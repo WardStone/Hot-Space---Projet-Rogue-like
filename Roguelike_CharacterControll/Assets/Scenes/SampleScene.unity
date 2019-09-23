@@ -315,13 +315,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1270a5fb959a9204e9baf6079e8a9685, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 20
+  movementSpeed: 7
   aimingPoint: {fileID: 567749771}
   gun: {fileID: 1899042761}
   bulletPrefab: {fileID: 5860706479280831944, guid: 166468ddded865f46b4bf58116038876,
     type: 3}
   dashTrail: {fileID: 1728878557}
   dashCompt: 0
+  dashTime: 0
+  startDashTime: 0
 --- !u!50 &1314589996
 Rigidbody2D:
   serializedVersion: 4
@@ -484,7 +486,7 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Time: 0.05
+  m_Time: 0.2
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 1

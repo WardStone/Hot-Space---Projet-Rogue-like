@@ -22,18 +22,20 @@ public class PlayerControllerScript : MonoBehaviour
     public int dashCompt;
     public float dashTime;
     public float startDashTime;
+    private bool canMove;
 
 
     void Start()
     {
         playerRb = GetComponent<Rigidbody2D>();
         playerAnimator = GetComponent<Animator>();
+        canMove = true;
     }
 
 
     void Update()
     {
-        moveInputDirection = new Vector3(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
+        moveInputDirection = new Vector3(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"),0.0f);
         moveVelocity = moveInputDirection * movementSpeed;
 
         playerAnimator.SetFloat("Horizontal", moveInputDirection.x);
@@ -44,6 +46,7 @@ public class PlayerControllerScript : MonoBehaviour
         
         AimAndShoot();
         Dash();
+       
    
         if (Input.GetButtonDown("Fire"))
         {
@@ -59,8 +62,11 @@ public class PlayerControllerScript : MonoBehaviour
 
     private void FixedUpdate()
     {
-        playerRb.velocity = moveVelocity;
         dashCompt = dashCompt + 1;
+        if (canMove == true)
+        {
+            playerRb.velocity = moveVelocity;    
+        }
     }
 
 
@@ -83,18 +89,22 @@ public class PlayerControllerScript : MonoBehaviour
     private void Dash()
     {
         {
-            if (Input.GetButtonDown("Dash"))
+            if (Input.GetButtonDown("Dash") && canMove == true)
             {
-                float dashDistance = 2f;
-                transform.position += moveInputDirection * dashDistance;
+                float dashDistance = 15f;
+                playerRb.velocity = moveInputDirection * dashDistance;
                 dashTrail.SetActive(true);
                 dashCompt = 0;
+                canMove = false;
             }
-            else if(dashCompt >= 25)
+            else if(dashCompt >= 15)
             {
                 dashTrail.SetActive(false);
+                canMove = true;
             }
         }
     }
+
+
 
 }

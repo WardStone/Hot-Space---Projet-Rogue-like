@@ -19,11 +19,13 @@ public class PlayerControllerScript : MonoBehaviour
     public GameObject dashTrail;
     private Animator playerAnimator;
 
-    public int dashCompt;
-    public float dashTime;
-    public float startDashTime;
-    private bool canMove;
+  
+    private bool canMove = true;
+    private bool canDash = true;
+    private bool canShoot = true;
 
+    public float dashForce;
+    public float timeBetweenShoot;
 
     void Start()
     {
@@ -45,24 +47,29 @@ public class PlayerControllerScript : MonoBehaviour
         bulletDirection = new Vector2(Input.GetAxisRaw("HorizontalSecondJoystick"), Input.GetAxisRaw("VerticalSecondJoystick"));
         
         AimAndShoot();
-        Dash();
-       
-   
-        if (Input.GetButtonDown("Fire"))
+        
+        
+
+        if (Input.GetButtonDown("Dash") && canMove == true && canDash == true)
         {
-            GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
-            bullet.GetComponent<Rigidbody2D>().velocity = bulletDirection * 20f;
-            bullet.transform.Rotate(0.0f,0.0f,Mathf.Atan2(bulletDirection.y,bulletDirection.x) * Mathf.Rad2Deg);
-            Destroy(bullet, 2.0f);
+            StartCoroutine(Dash());
         }
- 
-       
+        if (Input.GetButton("Fire") && aimInputDirection != Vector2.zero)
+        {
+            if (canShoot)
+            {
+                canShoot = false;
+                Shoot();
+                StartCoroutine(TimeBetween());
+            }
+           
+        }
 
     }
 
     private void FixedUpdate()
     {
-        dashCompt = dashCompt + 1;
+
         if (canMove == true)
         {
             playerRb.velocity = moveVelocity;    
@@ -86,23 +93,35 @@ public class PlayerControllerScript : MonoBehaviour
         }
       
     }
-    private void Dash()
+
+
+    IEnumerator Dash()
     {
-        {
-            if (Input.GetButtonDown("Dash") && canMove == true)
-            {
-                float dashDistance = 15f;
-                playerRb.velocity = moveInputDirection * dashDistance;
-                dashTrail.SetActive(true);
-                dashCompt = 0;
-                canMove = false;
-            }
-            else if(dashCompt >= 15)
-            {
-                dashTrail.SetActive(false);
-                canMove = true;
-            }
-        }
+        playerRb.velocity = moveInputDirection.normalized * dashForce;
+        dashTrail.SetActive(true);
+        canMove = false;
+        canDash = false;
+        yield return new WaitForSeconds(0.25f);
+        dashTrail.SetActive(false);
+        canMove = true;
+        yield return new WaitForSeconds(0.5f);
+        canDash = true;
+
+    }
+
+    IEnumerator TimeBetween()
+    {       
+            yield return new WaitForSeconds(timeBetweenShoot);
+            canShoot = true;
+    }
+
+    void Shoot()
+    {
+        float bulletSpeed = 20f;
+        GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
+        bullet.GetComponent<Rigidbody2D>().velocity = bulletDirection * bulletSpeed;
+        bullet.transform.Rotate(0.0f, 0.0f, Mathf.Atan2(bulletDirection.y, bulletDirection.x) * Mathf.Rad2Deg);
+        Destroy(bullet, 2.0f);
     }
 
 

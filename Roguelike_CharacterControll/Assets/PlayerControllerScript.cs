@@ -12,11 +12,13 @@ public class PlayerControllerScript : MonoBehaviour
     private Vector2 moveVelocity;
     private Vector2 aimInputDirection;
     private Vector2 bulletDirection;
+    private Vector2 fireDirection;
 
     public GameObject aimingPoint;
-    public GameObject gun;
+    public GameObject shield;
     public GameObject bulletPrefab;
     public GameObject dashTrail;
+    public GameObject firePoint;
     private Animator playerAnimator;
 
   
@@ -26,6 +28,7 @@ public class PlayerControllerScript : MonoBehaviour
 
     public float dashForce;
     public float timeBetweenShoot;
+
 
     void Start()
     {
@@ -43,10 +46,13 @@ public class PlayerControllerScript : MonoBehaviour
         playerAnimator.SetFloat("Horizontal", moveInputDirection.x);
         playerAnimator.SetFloat("Vertical", moveInputDirection.y);
 
-        aimInputDirection = new Vector2(Input.GetAxisRaw("HorizontalSecondJoystick"),Input.GetAxisRaw("VerticalSecondJoystick"));
+        aimInputDirection = new Vector3(Input.GetAxisRaw("HorizontalSecondJoystick"),Input.GetAxisRaw("VerticalSecondJoystick"));
         bulletDirection = new Vector2(Input.GetAxisRaw("HorizontalSecondJoystick"), Input.GetAxisRaw("VerticalSecondJoystick"));
-        
+        fireDirection = new Vector3(Input.GetAxisRaw("HorizontalSecondJoystick") * 0.5f, Input.GetAxisRaw("VerticalSecondJoystick") * 0.5f);
+
+        firePoint.transform.localPosition = fireDirection;
         AimAndShoot();
+        ActivateShield();
         
         
 
@@ -94,6 +100,21 @@ public class PlayerControllerScript : MonoBehaviour
       
     }
 
+    void ActivateShield()
+    {
+
+        Quaternion shieldRotation = Quaternion.LookRotation(aimInputDirection,Vector3.up);
+
+        if (Input.GetButton("Shield"))
+        {
+            shield.SetActive(true);
+            shield.transform.rotation = shieldRotation;
+        }
+        else
+        {
+            shield.SetActive(false);
+        }
+    }
 
     IEnumerator Dash()
     {
@@ -118,7 +139,7 @@ public class PlayerControllerScript : MonoBehaviour
     void Shoot()
     {
         float bulletSpeed = 20f;
-        GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
+        GameObject bullet = Instantiate(bulletPrefab, firePoint.transform.position, Quaternion.identity);
         bullet.GetComponent<Rigidbody2D>().velocity = bulletDirection * bulletSpeed;
         bullet.transform.Rotate(0.0f, 0.0f, Mathf.Atan2(bulletDirection.y, bulletDirection.x) * Mathf.Rad2Deg);
         Destroy(bullet, 2.0f);

@@ -12,55 +12,74 @@ public class PlayerControllerScript : MonoBehaviour
     private Vector2 moveVelocity;
     private Vector2 aimInputDirection;
     private Vector2 bulletDirection;
+    private Vector2 fireDirection;
 
     public GameObject aimingPoint;
-    public GameObject gun;
+    public GameObject shield;
     public GameObject bulletPrefab;
     public GameObject dashTrail;
+    public GameObject firePoint;
     private Animator playerAnimator;
 
-    public int dashCompt;
-    public float dashTime;
-    public float startDashTime;
+  
+    private bool canMove = true;
+    private bool canDash = true;
+    private bool canShoot = true;
+
+    public float dashForce;
+    public float timeBetweenShoot;
 
 
     void Start()
     {
         playerRb = GetComponent<Rigidbody2D>();
         playerAnimator = GetComponent<Animator>();
+        canMove = true;
     }
 
 
     void Update()
     {
-        moveInputDirection = new Vector3(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
+        moveInputDirection = new Vector3(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"),0.0f);
         moveVelocity = moveInputDirection * movementSpeed;
 
         playerAnimator.SetFloat("Horizontal", moveInputDirection.x);
         playerAnimator.SetFloat("Vertical", moveInputDirection.y);
 
-        aimInputDirection = new Vector2(Input.GetAxisRaw("HorizontalSecondJoystick"),Input.GetAxisRaw("VerticalSecondJoystick"));
+        aimInputDirection = new Vector3(Input.GetAxisRaw("HorizontalSecondJoystick"),Input.GetAxisRaw("VerticalSecondJoystick"));
         bulletDirection = new Vector2(Input.GetAxisRaw("HorizontalSecondJoystick"), Input.GetAxisRaw("VerticalSecondJoystick"));
-        
+        fireDirection = new Vector3(Input.GetAxisRaw("HorizontalSecondJoystick") * 0.5f, Input.GetAxisRaw("VerticalSecondJoystick") * 0.5f);
+
+        firePoint.transform.localPosition = fireDirection;
         AimAndShoot();
-        Dash();
-   
-        if (Input.GetButtonDown("Fire"))
+        ActivateShield();
+        
+        
+
+        if (Input.GetButtonDown("Dash") && canMove == true && canDash == true)
         {
-            GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
-            bullet.GetComponent<Rigidbody2D>().velocity = bulletDirection * 20f;
-            bullet.transform.Rotate(0.0f,0.0f,Mathf.Atan2(bulletDirection.y,bulletDirection.x) * Mathf.Rad2Deg);
-            Destroy(bullet, 2.0f);
+            StartCoroutine(Dash());
         }
- 
-       
+        if (Input.GetButton("Fire") && aimInputDirection != Vector2.zero)
+        {
+            if (canShoot)
+            {
+                canShoot = false;
+                Shoot();
+                StartCoroutine(TimeBetween());
+            }
+           
+        }
 
     }
 
     private void FixedUpdate()
     {
-        playerRb.velocity = moveVelocity;
-        dashCompt = dashCompt + 1;
+
+        if (canMove == true)
+        {
+            playerRb.velocity = moveVelocity;    
+        }
     }
 
 
@@ -80,21 +99,52 @@ public class PlayerControllerScript : MonoBehaviour
         }
       
     }
-    private void Dash()
+
+    void ActivateShield()
     {
+
+        Quaternion shieldRotation = Quaternion.LookRotation(aimInputDirection,Vector3.up);
+
+        if (Input.GetButton("Shield"))
         {
-            if (Input.GetButtonDown("Dash"))
-            {
-                float dashDistance = 2f;
-                transform.position += moveInputDirection * dashDistance;
-                dashTrail.SetActive(true);
-                dashCompt = 0;
-            }
-            else if(dashCompt >= 25)
-            {
-                dashTrail.SetActive(false);
-            }
+            shield.SetActive(true);
+            shield.transform.rotation = shieldRotation;
+        }
+        else
+        {
+            shield.SetActive(false);
         }
     }
+
+    IEnumerator Dash()
+    {
+        playerRb.velocity = moveInputDirection.normalized * dashForce;
+        dashTrail.SetActive(true);
+        canMove = false;
+        canDash = false;
+        yield return new WaitForSeconds(0.25f);
+        dashTrail.SetActive(false);
+        canMove = true;
+        yield return new WaitForSeconds(0.5f);
+        canDash = true;
+
+    }
+
+    IEnumerator TimeBetween()
+    {       
+            yield return new WaitForSeconds(timeBetweenShoot);
+            canShoot = true;
+    }
+
+    void Shoot()
+    {
+        float bulletSpeed = 20f;
+        GameObject bullet = Instantiate(bulletPrefab, firePoint.transform.position, Quaternion.identity);
+        bullet.GetComponent<Rigidbody2D>().velocity = bulletDirection * bulletSpeed;
+        bullet.transform.Rotate(0.0f, 0.0f, Mathf.Atan2(bulletDirection.y, bulletDirection.x) * Mathf.Rad2Deg);
+        Destroy(bullet, 2.0f);
+    }
+
+
 
 }

@@ -13,12 +13,16 @@ public class PlayerControllerScript : MonoBehaviour
     private Vector2 aimInputDirection;
     private Vector2 bulletDirection;
     private Vector2 fireDirection;
+    private Vector2 weaponDirection;
+
 
     public GameObject aimingPoint;
-    public GameObject shield;
     public GameObject bulletPrefab;
     public GameObject dashTrail;
     public GameObject firePoint;
+    public GameObject weaponPoint;
+    public GameObject player;
+
     private Animator playerAnimator;
 
   
@@ -33,43 +37,30 @@ public class PlayerControllerScript : MonoBehaviour
     void Start()
     {
         playerRb = GetComponent<Rigidbody2D>();
-        playerAnimator = GetComponent<Animator>();
         canMove = true;
     }
 
 
     void Update()
     {
+       
+
         moveInputDirection = new Vector3(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"),0.0f);
         moveVelocity = moveInputDirection * movementSpeed;
-
-        playerAnimator.SetFloat("Horizontal", moveInputDirection.x);
-        playerAnimator.SetFloat("Vertical", moveInputDirection.y);
-
-        aimInputDirection = new Vector3(Input.GetAxisRaw("HorizontalSecondJoystick"),Input.GetAxisRaw("VerticalSecondJoystick"));
+       
         bulletDirection = new Vector2(Input.GetAxisRaw("HorizontalSecondJoystick"), Input.GetAxisRaw("VerticalSecondJoystick"));
-        fireDirection = new Vector3(Input.GetAxisRaw("HorizontalSecondJoystick") * 0.5f, Input.GetAxisRaw("VerticalSecondJoystick") * 0.5f);
-
+        fireDirection = new Vector3(Input.GetAxisRaw("HorizontalSecondJoystick") * 1f, Input.GetAxisRaw("VerticalSecondJoystick") * 1f);
+        weaponDirection = new Vector3(Input.GetAxisRaw("HorizontalSecondJoystick") * 0.01f, Input.GetAxisRaw("VerticalSecondJoystick") * 0.01f);
         firePoint.transform.localPosition = fireDirection;
+        weaponPoint.transform.localPosition = weaponDirection;
         AimAndShoot();
-        ActivateShield();
-        
         
 
         if (Input.GetButtonDown("Dash") && canMove == true && canDash == true)
         {
             StartCoroutine(Dash());
         }
-        if (Input.GetButton("Fire") && aimInputDirection != Vector2.zero)
-        {
-            if (canShoot)
-            {
-                canShoot = false;
-                Shoot();
-                StartCoroutine(TimeBetween());
-            }
-           
-        }
+       
 
     }
 
@@ -85,36 +76,32 @@ public class PlayerControllerScript : MonoBehaviour
 
     void AimAndShoot()
     {
+       Vector3 aimInputDirection = new Vector3(Input.GetAxisRaw("HorizontalSecondJoystick"), Input.GetAxisRaw("VerticalSecondJoystick"));
+
         bulletDirection.Normalize();
         if (aimInputDirection.magnitude > 0.0f)
         {
 
             aimInputDirection.Normalize();
-            aimingPoint.transform.localPosition = aimInputDirection;
+            aimingPoint.transform.localPosition =  aimInputDirection;
             aimingPoint.SetActive(true);
         }
         else
         {
             aimingPoint.SetActive(false);
         }
-      
-    }
-
-    void ActivateShield()
-    {
-
-        Quaternion shieldRotation = Quaternion.LookRotation(aimInputDirection,Vector3.up);
-
-        if (Input.GetButton("Shield"))
+        if (Input.GetButton("Fire") && aimInputDirection != Vector3.zero)
         {
-            shield.SetActive(true);
-            shield.transform.rotation = shieldRotation;
-        }
-        else
-        {
-            shield.SetActive(false);
+            if (canShoot)
+            {
+                canShoot = false;
+                Shoot();
+                StartCoroutine(TimeBetween());
+            }
+
         }
     }
+
 
     IEnumerator Dash()
     {
@@ -144,7 +131,6 @@ public class PlayerControllerScript : MonoBehaviour
         bullet.transform.Rotate(0.0f, 0.0f, Mathf.Atan2(bulletDirection.y, bulletDirection.x) * Mathf.Rad2Deg);
         Destroy(bullet, 2.0f);
     }
-
 
 
 }

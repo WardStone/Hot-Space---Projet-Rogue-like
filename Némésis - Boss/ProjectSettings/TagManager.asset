@@ -10,6 +10,9 @@ TagManager:
   - bossRightArm01
   - damagedZone
   - bossHead01
+  - WallY
+  - WallX
+  - EnemyBullet
   layers:
   - Default
   - TransparentFX

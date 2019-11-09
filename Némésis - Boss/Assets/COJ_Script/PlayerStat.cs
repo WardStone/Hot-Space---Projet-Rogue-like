@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class PlayerStat : MonoBehaviour
 {
     public GameObject player;
-    protected int playerHealth = 100;
+    public int playerHealth = 100;
     protected int damageTaken;
     protected bool canTakeDamage = true;
     protected float privateTimer;
@@ -46,6 +46,13 @@ public class PlayerStat : MonoBehaviour
             privateTimer = 0.5f;
             StartCoroutine(takeDamage());
             Debug.Log("Aie ouille");
+        }
+
+        if (other.CompareTag("EnemyBullet"))
+        {
+            damageTaken = 5;
+            privateTimer = 1f;
+            StartCoroutine(takeDamage());
         }
 
 

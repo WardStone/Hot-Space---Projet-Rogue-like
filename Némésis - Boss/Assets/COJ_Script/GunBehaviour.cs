@@ -7,6 +7,7 @@ public class GunBehaviour : MonoBehaviour
     public Transform aimingPoint;
     public Rigidbody2D rb;
     public GameObject weaponPointPosition;
+    public float pickUpRadius = 3f;
 
     Vector2 aimingPointPos;
 
@@ -25,4 +26,5 @@ public class GunBehaviour : MonoBehaviour
         rb.position = weaponPointPosition.transform.position;
 
     }
+
 }

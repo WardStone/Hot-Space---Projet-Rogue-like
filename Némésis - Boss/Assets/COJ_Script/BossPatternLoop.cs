@@ -96,7 +96,7 @@ public class BossPatternLoop : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        healthBar.value = bossHealth;
+        
 
         if (bossHealth <= 50)
         {
@@ -185,6 +185,7 @@ public class BossPatternLoop : MonoBehaviour
     IEnumerator takeDamage()
     {
         bossHealth -= weaponDamage;
+        healthBar.value = bossHealth;
         canTakeDamage = false;
         Debug.Log("bosshealth =" + bossHealth);
         yield return new WaitForSeconds(0.01f);

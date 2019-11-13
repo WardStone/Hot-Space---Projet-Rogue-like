@@ -24,6 +24,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rock (break)
       objectReference: {fileID: 0}
+    - target: {fileID: 2237598454171840041, guid: 170d91d112a9f944ab186f1ba0b58b67,
+        type: 3}
+      propertyPath: m_TagString
+      value: BrkRock
+      objectReference: {fileID: 0}
     - target: {fileID: 2237598454171840043, guid: 170d91d112a9f944ab186f1ba0b58b67,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -82,18 +87,23 @@ PrefabInstance:
     - target: {fileID: 2237598454171840042, guid: 170d91d112a9f944ab186f1ba0b58b67,
         type: 3}
       propertyPath: m_Color.r
-      value: 0.8962264
+      value: 0.8584906
       objectReference: {fileID: 0}
     - target: {fileID: 2237598454171840042, guid: 170d91d112a9f944ab186f1ba0b58b67,
         type: 3}
       propertyPath: m_Color.g
-      value: 0.10568706
+      value: 0.125534
       objectReference: {fileID: 0}
     - target: {fileID: 2237598454171840042, guid: 170d91d112a9f944ab186f1ba0b58b67,
         type: 3}
       propertyPath: m_Color.b
-      value: 0.10568706
+      value: 0.125534
       objectReference: {fileID: 0}
+    - target: {fileID: 2237598454171840042, guid: 170d91d112a9f944ab186f1ba0b58b67,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 170d91d112a9f944ab186f1ba0b58b67, type: 3}
 --- !u!1 &4257507566112856806 stripped

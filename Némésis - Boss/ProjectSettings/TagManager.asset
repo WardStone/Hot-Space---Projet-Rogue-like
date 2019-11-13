@@ -13,6 +13,8 @@ TagManager:
   - WallY
   - WallX
   - EnemyBullet
+  - BrkRock
+  - StyRock
   layers:
   - Default
   - TransparentFX

@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 2237598454171840043}
   - component: {fileID: 2237598454171840042}
   - component: {fileID: 4477550543919079358}
+  - component: {fileID: -6816611452800201294}
   m_Layer: 0
   m_Name: Rock (stay)
-  m_TagString: Untagged
+  m_TagString: BrkRock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -49,7 +50,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -71,7 +72,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 60
   m_Sprite: {fileID: 21300000, guid: 9944452c2f726434182839dedeba326a, type: 3}
-  m_Color: {r: 0.21960786, g: 0.454902, b: 0.7176471, a: 1}
+  m_Color: {r: 0.10693307, g: 0.45308563, b: 0.8396226, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -107,3 +108,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.60926247, y: 0.30400038}
   m_EdgeRadius: 0
+--- !u!114 &-6816611452800201294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2237598454171840041}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 495fc7ef21757cb428e4ff72aa56cd70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 30

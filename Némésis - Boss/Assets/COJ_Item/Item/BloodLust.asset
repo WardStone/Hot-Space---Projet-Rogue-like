@@ -10,18 +10,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ef7f2ed38d3127e45865cfa49648ec4b, type: 3}
-  m_Name: Item1
+  m_Name: BloodLust
   m_EditorClassIdentifier: 
-  name: Item1
+  name: Bloodlust
   icon: {fileID: 0}
   isDefaultItem: 0
-  howManybulleShot: 0
-  bulletLifeSpan: 0.5
+  howManybulleShot: 1
+  bulletLifeSpan: 0
   delayBeforeFirstShot: 0
-  delayBeforeNextShot: -0.15
+  delayBeforeNextShot: 0
   bulletSpeed: 0
   bulletSize: {fileID: 0}
-  bulletDamage: 2
-  weaponAccuracy: 0
+  bulletDamage: 0.25
+  weaponAccuracy: 1
   healthBonus: 0
+  playerSpeed: 5
+  bulletPrefab: {fileID: 0}
   isWeapon: 0
+  weaponRef: 0

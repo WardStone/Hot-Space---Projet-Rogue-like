@@ -10,10 +10,10 @@ public class PlayerStat : MonoBehaviour
     public Item newItem;
     public int listLenght = 0;
 
-    public int playerHealth;
+    public float playerHealth;
     protected int damageTaken;
     protected bool canTakeDamage = true;
-    protected float privateTimer ;
+    protected float privateTimer;
     public Slider playerBar;
 
     public float howManybulleShot; // nb de balle par tir
@@ -22,9 +22,10 @@ public class PlayerStat : MonoBehaviour
     public float delayBeforeNextShot;//délai avant le prochain tir
     public float bulletSpeed;//vitesse de la balle
     public Transform bulletSize;// taille de la balle
-    public int bulletDamage;//dégat de la balle
+    public float bulletDamage;//dégat de la balle
     public float weaponAccuracy;//Précision de l'arme
     public float playerSpeed;//vitesse du joueur
+    public GameObject bulletPrefab;
 
     public bool canGetStat;
 
@@ -42,6 +43,7 @@ public class PlayerStat : MonoBehaviour
         bulletSize = defaultWeapon.bulletSize;
         bulletDamage = defaultWeapon.bulletDamage;
         weaponAccuracy = defaultWeapon.weaponAccuracy;
+        bulletPrefab = defaultWeapon.bulletPrefab;
         playerHealth = 100;
         playerSpeed = 5;
 
@@ -91,7 +93,7 @@ public class PlayerStat : MonoBehaviour
 
         }
 
-        if(other.CompareTag("damagedZone") && canTakeDamage == true)
+        if (other.CompareTag("damagedZone") && canTakeDamage == true)
         {
             damageTaken = 10;
             privateTimer = 0.5f;
@@ -121,27 +123,60 @@ public class PlayerStat : MonoBehaviour
     {
         if (listLenght != playerInventory.items.Count)
         {
-            newItem = playerInventory.items[playerInventory.items.Count -1];
+            newItem = playerInventory.items[playerInventory.items.Count - 1];
             listLenght++;
-            StartCoroutine(GetStatFromItem());
+
+            if (newItem.isWeapon == false)
+            {
+                StartCoroutine(GetStatFromItem());
+            }
+            else if (newItem.isWeapon == true)
+            {
+                StartCoroutine(SetStatFromWeapon());
+            }
+
             Debug.Log("List lenght =" + listLenght);
         }
     }
 
     IEnumerator GetStatFromItem()
     {
-        howManybulleShot += newItem.howManybulleShot;
+        Debug.Log("You got the item " + newItem.name);
+        howManybulleShot = howManybulleShot * newItem.howManybulleShot;
+        Debug.Log("howManyBulletShot is now" + howManybulleShot);
         bulletLifeSpan += newItem.bulletLifeSpan;
+        Debug.Log("bulletLifeSap is now" + bulletLifeSpan);
         delayBeforeFirstShot += newItem.delayBeforeFirstShot;
-        delayBeforeNextShot += defaultWeapon.delayBeforeNextShot;
-        bulletSpeed += defaultWeapon.bulletSpeed;
+        Debug.Log("delayBeforeFirstShot is now" + delayBeforeFirstShot);
+        delayBeforeNextShot += newItem.delayBeforeNextShot;
+        Debug.Log("delayBeforeNextShot is now" + delayBeforeNextShot);
+        bulletSpeed += newItem.bulletSpeed;
+        Debug.Log("bulletSpeed is now" + bulletSpeed);
         //bulletSize = defaultWeapon.bulletSize;
-        bulletDamage += defaultWeapon.bulletDamage;
-        weaponAccuracy += defaultWeapon.weaponAccuracy;
-        playerHealth += newItem.healthBonus;
-        playerSpeed += newItem.playerSpeed;
+        bulletDamage += bulletDamage * newItem.bulletDamage;
+        Debug.Log("Damage is now" + bulletDamage);
+        weaponAccuracy += weaponAccuracy * newItem.weaponAccuracy;
+        Debug.Log("Accuracy is  now" + weaponAccuracy);
+        playerHealth += playerHealth * newItem.healthBonus;
+        Debug.Log("PlayerHealth is now" + playerHealth);
+        playerSpeed += playerSpeed * newItem.playerSpeed;
+        Debug.Log("playerSpeed is now" + playerSpeed);
         yield return null;
-        Debug.Log("bullet damage =" + bulletDamage);
+        
     }
 
+    IEnumerator SetStatFromWeapon()
+    {
+        howManybulleShot = newItem.howManybulleShot;
+        bulletLifeSpan = newItem.bulletLifeSpan;
+        delayBeforeFirstShot = newItem.delayBeforeFirstShot;
+        delayBeforeNextShot = newItem.delayBeforeNextShot;
+        bulletSpeed = newItem.bulletSpeed;
+        //bulletSize = defaultWeapon.bulletSize;
+        bulletDamage = newItem.bulletDamage;
+        weaponAccuracy = newItem.weaponAccuracy;
+        bulletPrefab = newItem.bulletPrefab;
+        yield return null;
+        Debug.Log("You got the weapon " + newItem.name);
+    }
 }

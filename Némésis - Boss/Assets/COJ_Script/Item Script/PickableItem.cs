@@ -25,6 +25,7 @@ public class PickableItem : MonoBehaviour
     {
         Debug.Log("Picking up" + item.name);
         Inventory.instance.Add(item);
+        Destroy(gameObject);
         
     }
 }

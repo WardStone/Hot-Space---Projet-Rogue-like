@@ -5,13 +5,13 @@ using UnityEngine.UI;
 
 public class BossPatternLoop : MonoBehaviour
 {
+    public PlayerStat playerStat;
 
     public float bossHealth = 300;
     protected int patternRef;
     protected int patternSaved;
     protected bool canTakeDamage = true;
     protected bool canDoAnotherOne = true;
-    protected float weaponDamage = 5;
     public Slider healthBar;
     List<int> patternList = new List<int>();
 
@@ -184,7 +184,7 @@ public class BossPatternLoop : MonoBehaviour
 
     IEnumerator takeDamage()
     {
-        bossHealth -= weaponDamage;
+        bossHealth -= playerStat.bulletDamage;
         healthBar.value = bossHealth;
         canTakeDamage = false;
         Debug.Log("bosshealth =" + bossHealth);

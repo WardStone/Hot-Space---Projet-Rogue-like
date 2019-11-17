@@ -33,8 +33,8 @@ public class RockSpawning : MonoBehaviour
 
         for (int i = 0; i < styRockNbr; i++)
         {
-            float posix = Random.Range(-9f, 9f);
-            float posiy = Random.Range(-11f, -4f);
+            float posix = Random.Range(-9, 9);
+            float posiy = Random.Range(-10, -4);
 
             GameObject rocks = Instantiate(styShadowPreviz, new Vector3(posix, posiy, 0), Quaternion.identity);
 

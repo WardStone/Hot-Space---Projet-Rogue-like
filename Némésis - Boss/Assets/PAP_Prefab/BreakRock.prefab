@@ -22,22 +22,17 @@ PrefabInstance:
     - target: {fileID: 2237598454171840041, guid: 170d91d112a9f944ab186f1ba0b58b67,
         type: 3}
       propertyPath: m_Name
-      value: Rock (break)
-      objectReference: {fileID: 0}
-    - target: {fileID: 2237598454171840041, guid: 170d91d112a9f944ab186f1ba0b58b67,
-        type: 3}
-      propertyPath: m_TagString
-      value: BrkRock
+      value: BreakRock
       objectReference: {fileID: 0}
     - target: {fileID: 2237598454171840043, guid: 170d91d112a9f944ab186f1ba0b58b67,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 13.3
+      value: 17.42
       objectReference: {fileID: 0}
     - target: {fileID: 2237598454171840043, guid: 170d91d112a9f944ab186f1ba0b58b67,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.53
+      value: -0.22
       objectReference: {fileID: 0}
     - target: {fileID: 2237598454171840043, guid: 170d91d112a9f944ab186f1ba0b58b67,
         type: 3}
@@ -84,26 +79,36 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2237598454171840043, guid: 170d91d112a9f944ab186f1ba0b58b67,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.2607269
+      objectReference: {fileID: 0}
+    - target: {fileID: 2237598454171840043, guid: 170d91d112a9f944ab186f1ba0b58b67,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.2597579
+      objectReference: {fileID: 0}
+    - target: {fileID: 2237598454171840043, guid: 170d91d112a9f944ab186f1ba0b58b67,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.2157444
+      objectReference: {fileID: 0}
     - target: {fileID: 2237598454171840042, guid: 170d91d112a9f944ab186f1ba0b58b67,
         type: 3}
       propertyPath: m_Color.r
-      value: 0.8584906
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2237598454171840042, guid: 170d91d112a9f944ab186f1ba0b58b67,
         type: 3}
       propertyPath: m_Color.g
-      value: 0.125534
+      value: 0.21176472
       objectReference: {fileID: 0}
     - target: {fileID: 2237598454171840042, guid: 170d91d112a9f944ab186f1ba0b58b67,
         type: 3}
       propertyPath: m_Color.b
-      value: 0.125534
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2237598454171840042, guid: 170d91d112a9f944ab186f1ba0b58b67,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 170d91d112a9f944ab186f1ba0b58b67, type: 3}
 --- !u!1 &4257507566112856806 stripped

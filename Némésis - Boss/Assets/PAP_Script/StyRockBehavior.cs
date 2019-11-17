@@ -19,13 +19,32 @@ public class StyRockBehavior : MonoBehaviour
         transform.gameObject.tag = "StyRock";
     }
 
-    void HitByBullet()
+    public void OnTriggerEnter2D(Collider2D other)
     {
-        health -= 5;
+        if (other.gameObject.CompareTag("Bullet"))
+        {
+            health -= 5;
+        }
+
+        if (other.CompareTag("EnemyBullet"))
+        {
+            health -= 10;
+        }
+
+        if (other.CompareTag("bossLeftArm01"))
+        {
+            health -= 30;
+        }
+
+        if (other.CompareTag("bossRightArm01"))
+        {
+            health -= 30;
+        }
 
         if (health <= 0)
         {
             Destroy(gameObject);
         }
+
     }
 }

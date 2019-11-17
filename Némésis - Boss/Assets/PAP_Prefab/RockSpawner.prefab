@@ -48,8 +48,8 @@ MonoBehaviour:
   brkShadowPreviz: {fileID: 4416108185306851784, guid: 8c6d721deaf5abf47a9ed2bbcec8326f,
     type: 3}
   stopSpawning: 0
-  spawnTime: 4
-  spawnDelay: 4
+  spawnTime: 10
+  spawnDelay: 10
   styRockNbr: 1
   brkRockNbrMin: 1
   brkRockNbrMax: 3

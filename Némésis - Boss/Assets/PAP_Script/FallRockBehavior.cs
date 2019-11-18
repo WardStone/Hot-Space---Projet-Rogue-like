@@ -6,30 +6,29 @@ public class FallRockBehavior : MonoBehaviour
 {
     public float fallSpeed;
     public float safeTime;
+    private float originalPosiy;
 
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(SafeTimer());
+        originalPosiy = transform.position.y;
     }
 
     // Update is called once per frame
     void Update()
     {
+        
         transform.position = transform.position + new Vector3(0, fallSpeed, 0);
+
     }
 
-    IEnumerator SafeTimer()
-    {
-        yield return new WaitForSeconds(safeTime);
-        transform.gameObject.tag = "FallRock";
-    }
 
     public void OnTriggerEnter2D(Collider2D other)
     {
 
-        if (other.gameObject.CompareTag("Shadow"))
+        if ((transform.position.y <= originalPosiy - 7) && (other.gameObject.CompareTag("Shadow")))
         {
+            transform.gameObject.tag = "FallRock";
             Destroy(gameObject);
         }
     }

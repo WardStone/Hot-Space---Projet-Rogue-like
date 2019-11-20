@@ -24,7 +24,7 @@ MonoBehaviour:
   bulletDamage: 0
   weaponAccuracy: 0.4
   healthBonus: 0
-  playerSpeed: 0
+  playerSpeed: 1
   bulletPrefab: {fileID: 0}
   isWeapon: 0
   weaponRef: 0

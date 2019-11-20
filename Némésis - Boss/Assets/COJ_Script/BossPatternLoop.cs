@@ -40,15 +40,17 @@ public class BossPatternLoop : MonoBehaviour
     //Head01Pattern condition and object
     protected GameObject Head01;
     public GameObject Head01Prefab;
-    public LineRenderer laserBeamRenderer;
-    public GameObject newBeamImpactPoint;
     protected bool canDoHead01 = true;
     public Transform HeadPoint;
-    public GameObject newBeamPoint;
-    public Transform BeamPoint;
     public Transform HeadSpawnPoint;
-    private LineRenderer Beam;
     protected bool canSpawn = true;
+
+    public Transform newTargetPoint;
+    public GameObject enemyBulletPrefab;
+    protected Vector2 head01BulletDir;
+    public float enemyBulletSpeed = 100f;
+    public Rigidbody2D enemyBulletRb;
+    protected GameObject enemyBullet;
 
     //RightArm01Pattern Condition and object
 
@@ -275,31 +277,27 @@ public class BossPatternLoop : MonoBehaviour
     {
         
         float beamPatternTimer = 3f;
-
-        if (canSpawn == true)
-        {
-            Beam = Instantiate(laserBeamRenderer, HeadPoint.transform.position, Quaternion.identity);
-            newBeamPoint = Instantiate(newBeamImpactPoint, BeamPoint.transform.position, Quaternion.identity);
-            canSpawn = false;
-        }
-
+        bool canSpawn = true;
         while (beamPatternTimer > 0)
         {
-            Beam.SetPosition(0, HeadPoint.position);
-            Beam.SetPosition(1, newBeamPoint.transform.position);
-            beamPatternTimer -= Time.deltaTime;
-       
+            
+            if (canSpawn == true)
+            {
+                canSpawn = false;
+                yield return new WaitForSeconds(0.25f);
+                
+                enemyBullet = enemyBulletPrefab;
+                Instantiate(enemyBullet, Head01.transform.position, Quaternion.identity);
+                beamPatternTimer -= 0.25f;
+                Debug.Log("ALLO");
+                
+                canSpawn = true;
+                
+            }
             yield return null;
         }
-        if (beamPatternTimer <= 0)
-        {
-            Destroy(Beam);
-            Destroy(newBeamPoint);
-            
-            
-            
-        }
-        yield return new WaitForSeconds(1f);
+ 
+        yield return new WaitForSeconds(0.1f);
         Debug.Log("Refrest the pattern");
         RefreshPattern();
         canSpawn = true;

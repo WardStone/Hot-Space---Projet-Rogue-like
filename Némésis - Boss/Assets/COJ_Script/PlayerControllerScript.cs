@@ -113,8 +113,10 @@ public class PlayerControllerScript : MonoBehaviour
         yield return new WaitForSeconds(dashDuration);
         
         canMove = true;
+
         yield return new WaitForSeconds(0.5f);
         canDash = true;
+
     }
 
 

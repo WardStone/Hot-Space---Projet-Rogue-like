@@ -74,7 +74,7 @@ public class PlayerStat : MonoBehaviour
 
         if (other.CompareTag("EnemyBullet"))
         {
-            damageTaken = 5;
+            damageTaken = 3;
             privateTimer = 1f;
             StartCoroutine(takeDamage());
         }
@@ -159,7 +159,7 @@ public class PlayerStat : MonoBehaviour
         Debug.Log("Accuracy is  now" + weaponAccuracy);
         playerHealth += playerHealth * newItem.healthBonus;
         Debug.Log("PlayerHealth is now" + playerHealth);
-        playerSpeed += playerSpeed * newItem.playerSpeed;
+        playerSpeed = playerSpeed * newItem.playerSpeed;
         Debug.Log("playerSpeed is now" + playerSpeed);
         yield return null;
         

@@ -452,7 +452,7 @@ SpriteRenderer:
   m_Size: {x: 1.5, y: 1.4166666}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!95 &235485836
@@ -618,13 +618,9 @@ MonoBehaviour:
   m_CameraCutEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Cinemachine.CinemachineBrain+BrainEvent, Cinemachine, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Cinemachine.CinemachineBrain+VcamActivatedEvent, Cinemachine, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!1 &328509330
 GameObject:
   m_ObjectHideFlags: 0
@@ -1084,7 +1080,7 @@ SpriteRenderer:
   m_Size: {x: 1.2916666, y: 1.3333334}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!95 &527913064
@@ -1338,8 +1334,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: d9b628873db47a4408700e28a2140222, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -1437,7 +1431,7 @@ SpriteRenderer:
   m_Size: {x: 1.125, y: 2.1666667}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!95 &716298779
@@ -1527,8 +1521,6 @@ MonoBehaviour:
     m_OnCameraLive:
       m_PersistentCalls:
         m_Calls: []
-      m_TypeName: Cinemachine.CinemachineBrain+VcamActivatedEvent, Cinemachine, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
   m_LegacyBlendHint: 0
   m_ComponentOwner: {fileID: 899718219}
 --- !u!4 &718037171
@@ -1777,8 +1769,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: d9b628873db47a4408700e28a2140222, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -2057,7 +2047,7 @@ SpriteRenderer:
   m_Size: {x: 1.5, y: 1.7083334}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!95 &946710498
@@ -2348,8 +2338,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: d9b628873db47a4408700e28a2140222, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -2423,8 +2411,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: d9b628873db47a4408700e28a2140222, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -2522,7 +2508,7 @@ SpriteRenderer:
   m_Size: {x: 0.9166667, y: 1.4166666}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!95 &1264598699
@@ -3079,8 +3065,6 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.Slider+SliderEvent, UnityEngine.UI, Version=1.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!1001 &1585096647
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3511,7 +3495,7 @@ SpriteRenderer:
   m_Size: {x: 1.2083334, y: 1.375}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!95 &1825453451
@@ -3967,8 +3951,6 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.Slider+SliderEvent, UnityEngine.UI, Version=1.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!1 &2061835898
 GameObject:
   m_ObjectHideFlags: 0
@@ -4067,7 +4049,7 @@ SpriteRenderer:
   m_Size: {x: 1.6666666, y: 3.8333333}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1001 &2142836029
@@ -4247,6 +4229,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 705c6796eff09644d8f63474e6c6be9b,
         type: 2}
+    - target: {fileID: 6015816081722176323, guid: ad024cec512fb6040a5b0834226afa47,
+        type: 3}
+      propertyPath: bulletPrefab
+      value: 
+      objectReference: {fileID: 1040633955465522699, guid: 2400e91dceb08d246bd0fb3a75fb2712,
+        type: 3}
+    - target: {fileID: 6015816081722176323, guid: ad024cec512fb6040a5b0834226afa47,
+        type: 3}
+      propertyPath: canGetStat
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6015816081722176322, guid: ad024cec512fb6040a5b0834226afa47,
         type: 3}
       propertyPath: m_LocalPosition.x

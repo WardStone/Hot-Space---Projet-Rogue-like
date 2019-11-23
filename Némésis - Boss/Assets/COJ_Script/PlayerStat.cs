@@ -44,7 +44,7 @@ public class PlayerStat : MonoBehaviour
         bulletDamage = defaultWeapon.bulletDamage;
         weaponAccuracy = defaultWeapon.weaponAccuracy;
         bulletPrefab = defaultWeapon.bulletPrefab;
-        playerHealth = 100;
+        playerHealth = defaultWeapon.healthBonus;
         playerSpeed = 5;
 
     }
@@ -191,6 +191,7 @@ public class PlayerStat : MonoBehaviour
         bulletDamage = newItem.bulletDamage;
         weaponAccuracy = newItem.weaponAccuracy;
         bulletPrefab = newItem.bulletPrefab;
+        playerHealth = newItem.healthBonus;
         yield return null;
         Debug.Log("You got the weapon " + newItem.name);
     }

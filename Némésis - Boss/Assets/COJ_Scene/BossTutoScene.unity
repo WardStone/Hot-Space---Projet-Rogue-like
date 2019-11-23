@@ -1189,10 +1189,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerStat: {fileID: 0}
   leftArm01Stat: {fileID: 0}
-  RightArm01Stat: {fileID: 0}
-  Head01Stat: {fileID: 0}
+  rightArm01Stat: {fileID: 0}
+  head01Stat: {fileID: 0}
   bossHealth: 300
   healthBar: {fileID: 0}
+  phase2Started: 0
   leftArm01Prefab: {fileID: 0}
   leftSpawnArmPoint: {fileID: 0}
   prepareAttackPoint: {fileID: 0}
@@ -2213,6 +2214,85 @@ RectTransform:
   m_AnchoredPosition: {x: -5, y: 0}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1001 &1089559980
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5637774132717446205, guid: b2e4ea56eb4957d478f63db0fd09bbfd,
+        type: 3}
+      propertyPath: m_Name
+      value: RockSpawner
+      objectReference: {fileID: 0}
+    - target: {fileID: 5637774132717446193, guid: b2e4ea56eb4957d478f63db0fd09bbfd,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5637774132717446193, guid: b2e4ea56eb4957d478f63db0fd09bbfd,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5637774132717446193, guid: b2e4ea56eb4957d478f63db0fd09bbfd,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5637774132717446193, guid: b2e4ea56eb4957d478f63db0fd09bbfd,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5637774132717446193, guid: b2e4ea56eb4957d478f63db0fd09bbfd,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5637774132717446193, guid: b2e4ea56eb4957d478f63db0fd09bbfd,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5637774132717446193, guid: b2e4ea56eb4957d478f63db0fd09bbfd,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5637774132717446193, guid: b2e4ea56eb4957d478f63db0fd09bbfd,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 5637774132717446193, guid: b2e4ea56eb4957d478f63db0fd09bbfd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5637774132717446193, guid: b2e4ea56eb4957d478f63db0fd09bbfd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5637774132717446193, guid: b2e4ea56eb4957d478f63db0fd09bbfd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5637774132717446204, guid: b2e4ea56eb4957d478f63db0fd09bbfd,
+        type: 3}
+      propertyPath: spawnTime
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5637774132717446204, guid: b2e4ea56eb4957d478f63db0fd09bbfd,
+        type: 3}
+      propertyPath: spawnDelay
+      value: 7
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b2e4ea56eb4957d478f63db0fd09bbfd, type: 3}
 --- !u!1 &1132398683
 GameObject:
   m_ObjectHideFlags: 0
@@ -3188,7 +3268,7 @@ GameObject:
   - component: {fileID: 1731571466}
   m_Layer: 0
   m_Name: Boss
-  m_TagString: Untagged
+  m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3207,10 +3287,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerStat: {fileID: 102785012}
   leftArm01Stat: {fileID: 0}
-  RightArm01Stat: {fileID: 0}
-  Head01Stat: {fileID: 0}
-  bossHealth: 500
+  rightArm01Stat: {fileID: 0}
+  head01Stat: {fileID: 0}
+  bossHealth: 1500
   healthBar: {fileID: 2061675332}
+  phase2Started: 0
   leftArm01Prefab: {fileID: 1243433978311801857, guid: b2f889734df3c524998fa7bfac65d92a,
     type: 3}
   leftSpawnArmPoint: {fileID: 1052461854}
@@ -3880,9 +3961,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 0}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 500
+  m_MaxValue: 1500
   m_WholeNumbers: 1
-  m_Value: 500
+  m_Value: 1500
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -4164,7 +4245,7 @@ PrefabInstance:
         type: 3}
       propertyPath: defaultWeapon
       value: 
-      objectReference: {fileID: 11400000, guid: 5df7751732672b04182ba1753f6d2277,
+      objectReference: {fileID: 11400000, guid: 705c6796eff09644d8f63474e6c6be9b,
         type: 2}
     - target: {fileID: 6015816081722176322, guid: ad024cec512fb6040a5b0834226afa47,
         type: 3}

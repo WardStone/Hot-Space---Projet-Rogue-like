@@ -26,7 +26,7 @@ public class StyRockBehavior : MonoBehaviour
             health -= 5;
         }
 
-        if (other.CompareTag("EnemyBullet"))
+        if (other.CompareTag("BossBullet") || other.CompareTag("HomingBossBullet"))
         {
             health -= 10;
         }

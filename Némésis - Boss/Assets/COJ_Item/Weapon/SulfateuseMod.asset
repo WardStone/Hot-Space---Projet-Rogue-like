@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef7f2ed38d3127e45865cfa49648ec4b, type: 3}
+  m_Name: SulfateuseMod
+  m_EditorClassIdentifier: 
+  name: SulfateuseMod
+  icon: {fileID: 0}
+  isDefaultItem: 0
+  howManybulleShot: 1
+  bulletLifeSpan: 1.5
+  delayBeforeFirstShot: 1.5
+  delayBeforeNextShot: 0.05
+  bulletSpeed: 20
+  bulletSize: {fileID: 0}
+  bulletDamage: 3
+  weaponAccuracy: 0.2
+  healthBonus: 0
+  playerSpeed: 0
+  bulletPrefab: {fileID: 5763282880058473366, guid: 12cad30d32ab7554f9d012bf7ec2acb3,
+    type: 3}
+  isWeapon: 1
+  weaponRef: 0

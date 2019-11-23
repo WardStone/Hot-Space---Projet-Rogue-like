@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerControllerScript : MonoBehaviour
 {
+    public PlayerStat stats;
 
     public float movementSpeed;
     private Rigidbody2D playerRb;
@@ -17,8 +18,6 @@ public class PlayerControllerScript : MonoBehaviour
 
 
     public GameObject aimingPoint;
-    public GameObject bulletPrefab;
-    public GameObject dashTrail;
     public GameObject firePoint;
     public GameObject player;
 
@@ -30,9 +29,8 @@ public class PlayerControllerScript : MonoBehaviour
     private bool canShoot = true;
 
     public float dashForce;
-    public float timeBetweenShoot;
     public float dashDuration;
-
+    public float firstShotDelay;
 
     void Start()
     {
@@ -46,11 +44,10 @@ public class PlayerControllerScript : MonoBehaviour
        
 
         moveInputDirection = new Vector3(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"),0.0f);
-        moveVelocity = moveInputDirection * movementSpeed;
+        moveVelocity = moveInputDirection * stats.playerSpeed;
        
-        bulletDirection = new Vector2(Input.GetAxisRaw("HorizontalSecondJoystick"), Input.GetAxisRaw("VerticalSecondJoystick"));
+        
         fireDirection = new Vector3(Input.GetAxisRaw("HorizontalSecondJoystick") * 1f, Input.GetAxisRaw("VerticalSecondJoystick") * 1f);
-        weaponDirection = new Vector3(Input.GetAxisRaw("HorizontalSecondJoystick") * 0.01f, Input.GetAxisRaw("VerticalSecondJoystick") * 0.01f);
         firePoint.transform.localPosition = fireDirection;
         AimAndShoot();
         
@@ -91,13 +88,19 @@ public class PlayerControllerScript : MonoBehaviour
         }
         if (Input.GetButton("Fire") && aimInputDirection != Vector3.zero)
         {
-            if (canShoot)
+            firstShotDelay += Time.deltaTime;
+            
+            if (canShoot == true && firstShotDelay >= stats.delayBeforeFirstShot)
             {
+                Debug.Log("You shot !");
                 canShoot = false;
-                Shoot();
-                StartCoroutine(TimeBetween());
+                StartCoroutine(ShootBullet());
             }
 
+        }
+        else
+        {
+            firstShotDelay = 0;
         }
     }
 
@@ -105,32 +108,45 @@ public class PlayerControllerScript : MonoBehaviour
     IEnumerator Dash()
     {
         playerRb.velocity = moveInputDirection.normalized * dashForce;
-        dashTrail.SetActive(true);
         canMove = false;
         canDash = false;
         yield return new WaitForSeconds(dashDuration);
         
         canMove = true;
+
         yield return new WaitForSeconds(0.5f);
         canDash = true;
-        dashTrail.SetActive(false);
+
     }
 
-    IEnumerator TimeBetween()
-    {       
-            yield return new WaitForSeconds(timeBetweenShoot);
-            canShoot = true;
-    }
 
-    void Shoot()
+    IEnumerator ShootBullet()
     {
-        float bulletSpeed = 20f;
-        GameObject bullet = Instantiate(bulletPrefab, firePoint.transform.position, Quaternion.identity);
-        bullet.GetComponent<Rigidbody2D>().velocity = bulletDirection * bulletSpeed;
-        bullet.transform.Rotate(0.0f, 0.0f, Mathf.Atan2(bulletDirection.y, bulletDirection.x) * Mathf.Rad2Deg);
-        Destroy(bullet, 2.0f);
+        for (int i = 0; i < stats.howManybulleShot; i++)
+        {
+            Debug.Log("Cool it shoot");
+            if (aimingPoint.transform.position.x >= 0.5f || aimingPoint.transform.position.x <= -0.5f)
+            {
+                firePoint.transform.position += new Vector3(0f, Random.Range(-stats.weaponAccuracy, stats.weaponAccuracy));
+            }
+
+            if (aimingPoint.transform.position.y >= 0.5f || aimingPoint.transform.position.y <= -0.5f)
+            {
+                firePoint.transform.position += new Vector3(Random.Range(-stats.weaponAccuracy, stats.weaponAccuracy),0f);
+            }
+
+
+            bulletDirection = firePoint.transform.position - player.transform.position;
+            GameObject bullet = Instantiate(stats.bulletPrefab, firePoint.transform.position, Quaternion.identity);
+
+            bullet.GetComponent<Rigidbody2D>().velocity = bulletDirection * stats.bulletSpeed;
+            bullet.transform.Rotate(0.0f, 0.0f, Mathf.Atan2(bulletDirection.y, bulletDirection.x) * Mathf.Rad2Deg);
+            Destroy(bullet, stats.bulletLifeSpan);
+            yield return new WaitForSeconds(0.01f);
+        }
+        yield return new WaitForSeconds(stats.delayBeforeNextShot);
+        canShoot = true;
+        
     }
-
-
 
 }

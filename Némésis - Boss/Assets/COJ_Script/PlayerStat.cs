@@ -86,6 +86,14 @@ public class PlayerStat : MonoBehaviour
             StartCoroutine(takeDamage());
         }
 
+        if (other.CompareTag("BrkRock"))
+        {
+            damageTaken = 30;
+            privateTimer = 0.5f;
+            StartCoroutine(takeDamage());
+            Debug.Log("ça fait mal");
+        }
+
 
     }
 

@@ -13,6 +13,8 @@ TagManager:
   - WallY
   - WallX
   - EnemyBullet
+  - BossBullet
+  - HomingBossBullet
   layers:
   - Default
   - TransparentFX

@@ -6,27 +6,50 @@ public class EnemyBulletBehaviour : MonoBehaviour
 {
     public Transform playerPos;
     public Transform headPos;
-    protected Vector2 bulletDir;
+    protected Vector2 homingBulletDir;
+    protected Vector2 downBulletDir;
     protected Rigidbody2D bulletRb;
-    protected float bulletSpeed = 45f;
 
     public void Start()
     {
         playerPos = GameObject.Find("Player").transform;
         headPos = GameObject.Find("HeadPoint").transform;
-        bulletDir = playerPos.position - headPos.position;
+        homingBulletDir = playerPos.position - headPos.position;
+        downBulletDir = new Vector2(0, -1);
+
     }
     public void FixedUpdate()
     {
-        StartCoroutine(BulletGosTowardPlayer());
+        bulletType();
     }
 
+    public void bulletType()
+    {
+        if (gameObject.CompareTag("HomingBossBullet"))
+        {
+            StartCoroutine(BulletGosTowardPlayer());
+        }
+
+        if (gameObject.CompareTag("BossBullet"))
+        {
+            StartCoroutine(BulletGoesForward());
+        }
+    }
     IEnumerator BulletGosTowardPlayer()
     {
-        
+        float bulletSpeed = 45f;
         bulletRb = gameObject.GetComponent<Rigidbody2D>();
-        bulletRb.velocity = bulletDir * bulletSpeed * Time.deltaTime;
+        bulletRb.velocity = homingBulletDir * bulletSpeed * Time.deltaTime;
         yield return new WaitForSeconds(3f);
+        Destroy(gameObject);
+    }
+
+    IEnumerator BulletGoesForward()
+    {
+        float bulletSpeed = 150f;
+        bulletRb = gameObject.GetComponent<Rigidbody2D>();
+        bulletRb.velocity = downBulletDir * bulletSpeed * Time.deltaTime;
+        yield return new WaitForSeconds(1.5f);
         Destroy(gameObject);
     }
 

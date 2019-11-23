@@ -74,8 +74,15 @@ public class PlayerStat : MonoBehaviour
 
         if (other.CompareTag("EnemyBullet"))
         {
-            damageTaken = 3;
-            privateTimer = 1f;
+            damageTaken = 5;
+            privateTimer = 1.5f;
+            StartCoroutine(takeDamage());
+        }
+
+        if(other.CompareTag("BossBullet") || other.CompareTag("HomingBossBullet"))
+        {
+            damageTaken = 10;
+            privateTimer = 1.5f;
             StartCoroutine(takeDamage());
         }
 

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -5977871437912080019}
   m_Layer: 0
   m_Name: BossBullet
-  m_TagString: EnemyBullet
+  m_TagString: BossBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -142,3 +142,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1052fcc47a4798459d951a9363b6ba5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerPos: {fileID: 0}
+  headPos: {fileID: 0}

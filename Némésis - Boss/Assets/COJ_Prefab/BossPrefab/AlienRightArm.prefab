@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1992585087}
   - component: {fileID: 1992585086}
   - component: {fileID: 7363732988143642221}
+  - component: {fileID: 4053036082603637241}
   m_Layer: 0
   m_Name: AlienRightArm
   m_TagString: bossRightArm01
@@ -149,3 +150,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &4053036082603637241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4962646218542758053}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b12ef2ebdf071d94a95180029f4a9c8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stat: {fileID: 0}
+  partHealth: 300
+  hasRespawned: 0
+  hurtColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  okColor: {r: 1, g: 1, b: 1, a: 1}

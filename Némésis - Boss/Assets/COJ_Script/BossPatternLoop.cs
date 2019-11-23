@@ -6,6 +6,9 @@ using UnityEngine.UI;
 public class BossPatternLoop : MonoBehaviour
 {
     public PlayerStat playerStat;
+    public BossPartStat leftArm01Stat;
+    public BossPartStat rightArm01Stat;
+    public BossPartStat head01Stat;
 
     public float bossHealth = 300;
     protected int patternRef;
@@ -15,6 +18,7 @@ public class BossPatternLoop : MonoBehaviour
     public Slider healthBar;
     List<int> patternList = new List<int>();
 
+    public bool phase2Started;
 
 
 
@@ -71,17 +75,28 @@ public class BossPatternLoop : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        healthBar.value = bossHealth;
+        phase2Started = false;
+        gameObject.GetComponent<BoxCollider2D>().enabled = false;
+
         leftArm01 = Instantiate(leftArm01Prefab,leftSpawnArmPoint.transform.position,Quaternion.identity);
         leftArmPoint = leftArm01.transform.GetChild(0).transform;
         leftArm01Rb = leftArm01.GetComponent<Rigidbody2D>();
+        leftArm01Stat = leftArm01.GetComponent<BossPartStat>();
+
+        
+
+   
 
         bossCoreDirection = Vector2.one.normalized;
 
         Head01 = Instantiate(Head01Prefab, HeadSpawnPoint.transform.position, Quaternion.identity);
         HeadPoint = Head01.transform.GetChild(0).transform;
+        head01Stat = Head01.GetComponent<BossPartStat>();
 
         rightArm01 = Instantiate(rightArm01Prefab, rightArmSpawnPoint.transform.position, Quaternion.identity);
         rightArm01Animator = rightArm01.GetComponent<Animator>();
+        rightArm01Stat = rightArm01.GetComponent<BossPartStat>();
 
         for (int i = 0; i < 3; i++)
         {
@@ -100,31 +115,56 @@ public class BossPatternLoop : MonoBehaviour
     {
         
 
-        if (bossHealth <= 50)
+        if (bossHealth <= 500)
         {
            
             bossCoreRb.velocity = bossCoreDirection * coreSpeed * Time.deltaTime;
+            phase2Started = true;
+            gameObject.GetComponent<BoxCollider2D>().enabled = true;
 
         }
         // Pattern LeftArm01
         if(patternRef == 0 && canDoLeftArm01 == true)
         {
-            StartCoroutine(LeftArmPattern01Part1());
             canDoLeftArm01 = false;
+            if(leftArm01Stat.partHealth > 0)
+            {
+                StartCoroutine(LeftArmPattern01Part1());
+            }
+            else
+            {
+                StartCoroutine(RespawnLeftArm());
+            }
+            
+            
         }
+ 
 
         //Pattern Head01
         if (patternRef == 1 && canDoHead01 == true)
         {
-            StartCoroutine(Head01Pattern());
             canDoHead01 = false;
-            
+            if(head01Stat.partHealth > 0)
+            {
+                StartCoroutine(Head01Pattern());
+            }
+            else
+            {
+                StartCoroutine(RespawnHead());
+            }
         }
         if (patternRef == 2 && canDoRightArm01 == true)
         {
-            StartCoroutine(RightArm01Pattern());
             canDoRightArm01 = false;
-           
+            if(rightArm01Stat.partHealth > 0)
+            {
+                StartCoroutine(RightArm01Pattern());
+                Debug.Log("patternRef Accessed");
+            }
+            else
+            {
+                StartCoroutine(RespawnRightArm());
+            }
         }
 
 
@@ -195,81 +235,115 @@ public class BossPatternLoop : MonoBehaviour
 
     }
 
+    IEnumerator RespawnLeftArm()
+    {
+        if (leftArm01Stat.partHealth <= 0)
+        {
+            yield return new WaitForSeconds(1.5f);
+            leftArm01Stat.partHealth = 200;
+            leftArm01Stat.hasRespawned = true;
+            Debug.Log("I'm back baby Boi");
+            yield return new WaitForSeconds(0.5f);
+            Debug.Log("here my new move cunt");
+            canDoLeftArm01 = true; 
+            RefreshPattern();
+        }
+
+    }
+
+    IEnumerator RespawnRightArm()
+    {
+        if (rightArm01Stat.partHealth <= 0)
+        {
+            yield return new WaitForSeconds(1.5f);
+            rightArm01Stat.partHealth = 200;
+            rightArm01Stat.hasRespawned = true;
+            Debug.Log("I'm back baby Boi");
+            yield return new WaitForSeconds(0.5f);
+            Debug.Log("here my new move cunt");
+            canDoRightArm01 = true;
+            RefreshPattern();
+        }
+
+    }
+
+    IEnumerator RespawnHead()
+    {
+        if (head01Stat.partHealth <= 0)
+        {
+            yield return new WaitForSeconds(1.5f);
+            head01Stat.partHealth = 200;
+            head01Stat.hasRespawned = true;
+            Debug.Log("I'm back baby Boi");
+            yield return new WaitForSeconds(0.5f);
+            Debug.Log("here my new move cunt");
+            canDoHead01 = true;
+            RefreshPattern();
+        }
+
+    }
+
     IEnumerator LeftArmPattern01Part1()
     {
         float moveSpeed = 5f;
         float pattern1Timer = 2f;
+        float impactSpeed = 15f;
+        float comeBackTimer = 0.25f;
+        float returnSpeed = 10f;
 
-        while(pattern1Timer > 0)
-        {
-            
-            pattern01FirstDir = prepareAttackPoint.position - leftArmPoint.position;
-            leftArm01Rb.velocity = pattern01FirstDir * moveSpeed;
-            pattern1Timer -= Time.deltaTime;
-            if (pattern1Timer <= 0.3f && pattern1Timer > 0.1f)
+        leftArm01.GetComponent<BoxCollider2D>().enabled = false;
+        while (pattern1Timer > 0 && leftArm01)
             {
-                leftArm01.GetComponent<SpriteRenderer>().material.color = dashNowColor;
-            }
-            else
-            {
-                leftArm01.GetComponent<SpriteRenderer>().material.color = normalColor;
-            }
-            yield return null;
-        }
 
-        StartCoroutine(LeftArmPattern01Part2());
-      
-    }
+                pattern01FirstDir = prepareAttackPoint.position - leftArmPoint.position;
+                leftArm01Rb.velocity = pattern01FirstDir * moveSpeed;
+                pattern1Timer -= Time.deltaTime;
+                if (pattern1Timer <= 0.3f && pattern1Timer > 0.1f)
+                {
+                    leftArm01.GetComponent<SpriteRenderer>().material.color = dashNowColor;
+                }
+                else
+                {
+                    leftArm01.GetComponent<SpriteRenderer>().material.color = normalColor;
+                }
 
-    IEnumerator LeftArmPattern01Part2()
-    {
-        
-        {
-            
-            float impactSpeed = 15f;
-           
+
+                yield return null;
+            }
+
+        // PatternPart2
+            leftArm01.GetComponent<BoxCollider2D>().enabled = true;
             GameObject impactPointSpawn = Instantiate(impactPointSpawnPrefab, ImpactPoint.transform.position, Quaternion.identity);
             pattern01FirstDir = impactPointSpawn.transform.position - leftArmPoint.position;
             leftArm01Rb.velocity = pattern01FirstDir * impactSpeed;
             yield return new WaitForSeconds(0.1f);
             Destroy(impactPointSpawn);
-            StartCoroutine(LeftArmPattern01Part3());
-        }
-       
-      
-    }
 
-    IEnumerator LeftArmPattern01Part3()
-    {
-        
-        pattern01FirstDir = new Vector3(0, 0, 0);
-        leftArm01Rb.velocity = pattern01FirstDir * 1;
-        yield return new WaitForSeconds(2f);
-        StartCoroutine(LeftArmPattern01Part4());
-    }
+            //PatternPart3
+            pattern01FirstDir = new Vector3(0, 0, 0);
+            leftArm01Rb.velocity = pattern01FirstDir * 1;
+            yield return new WaitForSeconds(2f);
+        leftArm01.GetComponent<BoxCollider2D>().enabled = false;
+            //PatternPArt4
+            while (comeBackTimer > 0)
+            {
 
-    IEnumerator LeftArmPattern01Part4()
-    {
-        float pattern1Timer = 0.25f;
-        float returnSpeed = 10f;
-        while (pattern1Timer > 0)
-        {
-           
-            pattern01FirstDir = leftSpawnArmPoint.position - leftArmPoint.position;
-            leftArm01Rb.velocity = pattern01FirstDir * returnSpeed;
-            pattern1Timer -= Time.deltaTime;
-            yield return null;
-        }
-        
-        pattern01FirstDir = new Vector3(0, 0, 0);
-        leftArm01Rb.velocity = pattern01FirstDir * 0;
-        yield return new WaitForSeconds(0.25f);
-        leftArm01Rb.position = leftSpawnArmPoint.transform.position;
+                pattern01FirstDir = leftSpawnArmPoint.position - leftArmPoint.position;
+                leftArm01Rb.velocity = pattern01FirstDir * returnSpeed;
+                comeBackTimer -= Time.deltaTime;
+                yield return null;
+            }
 
-        yield return new WaitForSeconds(0.25f);
-        Debug.Log("Refrest the pattern");
-        RefreshPattern();
-        canDoLeftArm01 = true;
+            pattern01FirstDir = new Vector3(0, 0, 0);
+            leftArm01Rb.velocity = pattern01FirstDir * 0;
+            yield return new WaitForSeconds(0.25f);
+            leftArm01Rb.position = leftSpawnArmPoint.transform.position;
+            leftArm01.GetComponent<BoxCollider2D>().enabled = true;
+            yield return new WaitForSeconds(0.25f);
+            Debug.Log("Refrest the pattern");
+            canDoLeftArm01 = true;
+            RefreshPattern();
+            
     }
   
 
@@ -278,18 +352,19 @@ public class BossPatternLoop : MonoBehaviour
         
         float beamPatternTimer = 3f;
         bool canSpawn = true;
+
+        Head01.GetComponent<BoxCollider2D>().enabled = false;
         while (beamPatternTimer > 0)
         {
             
             if (canSpawn == true)
             {
                 canSpawn = false;
-                yield return new WaitForSeconds(0.25f);
+                yield return new WaitForSeconds(0.45f);
                 
                 enemyBullet = enemyBulletPrefab;
                 Instantiate(enemyBullet, Head01.transform.position, Quaternion.identity);
                 beamPatternTimer -= 0.25f;
-                Debug.Log("ALLO");
                 
                 canSpawn = true;
                 
@@ -299,13 +374,17 @@ public class BossPatternLoop : MonoBehaviour
  
         yield return new WaitForSeconds(0.1f);
         Debug.Log("Refrest the pattern");
-        RefreshPattern();
-        canSpawn = true;
         canDoHead01 = true;
+        RefreshPattern();
+        Head01.GetComponent<BoxCollider2D>().enabled = true;
+        canSpawn = true;
+        
     }
 
     IEnumerator RightArm01Pattern()
     {
+        Debug.Log("Pattern 2 has begun");
+       
         rightArm01Animator.SetBool("doPattern", true);
         yield return new WaitForSeconds(1f);
         rightArm01Animator.SetBool("doPattern", false);

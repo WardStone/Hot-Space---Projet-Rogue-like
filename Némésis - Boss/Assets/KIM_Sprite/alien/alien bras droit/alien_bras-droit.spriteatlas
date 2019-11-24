@@ -1,0 +1,138 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: alien_bras-droit
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 0
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 0
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+    variantMultiplier: 1
+    packables:
+    - {fileID: 2800000, guid: e996c0ee98383264995e1769f2a1c050, type: 3}
+    - {fileID: 2800000, guid: 41f21be28cd71ca4a88c730d56c8927e, type: 3}
+    - {fileID: 2800000, guid: b9640735b1c219646b3c30803ac6ed2e, type: 3}
+    - {fileID: 2800000, guid: 517bf8fb76f9e1743ad99c0a1655038c, type: 3}
+    - {fileID: 2800000, guid: 2496cfdfde3fab647a5e33fc6d61b6b1, type: 3}
+    - {fileID: 2800000, guid: eda43691a8f29f74c8c9c08af960fa0a, type: 3}
+    - {fileID: 2800000, guid: ed9521bf77f30274da347ea685340e44, type: 3}
+    - {fileID: 2800000, guid: 172e9af1696fdca45bbaa3ee056869b9, type: 3}
+    - {fileID: 2800000, guid: 69621ff35652f934ba52a455c73204d7, type: 3}
+    - {fileID: 2800000, guid: 27857d2b4393a2c4ba585a715ff03b04, type: 3}
+    - {fileID: 2800000, guid: e0735441ed4dfcd49b007ca17d8d665e, type: 3}
+    - {fileID: 2800000, guid: 298e975f9d489314980d784358acfa3e, type: 3}
+    - {fileID: 2800000, guid: dbc4dba1b43811e47940a8bfe4ba9ba4, type: 3}
+    - {fileID: 2800000, guid: ee05de1915875d94389d2d16dc0d20c1, type: 3}
+    - {fileID: 2800000, guid: 5bd4f6e53786232418bd9246b7b36dc0, type: 3}
+    - {fileID: 2800000, guid: ec9ef343969b93c4480d6655246b08ee, type: 3}
+    - {fileID: 2800000, guid: 19848720afa3ccf40b8a50b038146e4c, type: 3}
+    - {fileID: 2800000, guid: eae19417868513640bb6506ff04eba5d, type: 3}
+    - {fileID: 2800000, guid: 2834b02b2dfeae749841375b62849112, type: 3}
+    - {fileID: 2800000, guid: c3b3c8f3e50e2f84db98f6d5256554f7, type: 3}
+    - {fileID: 2800000, guid: 6c4d73d8af2b7c9498fe1583b1b6aa45, type: 3}
+    - {fileID: 2800000, guid: e64d4809182acd040a0113a79457ec81, type: 3}
+    - {fileID: 2800000, guid: 4f59a10392d725b41bba342186409abd, type: 3}
+    - {fileID: 2800000, guid: 9dd0def6d9d7d5a45b8ec71eb22b467a, type: 3}
+    - {fileID: 2800000, guid: 6c19d632a981df748810c4efa10f8fe1, type: 3}
+    - {fileID: 2800000, guid: 253b8d9f90588f6409a88e16f7e24a52, type: 3}
+    - {fileID: 2800000, guid: 694c23cb729db7442933210c45972401, type: 3}
+    - {fileID: 2800000, guid: c1ffc97f1c25dcd48922f327874c0b43, type: 3}
+    totalSpriteSurfaceArea: 2472960
+    bindAsDefault: 1
+    storedHash:
+      serializedVersion: 2
+      Hash: 268ea74defc83a9f629a3c5eb80bbcf5
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 19848720afa3ccf40b8a50b038146e4c, type: 3}
+  - {fileID: 21300000, guid: e0735441ed4dfcd49b007ca17d8d665e, type: 3}
+  - {fileID: 21300000, guid: eda43691a8f29f74c8c9c08af960fa0a, type: 3}
+  - {fileID: 21300000, guid: dbc4dba1b43811e47940a8bfe4ba9ba4, type: 3}
+  - {fileID: 21300000, guid: 172e9af1696fdca45bbaa3ee056869b9, type: 3}
+  - {fileID: 21300000, guid: 6c19d632a981df748810c4efa10f8fe1, type: 3}
+  - {fileID: 21300000, guid: 41f21be28cd71ca4a88c730d56c8927e, type: 3}
+  - {fileID: 21300000, guid: 4f59a10392d725b41bba342186409abd, type: 3}
+  - {fileID: 21300000, guid: ec9ef343969b93c4480d6655246b08ee, type: 3}
+  - {fileID: 21300000, guid: c3b3c8f3e50e2f84db98f6d5256554f7, type: 3}
+  - {fileID: 21300000, guid: 69621ff35652f934ba52a455c73204d7, type: 3}
+  - {fileID: 21300000, guid: b9640735b1c219646b3c30803ac6ed2e, type: 3}
+  - {fileID: 21300000, guid: 5bd4f6e53786232418bd9246b7b36dc0, type: 3}
+  - {fileID: 21300000, guid: 9dd0def6d9d7d5a45b8ec71eb22b467a, type: 3}
+  - {fileID: 21300000, guid: eae19417868513640bb6506ff04eba5d, type: 3}
+  - {fileID: 21300000, guid: 6c4d73d8af2b7c9498fe1583b1b6aa45, type: 3}
+  - {fileID: 21300000, guid: e64d4809182acd040a0113a79457ec81, type: 3}
+  - {fileID: 21300000, guid: ee05de1915875d94389d2d16dc0d20c1, type: 3}
+  - {fileID: 21300000, guid: 2834b02b2dfeae749841375b62849112, type: 3}
+  - {fileID: 21300000, guid: 27857d2b4393a2c4ba585a715ff03b04, type: 3}
+  - {fileID: 21300000, guid: 694c23cb729db7442933210c45972401, type: 3}
+  - {fileID: 21300000, guid: 517bf8fb76f9e1743ad99c0a1655038c, type: 3}
+  - {fileID: 21300000, guid: e996c0ee98383264995e1769f2a1c050, type: 3}
+  - {fileID: 21300000, guid: 298e975f9d489314980d784358acfa3e, type: 3}
+  - {fileID: 21300000, guid: c1ffc97f1c25dcd48922f327874c0b43, type: 3}
+  - {fileID: 21300000, guid: 253b8d9f90588f6409a88e16f7e24a52, type: 3}
+  - {fileID: 21300000, guid: ed9521bf77f30274da347ea685340e44, type: 3}
+  - {fileID: 21300000, guid: 2496cfdfde3fab647a5e33fc6d61b6b1, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - alien_attaque-3_bras-droit_7
+  - alien_attaque-3_bras-droit_1
+  - alien_idle_bras-droit_6
+  - alien_attaque-3_bras-droit_3
+  - alien_idle_bras-droit_8
+  - alien_attaque-3_bras-droit_15
+  - alien_idle_bras-droit_2
+  - alien_attaque-3_bras-droit_13
+  - alien_attaque-3_bras-droit_6
+  - alien_attaque-3_bras-droit_10
+  - alien_idle_bras-droit_9
+  - alien_idle_bras-droit_3
+  - alien_attaque-3_bras-droit_5
+  - alien_attaque-3_bras-droit_14
+  - alien_attaque-3_bras-droit_8
+  - alien_attaque-3_bras-droit_11
+  - alien_attaque-3_bras-droit_12
+  - alien_attaque-3_bras-droit_4
+  - alien_attaque-3_bras-droit_9
+  - alien_idle_bras-droit_10
+  - alien_attaque-3_bras-droit_17
+  - alien_idle_bras-droit_4
+  - alien_idle_bras-droit_1
+  - alien_attaque-3_bras-droit_2
+  - alien_attaque-3_bras-droit_18
+  - alien_attaque-3_bras-droit_16
+  - alien_idle_bras-droit_7
+  - alien_idle_bras-droit_5
+  m_Tag: alien_bras-droit
+  m_IsVariant: 0

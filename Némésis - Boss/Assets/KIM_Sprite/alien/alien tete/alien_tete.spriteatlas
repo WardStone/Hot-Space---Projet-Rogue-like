@@ -1,0 +1,204 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: alien_tete
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 0
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 0
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+    variantMultiplier: 1
+    packables:
+    - {fileID: 2800000, guid: 27b5b6e6a2abfb34693d68d5a9bdca75, type: 3}
+    - {fileID: 2800000, guid: dce074bfaea7a5945a4f30078fe048c3, type: 3}
+    - {fileID: 2800000, guid: f0479e14542f8474190ca28b116fdb46, type: 3}
+    - {fileID: 2800000, guid: 81e1b493ac7cb014d995b0cbef09c983, type: 3}
+    - {fileID: 2800000, guid: 1e11a786fc28d8e49b78c43b515ad004, type: 3}
+    - {fileID: 2800000, guid: 93bb69c465578d34284e96193716d3b4, type: 3}
+    - {fileID: 2800000, guid: d447dd7ec7f35b845ab5e22ad37f5314, type: 3}
+    - {fileID: 2800000, guid: ab12379a6598a354d86f98850c2b2b36, type: 3}
+    - {fileID: 2800000, guid: 3c8f53ac15438554a9019a917854f41a, type: 3}
+    - {fileID: 2800000, guid: 5f0b9d7cfccfab6488c513c56b8df16a, type: 3}
+    - {fileID: 2800000, guid: a32ce95388b852b4793e993b87911c93, type: 3}
+    - {fileID: 2800000, guid: aa3eabd601ffbd1478e5aa4337ea7036, type: 3}
+    - {fileID: 2800000, guid: c872283ceadbe48439df6acd4309da32, type: 3}
+    - {fileID: 2800000, guid: 494b8108d26c8404e8bd481a6f2d5123, type: 3}
+    - {fileID: 2800000, guid: 0d3081587a76f4c4e900d1b29b4ec235, type: 3}
+    - {fileID: 2800000, guid: a8a6c0b519f944b439fbbb20573c2c9f, type: 3}
+    - {fileID: 2800000, guid: 1163c197e858f0b40915dda9fbec07a4, type: 3}
+    - {fileID: 2800000, guid: 8dd7af92eea23984ebed01c7a9cf3668, type: 3}
+    - {fileID: 2800000, guid: dd0ba7e2dedf8124ca9ff2eb3b8eec3e, type: 3}
+    - {fileID: 2800000, guid: 653b455b584bc7345818d9d944281be3, type: 3}
+    - {fileID: 2800000, guid: 5bb4da51295000046be12949de862c34, type: 3}
+    - {fileID: 2800000, guid: a82e4bad9da608e42bb69e775891aa66, type: 3}
+    - {fileID: 2800000, guid: 4b14f55952466af43adadbcfb1fa4972, type: 3}
+    - {fileID: 2800000, guid: 05786f73355f660458461c60ebfd5396, type: 3}
+    - {fileID: 2800000, guid: 16d696a166d78c14e91fb5d532aec2ea, type: 3}
+    - {fileID: 2800000, guid: aed8dd82810b72c42951a758c677093e, type: 3}
+    - {fileID: 2800000, guid: 3c46ef8d2921cad41b2e5bc87ae0a53b, type: 3}
+    - {fileID: 2800000, guid: 97d04450aabc92c4b9183870c7761d1f, type: 3}
+    - {fileID: 2800000, guid: 405a9924bfe295a4ba176319e987c7eb, type: 3}
+    - {fileID: 2800000, guid: d70cf715e9b83a249a19c9400a589cea, type: 3}
+    - {fileID: 2800000, guid: 223069683a46694419f7536c651b8589, type: 3}
+    - {fileID: 2800000, guid: d4d9fdf461583114ab0d45c13f0b3307, type: 3}
+    - {fileID: 2800000, guid: ed1efb80e960aea4abf82f45e18f59f7, type: 3}
+    - {fileID: 2800000, guid: 203540a093dc60140ba8d33f9dc192f6, type: 3}
+    - {fileID: 2800000, guid: 5b69303d808ac7042ace1b169bbc9269, type: 3}
+    - {fileID: 2800000, guid: da6ecd0d49acae146aa57e9857d9b001, type: 3}
+    - {fileID: 2800000, guid: 039401ab04b3dc1419b6250a3499839d, type: 3}
+    - {fileID: 2800000, guid: 46b1dd0c34eef6f4aae83887c08a90b3, type: 3}
+    - {fileID: 2800000, guid: 2537817d64972154499d414555c25fa7, type: 3}
+    - {fileID: 2800000, guid: 4c21bb36b7de2eb41a1aa5a87412aaee, type: 3}
+    - {fileID: 2800000, guid: 6dc1f447fe6638c47accb9723eb91ae6, type: 3}
+    - {fileID: 2800000, guid: 7cc081f8d0826134b93b65f806663492, type: 3}
+    - {fileID: 2800000, guid: 74c2e9c4684947d458e7b863b5b8674d, type: 3}
+    - {fileID: 2800000, guid: 7e163578cc377bf4ebbc204f8f2c67df, type: 3}
+    - {fileID: 2800000, guid: 62021bc140b1f764584b0ccc2b6d0dee, type: 3}
+    - {fileID: 2800000, guid: 4a2808f3292bee245aef60299ae3f8d7, type: 3}
+    - {fileID: 2800000, guid: 7ecd564021ec1ee42ad3280b3dece071, type: 3}
+    - {fileID: 2800000, guid: b67e7832c24c562498f08fc9c6b4c00a, type: 3}
+    - {fileID: 2800000, guid: 7cd987d95b702364ca461f4552f1e008, type: 3}
+    - {fileID: 2800000, guid: 0c4ea46ec322a2c4ab838011486e4a0b, type: 3}
+    totalSpriteSurfaceArea: 4416000
+    bindAsDefault: 1
+    storedHash:
+      serializedVersion: 2
+      Hash: 43c8fc5f7ee989f3dcf9af1cbc41dfba
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 7ecd564021ec1ee42ad3280b3dece071, type: 3}
+  - {fileID: 21300000, guid: 97d04450aabc92c4b9183870c7761d1f, type: 3}
+  - {fileID: 21300000, guid: ed1efb80e960aea4abf82f45e18f59f7, type: 3}
+  - {fileID: 21300000, guid: 203540a093dc60140ba8d33f9dc192f6, type: 3}
+  - {fileID: 21300000, guid: 5bb4da51295000046be12949de862c34, type: 3}
+  - {fileID: 21300000, guid: 16d696a166d78c14e91fb5d532aec2ea, type: 3}
+  - {fileID: 21300000, guid: 62021bc140b1f764584b0ccc2b6d0dee, type: 3}
+  - {fileID: 21300000, guid: b67e7832c24c562498f08fc9c6b4c00a, type: 3}
+  - {fileID: 21300000, guid: aed8dd82810b72c42951a758c677093e, type: 3}
+  - {fileID: 21300000, guid: 8dd7af92eea23984ebed01c7a9cf3668, type: 3}
+  - {fileID: 21300000, guid: dd0ba7e2dedf8124ca9ff2eb3b8eec3e, type: 3}
+  - {fileID: 21300000, guid: a32ce95388b852b4793e993b87911c93, type: 3}
+  - {fileID: 21300000, guid: 05786f73355f660458461c60ebfd5396, type: 3}
+  - {fileID: 21300000, guid: 81e1b493ac7cb014d995b0cbef09c983, type: 3}
+  - {fileID: 21300000, guid: 4a2808f3292bee245aef60299ae3f8d7, type: 3}
+  - {fileID: 21300000, guid: f0479e14542f8474190ca28b116fdb46, type: 3}
+  - {fileID: 21300000, guid: 405a9924bfe295a4ba176319e987c7eb, type: 3}
+  - {fileID: 21300000, guid: 93bb69c465578d34284e96193716d3b4, type: 3}
+  - {fileID: 21300000, guid: 74c2e9c4684947d458e7b863b5b8674d, type: 3}
+  - {fileID: 21300000, guid: d4d9fdf461583114ab0d45c13f0b3307, type: 3}
+  - {fileID: 21300000, guid: d70cf715e9b83a249a19c9400a589cea, type: 3}
+  - {fileID: 21300000, guid: a8a6c0b519f944b439fbbb20573c2c9f, type: 3}
+  - {fileID: 21300000, guid: 4c21bb36b7de2eb41a1aa5a87412aaee, type: 3}
+  - {fileID: 21300000, guid: 1e11a786fc28d8e49b78c43b515ad004, type: 3}
+  - {fileID: 21300000, guid: aa3eabd601ffbd1478e5aa4337ea7036, type: 3}
+  - {fileID: 21300000, guid: 27b5b6e6a2abfb34693d68d5a9bdca75, type: 3}
+  - {fileID: 21300000, guid: 6dc1f447fe6638c47accb9723eb91ae6, type: 3}
+  - {fileID: 21300000, guid: 1163c197e858f0b40915dda9fbec07a4, type: 3}
+  - {fileID: 21300000, guid: 494b8108d26c8404e8bd481a6f2d5123, type: 3}
+  - {fileID: 21300000, guid: 0d3081587a76f4c4e900d1b29b4ec235, type: 3}
+  - {fileID: 21300000, guid: 223069683a46694419f7536c651b8589, type: 3}
+  - {fileID: 21300000, guid: 7e163578cc377bf4ebbc204f8f2c67df, type: 3}
+  - {fileID: 21300000, guid: 7cc081f8d0826134b93b65f806663492, type: 3}
+  - {fileID: 21300000, guid: 4b14f55952466af43adadbcfb1fa4972, type: 3}
+  - {fileID: 21300000, guid: 7cd987d95b702364ca461f4552f1e008, type: 3}
+  - {fileID: 21300000, guid: ab12379a6598a354d86f98850c2b2b36, type: 3}
+  - {fileID: 21300000, guid: 653b455b584bc7345818d9d944281be3, type: 3}
+  - {fileID: 21300000, guid: 039401ab04b3dc1419b6250a3499839d, type: 3}
+  - {fileID: 21300000, guid: 46b1dd0c34eef6f4aae83887c08a90b3, type: 3}
+  - {fileID: 21300000, guid: c872283ceadbe48439df6acd4309da32, type: 3}
+  - {fileID: 21300000, guid: 5f0b9d7cfccfab6488c513c56b8df16a, type: 3}
+  - {fileID: 21300000, guid: 3c8f53ac15438554a9019a917854f41a, type: 3}
+  - {fileID: 21300000, guid: da6ecd0d49acae146aa57e9857d9b001, type: 3}
+  - {fileID: 21300000, guid: 5b69303d808ac7042ace1b169bbc9269, type: 3}
+  - {fileID: 21300000, guid: 2537817d64972154499d414555c25fa7, type: 3}
+  - {fileID: 21300000, guid: 3c46ef8d2921cad41b2e5bc87ae0a53b, type: 3}
+  - {fileID: 21300000, guid: a82e4bad9da608e42bb69e775891aa66, type: 3}
+  - {fileID: 21300000, guid: 0c4ea46ec322a2c4ab838011486e4a0b, type: 3}
+  - {fileID: 21300000, guid: d447dd7ec7f35b845ab5e22ad37f5314, type: 3}
+  - {fileID: 21300000, guid: dce074bfaea7a5945a4f30078fe048c3, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - alien_attaque-3_tete_15
+  - alien_attaque-2_reforme-tete_tete_3
+  - alien_attaque-3_tete_1
+  - alien_attaque-3_tete_2
+  - alien_attaque-2_idle_tete_6
+  - alien_attaque-2_idle_tete_10
+  - alien_attaque-3_tete_13
+  - alien_attaque-3_tete_16
+  - alien_attaque-2_reforme-tete_tete_1
+  - alien_attaque-2_idle_tete_3
+  - alien_attaque-2_idle_tete_4
+  - alien_attaque-2_arrache-tete_tete_1
+  - alien_attaque-2_idle_tete_9
+  - alien_idle_tete_4
+  - alien_attaque-3_tete_14
+  - alien_idle_tete_3
+  - alien_attaque-2_reforme-tete_tete_4
+  - alien_idle_tete_6
+  - alien_attaque-3_tete_11
+  - alien_attaque-2_reforme-tete_tete_7
+  - alien_attaque-2_reforme-tete_tete_5
+  - alien_attaque-2_idle_tete_1
+  - alien_attaque-3_tete_8
+  - alien_idle_tete_5
+  - alien_attaque-2_arrache-tete_tete_2
+  - alien_idle_tete_1
+  - alien_attaque-3_tete_9
+  - alien_attaque-2_idle_tete_2
+  - alien_attaque-2_arrache-tete_tete_4
+  - alien_attaque-2_arrache-tete_tete_5
+  - alien_attaque-2_reforme-tete_tete_6
+  - alien_attaque-3_tete_12
+  - alien_attaque-3_tete_10
+  - alien_attaque-2_idle_tete_8
+  - alien_attaque-3_tete_17
+  - alien_idle_tete_8
+  - alien_attaque-2_idle_tete_5
+  - alien_attaque-3_tete_5
+  - alien_attaque-3_tete_6
+  - alien_attaque-2_arrache-tete_tete_3
+  - alien_idle_tete_10
+  - alien_idle_tete_9
+  - alien_attaque-3_tete_4
+  - alien_attaque-3_tete_3
+  - alien_attaque-3_tete_7
+  - alien_attaque-2_reforme-tete_tete_2
+  - alien_attaque-2_idle_tete_7
+  - alien_attaque-3_tete_18
+  - alien_idle_tete_7
+  - alien_idle_tete_2
+  m_Tag: alien_tete
+  m_IsVariant: 0

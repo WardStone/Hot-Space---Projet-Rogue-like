@@ -1,0 +1,171 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: alien_main-gauche
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 0
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 0
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+    variantMultiplier: 1
+    packables:
+    - {fileID: 2800000, guid: 64139920a42d7fd4bb81f21817685a8b, type: 3}
+    - {fileID: 2800000, guid: 2c3041eba45090942bcd63f18e1e0112, type: 3}
+    - {fileID: 2800000, guid: 1d70f6199ccbc7c4d99575844310c74e, type: 3}
+    - {fileID: 2800000, guid: c71586370ee96bd418058886206efd69, type: 3}
+    - {fileID: 2800000, guid: 7a466d47edbb57b47a050baa4bfd5c07, type: 3}
+    - {fileID: 2800000, guid: cde70121dd84ef14fb95c69355b99e9d, type: 3}
+    - {fileID: 2800000, guid: e6c61f5b05bd5694ea08e3d854b0ace9, type: 3}
+    - {fileID: 2800000, guid: aae553fbfbb59dd448cfa56c240a0b8b, type: 3}
+    - {fileID: 2800000, guid: 0757d0cfca615514ca7841e779dfe67d, type: 3}
+    - {fileID: 2800000, guid: dd659bcfa6980d7479cf7f9141b02e74, type: 3}
+    - {fileID: 2800000, guid: c9427dec5b0364140808afede61afd37, type: 3}
+    - {fileID: 2800000, guid: e27f0a78bc2994c47977921fc7ef6e82, type: 3}
+    - {fileID: 2800000, guid: decf85b4f1034084f802ca6656e59e8d, type: 3}
+    - {fileID: 2800000, guid: 8a82a98d29d5b6443a6e5d3f52dae547, type: 3}
+    - {fileID: 2800000, guid: 54ba6ebd2e1a6344ebb4a52697515b15, type: 3}
+    - {fileID: 2800000, guid: d56176885779b8f48acfbc4921e3b51e, type: 3}
+    - {fileID: 2800000, guid: 077e5770d86371747bbc770a2177e6d6, type: 3}
+    - {fileID: 2800000, guid: 2195b4f626507bf4f95140fe2ef470a2, type: 3}
+    - {fileID: 2800000, guid: eeb04673ecd6c194d9143a9825339002, type: 3}
+    - {fileID: 2800000, guid: 45cb0d5001c2be445b462059db42ad87, type: 3}
+    - {fileID: 2800000, guid: f608bfad8fad3754c929bc9a12363d60, type: 3}
+    - {fileID: 2800000, guid: f98817b049e8bb14ca6bf37e417baddd, type: 3}
+    - {fileID: 2800000, guid: 7a230944b0c6d8849ab578f82239f225, type: 3}
+    - {fileID: 2800000, guid: 6a3418ae469bdbd4b95c419a0c214787, type: 3}
+    - {fileID: 2800000, guid: 74c4fc775631d524889fae9b7fdb566a, type: 3}
+    - {fileID: 2800000, guid: 3c4c5cf25ceeb9c419dfb8c6f6bb5e65, type: 3}
+    - {fileID: 2800000, guid: c7e01093d8c52a343ab7e6caf07e6de7, type: 3}
+    - {fileID: 2800000, guid: 071771804b281d043a6de57a08fb9a62, type: 3}
+    - {fileID: 2800000, guid: 0fe4a4663917a5b4cba60f39619a9dcf, type: 3}
+    - {fileID: 2800000, guid: 607a560dd6498ed4c8de30a630d724a6, type: 3}
+    - {fileID: 2800000, guid: cf3c31c34b4ec9944a742d432f9a5a0a, type: 3}
+    - {fileID: 2800000, guid: 5f07f77490385874c99362e83f8cb3b2, type: 3}
+    - {fileID: 2800000, guid: 230976dbc1f5f3f4289c548507867464, type: 3}
+    - {fileID: 2800000, guid: 306b0d32fef633f438492d73808842fa, type: 3}
+    - {fileID: 2800000, guid: 371c51adca1e6994e9c11b6033e29e08, type: 3}
+    - {fileID: 2800000, guid: 183d24e06bcc3ae4aa285d4341ec4560, type: 3}
+    - {fileID: 2800000, guid: 28fee4d6cada23c45a8fa1b4edb94f4b, type: 3}
+    - {fileID: 2800000, guid: 7e9d5b0cd29bb314c95c8e76a3be6650, type: 3}
+    - {fileID: 2800000, guid: 24626b176bdae0a4995c09a254e8647f, type: 3}
+    totalSpriteSurfaceArea: 3444480
+    bindAsDefault: 1
+    storedHash:
+      serializedVersion: 2
+      Hash: 65ca0afbab01006f95f2f4cd101e742d
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 64139920a42d7fd4bb81f21817685a8b, type: 3}
+  - {fileID: 21300000, guid: 45cb0d5001c2be445b462059db42ad87, type: 3}
+  - {fileID: 21300000, guid: 077e5770d86371747bbc770a2177e6d6, type: 3}
+  - {fileID: 21300000, guid: 071771804b281d043a6de57a08fb9a62, type: 3}
+  - {fileID: 21300000, guid: f98817b049e8bb14ca6bf37e417baddd, type: 3}
+  - {fileID: 21300000, guid: 183d24e06bcc3ae4aa285d4341ec4560, type: 3}
+  - {fileID: 21300000, guid: cde70121dd84ef14fb95c69355b99e9d, type: 3}
+  - {fileID: 21300000, guid: 306b0d32fef633f438492d73808842fa, type: 3}
+  - {fileID: 21300000, guid: 3c4c5cf25ceeb9c419dfb8c6f6bb5e65, type: 3}
+  - {fileID: 21300000, guid: eeb04673ecd6c194d9143a9825339002, type: 3}
+  - {fileID: 21300000, guid: c7e01093d8c52a343ab7e6caf07e6de7, type: 3}
+  - {fileID: 21300000, guid: cf3c31c34b4ec9944a742d432f9a5a0a, type: 3}
+  - {fileID: 21300000, guid: 7a230944b0c6d8849ab578f82239f225, type: 3}
+  - {fileID: 21300000, guid: 5f07f77490385874c99362e83f8cb3b2, type: 3}
+  - {fileID: 21300000, guid: decf85b4f1034084f802ca6656e59e8d, type: 3}
+  - {fileID: 21300000, guid: 0fe4a4663917a5b4cba60f39619a9dcf, type: 3}
+  - {fileID: 21300000, guid: 28fee4d6cada23c45a8fa1b4edb94f4b, type: 3}
+  - {fileID: 21300000, guid: 2195b4f626507bf4f95140fe2ef470a2, type: 3}
+  - {fileID: 21300000, guid: 24626b176bdae0a4995c09a254e8647f, type: 3}
+  - {fileID: 21300000, guid: c71586370ee96bd418058886206efd69, type: 3}
+  - {fileID: 21300000, guid: 7a466d47edbb57b47a050baa4bfd5c07, type: 3}
+  - {fileID: 21300000, guid: 74c4fc775631d524889fae9b7fdb566a, type: 3}
+  - {fileID: 21300000, guid: e27f0a78bc2994c47977921fc7ef6e82, type: 3}
+  - {fileID: 21300000, guid: d56176885779b8f48acfbc4921e3b51e, type: 3}
+  - {fileID: 21300000, guid: 1d70f6199ccbc7c4d99575844310c74e, type: 3}
+  - {fileID: 21300000, guid: e6c61f5b05bd5694ea08e3d854b0ace9, type: 3}
+  - {fileID: 21300000, guid: 230976dbc1f5f3f4289c548507867464, type: 3}
+  - {fileID: 21300000, guid: 2c3041eba45090942bcd63f18e1e0112, type: 3}
+  - {fileID: 21300000, guid: aae553fbfbb59dd448cfa56c240a0b8b, type: 3}
+  - {fileID: 21300000, guid: 7e9d5b0cd29bb314c95c8e76a3be6650, type: 3}
+  - {fileID: 21300000, guid: c9427dec5b0364140808afede61afd37, type: 3}
+  - {fileID: 21300000, guid: 607a560dd6498ed4c8de30a630d724a6, type: 3}
+  - {fileID: 21300000, guid: 8a82a98d29d5b6443a6e5d3f52dae547, type: 3}
+  - {fileID: 21300000, guid: 371c51adca1e6994e9c11b6033e29e08, type: 3}
+  - {fileID: 21300000, guid: f608bfad8fad3754c929bc9a12363d60, type: 3}
+  - {fileID: 21300000, guid: 54ba6ebd2e1a6344ebb4a52697515b15, type: 3}
+  - {fileID: 21300000, guid: 6a3418ae469bdbd4b95c419a0c214787, type: 3}
+  - {fileID: 21300000, guid: 0757d0cfca615514ca7841e779dfe67d, type: 3}
+  - {fileID: 21300000, guid: dd659bcfa6980d7479cf7f9141b02e74, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - alien_idle_main-fauche_6
+  - alien_attaque-1_reforme-bras_main-gauche_3
+  - alien_attaque-1_arrache-bras_mains-gauche_5
+  - alien_attaque-3_main-gauche_7
+  - alien_attaque-3_main-gauche_1
+  - alien_attaque-3_main-gauche_15
+  - alien_idle_main-gauche_5
+  - alien_attaque-3_main-gauche_13
+  - alien_attaque-3_main-gauche_5
+  - alien_attaque-1_reforme-bras_main-gauche_2
+  - alien_attaque-3_main-gauche_6
+  - alien_attaque-3_main-gauche_10
+  - alien_attaque-3_main-gauche_2
+  - alien_attaque-3_main-gauche_11
+  - alien_attaque-1_arrache-bras_main-gauche_3
+  - alien_attaque-3_main-gauche_8
+  - alien_attaque-3_main-gauche_16
+  - alien_attaque-1_reforme-bras_main-gauche_1
+  - alien_attaque-3_main-gauche_18
+  - alien_idle_main-gauche_3
+  - alien_idle_main-gauche_4
+  - alien_attaque-3_main-gauche_4
+  - alien_attaque-1_arrache-bras_main-gauche_2
+  - alien_attaque-1_arrache-bras_mains-gauche_4
+  - alien_idle_main-gauche_2
+  - alien_idle_main-gauche_7
+  - alien_attaque-3_main-gauche_12
+  - alien_idle_main-gauche_1
+  - alien_idle_main-gauche_8
+  - alien_attaque-3_main-gauche_17
+  - alien_attaque-1_arrache-bras_main-gauche_1
+  - alien_attaque-3_main-gauche_9
+  - alien_attaque-1_arrache-bras_main-gauche_6
+  - alien_attaque-3_main-gauche_14
+  - alien_attaque-1_reforme-bras_main-gauche_4
+  - alien_attaque-1_arrache-bras_main-gauche_7
+  - alien_attaque-3_main-gauche_3
+  - alien_idle_main-gauche_9
+  - alien_idle_main-gauche_10
+  m_Tag: alien_main-gauche
+  m_IsVariant: 0

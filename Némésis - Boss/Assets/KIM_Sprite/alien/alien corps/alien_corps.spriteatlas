@@ -1,0 +1,138 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: alien_corps
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 0
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 0
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+    variantMultiplier: 1
+    packables:
+    - {fileID: 2800000, guid: ad916b456fa4b8848abd12b80c42e9dc, type: 3}
+    - {fileID: 2800000, guid: f2e30d531cbd2824b87cfbcb7a8dcdaa, type: 3}
+    - {fileID: 2800000, guid: 7a7b5cb17d31d564a9f01699628409e1, type: 3}
+    - {fileID: 2800000, guid: 7330e5131f7e3b64cac32d26d8d7f847, type: 3}
+    - {fileID: 2800000, guid: aa5dd507f5d8f084aab87d8e5abdfbe4, type: 3}
+    - {fileID: 2800000, guid: 64de3ef553273924dbb185485d805312, type: 3}
+    - {fileID: 2800000, guid: 003542e30f032e44e912850e1493675b, type: 3}
+    - {fileID: 2800000, guid: 6b70e8278be1cb342821610f44ffd8da, type: 3}
+    - {fileID: 2800000, guid: 87a25dd5829f703468bb7686b27084f5, type: 3}
+    - {fileID: 2800000, guid: e38515542de62c245978d1929e2a5f7b, type: 3}
+    - {fileID: 2800000, guid: 54a5d01a2f6b237469e8ece9fd2b7e7e, type: 3}
+    - {fileID: 2800000, guid: 72708dfb190eb79478c9ddba264179db, type: 3}
+    - {fileID: 2800000, guid: 0d6bf090f062b2245becb3f093ea8d1c, type: 3}
+    - {fileID: 2800000, guid: f48b64e48b555be45990b20dc853abc2, type: 3}
+    - {fileID: 2800000, guid: 8d151a9ffc0d14843b23f23bd4a8adb8, type: 3}
+    - {fileID: 2800000, guid: 7260225e21c0c524da7afb4959176200, type: 3}
+    - {fileID: 2800000, guid: 4adedaf5f6082264f9082e73c61f4d5d, type: 3}
+    - {fileID: 2800000, guid: 20a3df24af600864285dfc72f979d1da, type: 3}
+    - {fileID: 2800000, guid: 5459cee8aa351934b82f8fdfdb47a728, type: 3}
+    - {fileID: 2800000, guid: c29a01d70d370e648b8db476c070f167, type: 3}
+    - {fileID: 2800000, guid: eb9a1ea3a010c6d4e8e01cb88506d54e, type: 3}
+    - {fileID: 2800000, guid: f9127adc621599e4980507ed159f83a8, type: 3}
+    - {fileID: 2800000, guid: d3a45820802b41f4ca344a89a8aa015e, type: 3}
+    - {fileID: 2800000, guid: 498e43c80e9da4e4cbd9f75671d4889a, type: 3}
+    - {fileID: 2800000, guid: 690dd2e51d72cc84599bf2a30ee7c98e, type: 3}
+    - {fileID: 2800000, guid: cc00bb4849e9b984b9aafa4d5b67d852, type: 3}
+    - {fileID: 2800000, guid: 80f8242d7408c8c4f8c9384e1c0fb3ca, type: 3}
+    - {fileID: 2800000, guid: f1ff17cfae0713a4f8b343e04880f0cd, type: 3}
+    totalSpriteSurfaceArea: 2472960
+    bindAsDefault: 1
+    storedHash:
+      serializedVersion: 2
+      Hash: 5d9b609702a0ba734362c050016a31e6
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: d3a45820802b41f4ca344a89a8aa015e, type: 3}
+  - {fileID: 21300000, guid: 0d6bf090f062b2245becb3f093ea8d1c, type: 3}
+  - {fileID: 21300000, guid: 7a7b5cb17d31d564a9f01699628409e1, type: 3}
+  - {fileID: 21300000, guid: 7330e5131f7e3b64cac32d26d8d7f847, type: 3}
+  - {fileID: 21300000, guid: f2e30d531cbd2824b87cfbcb7a8dcdaa, type: 3}
+  - {fileID: 21300000, guid: eb9a1ea3a010c6d4e8e01cb88506d54e, type: 3}
+  - {fileID: 21300000, guid: 003542e30f032e44e912850e1493675b, type: 3}
+  - {fileID: 21300000, guid: 20a3df24af600864285dfc72f979d1da, type: 3}
+  - {fileID: 21300000, guid: e38515542de62c245978d1929e2a5f7b, type: 3}
+  - {fileID: 21300000, guid: f48b64e48b555be45990b20dc853abc2, type: 3}
+  - {fileID: 21300000, guid: ad916b456fa4b8848abd12b80c42e9dc, type: 3}
+  - {fileID: 21300000, guid: 87a25dd5829f703468bb7686b27084f5, type: 3}
+  - {fileID: 21300000, guid: 690dd2e51d72cc84599bf2a30ee7c98e, type: 3}
+  - {fileID: 21300000, guid: 4adedaf5f6082264f9082e73c61f4d5d, type: 3}
+  - {fileID: 21300000, guid: 64de3ef553273924dbb185485d805312, type: 3}
+  - {fileID: 21300000, guid: aa5dd507f5d8f084aab87d8e5abdfbe4, type: 3}
+  - {fileID: 21300000, guid: 6b70e8278be1cb342821610f44ffd8da, type: 3}
+  - {fileID: 21300000, guid: c29a01d70d370e648b8db476c070f167, type: 3}
+  - {fileID: 21300000, guid: cc00bb4849e9b984b9aafa4d5b67d852, type: 3}
+  - {fileID: 21300000, guid: 498e43c80e9da4e4cbd9f75671d4889a, type: 3}
+  - {fileID: 21300000, guid: 5459cee8aa351934b82f8fdfdb47a728, type: 3}
+  - {fileID: 21300000, guid: 54a5d01a2f6b237469e8ece9fd2b7e7e, type: 3}
+  - {fileID: 21300000, guid: 72708dfb190eb79478c9ddba264179db, type: 3}
+  - {fileID: 21300000, guid: f9127adc621599e4980507ed159f83a8, type: 3}
+  - {fileID: 21300000, guid: 80f8242d7408c8c4f8c9384e1c0fb3ca, type: 3}
+  - {fileID: 21300000, guid: 7260225e21c0c524da7afb4959176200, type: 3}
+  - {fileID: 21300000, guid: 8d151a9ffc0d14843b23f23bd4a8adb8, type: 3}
+  - {fileID: 21300000, guid: f1ff17cfae0713a4f8b343e04880f0cd, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - alien_attaque-3_corps_13
+  - alien_attaque-3_corps_3
+  - alien_idle_corps_3
+  - alien_idle_corps_4
+  - alien_idle_corps_2
+  - alien_attaque-3_corps_11
+  - alien_idle_corps_7
+  - alien_attaque-3_corps_8
+  - alien_idle_corps_10
+  - alien_attaque-3_corps_4
+  - alien_idle_corps_1
+  - alien_idle_corps_9
+  - alien_attaque-3_corps_15
+  - alien_attaque-3_corps_7
+  - alien_idle_corps_6
+  - alien_idle_corps_5
+  - alien_idle_corps_8
+  - alien_attaque-3_corps_10
+  - alien_attaque-3_corps_16
+  - alien_attaque-3_corps_14
+  - alien_attaque-3_corps_9
+  - alien_attaque-3_corps_1
+  - alien_attaque-3_corps_2
+  - alien_attaque-3_corps_12
+  - alien_attaque-3_corps_17
+  - alien_attaque-3_corps_6
+  - alien_attaque-3_corps_5
+  - alien_attaque-3_corps_18
+  m_Tag: alien_corps
+  m_IsVariant: 0

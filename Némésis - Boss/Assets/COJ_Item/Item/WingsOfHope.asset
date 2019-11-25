@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ef7f2ed38d3127e45865cfa49648ec4b, type: 3}
-  m_Name: LaserScope
+  m_Name: WingsOfHope
   m_EditorClassIdentifier: 
-  name: LaserScope
+  name: WingsOfHope
   icon: {fileID: 0}
   isDefaultItem: 0
   howManybulleShot: 0
@@ -22,9 +22,9 @@ MonoBehaviour:
   bulletSpeed: 0
   bulletSize: {fileID: 0}
   bulletDamage: 0.2
-  weaponAccuracy: -0.2
+  weaponAccuracy: 0
   healthBonus: 0
-  playerSpeed: 0
+  playerSpeed: 0.3
   bulletPrefab: {fileID: 0}
   isWeapon: 0
   weaponRef: 0

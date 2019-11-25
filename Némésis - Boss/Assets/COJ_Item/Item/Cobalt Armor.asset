@@ -15,7 +15,7 @@ MonoBehaviour:
   name: Cobalt Armor
   icon: {fileID: 0}
   isDefaultItem: 0
-  howManybulleShot: 1
+  howManybulleShot: 0
   bulletLifeSpan: 0
   delayBeforeFirstShot: 0
   delayBeforeNextShot: 0
@@ -23,8 +23,8 @@ MonoBehaviour:
   bulletSize: {fileID: 0}
   bulletDamage: 0
   weaponAccuracy: 0
-  healthBonus: 0.3
-  playerSpeed: 0.75
+  healthBonus: 100
+  playerSpeed: -0.15
   bulletPrefab: {fileID: 0}
   isWeapon: 0
   weaponRef: 0

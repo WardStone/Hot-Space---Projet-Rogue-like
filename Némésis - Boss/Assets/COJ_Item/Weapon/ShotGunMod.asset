@@ -15,15 +15,15 @@ MonoBehaviour:
   name: Shotgun
   icon: {fileID: 0}
   isDefaultItem: 0
-  howManybulleShot: 5
+  howManybulleShot: 6
   bulletLifeSpan: 0.5
   delayBeforeFirstShot: 0
   delayBeforeNextShot: 1.1
   bulletSpeed: 15
   bulletSize: {fileID: 0}
   bulletDamage: 7
-  weaponAccuracy: 0.15
-  healthBonus: 0
+  weaponAccuracy: 0.25
+  healthBonus: 100
   playerSpeed: 0
   bulletPrefab: {fileID: 8031447477499389713, guid: 2b7a4bf342d284c43ac6e747815b1bc4,
     type: 3}

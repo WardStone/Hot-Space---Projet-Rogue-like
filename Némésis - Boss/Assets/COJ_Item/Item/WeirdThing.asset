@@ -10,19 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ef7f2ed38d3127e45865cfa49648ec4b, type: 3}
-  m_Name: LaserScope
+  m_Name: WeirdThing
   m_EditorClassIdentifier: 
-  name: LaserScope
+  name: WeirdThing
   icon: {fileID: 0}
   isDefaultItem: 0
-  howManybulleShot: 0
+  howManybulleShot: 1
   bulletLifeSpan: 0
   delayBeforeFirstShot: 0
   delayBeforeNextShot: 0
   bulletSpeed: 0
   bulletSize: {fileID: 0}
-  bulletDamage: 0.2
-  weaponAccuracy: -0.2
+  bulletDamage: 0
+  weaponAccuracy: 0.4
   healthBonus: 0
   playerSpeed: 0
   bulletPrefab: {fileID: 0}

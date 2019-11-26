@@ -22,9 +22,9 @@ MonoBehaviour:
   bulletSpeed: 0
   bulletSize: {fileID: 0}
   bulletDamage: 0
-  weaponAccuracy: 0
+  weaponAccuracy: 0.2
   healthBonus: 0
-  playerSpeed: 0.4
+  playerSpeed: 0.3
   bulletPrefab: {fileID: 0}
   isWeapon: 0
   weaponRef: 0

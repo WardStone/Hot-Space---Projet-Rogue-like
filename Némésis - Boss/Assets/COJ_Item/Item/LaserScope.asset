@@ -21,7 +21,7 @@ MonoBehaviour:
   delayBeforeNextShot: 0
   bulletSpeed: 0
   bulletSize: {fileID: 0}
-  bulletDamage: 0.2
+  bulletDamage: 0.1
   weaponAccuracy: -0.2
   healthBonus: 0
   playerSpeed: 0

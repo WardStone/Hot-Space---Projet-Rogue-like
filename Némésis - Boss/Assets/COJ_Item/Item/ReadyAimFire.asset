@@ -18,12 +18,12 @@ MonoBehaviour:
   howManybulleShot: 0
   bulletLifeSpan: 0
   delayBeforeFirstShot: 0
-  delayBeforeNextShot: 0.3
+  delayBeforeNextShot: 0.2
   bulletSpeed: 0
   bulletSize: {fileID: 0}
-  bulletDamage: 0.5
+  bulletDamage: 0.3
   weaponAccuracy: 0
-  healthBonus: 0
+  healthBonus: 20
   playerSpeed: 0
   bulletPrefab: {fileID: 0}
   isWeapon: 0

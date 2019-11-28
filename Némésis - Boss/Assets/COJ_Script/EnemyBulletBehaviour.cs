@@ -12,6 +12,7 @@ public class EnemyBulletBehaviour : MonoBehaviour
 
     public void Start()
     {
+
         playerPos = GameObject.Find("Player").transform;
         headPos = GameObject.Find("HeadPoint").transform;
         homingBulletDir = playerPos.position - headPos.position;
@@ -34,6 +35,7 @@ public class EnemyBulletBehaviour : MonoBehaviour
         {
             StartCoroutine(BulletGoesForward());
         }
+
     }
     IEnumerator BulletGosTowardPlayer()
     {

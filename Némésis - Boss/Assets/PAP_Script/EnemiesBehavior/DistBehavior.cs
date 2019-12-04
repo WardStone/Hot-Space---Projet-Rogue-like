@@ -18,7 +18,9 @@ public class DistBehavior : MonoBehaviour
     private bool canMove = true;
     private bool canShoot = true; 
 
+    [HideInInspector]
     public Transform player;
+
     public GameObject enemyBullet;
 
     // Start is called before the first frame update

@@ -13,15 +13,21 @@ public class BossPatternLoop : MonoBehaviour
     public float bossHealth = 300;
     protected int patternRef;
     protected int patternSaved;
-    protected bool canTakeDamage = true;
+    public bool canTakeDamage = true;
     protected bool canDoAnotherOne = true;
     public Slider healthBar;
     List<int> patternList = new List<int>();
 
     public bool phase2Started;
 
-
-
+    // Les Animators du boss
+    public Animator HeadAnimator;
+    public Animator BodyAnimator;
+    public Animator MaskAnimator;
+    public Animator LeftArmAnimator;
+    public Animator LeftHandAnimator;
+    public Animator RightArmAnimator;
+    public int AnimatorRef;
 
     // leftArm01Pattern condition and object
     protected GameObject leftArm01;
@@ -34,6 +40,7 @@ public class BossPatternLoop : MonoBehaviour
     public Transform leftSpawnArmPoint;
     public Transform prepareAttackPoint;
     public Transform leftArmPoint;
+    public Transform leftArmOriginalPos;
     public Transform ImpactPoint;
     public Vector3 pattern01FirstDir;
     public Rigidbody2D leftArm01Rb;
@@ -55,6 +62,7 @@ public class BossPatternLoop : MonoBehaviour
     public float enemyBulletSpeed = 100f;
     public Rigidbody2D enemyBulletRb;
     protected GameObject enemyBullet;
+    public Transform shotSpawnPoint;
 
     //RightArm01Pattern Condition and object
 
@@ -67,10 +75,7 @@ public class BossPatternLoop : MonoBehaviour
 
     //BossPhase2 Condition and object
 
-    protected Vector2 bossCoreDirection;
-    public Rigidbody2D bossCoreRb;
-    public float coreSpeed = 300f;
-    protected bool phase2IsOn = true;
+    public bool phase2IsOn;
 
     // Start is called before the first frame update
     void Start()
@@ -83,21 +88,28 @@ public class BossPatternLoop : MonoBehaviour
         leftArmPoint = leftArm01.transform.GetChild(0).transform;
         leftArm01Rb = leftArm01.GetComponent<Rigidbody2D>();
         leftArm01Stat = leftArm01.GetComponent<BossPartStat>();
+        LeftHandAnimator = leftArm01.GetComponent<Animator>();
 
-        
+        HeadAnimator = gameObject.transform.GetChild(1).GetComponent<Animator>();
+        BodyAnimator = gameObject.transform.GetChild(2).GetComponent<Animator>();
+        LeftArmAnimator = gameObject.transform.GetChild(3).GetComponent<Animator>();
+
 
    
 
-        bossCoreDirection = Vector2.one.normalized;
+
 
         Head01 = Instantiate(Head01Prefab, HeadSpawnPoint.transform.position, Quaternion.identity);
         HeadPoint = Head01.transform.GetChild(0).transform;
         head01Stat = Head01.GetComponent<BossPartStat>();
+        MaskAnimator = Head01.GetComponent<Animator>();
 
         rightArm01 = Instantiate(rightArm01Prefab, rightArmSpawnPoint.transform.position, Quaternion.identity);
-        rightArm01Animator = rightArm01.GetComponent<Animator>();
         rightArm01Stat = rightArm01.GetComponent<BossPartStat>();
+        RightArmAnimator = rightArm01.GetComponent<Animator>();
 
+        AnimatorRef = -1;
+        SetAllAnimatorRef();
         for (int i = 0; i < 3; i++)
         {
             patternList.Add(i);
@@ -114,15 +126,6 @@ public class BossPatternLoop : MonoBehaviour
     void FixedUpdate()
     {
         
-
-        if (bossHealth <= 500)
-        {
-           
-            bossCoreRb.velocity = bossCoreDirection * coreSpeed * Time.deltaTime;
-            phase2Started = true;
-            gameObject.GetComponent<BoxCollider2D>().enabled = true;
-
-        }
         // Pattern LeftArm01
         if(patternRef == 0 && canDoLeftArm01 == true)
         {
@@ -202,29 +205,9 @@ public class BossPatternLoop : MonoBehaviour
         BossPatternSelection();
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        Debug.Log("It has triggered");
-        if (collision.CompareTag("Bullet"))
-        {
-            if (canTakeDamage == true)
-            {
-                StartCoroutine(takeDamage());
-            }
-        }
 
-        if (collision.CompareTag("WallY"))
-        {
-            bossCoreDirection.y = -bossCoreDirection.y;
-        }
 
-        if (collision.CompareTag("WallX"))
-        {
-            bossCoreDirection.x = -bossCoreDirection.x;
-        }
-    }
-
-    IEnumerator takeDamage()
+    public IEnumerator takeDamage()
     {
         bossHealth -= playerStat.bulletDamage;
         healthBar.value = bossHealth;
@@ -291,6 +274,14 @@ public class BossPatternLoop : MonoBehaviour
         float comeBackTimer = 0.25f;
         float returnSpeed = 10f;
 
+
+        AnimatorRef = 0;
+        SetAllAnimatorRef();
+        LeftArmAnimator.SetBool("Part2", true);
+        LeftHandAnimator.SetBool("Part2", true);
+        yield return new WaitForSeconds(1f);
+        
+        
         leftArm01.GetComponent<BoxCollider2D>().enabled = false;
         while (pattern1Timer > 0 && leftArm01)
             {
@@ -310,25 +301,32 @@ public class BossPatternLoop : MonoBehaviour
 
                 yield return null;
             }
+        LeftArmAnimator.SetBool("Part2", false);
+        LeftHandAnimator.SetBool("Part2", false);
 
         // PatternPart2
-            leftArm01.GetComponent<BoxCollider2D>().enabled = true;
+
+        leftArm01.GetComponent<BoxCollider2D>().enabled = true;
             GameObject impactPointSpawn = Instantiate(impactPointSpawnPrefab, ImpactPoint.transform.position, Quaternion.identity);
             pattern01FirstDir = impactPointSpawn.transform.position - leftArmPoint.position;
             leftArm01Rb.velocity = pattern01FirstDir * impactSpeed;
             yield return new WaitForSeconds(0.1f);
             Destroy(impactPointSpawn);
+     
 
-            //PatternPart3
-            pattern01FirstDir = new Vector3(0, 0, 0);
+        //PatternPart3
+        pattern01FirstDir = new Vector3(0, 0, 0);
             leftArm01Rb.velocity = pattern01FirstDir * 1;
             yield return new WaitForSeconds(2f);
         leftArm01.GetComponent<BoxCollider2D>().enabled = false;
-            //PatternPArt4
-            while (comeBackTimer > 0)
+     
+
+        
+        //PatternPArt4
+        while (comeBackTimer > 0)
             {
 
-                pattern01FirstDir = leftSpawnArmPoint.position - leftArmPoint.position;
+                pattern01FirstDir = leftArmOriginalPos.position - leftArmPoint.position;
                 leftArm01Rb.velocity = pattern01FirstDir * returnSpeed;
                 comeBackTimer -= Time.deltaTime;
                 yield return null;
@@ -338,9 +336,20 @@ public class BossPatternLoop : MonoBehaviour
             leftArm01Rb.velocity = pattern01FirstDir * 0;
             yield return new WaitForSeconds(0.25f);
             leftArm01Rb.position = leftSpawnArmPoint.transform.position;
-            leftArm01.GetComponent<BoxCollider2D>().enabled = true;
+        LeftArmAnimator.SetBool("Part3", true);
+        LeftHandAnimator.SetBool("Part3", true);
+        yield return new WaitForSeconds(0.5f);
+        LeftArmAnimator.SetBool("Part3", false);
+        LeftHandAnimator.SetBool("Part3", false);
+        LeftArmAnimator.SetBool("Part4", true);
+        LeftHandAnimator.SetBool("Part4", true);
+        LeftArmAnimator.SetInteger("Ref", -1);
+        LeftHandAnimator.SetInteger("Ref", -1);
+        leftArm01.GetComponent<BoxCollider2D>().enabled = true;
             yield return new WaitForSeconds(0.25f);
-            Debug.Log("Refrest the pattern");
+        LeftArmAnimator.SetBool("Part4", false);
+        LeftHandAnimator.SetBool("Part4", false);
+        Debug.Log("Refrest the pattern");
             canDoLeftArm01 = true;
             RefreshPattern();
             
@@ -350,8 +359,14 @@ public class BossPatternLoop : MonoBehaviour
     IEnumerator Head01Pattern()
     {
         
+        
         float beamPatternTimer = 3f;
         bool canSpawn = true;
+
+        AnimatorRef = 1;
+        SetAllAnimatorRef();
+        MaskAnimator.SetBool("Part2", true);
+        HeadAnimator.SetBool("Part2", true);
 
         Head01.GetComponent<BoxCollider2D>().enabled = false;
         while (beamPatternTimer > 0)
@@ -363,7 +378,7 @@ public class BossPatternLoop : MonoBehaviour
                 yield return new WaitForSeconds(0.45f);
                 
                 enemyBullet = enemyBulletPrefab;
-                Instantiate(enemyBullet, Head01.transform.position, Quaternion.identity);
+                Instantiate(enemyBullet, shotSpawnPoint.transform.position, Quaternion.identity);
                 beamPatternTimer -= 0.25f;
                 
                 canSpawn = true;
@@ -371,9 +386,24 @@ public class BossPatternLoop : MonoBehaviour
             }
             yield return null;
         }
- 
-        yield return new WaitForSeconds(0.1f);
-        Debug.Log("Refrest the pattern");
+        yield return new WaitForSeconds(0.2f);
+        MaskAnimator.SetBool("Part2", false);
+        HeadAnimator.SetBool("Part2", false);
+        MaskAnimator.SetBool("Part3", true);
+        HeadAnimator.SetBool("Part3", true);
+        yield return new WaitForSeconds(0.2f);
+        MaskAnimator.SetBool("Part3", false);
+        HeadAnimator.SetBool("Part3", false);
+        MaskAnimator.SetBool("Part4", true);
+        HeadAnimator.SetBool("Part4", true);
+
+        yield return new WaitForSeconds(0.2f);
+        MaskAnimator.SetBool("Part4", false);
+        HeadAnimator.SetBool("Part4", false);
+
+        MaskAnimator.SetInteger("Ref", -1);
+        HeadAnimator.SetInteger("Ref", -1);
+        Debug.Log("Refresh the pattern");
         canDoHead01 = true;
         RefreshPattern();
         Head01.GetComponent<BoxCollider2D>().enabled = true;
@@ -384,10 +414,11 @@ public class BossPatternLoop : MonoBehaviour
     IEnumerator RightArm01Pattern()
     {
         Debug.Log("Pattern 2 has begun");
-       
-        rightArm01Animator.SetBool("doPattern", true);
+        AnimatorRef = 2;
+        SetAllAnimatorRef();
         yield return new WaitForSeconds(1f);
-        rightArm01Animator.SetBool("doPattern", false);
+        AnimatorRef = -1;
+        SetAllAnimatorRef();
         damagedGround.SetActive(true);
         yield return new WaitForSeconds(2f);
         canDoRightArm01 = true;
@@ -405,4 +436,14 @@ public class BossPatternLoop : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    void SetAllAnimatorRef()
+    {
+        HeadAnimator.SetInteger("Ref", AnimatorRef);
+        BodyAnimator.SetInteger("Ref",AnimatorRef);
+        MaskAnimator.SetInteger("Ref",AnimatorRef);
+        LeftArmAnimator.SetInteger("Ref",AnimatorRef);
+        LeftHandAnimator.SetInteger("Ref",AnimatorRef);
+        RightArmAnimator.SetInteger("Ref",AnimatorRef) ;
+}
 }

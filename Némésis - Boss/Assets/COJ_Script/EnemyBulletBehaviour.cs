@@ -13,7 +13,7 @@ public class EnemyBulletBehaviour : MonoBehaviour
     public void Start()
     {
         playerPos = GameObject.Find("Player").transform;
-        headPos = GameObject.Find("HeadPoint").transform;
+        headPos = GameObject.Find("HeadShotPoint").transform;
         homingBulletDir = playerPos.position - headPos.position;
         downBulletDir = new Vector2(0, -1);
 

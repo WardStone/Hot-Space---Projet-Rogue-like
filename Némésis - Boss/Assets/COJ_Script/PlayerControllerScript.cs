@@ -15,10 +15,12 @@ public class PlayerControllerScript : MonoBehaviour
     private Vector2 bulletDirection;
     private Vector2 fireDirection;
     private Vector2 weaponDirection;
+    private Vector2 laserDirection;
 
 
     public GameObject aimingPoint;
     public GameObject firePoint;
+    public GameObject laserPoint;
     public GameObject player;
 
     private Animator playerAnimator;
@@ -27,10 +29,13 @@ public class PlayerControllerScript : MonoBehaviour
     private bool canMove = true;
     private bool canDash = true;
     private bool canShoot = true;
+    public bool laserScope = true;
 
     public float dashForce;
     public float dashDuration;
     public float firstShotDelay;
+
+    public LineRenderer laserScopeRenderer;
 
     void Start()
     {
@@ -47,8 +52,12 @@ public class PlayerControllerScript : MonoBehaviour
         moveVelocity = moveInputDirection * stats.playerSpeed;
        
         
-        fireDirection = new Vector3(Input.GetAxisRaw("HorizontalSecondJoystick") * 1f, Input.GetAxisRaw("VerticalSecondJoystick") * 1f);
+        fireDirection = new Vector2(Input.GetAxisRaw("HorizontalSecondJoystick") * 1f, Input.GetAxisRaw("VerticalSecondJoystick") * 1f);
         firePoint.transform.localPosition = fireDirection;
+
+        laserDirection = new Vector2(Input.GetAxisRaw("HorizontalSecondJoystick") * 25f, Input.GetAxisRaw("VerticalSecondJoystick") * 25f);
+        laserPoint.transform.localPosition = laserDirection;
+        laserScopeRenderer = laserPoint.GetComponent<LineRenderer>();
         AimAndShoot();
         
 
@@ -56,7 +65,14 @@ public class PlayerControllerScript : MonoBehaviour
         {
             StartCoroutine(Dash());
         }
-       
+
+        if (laserScope == true)
+        {
+            LaserScoping();
+        }
+
+
+
 
     }
 
@@ -104,6 +120,12 @@ public class PlayerControllerScript : MonoBehaviour
         }
     }
 
+    void LaserScoping()
+    {
+        laserScopeRenderer.enabled = true;
+        laserScopeRenderer.SetPosition(0, firePoint.transform.position);
+        laserScopeRenderer.SetPosition(1, laserPoint.transform.position);
+    }
 
     IEnumerator Dash()
     {

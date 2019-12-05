@@ -52,7 +52,7 @@ public class BossPartStat : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Bullet") && boss.phase2Started == false)
+        if (other.CompareTag("Bullet") && boss.bossHealth > 500)
         {
             StartCoroutine(partTakeDamage());
             Debug.Log("PartHealt is" + partHealth);

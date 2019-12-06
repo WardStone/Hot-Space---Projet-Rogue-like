@@ -329,7 +329,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: baf313139277e2649a9683684d5fbb08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerC: {fileID: 0}
   item: {fileID: 11400000, guid: 345adcf91aeab9a4886d2424b1ace3de, type: 2}
 --- !u!1001 &1579557187
 PrefabInstance:
@@ -514,7 +513,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &1933204674
+--- !u!1001 &1877868104
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -526,15 +525,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 6015816081722176323, guid: ad024cec512fb6040a5b0834226afa47,
+        type: 3}
+      propertyPath: defaultBulletPrefab
+      value: 
+      objectReference: {fileID: 1040633955465522699, guid: 2400e91dceb08d246bd0fb3a75fb2712,
+        type: 3}
     - target: {fileID: 6015816081722176322, guid: ad024cec512fb6040a5b0834226afa47,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.33131313
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6015816081722176322, guid: ad024cec512fb6040a5b0834226afa47,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.6863665
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6015816081722176322, guid: ad024cec512fb6040a5b0834226afa47,
         type: 3}
@@ -564,7 +569,7 @@ PrefabInstance:
     - target: {fileID: 6015816081722176322, guid: ad024cec512fb6040a5b0834226afa47,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6015816081722176322, guid: ad024cec512fb6040a5b0834226afa47,
         type: 3}
@@ -579,6 +584,11 @@ PrefabInstance:
     - target: {fileID: 6015816081722176322, guid: ad024cec512fb6040a5b0834226afa47,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6015816081722176325, guid: ad024cec512fb6040a5b0834226afa47,
+        type: 3}
+      propertyPath: timeBetweenShot
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -940,7 +950,7 @@ PrefabInstance:
     - target: {fileID: 8124329104586401913, guid: e0650819a4c453848ae5ca2b2685ef50,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8124329104586401913, guid: e0650819a4c453848ae5ca2b2685ef50,
         type: 3}

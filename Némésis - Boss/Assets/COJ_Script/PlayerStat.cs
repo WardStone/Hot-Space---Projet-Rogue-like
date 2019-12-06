@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class PlayerStat : MonoBehaviour
 {
-    public PlayerControllerScript playerC;
+
     public Inventory playerInventory;
     public Item newItem;
     public int listLenght = 0;
@@ -35,11 +35,6 @@ public class PlayerStat : MonoBehaviour
     // Start is called before the first frame update
     public void Start()
     {
-        playerC = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControllerScript>();
-
-
-
-
         howManybulleShot = defaultWeapon.howManybulleShot;
         bulletLifeSpan = defaultWeapon.bulletLifeSpan;
         delayBeforeFirstShot = defaultWeapon.delayBeforeFirstShot;
@@ -51,7 +46,6 @@ public class PlayerStat : MonoBehaviour
         bulletPrefab = defaultWeapon.bulletPrefab;
         playerHealth = 100;
         playerSpeed = 5;
-        NewPassiveAcquired();
 
     }
 
@@ -85,7 +79,7 @@ public class PlayerStat : MonoBehaviour
             StartCoroutine(takeDamage());
         }
 
-        if (other.CompareTag("BossBullet") || other.CompareTag("HomingBossBullet"))
+        if(other.CompareTag("BossBullet") || other.CompareTag("HomingBossBullet"))
         {
             damageTaken = 10;
             privateTimer = 1.5f;
@@ -182,9 +176,8 @@ public class PlayerStat : MonoBehaviour
         Debug.Log("PlayerHealth is now" + playerHealth);
         playerSpeed = playerSpeed * newItem.playerSpeed;
         Debug.Log("playerSpeed is now" + playerSpeed);
-        NewPassiveAcquired();
         yield return null;
-
+        
     }
 
     IEnumerator SetStatFromWeapon()
@@ -198,17 +191,7 @@ public class PlayerStat : MonoBehaviour
         bulletDamage = newItem.bulletDamage;
         weaponAccuracy = newItem.weaponAccuracy;
         bulletPrefab = newItem.bulletPrefab;
-        NewPassiveAcquired();
         yield return null;
         Debug.Log("You got the weapon " + newItem.name);
-    }
-
-    void NewPassiveAcquired()
-    {
-        if (defaultWeapon.weaponRef == 1)
-        {
-            Debug.Log("WORK GODAMMIT");
-            playerC.laserScope = true;
-        }
     }
 }

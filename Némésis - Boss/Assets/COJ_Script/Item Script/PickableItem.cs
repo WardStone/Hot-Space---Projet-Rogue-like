@@ -4,17 +4,10 @@ using UnityEngine;
 
 public class PickableItem : MonoBehaviour
 {
-    public PlayerControllerScript playerC;
-
-
 
     public Item item;
     protected bool canPick = true;
-    private void Start()
-    {
-        playerC = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControllerScript>();
-    }
-
+ 
     private void OnTriggerStay2D(Collider2D other)
     {
         if(other.CompareTag("Player") && Input.GetButtonDown("Interact"))

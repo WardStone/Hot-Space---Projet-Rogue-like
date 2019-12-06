@@ -23,6 +23,9 @@ public class DistBehavior : MonoBehaviour
 
     public GameObject enemyBullet;
 
+    public Color shootColor = Color.red;
+    public Color normalColor = Color.white;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -52,7 +55,7 @@ public class DistBehavior : MonoBehaviour
 
     IEnumerator Shoot()
     {
-        GetComponent<SpriteRenderer>().material.color = Color.red;
+        GetComponent<SpriteRenderer>().material.color = shootColor;
 
         yield return new WaitForSeconds(startShootTime);
 
@@ -65,7 +68,7 @@ public class DistBehavior : MonoBehaviour
         yield return new WaitForSeconds(recoveryTime);
 
         canMove = true;
-        GetComponent<SpriteRenderer>().material.color = Color.white;
+        GetComponent<SpriteRenderer>().material.color = normalColor;
 
         yield return new WaitForSeconds(reloadTime);
 

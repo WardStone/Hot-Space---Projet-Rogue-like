@@ -4,15 +4,23 @@ using UnityEngine;
 
 public class CacBehavior : MonoBehaviour
 {
+    public float health;
     public float normalSpeed;
-    public float chargeSpeed;
+    public float dashSpeed;
     public float stoppingDistance;
-    public bool canMove = true;
 
+    public float recoveryTime;
+    public float timeBeforeDash;
+
+    private bool canMove = true;
+    private bool stopDash = false;
+
+    [HideInInspector]
     public Transform player;
-    public Vector3 dashDir;
 
-    public Color dashNowColor = Color.red;
+    private Vector3 target;
+
+    public Color dashColor = Color.red;
     public Color normalColor = Color.white;
 
     // Start is called before the first frame update
@@ -39,15 +47,60 @@ public class CacBehavior : MonoBehaviour
 
     IEnumerator DashAttack()
     {
-        dashDir = player.position;
-        GetComponent<SpriteRenderer>().material.color = dashNowColor;
-        yield return new WaitForSeconds(1f);
-        GetComponent<SpriteRenderer>().material.color = normalColor;
-        canMove = true;
-        transform.position = transform.position - dashDir;
-        canMove = false;
-        yield return new WaitForSeconds(1f);
 
+        GetComponent<SpriteRenderer>().material.color = dashColor;
+        
+        yield return new WaitForSeconds(timeBeforeDash);
+
+        target = new Vector2(player.position.x, player.position.y);
+
+
+        while (transform.position != target && stopDash == false)
+        {
+            GetComponent<CircleCollider2D>().isTrigger = true;
+            transform.position = Vector2.MoveTowards(transform.position, target, dashSpeed * Time.deltaTime);
+
+            yield return new WaitForSeconds(0.005f);
+
+        }
+
+        GetComponent<CircleCollider2D>().isTrigger = false;
+
+        stopDash = false;
+
+        GetComponent<SpriteRenderer>().material.color = normalColor;
+
+        yield return new WaitForSeconds(recoveryTime);
+
+        canMove = true;
+
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Bullet"))
+        {
+            health -= 5;
+
+            if (health <= 0)
+            {
+                Destroy(gameObject);
+            }
+        }
+
+        if (other.CompareTag("Wall"))
+        {
+            stopDash = true;
+        }
+        
+    }
+
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        if (other.CompareTag("Wall"))
+        {
+            stopDash = true;
+        }
     }
 
 }

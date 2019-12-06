@@ -21,6 +21,7 @@ TagManager:
   - HomingBossBullet
   - Boss
   - Enemy
+  - Wall
   layers:
   - Default
   - TransparentFX

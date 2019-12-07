@@ -6,69 +6,55 @@ public class SpcBahavior : MonoBehaviour
 {
 
     public int health;
-    public float normalSpeed;
-    private int direction; // 1 = Nord / 2 = Est / 3 = Sud / 4 = Ouest
-    private int prevDirection;
+    public float speed;
+    public float dmgBoxSpawnDelay;
+    public GameObject spcDmgBox;
+    public Transform[] target;
+
+    private int currentWaypoint;
+    private int previousWaypoint;
+
     protected Rigidbody2D spcRb;
-    protected Vector3 dirVector;
+    protected Vector2 dirVector;
+
+
 
 
 
     // Start is called before the first frame update
     void Start()
     {
-        direction = Random.Range(1, 5);
+        InvokeRepeating("SpawnDamageBox", 0, dmgBoxSpawnDelay);
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (direction == 1)
+        if (transform.position != target[currentWaypoint].position)
         {
-            dirVector = new Vector2(0, 1);
+            Vector2 pos = Vector2.MoveTowards(transform.position, target[currentWaypoint].position, speed * Time.deltaTime);
+            GetComponent<Rigidbody2D>().MovePosition(pos);
+        }
 
-            spcRb = gameObject.GetComponent<Rigidbody2D>();
-            spcRb.velocity = dirVector * normalSpeed * Time.deltaTime;
-
-        } else if (direction == 2)
+        else
         {
-            dirVector = new Vector2(1, 0);
-
-            spcRb = gameObject.GetComponent<Rigidbody2D>();
-            spcRb.velocity = dirVector * normalSpeed * Time.deltaTime;
-
-        } else if (direction == 3)
-        {
-            dirVector = new Vector2(0, -1);
-
-            spcRb = gameObject.GetComponent<Rigidbody2D>();
-            spcRb.velocity = dirVector * normalSpeed * Time.deltaTime;
-
-        } else if (direction == 4)
-        {
-            dirVector = new Vector2(-1, 0);
-
-            spcRb = gameObject.GetComponent<Rigidbody2D>();
-            spcRb.velocity = dirVector * normalSpeed * Time.deltaTime;
+            Debug.Log("(avant) : " + target[currentWaypoint]);
+            currentWaypoint = (currentWaypoint + 1) % target.Length;
+            Debug.Log("(après) : " + target[currentWaypoint]);
 
         }
 
     }
 
+    private void SpawnDamageBox()
+    {
+        Instantiate(spcDmgBox, new Vector3(transform.position.x, transform.position.y, 0), Quaternion.identity);
+    }
+
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-
-        if (other.CompareTag("Wall"))
-        {
-            prevDirection = direction;
-
-            while(direction == prevDirection)
-            {
-                direction = Random.Range(1, 5);
-            }
-            
-        }
 
         if (other.CompareTag("Bullet"))
         {

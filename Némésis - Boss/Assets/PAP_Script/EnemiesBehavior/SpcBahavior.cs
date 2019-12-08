@@ -9,15 +9,17 @@ public class SpcBahavior : MonoBehaviour
     public float speed;
     public float dmgBoxSpawnDelay;
     public GameObject spcDmgBox;
-    public Transform[] target;
+
+    public Transform[] target1;
+    public Transform[] target2;
 
     private int currentWaypoint;
-    private int previousWaypoint;
+    private int previousPath;
+    private int currentPath = 1;
+    private bool canChangePath = true;
 
     protected Rigidbody2D spcRb;
     protected Vector2 dirVector;
-
-
 
 
 
@@ -31,17 +33,61 @@ public class SpcBahavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (transform.position != target[currentWaypoint].position)
+        if (transform.position != target1[currentWaypoint].position && currentPath == 1)
         {
-            Vector2 pos = Vector2.MoveTowards(transform.position, target[currentWaypoint].position, speed * Time.deltaTime);
+            Vector2 pos = Vector2.MoveTowards(transform.position, target1[currentWaypoint].position, speed * Time.deltaTime);
             GetComponent<Rigidbody2D>().MovePosition(pos);
         }
 
+        else if (transform.position != target2[currentWaypoint].position && currentPath == 2)
+        {
+            Vector2 pos = Vector2.MoveTowards(transform.position, target2[currentWaypoint].position, speed * Time.deltaTime);
+            GetComponent<Rigidbody2D>().MovePosition(pos);
+        }
+
+
         else
         {
-            Debug.Log("(avant) : " + target[currentWaypoint]);
-            currentWaypoint = (currentWaypoint + 1) % target.Length;
-            Debug.Log("(après) : " + target[currentWaypoint]);
+
+            if (target1[currentWaypoint].CompareTag("Branch") && canChangePath == true || target2[currentWaypoint].CompareTag("Branch") && canChangePath == true)
+            {
+                previousPath = currentPath;
+                currentPath = Random.Range(1, 3);
+                Debug.Log("le current path est : " + currentPath);
+                StartCoroutine("NextWaypoint");
+            }
+
+            if (currentPath == 1)
+            {
+                if (previousPath != currentPath && canChangePath == false)
+                {
+                    currentWaypoint = (currentWaypoint) % target1.Length;
+                    Debug.Log("aled");
+                }
+
+                else
+                {
+                    currentWaypoint = (currentWaypoint + 1) % target1.Length;
+                }
+ 
+            }
+
+            if (currentPath == 2)
+            {
+               if (target1[currentWaypoint].CompareTag("Branch") && canChangePath == false)
+               {
+                 //   currentWaypoint = (currentWaypoint) % target2.Length;
+                //    Debug.Log("aled");
+                //}
+
+                ///else
+                //{
+                    currentWaypoint = (currentWaypoint + 1) % target2.Length;
+                //}
+              
+            }
+
+
 
         }
 
@@ -67,6 +113,13 @@ public class SpcBahavior : MonoBehaviour
         }
 
     
+    }
+
+    IEnumerator NextWaypoint()
+    {
+        canChangePath = false;
+        yield return new WaitForSeconds(2f);
+        canChangePath = true;
     }
 
 }

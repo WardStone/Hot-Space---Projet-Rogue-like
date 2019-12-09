@@ -48,49 +48,36 @@ public class SpcBahavior : MonoBehaviour
 
         else
         {
+            previousPath = currentPath;
+
 
             if (target1[currentWaypoint].CompareTag("Branch") && canChangePath == true || target2[currentWaypoint].CompareTag("Branch") && canChangePath == true)
             {
-                previousPath = currentPath;
                 currentPath = Random.Range(1, 3);
                 Debug.Log("le current path est : " + currentPath);
                 StartCoroutine("NextWaypoint");
             }
 
-            if (currentPath == 1)
+            if (currentPath == previousPath)
             {
-                if (previousPath != currentPath && canChangePath == false)
-                {
-                    currentWaypoint = (currentWaypoint) % target1.Length;
-                    Debug.Log("aled");
-                }
-
-                else
-                {
-                    currentWaypoint = (currentWaypoint + 1) % target1.Length;
-                }
- 
+                currentWaypoint = (currentWaypoint + 1) % target1.Length;
             }
 
-            if (currentPath == 2)
+            if (currentPath != previousPath)
             {
-               if (target1[currentWaypoint].CompareTag("Branch") && canChangePath == false)
-               {
-                 //   currentWaypoint = (currentWaypoint) % target2.Length;
-                //    Debug.Log("aled");
-                //}
-
-                ///else
-                //{
-                    currentWaypoint = (currentWaypoint + 1) % target2.Length;
-                //}
-              
+                currentWaypoint = (currentWaypoint) % target2.Length;
             }
-
 
 
         }
 
+    }
+
+    IEnumerator NextWaypoint()
+    {
+        canChangePath = false;
+        yield return new WaitForSeconds(2f);
+        canChangePath = true;
     }
 
     private void SpawnDamageBox()
@@ -113,13 +100,6 @@ public class SpcBahavior : MonoBehaviour
         }
 
     
-    }
-
-    IEnumerator NextWaypoint()
-    {
-        canChangePath = false;
-        yield return new WaitForSeconds(2f);
-        canChangePath = true;
     }
 
 }

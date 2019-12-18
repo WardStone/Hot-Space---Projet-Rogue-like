@@ -23,7 +23,8 @@ public class PlayerControllerScript : MonoBehaviour
     public GameObject laserPoint;
     public GameObject player;
 
-    private Animator playerAnimator;
+    private Animator playerlegs, playerTorso, playerArms;
+
 
   
     private bool canMove = true;
@@ -41,6 +42,9 @@ public class PlayerControllerScript : MonoBehaviour
     {
         playerRb = GetComponent<Rigidbody2D>();
         canMove = true;
+        playerTorso = gameObject.transform.GetChild(0).transform.GetChild(1).GetComponent<Animator>();
+        playerArms = gameObject.transform.GetChild(0).transform.GetChild(0).GetComponent<Animator>();
+        playerlegs = gameObject.transform.GetChild(0).transform.GetChild(2).GetComponent<Animator>();
     }
 
 
@@ -51,7 +55,7 @@ public class PlayerControllerScript : MonoBehaviour
         moveInputDirection = new Vector3(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"),0.0f);
         moveVelocity = moveInputDirection * stats.playerSpeed;
        
-        
+      
         fireDirection = new Vector2(Input.GetAxisRaw("HorizontalSecondJoystick") * 1f, Input.GetAxisRaw("VerticalSecondJoystick") * 1f);
         firePoint.transform.localPosition = fireDirection;
 
@@ -59,7 +63,16 @@ public class PlayerControllerScript : MonoBehaviour
         laserPoint.transform.localPosition = laserDirection;
         laserScopeRenderer = laserPoint.GetComponent<LineRenderer>();
         AimAndShoot();
-        
+        playerTorso.SetFloat("deplacementHorizontal", Input.GetAxis("HorizontalSecondJoystick"));
+        playerTorso.SetFloat("deplacementVertical", Input.GetAxis("VerticalSecondJoystick"));
+
+        playerArms.SetFloat("deplacementHorizontal", Input.GetAxis("HorizontalSecondJoystick"));
+        playerArms.SetFloat("deplacementVertical", Input.GetAxis("VerticalSecondJoystick"));
+
+        playerlegs.SetFloat("deplacementHorizontal", Input.GetAxis("Horizontal"));
+        playerlegs.SetFloat("deplacementVertical", Input.GetAxis("Vertical"));
+
+
 
         if (Input.GetButtonDown("Dash") && canMove == true && canDash == true)
         {

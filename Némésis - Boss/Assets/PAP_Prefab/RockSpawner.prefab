@@ -50,6 +50,6 @@ MonoBehaviour:
   stopSpawning: 0
   spawnTime: 10
   spawnDelay: 10
-  styRockNbr: 1
-  brkRockNbrMin: 1
-  brkRockNbrMax: 3
+  styRockNbr: 2
+  brkRockNbrMin: 2
+  brkRockNbrMax: 4

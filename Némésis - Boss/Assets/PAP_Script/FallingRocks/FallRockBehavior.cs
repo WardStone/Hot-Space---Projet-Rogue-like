@@ -29,6 +29,7 @@ public class FallRockBehavior : MonoBehaviour
         if ((transform.position.y <= originalPosiy - 7) && (other.gameObject.CompareTag("Shadow")))
         {
             transform.gameObject.tag = "FallRock";
+
             Destroy(gameObject);
         }
     }

@@ -7,13 +7,13 @@ public class BrkRockBehavior : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(waiter());
+
     }
 
     // Update is called once per frame
-    IEnumerator waiter()
+    private void waiter()
     {
-        yield return new WaitForSeconds(0.25f);
         Destroy(gameObject);
     }
+
 }

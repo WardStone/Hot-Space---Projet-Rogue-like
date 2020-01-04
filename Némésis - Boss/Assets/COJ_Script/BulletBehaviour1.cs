@@ -8,7 +8,7 @@ public class BulletBehaviour1 : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.CompareTag("Boss") || other.CompareTag("bossLeftArm01") || other.CompareTag("bossRightArm01") || other.CompareTag("bossHead01") || other.CompareTag("StyRock") || other.CompareTag("BossHeart"))
+        if(other.CompareTag("Boss") || other.CompareTag("bossLeftArm01") || other.CompareTag("bossRightArm01") || other.CompareTag("bossHead01") || other.CompareTag("StyRock") || other.CompareTag("BossHeart") || other.CompareTag("Wall") || other.CompareTag("Enemy"))
         {
             Destroy(gameObject);
         }

@@ -15,16 +15,16 @@ MonoBehaviour:
   name: FlashEngine
   icon: {fileID: 0}
   isDefaultItem: 0
-  howManybulleShot: 1
+  howManybulleShot: 0
   bulletLifeSpan: 0
   delayBeforeFirstShot: 0
   delayBeforeNextShot: 0
-  bulletSpeed: 20
+  bulletSpeed: 0.2
   bulletSize: {fileID: 0}
   bulletDamage: -0.2
   weaponAccuracy: 0
   healthBonus: 0
-  playerSpeed: 1.25
+  playerSpeed: 0.3
   bulletPrefab: {fileID: 0}
   isWeapon: 0
   weaponRef: 0

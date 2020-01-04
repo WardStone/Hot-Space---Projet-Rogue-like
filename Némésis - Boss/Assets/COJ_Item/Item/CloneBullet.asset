@@ -15,16 +15,16 @@ MonoBehaviour:
   name: Clone Bullet
   icon: {fileID: 0}
   isDefaultItem: 0
-  howManybulleShot: 2
+  howManybulleShot: 1
   bulletLifeSpan: 0
   delayBeforeFirstShot: 0
   delayBeforeNextShot: 0
   bulletSpeed: 0
   bulletSize: {fileID: 0}
   bulletDamage: 0
-  weaponAccuracy: 0.4
+  weaponAccuracy: 0
   healthBonus: 0
-  playerSpeed: 1
+  playerSpeed: 0
   bulletPrefab: {fileID: 0}
   isWeapon: 0
   weaponRef: 0

@@ -49,7 +49,7 @@ public class PlayerStat : MonoBehaviour
         bulletDamage = defaultWeapon.bulletDamage;
         weaponAccuracy = defaultWeapon.weaponAccuracy;
         bulletPrefab = defaultWeapon.bulletPrefab;
-        playerHealth = 200;
+        playerHealth = defaultWeapon.healthBonus;
         playerSpeed = 5;
         NewPassiveAcquired();
 
@@ -158,24 +158,24 @@ public class PlayerStat : MonoBehaviour
     IEnumerator GetStatFromItem()
     {
         Debug.Log("You got the item " + newItem.name);
-        howManybulleShot = howManybulleShot * newItem.howManybulleShot;
+        howManybulleShot += newItem.howManybulleShot;
         Debug.Log("howManyBulletShot is now" + howManybulleShot);
-        bulletLifeSpan += newItem.bulletLifeSpan;
+        bulletLifeSpan += bulletLifeSpan * newItem.bulletLifeSpan;
         Debug.Log("bulletLifeSap is now" + bulletLifeSpan);
         delayBeforeFirstShot += newItem.delayBeforeFirstShot;
         Debug.Log("delayBeforeFirstShot is now" + delayBeforeFirstShot);
-        delayBeforeNextShot += newItem.delayBeforeNextShot;
+        delayBeforeNextShot += delayBeforeNextShot * newItem.delayBeforeNextShot;
         Debug.Log("delayBeforeNextShot is now" + delayBeforeNextShot);
-        bulletSpeed += newItem.bulletSpeed;
+        bulletSpeed += bulletSpeed * newItem.bulletSpeed;
         Debug.Log("bulletSpeed is now" + bulletSpeed);
         //bulletSize = defaultWeapon.bulletSize;
         bulletDamage += bulletDamage * newItem.bulletDamage;
         Debug.Log("Damage is now" + bulletDamage);
         weaponAccuracy += weaponAccuracy * newItem.weaponAccuracy;
         Debug.Log("Accuracy is  now" + weaponAccuracy);
-        playerHealth += playerHealth * newItem.healthBonus;
+        playerHealth += newItem.healthBonus;
         Debug.Log("PlayerHealth is now" + playerHealth);
-        playerSpeed = playerSpeed * newItem.playerSpeed;
+        playerSpeed += playerSpeed * newItem.playerSpeed;
         Debug.Log("playerSpeed is now" + playerSpeed);
         NewPassiveAcquired();
         yield return null;
@@ -194,6 +194,7 @@ public class PlayerStat : MonoBehaviour
         weaponAccuracy = newItem.weaponAccuracy;
         bulletPrefab = newItem.bulletPrefab;
         NewPassiveAcquired();
+        playerHealth = newItem.healthBonus;
         yield return null;
         Debug.Log("You got the weapon " + newItem.name);
     }

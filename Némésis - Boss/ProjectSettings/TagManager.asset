@@ -31,6 +31,9 @@ TagManager:
   - BossBouncyBullet
   - BossRockBullet
   - RockSpawner
+  - Enemy
+  - Wall
+  - Branch
   layers:
   - Default
   - TransparentFX

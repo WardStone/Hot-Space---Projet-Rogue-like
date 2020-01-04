@@ -5,11 +5,20 @@ using UnityEngine;
 public class StyRockBehavior : MonoBehaviour
 {
     public int health;
+    private int maxHealth;
+    private Animator anim;
+
+
+    private void Awake()
+    {
+        maxHealth = health;
+    }
 
     // Start is called before the first frame update
     void Start()
     {
         StartCoroutine(DmgOnFall());
+        anim = GetComponent<Animator>();
     }
 
 
@@ -26,19 +35,24 @@ public class StyRockBehavior : MonoBehaviour
             health -= 5;
         }
 
-        if (other.CompareTag("BossBullet") || other.CompareTag("HomingBossBullet"))
+        else if (other.CompareTag("BossBullet") || other.CompareTag("HomingBossBullet"))
         {
             health -= 10;
         }
 
-        if (other.CompareTag("bossLeftArm01"))
+        else if (other.CompareTag("bossLeftArm01"))
         {
             health -= 30;
         }
 
-        if (other.CompareTag("bossRightArm01"))
+        else if (other.CompareTag("bossRightArm01"))
         {
             health -= 30;
+        }
+
+        if (health <= maxHealth / 2)
+        {
+            anim.SetBool("switchSprite", true);
         }
 
         if (health <= 0)

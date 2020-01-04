@@ -30,6 +30,10 @@ public class BossHeartScript : MonoBehaviour
             
 
         }
+        if(boss.bossHealth <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 
     void OnTriggerEnter2D(Collider2D collision)

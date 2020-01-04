@@ -174,7 +174,7 @@ public class PlayerControllerScript : MonoBehaviour
             bulletDirection = firePoint.transform.position - player.transform.position;
             GameObject bullet = Instantiate(stats.bulletPrefab, firePoint.transform.position, Quaternion.identity);
 
-            bullet.GetComponent<Rigidbody2D>().velocity = bulletDirection * stats.bulletSpeed;
+            bullet.GetComponent<Rigidbody2D>().velocity = bulletDirection.normalized * stats.bulletSpeed;
             bullet.transform.Rotate(0.0f, 0.0f, Mathf.Atan2(bulletDirection.y, bulletDirection.x) * Mathf.Rad2Deg);
             Destroy(bullet, stats.bulletLifeSpan);
             yield return new WaitForSeconds(0.01f);

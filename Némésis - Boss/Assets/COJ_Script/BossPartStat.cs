@@ -18,17 +18,17 @@ public class BossPartStat : MonoBehaviour
     {
         stat = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStat>();
         boss = GameObject.FindGameObjectWithTag("Boss").GetComponent<BossPatternLoop>();
-        if (gameObject.CompareTag("bossLeftArm01"))
+        if (gameObject.CompareTag("bossLeftArm01") || gameObject.CompareTag("bossLeftArm02") || gameObject.CompareTag("bossLeftArm03"))
         {
-            partHealth = 300;
+            partHealth = 250;
         }
-        if (gameObject.CompareTag("bossRightArm01"))
+        if (gameObject.CompareTag("bossRightArm01") || gameObject.CompareTag("bossRightArm02") || gameObject.CompareTag("bossRightArm03"))
         {
-            partHealth = 300;
+            partHealth = 250;
         }
-        if (gameObject.CompareTag("bossHead01"))
+        if (gameObject.CompareTag("bossHead01") || gameObject.CompareTag("bossHead02") || gameObject.CompareTag("bossHead03"))
         {
-            partHealth = 350;
+            partHealth = 200;
         }
     }
 

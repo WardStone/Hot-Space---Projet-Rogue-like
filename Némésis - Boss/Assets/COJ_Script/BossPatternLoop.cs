@@ -5,12 +5,13 @@ using UnityEngine.UI;
 
 public class BossPatternLoop : MonoBehaviour
 {
-    public PlayerStat playerStat;
-    public BossPartStat leftArm01Stat;
-    public BossPartStat rightArm01Stat;
-    public BossPartStat head01Stat;
+    protected PlayerStat playerStat;
+    protected RockSpawning rockSpawn;
+    protected BossPartStat leftArm01Stat;
+    protected BossPartStat rightArm01Stat;
+    protected BossPartStat head01Stat;
 
-    public float bossHealth = 300;
+    public float bossHealth;
     protected int patternRef;
     protected int patternSaved;
     public bool canTakeDamage = true;
@@ -29,7 +30,7 @@ public class BossPatternLoop : MonoBehaviour
     public Animator RightArmAnimator;
     public int AnimatorRef;
 
-    // leftArm01Pattern condition and object
+    // leftArmPattern condition and object
     protected GameObject leftArm01;
     public GameObject leftArm01Prefab;
     protected float leftArm01Speed = 5f;
@@ -48,7 +49,16 @@ public class BossPatternLoop : MonoBehaviour
     public Color dashNowColor = Color.red;
     public Color normalColor = Color.white;
 
-    //Head01Pattern condition and object
+    public float leftArmRespawn;
+
+    public GameObject rockProjectile;
+    public Vector2 rockProjDir = new Vector2 (0,-1);
+
+    public float patternPart2Timer;
+
+    public GameObject burnZone;
+
+    //HeadPattern condition and object
     protected GameObject Head01;
     public GameObject Head01Prefab;
     protected bool canDoHead01 = true;
@@ -57,21 +67,31 @@ public class BossPatternLoop : MonoBehaviour
     protected bool canSpawn = true;
 
     public Transform newTargetPoint;
+    public GameObject enemyHomingBulletPrefab;
+    public GameObject enemyRandomBulletPrefab;
     public GameObject enemyBulletPrefab;
+    public GameObject enemyBouncyBulletPrefab;
     protected Vector2 head01BulletDir;
     public float enemyBulletSpeed = 100f;
     public Rigidbody2D enemyBulletRb;
     protected GameObject enemyBullet;
     public Transform shotSpawnPoint;
 
-    //RightArm01Pattern Condition and object
+    public float headRespawn;
+
+    //RightArmPattern Condition and object
 
     public GameObject rightArm01;
     public GameObject rightArm01Prefab;
     public Transform rightArmSpawnPoint;
     protected bool canDoRightArm01 = true;
     protected Animator rightArm01Animator;
-    public GameObject damagedGround;
+    public GameObject horizontalDamagedGround;
+    public Transform horizontalDamagedGroundSpawn;
+    public GameObject verticalDamagedGround;
+    public Transform verticalDamagedGroundSpawn;
+
+    public int rightArmRespawn;
 
     //BossPhase2 Condition and object
 
@@ -80,6 +100,9 @@ public class BossPatternLoop : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        rockSpawn = GameObject.FindGameObjectWithTag("RockSpawner").GetComponent<RockSpawning>();
+        playerStat = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStat>();
+
         healthBar.value = bossHealth;
         phase2Started = false;
         gameObject.GetComponent<BoxCollider2D>().enabled = false;
@@ -93,11 +116,6 @@ public class BossPatternLoop : MonoBehaviour
         HeadAnimator = gameObject.transform.GetChild(1).GetComponent<Animator>();
         BodyAnimator = gameObject.transform.GetChild(2).GetComponent<Animator>();
         LeftArmAnimator = gameObject.transform.GetChild(3).GetComponent<Animator>();
-
-
-   
-
-
 
         Head01 = Instantiate(Head01Prefab, HeadSpawnPoint.transform.position, Quaternion.identity);
         HeadPoint = Head01.transform.GetChild(0).transform;
@@ -132,7 +150,9 @@ public class BossPatternLoop : MonoBehaviour
             canDoLeftArm01 = false;
             if(leftArm01Stat.partHealth > 0)
             {
-                StartCoroutine(LeftArmPattern01Part1());
+                {
+                    StartCoroutine(LeftArmPattern01());
+                }
             }
             else
             {
@@ -156,6 +176,7 @@ public class BossPatternLoop : MonoBehaviour
                 StartCoroutine(RespawnHead());
             }
         }
+        //Pattern RightArm
         if (patternRef == 2 && canDoRightArm01 == true)
         {
             canDoRightArm01 = false;
@@ -225,9 +246,20 @@ public class BossPatternLoop : MonoBehaviour
             yield return new WaitForSeconds(1.5f);
             leftArm01Stat.partHealth = 200;
             leftArm01Stat.hasRespawned = true;
-            Debug.Log("I'm back baby Boi");
+            leftArmRespawn = Random.Range(0, 3);
+            if (leftArmRespawn == 0)
+            {
+                leftArm01.tag = "bossLeftArm01";
+            }
+            if (leftArmRespawn == 1)
+            {
+                leftArm01.tag = "bossLeftArm01";
+            }
+            if (leftArmRespawn == 2)
+            {
+                leftArm01.tag = "bossLeftArm03";
+            }
             yield return new WaitForSeconds(0.5f);
-            Debug.Log("here my new move cunt");
             canDoLeftArm01 = true; 
             RefreshPattern();
         }
@@ -241,9 +273,20 @@ public class BossPatternLoop : MonoBehaviour
             yield return new WaitForSeconds(1.5f);
             rightArm01Stat.partHealth = 200;
             rightArm01Stat.hasRespawned = true;
-            Debug.Log("I'm back baby Boi");
+            rightArmRespawn = Random.Range(0, 3);
+            if(rightArmRespawn == 0)
+            {
+                rightArm01.tag = "bossRightArm01";
+            }
+            if (rightArmRespawn == 1)
+            {
+                rightArm01.tag = "bossRightArm02";
+            }
+            if (rightArmRespawn == 2)
+            {
+                rightArm01.tag = "bossRightArm03";
+            }
             yield return new WaitForSeconds(0.5f);
-            Debug.Log("here my new move cunt");
             canDoRightArm01 = true;
             RefreshPattern();
         }
@@ -257,16 +300,27 @@ public class BossPatternLoop : MonoBehaviour
             yield return new WaitForSeconds(1.5f);
             head01Stat.partHealth = 200;
             head01Stat.hasRespawned = true;
-            Debug.Log("I'm back baby Boi");
+            headRespawn = Random.Range(0, 3);
+            if (headRespawn == 0)
+            {
+                Head01.tag = "bossHead01";
+            }
+            if (headRespawn == 1)
+            {
+                Head01.tag = "bossHead02";
+            }
+            if (headRespawn == 2)
+            {
+                Head01.tag = "bossHead03";
+            }
             yield return new WaitForSeconds(0.5f);
-            Debug.Log("here my new move cunt");
             canDoHead01 = true;
             RefreshPattern();
         }
 
     }
 
-    IEnumerator LeftArmPattern01Part1()
+    IEnumerator LeftArmPattern01()
     {
         float moveSpeed = 5f;
         float pattern1Timer = 2f;
@@ -311,17 +365,81 @@ public class BossPatternLoop : MonoBehaviour
             pattern01FirstDir = impactPointSpawn.transform.position - leftArmPoint.position;
             leftArm01Rb.velocity = pattern01FirstDir * impactSpeed;
             yield return new WaitForSeconds(0.1f);
-            Destroy(impactPointSpawn);
+        
+
      
 
         //PatternPart3
         pattern01FirstDir = new Vector3(0, 0, 0);
             leftArm01Rb.velocity = pattern01FirstDir * 1;
-            yield return new WaitForSeconds(2f);
-        leftArm01.GetComponent<BoxCollider2D>().enabled = false;
-     
+        if (leftArm01.CompareTag("bossLeftArm02"))
+        {
+            float x = 0.5f;
+            float y = -0.5f;
+            float time = 2f;
+            rockProjDir = new Vector2(0, -1);
+            while (time > 0)
+            {
+                time -= 0.25f;
+                Instantiate(rockProjectile, impactPointSpawn.transform.position, Quaternion.identity);
+                if (rockProjDir.x == 1 || rockProjDir.x == -1)
+                {
+                    x = -x;
 
-        
+                }
+                if (rockProjDir.y == 1 || rockProjDir.y == -1)
+                {
+                    y = -y;
+                }
+                rockProjDir.x += x;
+                rockProjDir.y += y;
+                yield return new WaitForSeconds(0.01f);
+            }
+        }
+        else if (leftArm01.CompareTag("bossLeftArm03"))
+        {
+            Instantiate(burnZone, impactPointSpawn.transform.position, Quaternion.identity);
+        }
+
+        Destroy(impactPointSpawn);
+        yield return new WaitForSeconds(2f);
+        leftArm01.GetComponent<BoxCollider2D>().enabled = false;
+        if (leftArm01.CompareTag("bossLeftArm01"))
+        {
+            patternPart2Timer = 1f;
+            while (patternPart2Timer > 0 && leftArm01)
+            {
+
+                pattern01FirstDir = prepareAttackPoint.position - leftArmPoint.position;
+                leftArm01Rb.velocity = pattern01FirstDir * moveSpeed;
+                patternPart2Timer -= Time.deltaTime;
+                if (patternPart2Timer <= 0.3f && patternPart2Timer > 0.1f)
+                {
+                    leftArm01.GetComponent<SpriteRenderer>().material.color = dashNowColor;
+                }
+                else
+                {
+                    leftArm01.GetComponent<SpriteRenderer>().material.color = normalColor;
+                }
+
+
+                yield return null;
+            }
+            LeftArmAnimator.SetBool("Part2", false);
+            LeftHandAnimator.SetBool("Part2", false);
+
+            leftArm01.GetComponent<BoxCollider2D>().enabled = true;
+            impactPointSpawn = Instantiate(impactPointSpawnPrefab, ImpactPoint.transform.position, Quaternion.identity);
+            pattern01FirstDir = impactPointSpawn.transform.position - leftArmPoint.position;
+            leftArm01Rb.velocity = pattern01FirstDir * impactSpeed;
+            yield return new WaitForSeconds(0.1f);
+            pattern01FirstDir = new Vector3(0, 0, 0);
+            leftArm01Rb.velocity = pattern01FirstDir * 1;
+            yield return new WaitForSeconds(2f);
+        }
+
+
+
         //PatternPArt4
         while (comeBackTimer > 0)
             {
@@ -365,26 +483,68 @@ public class BossPatternLoop : MonoBehaviour
 
         AnimatorRef = 1;
         SetAllAnimatorRef();
-        MaskAnimator.SetBool("Part2", true);
-        HeadAnimator.SetBool("Part2", true);
-
-        Head01.GetComponent<BoxCollider2D>().enabled = false;
-        while (beamPatternTimer > 0)
+        if (Head01.tag == "bossHead01")
         {
-            
-            if (canSpawn == true)
+            MaskAnimator.SetBool("Part2", true);
+            HeadAnimator.SetBool("Part2", true);
+
+            Head01.GetComponent<BoxCollider2D>().enabled = false;
+            while (beamPatternTimer > 0)
             {
-                canSpawn = false;
-                yield return new WaitForSeconds(0.45f);
-                
-                enemyBullet = enemyBulletPrefab;
-                Instantiate(enemyBullet, shotSpawnPoint.transform.position, Quaternion.identity);
-                beamPatternTimer -= 0.25f;
-                
-                canSpawn = true;
-                
+
+                if (canSpawn == true)
+                {
+                    canSpawn = false;
+                    yield return new WaitForSeconds(0.45f);
+
+                    enemyBullet = enemyHomingBulletPrefab;
+                    Instantiate(enemyBullet, shotSpawnPoint.transform.position, Quaternion.identity);
+                    beamPatternTimer -= 0.25f;
+
+                    canSpawn = true;
+
+                }
+                yield return null;
             }
-            yield return null;
+          
+        }
+        else if (Head01.tag == "bossHead02")
+        {
+            MaskAnimator.SetBool("Part2", true);
+            HeadAnimator.SetBool("Part2", true);
+            Head01.GetComponent<BoxCollider2D>().enabled = false;
+
+            while (beamPatternTimer > 0)
+            {
+
+                if (canSpawn == true)
+                {
+                    canSpawn = false;
+                    yield return new WaitForSeconds(0.15f);
+
+                    enemyBullet = enemyRandomBulletPrefab;
+                    Instantiate(enemyBullet, shotSpawnPoint.transform.position, Quaternion.identity);
+                    beamPatternTimer -= 0.10f;
+
+                    canSpawn = true;
+
+                }
+            }
+        }
+
+        else if (Head01.tag == "bossHead03")
+        {
+            MaskAnimator.SetBool("Part2", true);
+            HeadAnimator.SetBool("Part2", true);
+            Head01.GetComponent<BoxCollider2D>().enabled = false;
+
+            for (int i = 0; i < 2;  i++)
+            {
+
+                enemyBullet = enemyBouncyBulletPrefab;
+                Instantiate(enemyBullet, shotSpawnPoint.transform.position, Quaternion.identity);
+                yield return new WaitForSeconds(0.5f);
+            }
         }
         yield return new WaitForSeconds(0.2f);
         MaskAnimator.SetBool("Part2", false);
@@ -400,7 +560,6 @@ public class BossPatternLoop : MonoBehaviour
         yield return new WaitForSeconds(0.2f);
         MaskAnimator.SetBool("Part4", false);
         HeadAnimator.SetBool("Part4", false);
-
         MaskAnimator.SetInteger("Ref", -1);
         HeadAnimator.SetInteger("Ref", -1);
         Debug.Log("Refresh the pattern");
@@ -419,12 +578,22 @@ public class BossPatternLoop : MonoBehaviour
         yield return new WaitForSeconds(1f);
         AnimatorRef = -1;
         SetAllAnimatorRef();
-        damagedGround.SetActive(true);
+        if (rightArm01.CompareTag("bossRightArm01"))
+        {
+            Instantiate(horizontalDamagedGround, horizontalDamagedGroundSpawn.position, Quaternion.identity);
+        }
+        else if (rightArm01.CompareTag("bossRightArm02"))
+        {
+            Instantiate(verticalDamagedGround, verticalDamagedGroundSpawn.position,Quaternion.identity);
+        }
+        else if (rightArm01.CompareTag("bossRightArm03"))
+        {
+            rockSpawn.brkRockNbr = 20;
+            rockSpawn.BossSpawnObject();
+        }
         yield return new WaitForSeconds(2f);
         canDoRightArm01 = true;
         RefreshPattern();
-        yield return new WaitForSeconds(2f);
-        damagedGround.SetActive(false);
     }
    
     void bossDeath()

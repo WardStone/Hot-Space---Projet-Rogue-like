@@ -49,7 +49,7 @@ public class PlayerStat : MonoBehaviour
         bulletDamage = defaultWeapon.bulletDamage;
         weaponAccuracy = defaultWeapon.weaponAccuracy;
         bulletPrefab = defaultWeapon.bulletPrefab;
-        playerHealth = 100;
+        playerHealth = 200;
         playerSpeed = 5;
         NewPassiveAcquired();
 
@@ -62,42 +62,44 @@ public class PlayerStat : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("bossLeftArm01") && canTakeDamage == true)
+        if (other.CompareTag("bossLeftArm01") || other.CompareTag("bossLeftArm02") || other.CompareTag("bossLeftArm03") && canTakeDamage == true)
         {
+            canTakeDamage = false;
             damageTaken = 30;
-            privateTimer = 0.5f;
+            privateTimer = 1.5f;
             StartCoroutine(takeDamage());
-            Debug.Log("Ouch");
         }
 
-        if (other.CompareTag("bossRightArm01") && canTakeDamage == true)
+        if (other.CompareTag("bossRightArm01") || other.CompareTag("bossRightArm02") || other.CompareTag("bossRightArm03") && canTakeDamage == true)
         {
+            canTakeDamage = false;
             damageTaken = 30;
-            privateTimer = 0.5f;
+            privateTimer = 1.5f;
             StartCoroutine(takeDamage());
-            Debug.Log("Aie ouille");
         }
 
-        if (other.CompareTag("EnemyBullet"))
+        if (other.CompareTag("EnemyBullet") && canTakeDamage == true)
         {
+            canTakeDamage = false;
             damageTaken = 5;
             privateTimer = 1.5f;
             StartCoroutine(takeDamage());
         }
 
-        if (other.CompareTag("BossBullet") || other.CompareTag("HomingBossBullet"))
+        if (other.CompareTag("BossBullet") || other.CompareTag("HomingBossBullet") || other.CompareTag("BossRandomBullet") || other.CompareTag("BossBouncyBullet") || other.CompareTag("BossRockBullet") && canTakeDamage == true)
         {
+            canTakeDamage = false;
             damageTaken = 10;
             privateTimer = 1.5f;
             StartCoroutine(takeDamage());
         }
 
-        if (other.CompareTag("BrkRock"))
+        if (other.CompareTag("BrkRock") && canTakeDamage == true)
         {
-            damageTaken = 30;
+            canTakeDamage = false;
+            damageTaken = 15;
             privateTimer = 0.5f;
             StartCoroutine(takeDamage());
-            Debug.Log("ça fait mal");
         }
 
 
@@ -105,26 +107,20 @@ public class PlayerStat : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D other)
     {
-        if (other.CompareTag("bossHead01") && canTakeDamage == true)
-        {
-            damageTaken = 2;
-            privateTimer = 0.1f;
-            StartCoroutine(takeDamage());
-            Debug.Log("Laser Beam");
-
-        }
 
         if (other.CompareTag("damagedZone") && canTakeDamage == true)
         {
+            canTakeDamage = false;
             damageTaken = 10;
             privateTimer = 0.5f;
             StartCoroutine(takeDamage());
-            Debug.Log("ça brûle baby boi");
         }
     }
 
     IEnumerator takeDamage()
     {
+
+        Debug.Log(damageTaken);
         playerHealth -= damageTaken;
         playerBar.value = playerHealth;
 
@@ -134,7 +130,6 @@ public class PlayerStat : MonoBehaviour
         }
 
         Debug.Log("Player health equal" + playerHealth);
-        canTakeDamage = false;
         yield return new WaitForSeconds(privateTimer);
         canTakeDamage = true;
 

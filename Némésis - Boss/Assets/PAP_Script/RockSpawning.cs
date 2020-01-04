@@ -13,6 +13,7 @@ public class RockSpawning : MonoBehaviour
     public int styRockNbr;
     public int brkRockNbrMin;
     public int brkRockNbrMax;
+    public int brkRockNbr;
 
     // Start is called before the first frame update
     void Start()
@@ -26,7 +27,7 @@ public class RockSpawning : MonoBehaviour
 
         Debug.Log(styRockNbr);
 
-        int brkRockNbr = Random.Range(brkRockNbrMin, brkRockNbrMax);
+        brkRockNbr = Random.Range(brkRockNbrMin, brkRockNbrMax);
 
         Debug.Log(brkRockNbr);
 
@@ -55,5 +56,32 @@ public class RockSpawning : MonoBehaviour
             CancelInvoke("spawnObject");
         }
 
+    }
+    public void BossSpawnObject()
+    {
+
+        for (int i = 0; i < styRockNbr; i++)
+        {
+            float posix = Random.Range(-9, 9);
+            float posiy = Random.Range(-10, -4);
+
+            GameObject rocks = Instantiate(styShadowPreviz, new Vector3(posix, posiy, 0), Quaternion.identity);
+
+
+        }
+
+        for (int i = 0; i < brkRockNbr; i++)
+        {
+            float posix = Random.Range(-9f, 9f);
+            float posiy = Random.Range(-11f, -4f);
+
+            GameObject rocks = Instantiate(brkShadowPreviz, new Vector3(posix, posiy, 0), Quaternion.identity);
+
+        }
+
+        if (stopSpawning)
+        {
+            CancelInvoke("spawnObject");
+        }
     }
 }

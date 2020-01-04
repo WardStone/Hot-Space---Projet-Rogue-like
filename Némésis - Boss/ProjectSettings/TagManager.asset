@@ -21,6 +21,16 @@ TagManager:
   - HomingBossBullet
   - Boss
   - BossHeart
+  - bossHead02
+  - bossHead03
+  - bossLeftArm03
+  - bossLeftArm02
+  - bossRightArm02
+  - bossRightArm03
+  - BossRandomBullet
+  - BossBouncyBullet
+  - BossRockBullet
+  - RockSpawner
   layers:
   - Default
   - TransparentFX

@@ -253,7 +253,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &129446801
 GameObject:
@@ -674,7 +674,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &275010537
 MonoBehaviour:
@@ -706,9 +706,13 @@ MonoBehaviour:
   m_CameraCutEvent:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: Cinemachine.CinemachineBrain+BrainEvent, Cinemachine, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: Cinemachine.CinemachineBrain+VcamActivatedEvent, Cinemachine, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &328509330
 GameObject:
   m_ObjectHideFlags: 0
@@ -1119,7 +1123,7 @@ Transform:
   - {fileID: 522771283}
   - {fileID: 616859903}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &616859902
 GameObject:
@@ -1276,7 +1280,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &714806522
 GameObject:
@@ -1333,6 +1337,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: d9b628873db47a4408700e28a2140222, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -1520,6 +1526,8 @@ MonoBehaviour:
     m_OnCameraLive:
       m_PersistentCalls:
         m_Calls: []
+      m_TypeName: Cinemachine.CinemachineBrain+VcamActivatedEvent, Cinemachine, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
   m_LegacyBlendHint: 0
   m_ComponentOwner: {fileID: 899718219}
 --- !u!4 &718037171
@@ -1768,6 +1776,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: d9b628873db47a4408700e28a2140222, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -2118,7 +2128,7 @@ PrefabInstance:
     - target: {fileID: 9014887531480558822, guid: 9c351f3f49d21cb43bd69024bc613f62,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 9014887531480558822, guid: 9c351f3f49d21cb43bd69024bc613f62,
         type: 3}
@@ -2342,6 +2352,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: d9b628873db47a4408700e28a2140222, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -2415,6 +2427,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: d9b628873db47a4408700e28a2140222, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -2511,7 +2525,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1264598696
 GameObject:
@@ -3376,7 +3390,7 @@ PrefabInstance:
     - target: {fileID: 6137024042517345182, guid: 56ff47a4452caba4d919d520c39101a8,
         type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 6137024042517345182, guid: 56ff47a4452caba4d919d520c39101a8,
         type: 3}
@@ -3483,6 +3497,8 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.Slider+SliderEvent, UnityEngine.UI, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1001 &1585096647
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3533,7 +3549,7 @@ PrefabInstance:
     - target: {fileID: 8124329104586401913, guid: e0650819a4c453848ae5ca2b2685ef50,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8124329104586401913, guid: e0650819a4c453848ae5ca2b2685ef50,
         type: 3}
@@ -3602,7 +3618,7 @@ PrefabInstance:
     - target: {fileID: 1262721006627646283, guid: ce73eabce0b34524197809fc140c3fb7,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1262721006627646283, guid: ce73eabce0b34524197809fc140c3fb7,
         type: 3}
@@ -3722,7 +3738,7 @@ Transform:
   - {fileID: 1919839388}
   - {fileID: 1448298079}
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1731571461
 GameObject:
@@ -3787,7 +3803,7 @@ MonoBehaviour:
   patternPart2Timer: 0
   burnZone: {fileID: 6684535543246607528, guid: 46426f56204a11447bd72ba460f57f07,
     type: 3}
-  Head01Prefab: {fileID: 1269864246091698200, guid: 01a49aa9f6bc72d4e910678c8fa55924,
+  Head01Prefab: {fileID: 1778857180930371291, guid: 06214cb4f9821dc4e8b4ef5c22918d28,
     type: 3}
   HeadPoint: {fileID: 0}
   HeadSpawnPoint: {fileID: 780662587}
@@ -4538,7 +4554,7 @@ PrefabInstance:
     - target: {fileID: 2758404086810721837, guid: 2f821312045901d419e323c964ea29b0,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2758404086810721837, guid: 2f821312045901d419e323c964ea29b0,
         type: 3}
@@ -4702,6 +4718,8 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.Slider+SliderEvent, UnityEngine.UI, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &2061835898
 GameObject:
   m_ObjectHideFlags: 0
@@ -5007,7 +5025,7 @@ PrefabInstance:
     - target: {fileID: 5148136321157994200, guid: db586ccf8f69e4547bc53f3a87f50cf4,
         type: 3}
       propertyPath: m_RootOrder
-      value: 20
+      value: 21
       objectReference: {fileID: 0}
     - target: {fileID: 5148136321157994200, guid: db586ccf8f69e4547bc53f3a87f50cf4,
         type: 3}
@@ -5076,7 +5094,7 @@ PrefabInstance:
     - target: {fileID: 5276520539846381267, guid: 4b787953962dc1e418626055b167d908,
         type: 3}
       propertyPath: m_RootOrder
-      value: 22
+      value: 23
       objectReference: {fileID: 0}
     - target: {fileID: 5276520539846381267, guid: 4b787953962dc1e418626055b167d908,
         type: 3}
@@ -5319,7 +5337,7 @@ PrefabInstance:
     - target: {fileID: 2628107989454373487, guid: cde9b27f7453cdf43ae7373eb05841c4,
         type: 3}
       propertyPath: m_RootOrder
-      value: 21
+      value: 22
       objectReference: {fileID: 0}
     - target: {fileID: 2628107989454373487, guid: cde9b27f7453cdf43ae7373eb05841c4,
         type: 3}
@@ -5467,7 +5485,7 @@ PrefabInstance:
     - target: {fileID: 3983821049522800989, guid: cb6513fbb6f37f144b792a858163ac6f,
         type: 3}
       propertyPath: m_RootOrder
-      value: 24
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 3983821049522800989, guid: cb6513fbb6f37f144b792a858163ac6f,
         type: 3}
@@ -5536,7 +5554,7 @@ PrefabInstance:
     - target: {fileID: 755413498439857051, guid: 9a518c0313c73004ba4d70647de4a629,
         type: 3}
       propertyPath: m_RootOrder
-      value: 23
+      value: 24
       objectReference: {fileID: 0}
     - target: {fileID: 755413498439857051, guid: 9a518c0313c73004ba4d70647de4a629,
         type: 3}

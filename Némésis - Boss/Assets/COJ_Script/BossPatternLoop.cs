@@ -106,6 +106,9 @@ public class BossPatternLoop : MonoBehaviour
         healthBar.value = bossHealth;
         phase2Started = false;
         gameObject.GetComponent<BoxCollider2D>().enabled = false;
+        prepareAttackPoint = GameObject.FindGameObjectWithTag("prepareAttackPoint").transform;
+        ImpactPoint = GameObject.FindGameObjectWithTag("ImpactPoint").transform;
+
 
         leftArm01 = Instantiate(leftArm01Prefab,leftSpawnArmPoint.transform.position,Quaternion.identity);
         leftArmPoint = leftArm01.transform.GetChild(0).transform;
@@ -360,7 +363,7 @@ public class BossPatternLoop : MonoBehaviour
 
         // PatternPart2
 
-        leftArm01.GetComponent<BoxCollider2D>().enabled = true;
+            leftArm01.GetComponent<BoxCollider2D>().enabled = true;
             GameObject impactPointSpawn = Instantiate(impactPointSpawnPrefab, ImpactPoint.transform.position, Quaternion.identity);
             pattern01FirstDir = impactPointSpawn.transform.position - leftArmPoint.position;
             leftArm01Rb.velocity = pattern01FirstDir * impactSpeed;

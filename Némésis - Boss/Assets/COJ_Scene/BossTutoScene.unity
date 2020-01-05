@@ -3732,6 +3732,12 @@ PrefabInstance:
       propertyPath: m_TagString
       value: prepareAttackPoint
       objectReference: {fileID: 0}
+    - target: {fileID: 6015816081722176323, guid: ad024cec512fb6040a5b0834226afa47,
+        type: 3}
+      propertyPath: defaultWeapon
+      value: 
+      objectReference: {fileID: 11400000, guid: 345adcf91aeab9a4886d2424b1ace3de,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad024cec512fb6040a5b0834226afa47, type: 3}
 --- !u!1001 &7143420683240803584

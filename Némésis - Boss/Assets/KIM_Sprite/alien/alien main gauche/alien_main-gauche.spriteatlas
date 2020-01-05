@@ -81,7 +81,9 @@ SpriteAtlas:
     - {fileID: 2800000, guid: 28fee4d6cada23c45a8fa1b4edb94f4b, type: 3}
     - {fileID: 2800000, guid: 7e9d5b0cd29bb314c95c8e76a3be6650, type: 3}
     - {fileID: 2800000, guid: 24626b176bdae0a4995c09a254e8647f, type: 3}
-    totalSpriteSurfaceArea: 3444480
+    - {fileID: 2800000, guid: f45c3a99b8bed464995b2eeacff7f3f6, type: 3}
+    - {fileID: 2800000, guid: 04e18b2314ad17b4b8f08da19c0303d3, type: 3}
+    totalSpriteSurfaceArea: 3472200
     bindAsDefault: 1
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
@@ -94,6 +96,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: cde70121dd84ef14fb95c69355b99e9d, type: 3}
   - {fileID: 21300000, guid: 306b0d32fef633f438492d73808842fa, type: 3}
   - {fileID: 21300000, guid: 3c4c5cf25ceeb9c419dfb8c6f6bb5e65, type: 3}
+  - {fileID: 21300000, guid: 04e18b2314ad17b4b8f08da19c0303d3, type: 3}
   - {fileID: 21300000, guid: eeb04673ecd6c194d9143a9825339002, type: 3}
   - {fileID: 21300000, guid: c7e01093d8c52a343ab7e6caf07e6de7, type: 3}
   - {fileID: 21300000, guid: cf3c31c34b4ec9944a742d432f9a5a0a, type: 3}
@@ -110,6 +113,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: e27f0a78bc2994c47977921fc7ef6e82, type: 3}
   - {fileID: 21300000, guid: d56176885779b8f48acfbc4921e3b51e, type: 3}
   - {fileID: 21300000, guid: 1d70f6199ccbc7c4d99575844310c74e, type: 3}
+  - {fileID: 21300000, guid: f45c3a99b8bed464995b2eeacff7f3f6, type: 3}
   - {fileID: 21300000, guid: e6c61f5b05bd5694ea08e3d854b0ace9, type: 3}
   - {fileID: 21300000, guid: 230976dbc1f5f3f4289c548507867464, type: 3}
   - {fileID: 21300000, guid: 2c3041eba45090942bcd63f18e1e0112, type: 3}
@@ -134,6 +138,7 @@ SpriteAtlas:
   - alien_idle_main-gauche_5
   - alien_attaque-3_main-gauche_13
   - alien_attaque-3_main-gauche_5
+  - alien_attaque-1_ecrase_main-gauche_1
   - alien_attaque-1_reforme-bras_main-gauche_2
   - alien_attaque-3_main-gauche_6
   - alien_attaque-3_main-gauche_10
@@ -150,6 +155,7 @@ SpriteAtlas:
   - alien_attaque-1_arrache-bras_main-gauche_2
   - alien_attaque-1_arrache-bras_mains-gauche_4
   - alien_idle_main-gauche_2
+  - alien_attaque-1_ecrase_main-gauche_2
   - alien_idle_main-gauche_7
   - alien_attaque-3_main-gauche_12
   - alien_idle_main-gauche_1

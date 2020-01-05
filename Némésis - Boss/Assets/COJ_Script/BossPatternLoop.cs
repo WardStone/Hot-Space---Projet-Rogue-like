@@ -48,7 +48,12 @@ public class BossPatternLoop : MonoBehaviour
     public Rigidbody2D leftArm01Rb;
     public GameObject impactPointSpawnPrefab;
     public Color dashNowColor = Color.red;
-    public Color normalColor = Color.white;
+    public Color Part1Color = Color.white;
+    public Color Part2Color = Color.cyan;
+    public Color Part3Color = Color.green;
+    public Color leftArmColor;
+    public Color rightArmColor;
+    public Color headColor;
 
     public float leftArmRespawn;
 
@@ -203,7 +208,11 @@ public class BossPatternLoop : MonoBehaviour
     }
     private void Update()
     {
+        RightArmChangeColors();
+        LeftArmChangeColors();
+        HeadChangeColors();
         bossDeath();
+
     }
 
     void BossPatternSelection()
@@ -355,7 +364,7 @@ public class BossPatternLoop : MonoBehaviour
                 }
                 else
                 {
-                    leftArm01.GetComponent<SpriteRenderer>().material.color = normalColor;
+                    leftArm01.GetComponent<SpriteRenderer>().material.color = leftArmColor;
                 }
 
 
@@ -426,7 +435,7 @@ public class BossPatternLoop : MonoBehaviour
                 }
                 else
                 {
-                    leftArm01.GetComponent<SpriteRenderer>().material.color = normalColor;
+                    leftArm01.GetComponent<SpriteRenderer>().material.color = leftArmColor;
                 }
 
 
@@ -583,9 +592,8 @@ public class BossPatternLoop : MonoBehaviour
         Debug.Log("Pattern 2 has begun");
         AnimatorRef = 2;
         SetAllAnimatorRef();
-        yield return new WaitForSeconds(1f);
-        AnimatorRef = -1;
-        SetAllAnimatorRef();
+        yield return new WaitForSeconds(2f);
+
         if (rightArm01.CompareTag("bossRightArm01"))
         {
             Instantiate(horizontalDamagedGround, horizontalDamagedGroundSpawn.position, Quaternion.identity);
@@ -599,7 +607,10 @@ public class BossPatternLoop : MonoBehaviour
             rockSpawn.brkRockNbr = 20;
             rockSpawn.BossSpawnObject();
         }
-        yield return new WaitForSeconds(2f);
+        AnimatorRef = -1;
+        SetAllAnimatorRef();
+        yield return new WaitForSeconds(1f);
+      
         canDoRightArm01 = true;
         RefreshPattern();
     }
@@ -622,5 +633,59 @@ public class BossPatternLoop : MonoBehaviour
         LeftArmAnimator.SetInteger("Ref",AnimatorRef);
         LeftHandAnimator.SetInteger("Ref",AnimatorRef);
         RightArmAnimator.SetInteger("Ref",AnimatorRef) ;
-}
+    }
+
+    void LeftArmChangeColors()
+    {
+
+        leftArm01.GetComponent<SpriteRenderer>().color = leftArmColor;
+        if (leftArm01.CompareTag("bossLeftArm01"))
+        {
+            leftArmColor = Part1Color;
+        }
+        else if (leftArm01.CompareTag("bossLeftArm02"))
+        {
+            leftArmColor = Part2Color;
+        }
+        else if (leftArm01.CompareTag("bossLeftArm03"))
+        {
+            leftArmColor = Part3Color;
+        }
+    }
+
+    void RightArmChangeColors()
+    {
+
+        leftArm01.GetComponent<SpriteRenderer>().color = leftArmColor;
+        if (rightArm01.CompareTag("bossRightArm01"))
+        {
+            rightArmColor = Part1Color;
+        }
+        else if (rightArm01.CompareTag("bossRightArm02"))
+        {
+            rightArmColor = Part2Color;
+        }
+        else if (rightArm01.CompareTag("bossRightArm03"))
+        {
+            rightArmColor = Part3Color;
+        }
+    }
+
+    void HeadChangeColors()
+    {
+
+        leftArm01.GetComponent<SpriteRenderer>().color = leftArmColor;
+        if (Head01.CompareTag("bossHead01"))
+        {
+            headColor = Part1Color;
+        }
+        else if (Head01.CompareTag("bossHead01"))
+        {
+            headColor = Part2Color;
+        }
+        else if (Head01.CompareTag("bossHead01"))
+        {
+            headColor = Part3Color;
+        }
+    }
 }

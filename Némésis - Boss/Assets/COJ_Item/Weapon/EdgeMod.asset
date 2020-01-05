@@ -23,9 +23,9 @@ MonoBehaviour:
   bulletSize: {fileID: 0}
   bulletDamage: 25
   weaponAccuracy: 0.08
-  healthBonus: 100
+  healthBonus: 200
   playerSpeed: 0
-  bulletPrefab: {fileID: 1798982906214986569, guid: c3385333ed3fa54459797089cd2bf4e2,
+  bulletPrefab: {fileID: 8353112509574661061, guid: d64a96c5b881351439447da020d97127,
     type: 3}
   isWeapon: 1
   weaponRef: 0

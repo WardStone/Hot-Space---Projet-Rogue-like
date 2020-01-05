@@ -26,7 +26,7 @@ public class FallRockBehavior : MonoBehaviour
     public void OnTriggerEnter2D(Collider2D other)
     {
 
-        if ((transform.position.y <= originalPosiy - 7) && (other.gameObject.CompareTag("Shadow")))
+        if ((transform.position.y <= originalPosiy - 9) && (other.gameObject.CompareTag("Shadow")))
         {
             transform.gameObject.tag = "FallRock";
 

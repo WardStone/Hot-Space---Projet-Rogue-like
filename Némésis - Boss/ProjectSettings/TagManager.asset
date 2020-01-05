@@ -36,6 +36,19 @@ TagManager:
   - Branch
   - prepareAttackPoint
   - ImpactPoint
+  - ItemHolder
+  - ItemManager
+  - ItemSpawner
+  - WeaponSpawner
+  - WeaponHolder
+  - ShopWeaponSpawner
+  - ShopWeapon
+  - ShopItem
+  - ShopItemSpawner
+  - GameManager
+  - Item
+  - Cinemachine
+  - CameraShakeManager
   layers:
   - Default
   - TransparentFX

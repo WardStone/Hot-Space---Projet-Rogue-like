@@ -21,7 +21,7 @@ public class PreparePointScriptBehaviour : MonoBehaviour
         }
         else if (canDo == true)
         {
-            dir = player.transform.position - impactPointRb.transform.position + new Vector3 (0,1.5f,0);
+            dir = player.transform.position - impactPointRb.transform.position + new Vector3 (0,3f,0);
             impactPointRb.velocity = dir * absoluteSpeed;
         }
 

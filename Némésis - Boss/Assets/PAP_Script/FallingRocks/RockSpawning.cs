@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class RockSpawning : MonoBehaviour
 {
+    public SimpleCameraShakeInCinemachine cameraShake;
+
     public GameObject styShadowPreviz;
     public GameObject brkShadowPreviz;
 
@@ -18,6 +20,7 @@ public class RockSpawning : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        cameraShake = GameObject.FindGameObjectWithTag("CameraShakeManager").GetComponent<SimpleCameraShakeInCinemachine>();
         InvokeRepeating("SpawnObject", spawnTime, spawnDelay);
     }
 
@@ -28,7 +31,7 @@ public class RockSpawning : MonoBehaviour
         Debug.Log(styRockNbr);
 
         brkRockNbr = Random.Range(brkRockNbrMin, brkRockNbrMax);
-
+        cameraShake.Shake();
         Debug.Log(brkRockNbr);
 
 
@@ -59,11 +62,11 @@ public class RockSpawning : MonoBehaviour
     }
     public void BossSpawnObject()
     {
-
+        cameraShake.Shake();
         for (int i = 0; i < styRockNbr; i++)
         {
-            float posix = Random.Range(-9, 9);
-            float posiy = Random.Range(-10, -4);
+            float posix = Random.Range(-18, 18);
+            float posiy = Random.Range(-5, 0);
 
             GameObject rocks = Instantiate(styShadowPreviz, new Vector3(posix, posiy, 0), Quaternion.identity);
 
@@ -72,8 +75,8 @@ public class RockSpawning : MonoBehaviour
 
         for (int i = 0; i < brkRockNbr; i++)
         {
-            float posix = Random.Range(-9f, 9f);
-            float posiy = Random.Range(-11f, -4f);
+            float posix = Random.Range(-18, 18);
+            float posiy = Random.Range(-5, 0);
 
             GameObject rocks = Instantiate(brkShadowPreviz, new Vector3(posix, posiy, 0), Quaternion.identity);
 

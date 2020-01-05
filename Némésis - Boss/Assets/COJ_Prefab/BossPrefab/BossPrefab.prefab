@@ -101,7 +101,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: d9b628873db47a4408700e28a2140222, type: 3}
   m_Color: {r: 0.9811321, g: 0.48400265, b: 0, a: 1}
   m_FlipX: 0
@@ -200,7 +200,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3118177369689641724}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -6.96, z: 0}
+  m_LocalPosition: {x: -0.77, y: -10, z: 0}
   m_LocalScale: {x: 10, y: 3.2538567, z: 1.5}
   m_Children: []
   m_Father: {fileID: 3118177370671824308}
@@ -267,7 +267,7 @@ MonoBehaviour:
   LeftHandAnimator: {fileID: 0}
   RightArmAnimator: {fileID: 0}
   AnimatorRef: 0
-  leftArm01Prefab: {fileID: 5725362465774037996, guid: 3ac060ff6afeb3f44be808409b26d15c,
+  leftArm01Prefab: {fileID: 1243433978311801857, guid: b2f889734df3c524998fa7bfac65d92a,
     type: 3}
   leftSpawnArmPoint: {fileID: 3118177371042824110}
   prepareAttackPoint: {fileID: 0}
@@ -287,7 +287,7 @@ MonoBehaviour:
   patternPart2Timer: 0
   burnZone: {fileID: 6684535543246607528, guid: 46426f56204a11447bd72ba460f57f07,
     type: 3}
-  Head01Prefab: {fileID: 1269864246091698200, guid: 01a49aa9f6bc72d4e910678c8fa55924,
+  Head01Prefab: {fileID: 3426822258088181811, guid: a4a2b0fd9cd1cd947ac7b0215b501c43,
     type: 3}
   HeadPoint: {fileID: 0}
   HeadSpawnPoint: {fileID: 3118177370773095307}
@@ -657,7 +657,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3118177370230941717}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.126, y: -3.606, z: 0}
+  m_LocalPosition: {x: -0.81, y: -5.27, z: 0}
   m_LocalScale: {x: 20.003658, y: 3.2538548, z: 1.5}
   m_Children: []
   m_Father: {fileID: 3118177370671824308}
@@ -1060,7 +1060,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3118177370671824307}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:

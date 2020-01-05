@@ -10,6 +10,7 @@ public class BossPatternLoop : MonoBehaviour
     protected BossPartStat leftArm01Stat;
     protected BossPartStat rightArm01Stat;
     protected BossPartStat head01Stat;
+    protected SimpleCameraShakeInCinemachine cameraShake;
 
     public float bossHealth;
     protected int patternRef;
@@ -100,6 +101,8 @@ public class BossPatternLoop : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        cameraShake = GameObject.FindGameObjectWithTag("CameraShakeManager").GetComponent<SimpleCameraShakeInCinemachine>();
+
         rockSpawn = GameObject.FindGameObjectWithTag("RockSpawner").GetComponent<RockSpawning>();
         playerStat = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStat>();
 
@@ -375,6 +378,7 @@ public class BossPatternLoop : MonoBehaviour
         //PatternPart3
         pattern01FirstDir = new Vector3(0, 0, 0);
             leftArm01Rb.velocity = pattern01FirstDir * 1;
+        cameraShake.Shake();
         if (leftArm01.CompareTag("bossLeftArm02"))
         {
             float x = 0.5f;
@@ -438,6 +442,7 @@ public class BossPatternLoop : MonoBehaviour
             yield return new WaitForSeconds(0.1f);
             pattern01FirstDir = new Vector3(0, 0, 0);
             leftArm01Rb.velocity = pattern01FirstDir * 1;
+            cameraShake.Shake();
             yield return new WaitForSeconds(2f);
         }
 

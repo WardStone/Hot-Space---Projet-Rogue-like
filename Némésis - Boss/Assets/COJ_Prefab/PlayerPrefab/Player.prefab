@@ -1273,7 +1273,7 @@ MonoBehaviour:
   laserPoint: {fileID: 1160509529}
   player: {fileID: 6015816081722176326}
   laserScope: 0
-  dashForce: 15
+  dashForce: 30
   dashDuration: 0.1
   firstShotDelay: 0
   laserScopeRenderer: {fileID: 0}

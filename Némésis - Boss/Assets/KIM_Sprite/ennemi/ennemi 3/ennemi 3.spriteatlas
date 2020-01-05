@@ -1,0 +1,144 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: ennemi 3
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 0
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 0
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+    variantMultiplier: 1
+    packables:
+    - {fileID: 2800000, guid: e1b2767f6c4e63e40b91ba06c460f49b, type: 3}
+    - {fileID: 2800000, guid: 498bf4e01e26bb14d8b7d757d80f3423, type: 3}
+    - {fileID: 2800000, guid: bb0e804d05ca26c48a48a651535ce3b2, type: 3}
+    - {fileID: 2800000, guid: a39ef50e9157ab1439fbfa34485ca933, type: 3}
+    - {fileID: 2800000, guid: e96490316e1329e4597b9f61dc708278, type: 3}
+    - {fileID: 2800000, guid: d8ca05e0233bb864b9921691d8fd81e3, type: 3}
+    - {fileID: 2800000, guid: d306369796c9bcc43903804374167308, type: 3}
+    - {fileID: 2800000, guid: 40951eb39bf25f641a0a6eab18073512, type: 3}
+    - {fileID: 2800000, guid: 789fb2afee4fbbc4b8f8cd3072fd5d90, type: 3}
+    - {fileID: 2800000, guid: 6f7a0e40769c37e4fa2a62db7e21fe8f, type: 3}
+    - {fileID: 2800000, guid: 3adee9954d667a743ac113a3fa8775b2, type: 3}
+    - {fileID: 2800000, guid: 5ba6a1324d235e6408fdf2bd2375aa0c, type: 3}
+    - {fileID: 2800000, guid: 9ca2e357133e7a34b8057b5f53b39161, type: 3}
+    - {fileID: 2800000, guid: 66cb1e5f174688d49a4b7058cb17b485, type: 3}
+    - {fileID: 2800000, guid: 37376622a50670d418ab8e937bdcfe32, type: 3}
+    - {fileID: 2800000, guid: e69868aac3d7c9f4fa857fb7967acbd1, type: 3}
+    - {fileID: 2800000, guid: 44d68d53aeae7094e97144f9d1eff459, type: 3}
+    - {fileID: 2800000, guid: c5b0230d0932f5341b01a34e096c03ef, type: 3}
+    - {fileID: 2800000, guid: cdfc1ddbdd5775d418bf91279d974713, type: 3}
+    - {fileID: 2800000, guid: 70c5087494e8c6e45bbdc4986069a262, type: 3}
+    - {fileID: 2800000, guid: 72cab2c5dd3a49c489dfb1501ff3e5dc, type: 3}
+    - {fileID: 2800000, guid: f6398bcab1f94d948ab0864dffef7130, type: 3}
+    - {fileID: 2800000, guid: 6d280eb28b2769f49a8d2afb910753f9, type: 3}
+    - {fileID: 2800000, guid: 3d2eb38eb5e87e34b81e301165d03cba, type: 3}
+    - {fileID: 2800000, guid: 9fda202b5c54b0b4e93e74ba65254422, type: 3}
+    - {fileID: 2800000, guid: c9aede9a030ef9345b4efeaf5f90f839, type: 3}
+    - {fileID: 2800000, guid: 6d9f36d519eb522458731536f28e6cd0, type: 3}
+    - {fileID: 2800000, guid: b89711b13f83db043a4be2358a64495a, type: 3}
+    - {fileID: 2800000, guid: 329cc76bec9a67c4ea49e180d10fadc6, type: 3}
+    - {fileID: 2800000, guid: 81cb0c85ecfe8de4695413c55d98e304, type: 3}
+    - {fileID: 2800000, guid: 061d7f38ee9a2a44abbe4afc931c2f1f, type: 3}
+    totalSpriteSurfaceArea: 159588
+    bindAsDefault: 1
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 6f7a0e40769c37e4fa2a62db7e21fe8f, type: 3}
+  - {fileID: 21300000, guid: 498bf4e01e26bb14d8b7d757d80f3423, type: 3}
+  - {fileID: 21300000, guid: d8ca05e0233bb864b9921691d8fd81e3, type: 3}
+  - {fileID: 21300000, guid: e96490316e1329e4597b9f61dc708278, type: 3}
+  - {fileID: 21300000, guid: b89711b13f83db043a4be2358a64495a, type: 3}
+  - {fileID: 21300000, guid: 37376622a50670d418ab8e937bdcfe32, type: 3}
+  - {fileID: 21300000, guid: 5ba6a1324d235e6408fdf2bd2375aa0c, type: 3}
+  - {fileID: 21300000, guid: 6d280eb28b2769f49a8d2afb910753f9, type: 3}
+  - {fileID: 21300000, guid: 44d68d53aeae7094e97144f9d1eff459, type: 3}
+  - {fileID: 21300000, guid: 40951eb39bf25f641a0a6eab18073512, type: 3}
+  - {fileID: 21300000, guid: 70c5087494e8c6e45bbdc4986069a262, type: 3}
+  - {fileID: 21300000, guid: 81cb0c85ecfe8de4695413c55d98e304, type: 3}
+  - {fileID: 21300000, guid: 3adee9954d667a743ac113a3fa8775b2, type: 3}
+  - {fileID: 21300000, guid: 72cab2c5dd3a49c489dfb1501ff3e5dc, type: 3}
+  - {fileID: 21300000, guid: 6d9f36d519eb522458731536f28e6cd0, type: 3}
+  - {fileID: 21300000, guid: 9ca2e357133e7a34b8057b5f53b39161, type: 3}
+  - {fileID: 21300000, guid: d306369796c9bcc43903804374167308, type: 3}
+  - {fileID: 21300000, guid: 061d7f38ee9a2a44abbe4afc931c2f1f, type: 3}
+  - {fileID: 21300000, guid: c9aede9a030ef9345b4efeaf5f90f839, type: 3}
+  - {fileID: 21300000, guid: e69868aac3d7c9f4fa857fb7967acbd1, type: 3}
+  - {fileID: 21300000, guid: f6398bcab1f94d948ab0864dffef7130, type: 3}
+  - {fileID: 21300000, guid: 9fda202b5c54b0b4e93e74ba65254422, type: 3}
+  - {fileID: 21300000, guid: 329cc76bec9a67c4ea49e180d10fadc6, type: 3}
+  - {fileID: 21300000, guid: cdfc1ddbdd5775d418bf91279d974713, type: 3}
+  - {fileID: 21300000, guid: c5b0230d0932f5341b01a34e096c03ef, type: 3}
+  - {fileID: 21300000, guid: bb0e804d05ca26c48a48a651535ce3b2, type: 3}
+  - {fileID: 21300000, guid: a39ef50e9157ab1439fbfa34485ca933, type: 3}
+  - {fileID: 21300000, guid: 3d2eb38eb5e87e34b81e301165d03cba, type: 3}
+  - {fileID: 21300000, guid: 66cb1e5f174688d49a4b7058cb17b485, type: 3}
+  - {fileID: 21300000, guid: e1b2767f6c4e63e40b91ba06c460f49b, type: 3}
+  - {fileID: 21300000, guid: 789fb2afee4fbbc4b8f8cd3072fd5d90, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - ennemi-3_marche_6
+  - ennemi-3_idle_2
+  - ennemi-3_marche_2
+  - ennemi-3_marche_1
+  - ennemi-3_saut_7
+  - ennemi-3_mort_1
+  - ennemi-3_marche_8
+  - ennemi-3_saut_2
+  - ennemi-3_mort_3
+  - ennemi-3_marche_4
+  - ennemi-3_mort_6
+  - ennemi-3_saut_9
+  - ennemi-3_marche_7
+  - ennemi-3_mort_7
+  - ennemi-3_saut_6
+  - ennemi-3_marche_9
+  - ennemi-3_marche_3
+  - ennemi-3_saut_10
+  - ennemi-3_saut_5
+  - ennemi-3_mort_2
+  - ennemi-3_saut_1
+  - ennemi-3_saut_4
+  - ennemi-3_saut_8
+  - ennemi-3_mort_5
+  - ennemi-3_mort_4
+  - ennemi-3_idle_3
+  - ennemi-3_idle_4
+  - ennemi-3_saut_3
+  - ennemi-3_marche_10
+  - ennemi-3_idle_1
+  - ennemi-3_marche_5
+  m_Tag: ennemi 3
+  m_IsVariant: 0

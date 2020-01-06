@@ -20,15 +20,15 @@ public class BossPartStat : MonoBehaviour
         boss = GameObject.FindGameObjectWithTag("Boss").GetComponent<BossPatternLoop>();
         if (gameObject.CompareTag("bossLeftArm01") || gameObject.CompareTag("bossLeftArm02") || gameObject.CompareTag("bossLeftArm03"))
         {
-            partHealth = 400;
+            partHealth = 450;
         }
         if (gameObject.CompareTag("bossRightArm01") || gameObject.CompareTag("bossRightArm02") || gameObject.CompareTag("bossRightArm03"))
         {
-            partHealth = 400;
+            partHealth = 450;
         }
         if (gameObject.CompareTag("bossHead01") || gameObject.CompareTag("bossHead02") || gameObject.CompareTag("bossHead03"))
         {
-            partHealth = 300;
+            partHealth = 350;
         }
     }
 
@@ -52,7 +52,7 @@ public class BossPartStat : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Bullet") && boss.bossHealth > 500)
+        if (other.CompareTag("Bullet") && boss.bossHealth > 750)
         {
             StartCoroutine(partTakeDamage());
             Debug.Log("PartHealt is" + partHealth);

@@ -65,7 +65,7 @@ public class PlayerStat : MonoBehaviour
         if (other.CompareTag("bossLeftArm01") || other.CompareTag("bossLeftArm02") || other.CompareTag("bossLeftArm03") && canTakeDamage == true)
         {
             canTakeDamage = false;
-            damageTaken = 30;
+            damageTaken = 20;
             privateTimer = 1.5f;
             StartCoroutine(takeDamage());
         }
@@ -73,7 +73,7 @@ public class PlayerStat : MonoBehaviour
         if (other.CompareTag("bossRightArm01") || other.CompareTag("bossRightArm02") || other.CompareTag("bossRightArm03") && canTakeDamage == true)
         {
             canTakeDamage = false;
-            damageTaken = 30;
+            damageTaken = 20;
             privateTimer = 1.5f;
             StartCoroutine(takeDamage());
         }
@@ -89,15 +89,15 @@ public class PlayerStat : MonoBehaviour
         if (other.CompareTag("BossBullet") || other.CompareTag("HomingBossBullet") || other.CompareTag("BossRandomBullet") || other.CompareTag("BossBouncyBullet") || other.CompareTag("BossRockBullet") && canTakeDamage == true)
         {
             canTakeDamage = false;
-            damageTaken = 10;
-            privateTimer = 1.5f;
+            damageTaken = 15;
+            privateTimer = 0.5f;
             StartCoroutine(takeDamage());
         }
 
         if (other.CompareTag("BrkRock") && canTakeDamage == true)
         {
             canTakeDamage = false;
-            damageTaken = 15;
+            damageTaken = 20;
             privateTimer = 0.5f;
             StartCoroutine(takeDamage());
         }

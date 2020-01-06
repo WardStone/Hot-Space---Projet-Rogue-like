@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 8525995590231651216}
   - component: {fileID: 8920838663055704450}
   m_Layer: 0
-  m_Name: bloodLust
-  m_TagString: Untagged
+  m_Name: Enrage
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -110,4 +110,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: baf313139277e2649a9683684d5fbb08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerC: {fileID: 0}
+  gameManager: {fileID: 0}
   item: {fileID: 11400000, guid: c21d48e899f8a3c4fa2236d2fc2ae3ac, type: 2}

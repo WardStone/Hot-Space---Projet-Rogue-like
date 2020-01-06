@@ -16,7 +16,7 @@ MonoBehaviour:
   icon: {fileID: 0}
   isDefaultItem: 0
   howManybulleShot: 6
-  bulletLifeSpan: 0.5
+  bulletLifeSpan: 0.8
   delayBeforeFirstShot: 0
   delayBeforeNextShot: 1.1
   bulletSpeed: 15

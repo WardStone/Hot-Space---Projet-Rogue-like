@@ -59,24 +59,24 @@ public class StyRockBehavior : MonoBehaviour
 
         */
 
-        else if (other.CompareTag("BossBullet") || other.CompareTag("HomingBossBullet"))
+        else if (other.CompareTag("BossBullet") || other.CompareTag("HomingBossBullet")) 
         {
             health -= 25;
         }
 
-        else if (other.CompareTag("bossLeftArm01"))
+        else if (other.CompareTag("bossLeftArm01") || other.CompareTag("bossLeftArm02") || other.CompareTag("bossLeftArm03"))
         {
             health -= 100;
         }
 
-        else if (other.CompareTag("bossRightArm01"))
+        else if (other.CompareTag("bossRightArm01") || other.CompareTag("bossRightArm02") || other.CompareTag("bossRightArm03"))
         {
             health -= 100;
         }
 
         else if (other.CompareTag("BrkRock"))
         {
-            health -= 30;
+            health -= 100;
         }
 
         if (health <= maxHealth / 2)

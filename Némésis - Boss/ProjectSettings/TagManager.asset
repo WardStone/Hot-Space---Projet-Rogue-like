@@ -49,6 +49,8 @@ TagManager:
   - Item
   - Cinemachine
   - CameraShakeManager
+  - lock
+  - RootRoom
   - RootRoom
   - RockSpawnRoom
   - RockSpawnBoss

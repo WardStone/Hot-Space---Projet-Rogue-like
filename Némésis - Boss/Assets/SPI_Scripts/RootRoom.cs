@@ -16,10 +16,9 @@ public class RootRoom : MonoBehaviour
     public int normalRoomMax;
     public GameObject[] normalRoomListe = new GameObject[1];
 
-    public GameObject normal1;
+    //public GameObject normal1;
     //public GameObject normal2;
     //public GameObject normal3;
-
 
     //public int secretRoom;
     public int shopRoomMax;

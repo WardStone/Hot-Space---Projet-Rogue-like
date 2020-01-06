@@ -9,6 +9,11 @@ public class RoomDetection : MonoBehaviour
     public GameObject tpManager;
     public GameObject currentRoom;
 
+    public int ennemyNumber;
+    public bool hasBeenActivated;
+
+
+
     void Start()
     {
         rootRoom = GameObject.FindGameObjectWithTag("RootRoom");

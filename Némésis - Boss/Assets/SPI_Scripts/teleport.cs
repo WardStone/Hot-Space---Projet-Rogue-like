@@ -26,7 +26,7 @@ public class teleport : MonoBehaviour
 
         if (canTp & Input.GetButtonDown("Interact"))
         {
-            Debug.Log("tp toi !!!!");
+            //Debug.Log("tp toi !!!!");
             switch (orientation)
             {
                 case 0: // tp north

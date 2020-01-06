@@ -49,6 +49,8 @@ TagManager:
   - Item
   - Cinemachine
   - CameraShakeManager
+  - lock
+  - RootRoom
   layers:
   - Default
   - TransparentFX

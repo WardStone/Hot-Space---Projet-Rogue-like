@@ -12,7 +12,7 @@ public class BurneZone : MonoBehaviour
 
     IEnumerator Fadeout()
     {
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(6f);
         Destroy(gameObject);
     }
 }

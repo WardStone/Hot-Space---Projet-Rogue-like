@@ -51,6 +51,7 @@ TagManager:
   - CameraShakeManager
   - lock
   - RootRoom
+  - Key
   layers:
   - Default
   - TransparentFX

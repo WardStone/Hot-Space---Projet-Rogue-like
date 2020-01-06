@@ -1,5 +1,21 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!70 &8547808003663565078
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4950049784456409757}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.00034697852, y: -0.015872877}
+  m_Size: {x: 0.45919165, y: 0.992754}
+  m_Direction: 0
 --- !u!1001 &5387166195549904022
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -92,5 +108,12 @@ PrefabInstance:
       propertyPath: m_Color.b
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 9046595975491366475, guid: 2400e91dceb08d246bd0fb3a75fb2712, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 2400e91dceb08d246bd0fb3a75fb2712, type: 3}
+--- !u!1 &4950049784456409757 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1040633955465522699, guid: 2400e91dceb08d246bd0fb3a75fb2712,
+    type: 3}
+  m_PrefabInstance: {fileID: 5387166195549904022}
+  m_PrefabAsset: {fileID: 0}

@@ -90,7 +90,7 @@ public class PlayerStat : MonoBehaviour
         {
             canTakeDamage = false;
             damageTaken = 5;
-            privateTimer = 1.5f;
+            privateTimer = 0.2f;
             StartCoroutine(takeDamage());
         }
 
@@ -107,6 +107,14 @@ public class PlayerStat : MonoBehaviour
             canTakeDamage = false;
             damageTaken = 20;
             privateTimer = 0.5f;
+            StartCoroutine(takeDamage());
+        }
+
+        if (other.CompareTag("Enemy") && canTakeDamage == true)
+        {
+            canTakeDamage = false;
+            damageTaken = 15;
+            privateTimer = 2f;
             StartCoroutine(takeDamage());
         }
 

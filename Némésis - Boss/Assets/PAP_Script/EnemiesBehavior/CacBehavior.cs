@@ -23,10 +23,13 @@ public class CacBehavior : MonoBehaviour
     public Color dashColor = Color.red;
     public Color normalColor = Color.white;
 
+    private Animator anim;
+
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.Find("Player").transform;
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -40,6 +43,9 @@ public class CacBehavior : MonoBehaviour
         else if (Vector2.Distance(transform.position, player.position) <= stoppingDistance && canMove == true)
         {
             canMove = false;
+            anim.SetBool("isMoving", false);
+
+
             StartCoroutine("DashAttack");
         }
 
@@ -54,15 +60,20 @@ public class CacBehavior : MonoBehaviour
 
         target = new Vector2(player.position.x, player.position.y);
 
+        anim.SetBool("isJumping", true);
 
         while (transform.position != target && stopDash == false)
         {
+            
+
             GetComponent<CircleCollider2D>().isTrigger = true;
             transform.position = Vector2.MoveTowards(transform.position, target, dashSpeed * Time.deltaTime);
 
             yield return new WaitForSeconds(0.005f);
 
         }
+
+        anim.SetBool("isJumping", false);
 
         GetComponent<CircleCollider2D>().isTrigger = false;
 
@@ -73,6 +84,7 @@ public class CacBehavior : MonoBehaviour
         yield return new WaitForSeconds(recoveryTime);
 
         canMove = true;
+        anim.SetBool("isMoving", true);
 
     }
 
@@ -84,7 +96,7 @@ public class CacBehavior : MonoBehaviour
 
             if (health <= 0)
             {
-                Destroy(gameObject);
+                anim.SetBool("isDead", true);
             }
         }
 
@@ -101,6 +113,11 @@ public class CacBehavior : MonoBehaviour
         {
             stopDash = true;
         }
+    }
+
+    private void Death()
+    {
+        Destroy(gameObject);
     }
 
 }

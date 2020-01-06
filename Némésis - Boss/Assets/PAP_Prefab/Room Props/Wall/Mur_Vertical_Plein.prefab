@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 581504529287405077}
   - component: {fileID: 581504529287405076}
   - component: {fileID: 6898702842445931221}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Mur_Vertical_Plein
   m_TagString: Wall
   m_Icon: {fileID: 0}

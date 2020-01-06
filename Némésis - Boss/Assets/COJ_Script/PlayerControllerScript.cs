@@ -25,6 +25,7 @@ public class PlayerControllerScript : MonoBehaviour
 
     private Animator playerlegs, playerTorso, playerArms;
 
+    public bool isDashing = false;
 
   
     private bool canMove = true;
@@ -143,12 +144,13 @@ public class PlayerControllerScript : MonoBehaviour
     IEnumerator Dash()
     {
         playerRb.velocity = moveInputDirection.normalized * dashForce;
+        player.GetComponent<CapsuleCollider2D>().enabled = false;
         canMove = false;
         canDash = false;
         yield return new WaitForSeconds(dashDuration);
         
         canMove = true;
-
+        player.GetComponent<CapsuleCollider2D>().enabled = true;
         yield return new WaitForSeconds(0.5f);
         canDash = true;
 

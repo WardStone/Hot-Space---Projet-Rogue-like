@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6317247000667682310}
   - component: {fileID: 6317247000667682311}
   - component: {fileID: 2155367877413574}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Mur_Vertical_Bas&Gauche
   m_TagString: Wall
   m_Icon: {fileID: 0}

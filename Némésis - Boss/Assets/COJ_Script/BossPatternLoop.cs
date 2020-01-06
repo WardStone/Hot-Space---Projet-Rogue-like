@@ -55,6 +55,8 @@ public class BossPatternLoop : MonoBehaviour
     public Color rightArmColor;
     public Color headColor;
 
+    public GameObject fistImpactFX;
+
     public float leftArmRespawn;
 
     public GameObject rockProjectile;
@@ -376,85 +378,95 @@ public class BossPatternLoop : MonoBehaviour
         LeftHandAnimator.SetBool("Part2", false);
 
         // PatternPart2
+        if (leftArm01Stat.partHealth > 0)
+        {
+
 
             leftArm01.GetComponent<BoxCollider2D>().enabled = true;
             GameObject impactPointSpawn = Instantiate(impactPointSpawnPrefab, ImpactPoint.transform.position, Quaternion.identity);
             pattern01FirstDir = impactPointSpawn.transform.position - leftArmPoint.position;
             leftArm01Rb.velocity = pattern01FirstDir * impactSpeed;
             yield return new WaitForSeconds(0.1f);
-        
-
-     
-
-        //PatternPart3
-        pattern01FirstDir = new Vector3(0, 0, 0);
-            leftArm01Rb.velocity = pattern01FirstDir * 1;
-        cameraShake.Shake();
-        if (leftArm01.CompareTag("bossLeftArm02"))
-        {
-            float x = 0.5f;
-            float y = -0.5f;
-            float time = 2f;
-            rockProjDir = new Vector2(0, -1);
-            while (time > 0)
-            {
-                time -= 0.25f;
-                Instantiate(rockProjectile, impactPointSpawn.transform.position, Quaternion.identity);
-                if (rockProjDir.x == 1 || rockProjDir.x == -1)
-                {
-                    x = -x;
-
-                }
-                if (rockProjDir.y == 1 || rockProjDir.y == -1)
-                {
-                    y = -y;
-                }
-                rockProjDir.x += x;
-                rockProjDir.y += y;
-                yield return new WaitForSeconds(0.01f);
-            }
-        }
-        else if (leftArm01.CompareTag("bossLeftArm03"))
-        {
-            Instantiate(burnZone, impactPointSpawn.transform.position, Quaternion.identity);
-        }
-
-        Destroy(impactPointSpawn);
-        yield return new WaitForSeconds(2f);
-        leftArm01.GetComponent<BoxCollider2D>().enabled = false;
-        if (leftArm01.CompareTag("bossLeftArm01"))
-        {
-            patternPart2Timer = 1f;
-            while (patternPart2Timer > 0 && leftArm01)
-            {
-
-                pattern01FirstDir = prepareAttackPoint.position - leftArmPoint.position;
-                leftArm01Rb.velocity = pattern01FirstDir * moveSpeed;
-                patternPart2Timer -= Time.deltaTime;
-                if (patternPart2Timer <= 0.3f && patternPart2Timer > 0.1f)
-                {
-                    leftArm01.GetComponent<SpriteRenderer>().material.color = dashNowColor;
-                }
-                else
-                {
-                    leftArm01.GetComponent<SpriteRenderer>().material.color = leftArmColor;
-                }
 
 
-                yield return null;
-            }
-            LeftArmAnimator.SetBool("Part2", false);
-            LeftHandAnimator.SetBool("Part2", false);
 
-            leftArm01.GetComponent<BoxCollider2D>().enabled = true;
-            impactPointSpawn = Instantiate(impactPointSpawnPrefab, ImpactPoint.transform.position, Quaternion.identity);
-            pattern01FirstDir = impactPointSpawn.transform.position - leftArmPoint.position;
-            leftArm01Rb.velocity = pattern01FirstDir * impactSpeed;
-            yield return new WaitForSeconds(0.1f);
+
+            //PatternPart3
             pattern01FirstDir = new Vector3(0, 0, 0);
             leftArm01Rb.velocity = pattern01FirstDir * 1;
             cameraShake.Shake();
+            Instantiate(fistImpactFX, leftArm01.transform.position - new Vector3(4.5f, 0), Quaternion.identity);
+            if (leftArm01.CompareTag("bossLeftArm02"))
+            {
+                float x = 0.5f;
+                float y = -0.5f;
+                float time = 2f;
+                rockProjDir = new Vector2(0, -1);
+                while (time > 0)
+                {
+                    time -= 0.25f;
+                    Instantiate(rockProjectile, impactPointSpawn.transform.position, Quaternion.identity);
+                    if (rockProjDir.x == 1 || rockProjDir.x == -1)
+                    {
+                        x = -x;
+
+                    }
+                    if (rockProjDir.y == 1 || rockProjDir.y == -1)
+                    {
+                        y = -y;
+                    }
+                    rockProjDir.x += x;
+                    rockProjDir.y += y;
+                    yield return new WaitForSeconds(0.01f);
+                }
+            }
+            else if (leftArm01.CompareTag("bossLeftArm03"))
+            {
+                Instantiate(burnZone, impactPointSpawn.transform.position, Quaternion.identity);
+            }
+
+            Destroy(impactPointSpawn);
             yield return new WaitForSeconds(2f);
+            leftArm01.GetComponent<BoxCollider2D>().enabled = false;
+            if (leftArm01.CompareTag("bossLeftArm01"))
+            {
+                patternPart2Timer = 1f;
+                while (patternPart2Timer > 0 && leftArm01)
+                {
+
+                    pattern01FirstDir = prepareAttackPoint.position - leftArmPoint.position;
+                    leftArm01Rb.velocity = pattern01FirstDir * moveSpeed;
+                    patternPart2Timer -= Time.deltaTime;
+                    if (patternPart2Timer <= 0.3f && patternPart2Timer > 0.1f)
+                    {
+                        leftArm01.GetComponent<SpriteRenderer>().material.color = dashNowColor;
+                    }
+                    else
+                    {
+                        leftArm01.GetComponent<SpriteRenderer>().material.color = leftArmColor;
+                    }
+
+
+                    yield return null;
+                }
+                LeftArmAnimator.SetBool("Part2", false);
+                LeftHandAnimator.SetBool("Part2", false);
+
+                if (leftArm01Stat.partHealth > 0)
+                {
+                    leftArm01.GetComponent<BoxCollider2D>().enabled = true;
+                    impactPointSpawn = Instantiate(impactPointSpawnPrefab, ImpactPoint.transform.position, Quaternion.identity);
+                    pattern01FirstDir = impactPointSpawn.transform.position - leftArmPoint.position;
+                    leftArm01Rb.velocity = pattern01FirstDir * impactSpeed;
+                    yield return new WaitForSeconds(0.1f);
+                    pattern01FirstDir = new Vector3(0, 0, 0);
+                    leftArm01Rb.velocity = pattern01FirstDir * 1;
+                    cameraShake.Shake();
+                    Instantiate(fistImpactFX, leftArm01.transform.position - new Vector3(4.5f, 0), Quaternion.identity);
+                }
+
+                yield return new WaitForSeconds(2f);
+            }
         }
 
 
@@ -751,4 +763,5 @@ public class BossPatternLoop : MonoBehaviour
 
 
     }
+
 }

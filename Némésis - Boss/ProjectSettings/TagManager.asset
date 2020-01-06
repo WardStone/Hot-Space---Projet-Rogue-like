@@ -49,6 +49,9 @@ TagManager:
   - Item
   - Cinemachine
   - CameraShakeManager
+  - RootRoom
+  - RockSpawnRoom
+  - RockSpawnBoss
   layers:
   - Default
   - TransparentFX

@@ -50,9 +50,19 @@ public class StyRockBehavior : MonoBehaviour
             health -= 30;
         }
 
+        else if (other.CompareTag("BrkRock"))
+        {
+            health -= 30;
+        }
+
         if (health <= maxHealth / 2)
         {
             anim.SetBool("switchSprite", true);
+        }
+
+        if (health <= maxHealth / 4)
+        {
+            anim.SetBool("switchSprite2", true);
         }
 
         if (health <= 0)

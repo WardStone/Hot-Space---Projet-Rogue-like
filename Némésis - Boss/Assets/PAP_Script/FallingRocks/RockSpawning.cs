@@ -28,31 +28,56 @@ public class RockSpawning : MonoBehaviour
     public void SpawnObject()
     {
 
-        Debug.Log(styRockNbr);
 
         brkRockNbr = Random.Range(brkRockNbrMin, brkRockNbrMax);
         cameraShake.Shake();
-        Debug.Log(brkRockNbr);
 
-
-        for (int i = 0; i < styRockNbr; i++)
+        if (gameObject.CompareTag("RockSpawnBoss"))
         {
-            float posix = Random.Range(-18, 18);
-            float posiy = Random.Range(-5, 0);
 
-            GameObject rocks = Instantiate(styShadowPreviz, new Vector3(posix, posiy, 0), Quaternion.identity);
+            for (int i = 0; i < styRockNbr; i++)
+            {
+                float posix = Random.Range(-18, 18);
+                float posiy = Random.Range(-5, 0);
 
-            
+                GameObject rocks = Instantiate(styShadowPreviz, new Vector3(posix, posiy, 0), Quaternion.identity);
+
+
+            }
+
+            for (int i = 0; i < brkRockNbr; i++)
+            {
+                float posix = Random.Range(-18, 18);
+                float posiy = Random.Range(-5, 0);
+
+                GameObject rocks = Instantiate(brkShadowPreviz, new Vector3(posix, posiy, 0), Quaternion.identity);
+
+            }
+
         }
 
-        for (int i = 0; i < brkRockNbr; i++)
+        if (gameObject.CompareTag("RockSpawnRoom"))
         {
-            float posix = Random.Range(-18, 18);
-            float posiy = Random.Range(-5, 0);
+            for (int i = 0; i < styRockNbr; i++)
+            {
+                float posix = Random.Range(-16, 16);
+                float posiy = Random.Range(-8, 8);
 
-            GameObject rocks = Instantiate(brkShadowPreviz, new Vector3(posix, posiy, 0), Quaternion.identity);
+                GameObject rocks = Instantiate(styShadowPreviz, new Vector3(posix, posiy, 0), Quaternion.identity);
 
+
+            }
+
+            for (int i = 0; i < brkRockNbr; i++)
+            {
+                float posix = Random.Range(-16, 16);
+                float posiy = Random.Range(-8, 8);
+
+                GameObject rocks = Instantiate(brkShadowPreviz, new Vector3(posix, posiy, 0), Quaternion.identity);
+
+            }
         }
+
 
         if (stopSpawning)
         {

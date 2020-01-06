@@ -12,21 +12,30 @@ public class RoomDetection : MonoBehaviour
     public int ennemyNumber;
     public bool hasBeenActivated;
 
-
-
     void Start()
     {
         rootRoom = GameObject.FindGameObjectWithTag("RootRoom");
         tpManager = rootRoom.transform.GetChild(0).gameObject; // enfant de la salle racine qui sert juste de detecteur/ lock
+        hasBeenActivated = false;
     }
 
     void Update()
     {
-        
+        if (hasBeenActivated)
+        {
+            ennemyNumber = GameObject.FindGameObjectsWithTag("Enemy").Length;
+            if (ennemyNumber <= 0)
+                tpManager.gameObject.tag = "Untagged";
+        }
     }
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        currentRoom.transform.GetChild(0).gameObject.SetActive(true);
+        if (hasBeenActivated == false)
+        {
+            tpManager.gameObject.tag = ("lock");
+            currentRoom.transform.GetChild(1).gameObject.SetActive(true);
+            hasBeenActivated = true;
+        }
     }
 }

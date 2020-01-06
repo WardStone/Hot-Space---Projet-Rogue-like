@@ -14,7 +14,7 @@ public class RootRoom : MonoBehaviour
 
     // Listing des salles normales
     public int normalRoomMax;
-    public GameObject[] normalRoomListe = new GameObject[1];
+    public GameObject[] normalRoomListe = new GameObject[4];
 
     //public GameObject normal1;
     //public GameObject normal2;

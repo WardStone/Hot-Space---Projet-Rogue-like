@@ -10,21 +10,21 @@ public class PlayerStat : MonoBehaviour
     public Item newItem;
     public int listLenght = 0;
 
-    public float playerHealth;
+    public float playerHealth; //
     protected int damageTaken;
     protected bool canTakeDamage = true;
     protected float privateTimer;
     public Slider playerBar;
 
-    public float howManybulleShot; // nb de balle par tir
-    public float bulletLifeSpan; // portée de la balle
-    public float delayBeforeFirstShot;// délai avant le premier tir
-    public float delayBeforeNextShot;//délai avant le prochain tir
-    public float bulletSpeed;//vitesse de la balle
-    public Transform bulletSize;// taille de la balle
-    public float bulletDamage;//dégat de la balle
-    public float weaponAccuracy;//Précision de l'arme
-    public float playerSpeed;//vitesse du joueur
+    public float howManybulleShot; // nb de balle par tir   //
+    public float bulletLifeSpan; // portée de la balle //
+    public float delayBeforeFirstShot;// délai avant le premier tir //
+    public float delayBeforeNextShot;//délai avant le prochain tir //
+    public float bulletSpeed;//vitesse de la balle //
+    public Transform bulletSize;// taille de la balle 
+    public float bulletDamage;//dégat de la balle //
+    public float weaponAccuracy;//Précision de l'arme //
+    public float playerSpeed;//vitesse du joueur //
     public GameObject bulletPrefab;
 
     public bool canGetStat;

@@ -54,6 +54,7 @@ TagManager:
   - RootRoom
   - RockSpawnRoom
   - RockSpawnBoss
+  - Key
   layers:
   - Default
   - TransparentFX

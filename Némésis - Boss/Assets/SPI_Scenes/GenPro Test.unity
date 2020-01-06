@@ -157,6 +157,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 376559350167746137, guid: 30b0ae7f9459da14286ff5633c87e53b,
+        type: 3}
+      propertyPath: m_Name
+      value: RootRoom
+      objectReference: {fileID: 0}
+    - target: {fileID: 376559350167746137, guid: 30b0ae7f9459da14286ff5633c87e53b,
+        type: 3}
+      propertyPath: m_TagString
+      value: RootRoom
+      objectReference: {fileID: 0}
     - target: {fileID: 376559350167746119, guid: 30b0ae7f9459da14286ff5633c87e53b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -211,16 +221,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 376559350167746137, guid: 30b0ae7f9459da14286ff5633c87e53b,
-        type: 3}
-      propertyPath: m_Name
-      value: RootRoom
-      objectReference: {fileID: 0}
-    - target: {fileID: 376559350167746137, guid: 30b0ae7f9459da14286ff5633c87e53b,
-        type: 3}
-      propertyPath: m_TagString
-      value: RootRoom
       objectReference: {fileID: 0}
     - target: {fileID: 376559350167746136, guid: 30b0ae7f9459da14286ff5633c87e53b,
         type: 3}
@@ -1075,8 +1075,10 @@ MonoBehaviour:
   leftRoomNumber: 0
   normalRoomMax: 0
   normalRoomListe:
-  - {fileID: 376559350167746137, guid: 30b0ae7f9459da14286ff5633c87e53b, type: 3}
-  normal1: {fileID: 376559350167746137, guid: 30b0ae7f9459da14286ff5633c87e53b, type: 3}
+  - {fileID: 8357200835128550683, guid: 2d1ff610f0c628f498bdafab3b055e98, type: 3}
+  - {fileID: 6149937396916483694, guid: 0b821c328394c6e4f812f2c5329f564b, type: 3}
+  - {fileID: 1302700661601394191, guid: 9b4d468d3eb98674cbe0227fef9a693b, type: 3}
+  - {fileID: 1245256118031429207, guid: 32b0557b56a0a5842b65d1558ecbd30c, type: 3}
   shopRoomMax: 0
   shopRoom: {fileID: 376559350167746137, guid: 30b0ae7f9459da14286ff5633c87e53b, type: 3}
   treasorRoomMax: 0

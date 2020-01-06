@@ -27,6 +27,12 @@ public class PlayerStat : MonoBehaviour
     public float playerSpeed;//vitesse du joueur
     public GameObject bulletPrefab;
 
+    public Color DamagedColor;
+    public Color NormalColor;
+    public GameObject TorsoRenderer;
+    public GameObject LegRenderer;
+    public Image redScreenEffect;
+
     public bool canGetStat;
 
     public Item defaultWeapon;
@@ -36,8 +42,9 @@ public class PlayerStat : MonoBehaviour
     public void Start()
     {
         playerC = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControllerScript>();
-
-
+        TorsoRenderer = GameObject.FindGameObjectWithTag("Player").transform.GetChild(0).transform.GetChild(1).gameObject;
+        LegRenderer = GameObject.FindGameObjectWithTag("Player").transform.GetChild(0).transform.GetChild(2).gameObject;
+        redScreenEffect = GameObject.FindGameObjectWithTag("RedScreenEffect").GetComponent<Image>();
 
 
         howManybulleShot = defaultWeapon.howManybulleShot;
@@ -51,6 +58,7 @@ public class PlayerStat : MonoBehaviour
         bulletPrefab = defaultWeapon.bulletPrefab;
         playerHealth = defaultWeapon.healthBonus;
         playerSpeed = 5;
+        redScreenEffect.enabled = false;
         NewPassiveAcquired();
 
     }
@@ -123,7 +131,7 @@ public class PlayerStat : MonoBehaviour
         Debug.Log(damageTaken);
         playerHealth -= damageTaken;
         playerBar.value = playerHealth;
-
+        StartCoroutine(HurtColor());
         if (playerHealth <= 0)
         {
             Destroy(gameObject);
@@ -206,5 +214,16 @@ public class PlayerStat : MonoBehaviour
             Debug.Log("WORK GODAMMIT");
             playerC.laserScope = true;
         }
+    }
+
+    IEnumerator HurtColor()
+    {
+        LegRenderer.GetComponent<SpriteRenderer>().color = DamagedColor;
+        TorsoRenderer.GetComponent<SpriteRenderer>().color = DamagedColor;
+        redScreenEffect.enabled = true;
+        yield return new WaitForSeconds(0.2f);
+        LegRenderer.GetComponent<SpriteRenderer>().color = NormalColor;
+        TorsoRenderer.GetComponent<SpriteRenderer>().color = NormalColor;
+        redScreenEffect.enabled = false;
     }
 }

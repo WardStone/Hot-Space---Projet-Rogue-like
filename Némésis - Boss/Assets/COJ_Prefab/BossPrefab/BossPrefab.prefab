@@ -59,7 +59,7 @@ Transform:
   m_GameObject: {fileID: 3118177369647767390}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.4, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children: []
   m_Father: {fileID: 3118177370671824308}
   m_RootOrder: 8
@@ -256,7 +256,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b9d5dbb6a982ce409a91d4ecf904c97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bossHealth: 1500
+  bossHealth: 2500
   canTakeDamage: 1
   healthBar: {fileID: 3118177370040885236}
   phase2Started: 0
@@ -280,11 +280,13 @@ MonoBehaviour:
     type: 3}
   dashNowColor: {r: 1, g: 0, b: 0, a: 1}
   Part1Color: {r: 1, g: 1, b: 1, a: 1}
-  Part2Color: {r: 0, g: 1, b: 1, a: 1}
-  Part3Color: {r: 0, g: 1, b: 0, a: 1}
+  Part2Color: {r: 0.51370597, g: 0.9811321, b: 0.9811321, a: 1}
+  Part3Color: {r: 1, g: 0.86065483, b: 0.5613208, a: 1}
   leftArmColor: {r: 0, g: 0, b: 0, a: 0}
   rightArmColor: {r: 0, g: 0, b: 0, a: 0}
   headColor: {r: 0, g: 0, b: 0, a: 0}
+  fistImpactFX: {fileID: 8220609254931618550, guid: bac01e5adc1c1c84b83b9b65eb61a51e,
+    type: 3}
   leftArmRespawn: 0
   rockProjectile: {fileID: 4942289362193707314, guid: 6aedb76f65706684195761cd116a6f72,
     type: 3}
@@ -311,7 +313,7 @@ MonoBehaviour:
   shotSpawnPoint: {fileID: 3118177370175495388}
   headRespawn: 0
   rightArm01: {fileID: 0}
-  rightArm01Prefab: {fileID: 2281094133620947, guid: 68b3e87e5ef9bcb4eb743af966f60c11,
+  rightArm01Prefab: {fileID: 4962646218542758053, guid: 21c8945472abbda4a9d5ec3bb2e81ec3,
     type: 3}
   rightArmSpawnPoint: {fileID: 3118177371311194762}
   horizontalDamagedGround: {fileID: 2419657262079069306, guid: eefc063a5d270ba4d8bcdae506b4b5d9,
@@ -500,9 +502,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 0}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 1500
+  m_MaxValue: 2500
   m_WholeNumbers: 1
-  m_Value: 1500
+  m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -662,8 +664,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3118177370230941717}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.81, y: -5.27, z: 0}
-  m_LocalScale: {x: 20.003658, y: 3.2538548, z: 1.5}
+  m_LocalPosition: {x: -1.37, y: -2.85, z: 0}
+  m_LocalScale: {x: 0, y: 0, z: 1.5}
   m_Children: []
   m_Father: {fileID: 3118177370671824308}
   m_RootOrder: 1

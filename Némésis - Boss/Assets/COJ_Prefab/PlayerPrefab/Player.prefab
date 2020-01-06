@@ -982,7 +982,7 @@ GameObject:
   - component: {fileID: 6015816080738070489}
   m_Layer: 9
   m_Name: LeftArmPAttern01PreparePoint
-  m_TagString: Untagged
+  m_TagString: prepareAttackPoint
   m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1080,7 +1080,7 @@ GameObject:
   - component: {fileID: 6015816080922230670}
   m_Layer: 9
   m_Name: LeftArm01PatternImpactPoint
-  m_TagString: Untagged
+  m_TagString: ImpactPoint
   m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1329,9 +1329,10 @@ MonoBehaviour:
   firePoint: {fileID: 6015816081222611095}
   laserPoint: {fileID: 1160509529}
   player: {fileID: 6015816081722176326}
+  isDashing: 0
   laserScope: 0
   dashForce: 30
-  dashDuration: 0.1
+  dashDuration: 0.2
   firstShotDelay: 0
   laserScopeRenderer: {fileID: 0}
 --- !u!50 &6015816081722176324
@@ -1384,7 +1385,7 @@ MonoBehaviour:
   playerSpeed: 0
   bulletPrefab: {fileID: 0}
   canGetStat: 0
-  defaultWeapon: {fileID: 11400000, guid: 5df7751732672b04182ba1753f6d2277, type: 2}
+  defaultWeapon: {fileID: 11400000, guid: 345adcf91aeab9a4886d2424b1ace3de, type: 2}
 --- !u!114 &720278834
 MonoBehaviour:
   m_ObjectHideFlags: 0

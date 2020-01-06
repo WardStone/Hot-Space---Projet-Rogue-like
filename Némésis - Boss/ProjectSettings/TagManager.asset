@@ -54,6 +54,7 @@ TagManager:
   - RootRoom
   - RockSpawnRoom
   - RockSpawnBoss
+  - RedScreenEffect
   layers:
   - Default
   - TransparentFX
@@ -67,7 +68,7 @@ TagManager:
   - Player
   - PlayerConfiner
   - ScopeLayer
-  - 
+  - Wall
   - 
   - 
   - 

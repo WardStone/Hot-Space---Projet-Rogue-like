@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3389714580991617940}
   m_Layer: 0
   m_Name: FitAndSpeed
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -110,4 +110,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: baf313139277e2649a9683684d5fbb08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerC: {fileID: 0}
+  gameManager: {fileID: 0}
   item: {fileID: 11400000, guid: e13c7c3a0ee6fa4409e43dd737be3701, type: 2}

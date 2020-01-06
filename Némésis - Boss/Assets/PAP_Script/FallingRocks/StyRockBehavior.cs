@@ -32,22 +32,46 @@ public class StyRockBehavior : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Bullet"))
         {
-            health -= 5;
+            health -= 34;
         }
+
+        /* 
+         
+        else if (other.gameObject.CompareTag("WingBullet"))
+        {
+            health -= 50;
+        }
+
+        else if (other.gameObject.CompareTag("ShotGunBullet"))
+        {
+            health -= 30;
+        }
+
+        else if (other.gameObject.CompareTag("SniperBullet"))
+        {
+            health -= 75;
+        }
+
+        else if (other.gameObject.CompareTag("SulfateuseBullet"))
+        {
+            health -= 20;
+        }
+
+        */
 
         else if (other.CompareTag("BossBullet") || other.CompareTag("HomingBossBullet"))
         {
-            health -= 10;
+            health -= 25;
         }
 
         else if (other.CompareTag("bossLeftArm01"))
         {
-            health -= 30;
+            health -= 100;
         }
 
         else if (other.CompareTag("bossRightArm01"))
         {
-            health -= 30;
+            health -= 100;
         }
 
         if (health <= maxHealth / 2)

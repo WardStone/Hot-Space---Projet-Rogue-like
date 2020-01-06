@@ -279,7 +279,12 @@ MonoBehaviour:
   impactPointSpawnPrefab: {fileID: 2860663040443034580, guid: be41f7f616310914e84ca6b6525c32f0,
     type: 3}
   dashNowColor: {r: 1, g: 0, b: 0, a: 1}
-  normalColor: {r: 1, g: 1, b: 1, a: 1}
+  Part1Color: {r: 1, g: 1, b: 1, a: 1}
+  Part2Color: {r: 0, g: 1, b: 1, a: 1}
+  Part3Color: {r: 0, g: 1, b: 0, a: 1}
+  leftArmColor: {r: 0, g: 0, b: 0, a: 0}
+  rightArmColor: {r: 0, g: 0, b: 0, a: 0}
+  headColor: {r: 0, g: 0, b: 0, a: 0}
   leftArmRespawn: 0
   rockProjectile: {fileID: 4942289362193707314, guid: 6aedb76f65706684195761cd116a6f72,
     type: 3}

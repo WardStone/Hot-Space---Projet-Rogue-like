@@ -108,7 +108,7 @@ public class BossPatternLoop : MonoBehaviour
     {
         cameraShake = GameObject.FindGameObjectWithTag("CameraShakeManager").GetComponent<SimpleCameraShakeInCinemachine>();
 
-        rockSpawn = GameObject.FindGameObjectWithTag("RockSpawner").GetComponent<RockSpawning>();
+        rockSpawn = GameObject.FindGameObjectWithTag("RockSpawnBoss").GetComponent<RockSpawning>();
         playerStat = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStat>();
 
         healthBar.value = bossHealth;

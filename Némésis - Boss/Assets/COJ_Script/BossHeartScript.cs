@@ -9,6 +9,9 @@ public class BossHeartScript : MonoBehaviour
     public Rigidbody2D bossCoreRb;
     public Vector2 bossCoreDirection;
     public float coreSpeed = 150f;
+
+    public Color damagedColor;
+    public Color normalColor;
     // Start is called before the first frame update
     void Start()
     {
@@ -44,6 +47,7 @@ public class BossHeartScript : MonoBehaviour
         {
             if (boss.canTakeDamage == true)
             {
+                StartCoroutine(HurtColor());
                 StartCoroutine(boss.takeDamage());
             }
         }
@@ -57,5 +61,12 @@ public class BossHeartScript : MonoBehaviour
         {
             bossCoreDirection.x = -bossCoreDirection.x;
         }
+    }
+
+    IEnumerator HurtColor()
+    {
+        gameObject.GetComponent<SpriteRenderer>().color = damagedColor;
+        yield return new WaitForSeconds(0.2f);
+        gameObject.GetComponent<SpriteRenderer>().color = normalColor;
     }
 }

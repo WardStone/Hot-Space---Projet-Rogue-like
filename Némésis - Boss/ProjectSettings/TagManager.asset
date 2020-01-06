@@ -70,8 +70,8 @@ TagManager:
   - PlayerConfiner
   - ScopeLayer
   - Wall
-  - 
-  - 
+  - heartLayer
+  - bouncyLayer
   - 
   - 
   - 

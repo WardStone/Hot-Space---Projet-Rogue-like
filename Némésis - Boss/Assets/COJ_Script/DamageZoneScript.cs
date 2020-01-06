@@ -12,7 +12,7 @@ public class DamageZoneScript : MonoBehaviour
 
     IEnumerator fadeOut()
     {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(6f);
         Destroy(gameObject);
     }
 }

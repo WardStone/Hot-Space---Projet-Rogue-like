@@ -137,6 +137,8 @@ public class BossPatternLoop : MonoBehaviour
         rightArm01Stat = rightArm01.GetComponent<BossPartStat>();
         RightArmAnimator = rightArm01.GetComponent<Animator>();
 
+        RandomizeBoss();
+
         AnimatorRef = -1;
         SetAllAnimatorRef();
         for (int i = 0; i < 3; i++)
@@ -592,7 +594,7 @@ public class BossPatternLoop : MonoBehaviour
         Debug.Log("Pattern 2 has begun");
         AnimatorRef = 2;
         SetAllAnimatorRef();
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1.5f);
 
         if (rightArm01.CompareTag("bossRightArm01"))
         {
@@ -607,6 +609,7 @@ public class BossPatternLoop : MonoBehaviour
             rockSpawn.brkRockNbr = 20;
             rockSpawn.BossSpawnObject();
         }
+        yield return new WaitForSeconds(0.5f);
         AnimatorRef = -1;
         SetAllAnimatorRef();
         yield return new WaitForSeconds(1f);
@@ -656,7 +659,7 @@ public class BossPatternLoop : MonoBehaviour
     void RightArmChangeColors()
     {
 
-        leftArm01.GetComponent<SpriteRenderer>().color = leftArmColor;
+        rightArm01.GetComponent<SpriteRenderer>().color = rightArmColor;
         if (rightArm01.CompareTag("bossRightArm01"))
         {
             rightArmColor = Part1Color;
@@ -674,18 +677,78 @@ public class BossPatternLoop : MonoBehaviour
     void HeadChangeColors()
     {
 
-        leftArm01.GetComponent<SpriteRenderer>().color = leftArmColor;
+        Head01.GetComponent<SpriteRenderer>().color = headColor;
         if (Head01.CompareTag("bossHead01"))
         {
             headColor = Part1Color;
         }
-        else if (Head01.CompareTag("bossHead01"))
+        else if (Head01.CompareTag("bossHead02"))
         {
             headColor = Part2Color;
         }
-        else if (Head01.CompareTag("bossHead01"))
+        else if (Head01.CompareTag("bossHead03"))
         {
             headColor = Part3Color;
         }
+    }
+
+    void RandomizeBoss()
+    {
+        int headRandom = Random.Range(0,3);
+        Debug.Log("random head =" + headRandom);
+        int leftArmRandom = Random.Range(0, 3);
+        Debug.Log("random head =" + leftArmRandom);
+        int RightArmRandom = Random.Range(0, 3);
+        Debug.Log("random head =" + RightArmRandom);
+        //Randomiez Head
+        if(headRandom == 0)
+        {
+            Head01.tag = "bossHead01";
+        }
+
+        else if (headRandom == 1)
+        {
+            Head01.tag = "bossHead02";
+        }
+
+        else if (headRandom == 2)
+        {
+            Head01.tag = "bossHead03";
+        }
+
+        //Randomize LeftArm01
+        if (leftArmRandom == 0)
+        {
+            leftArm01.tag ="bossLeftArm01";
+        }
+
+        else if (leftArmRandom == 1)
+        {
+            leftArm01.tag = "bossLeftArm02";
+        }
+
+        else if (leftArmRandom == 2)
+        {
+            leftArm01.tag = "bossLeftArm03";
+        }
+
+        //Randomize RightArm01
+        if (RightArmRandom == 0)
+        {
+            rightArm01.tag ="bossRightArm01";
+        }
+
+        else if (RightArmRandom == 1)
+        {
+            rightArm01.tag = "bossRightArm02";
+        }
+
+        else if (RightArmRandom == 2)
+        {
+            rightArm01.tag = "bossRightArm03";
+        }
+
+
+
     }
 }

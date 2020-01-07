@@ -282,6 +282,8 @@ MonoBehaviour:
   canTakeDamage: 1
   healthBar: {fileID: 3118177370040885236}
   phase2Started: 0
+  isDead: 0
+  explosionMaker: {fileID: 0}
   HeadAnimator: {fileID: 0}
   BodyAnimator: {fileID: 0}
   MaskAnimator: {fileID: 0}

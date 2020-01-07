@@ -1669,6 +1669,21 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3118177371231984458, guid: c21a8d13f83cddc4b88fdece2ff38176,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3118177370040885236, guid: c21a8d13f83cddc4b88fdece2ff38176,
+        type: 3}
+      propertyPath: m_Value
+      value: 3000
+      objectReference: {fileID: 0}
+    - target: {fileID: 3118177370040885236, guid: c21a8d13f83cddc4b88fdece2ff38176,
+        type: 3}
+      propertyPath: m_MaxValue
+      value: 3000
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c21a8d13f83cddc4b88fdece2ff38176, type: 3}
 --- !u!4 &1401803199 stripped
@@ -2098,7 +2113,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1917843747}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.0000038146973, y: 0.009907246, z: -10}
+  m_LocalPosition: {x: -0.0000019073486, y: 0.009333134, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

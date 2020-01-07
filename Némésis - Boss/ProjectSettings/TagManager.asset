@@ -56,6 +56,8 @@ TagManager:
   - RockSpawnBoss
   - Key
   - RedScreenEffect
+  - loadScreen
+  - Menu
   layers:
   - Default
   - TransparentFX

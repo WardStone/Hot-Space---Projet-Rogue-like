@@ -5,15 +5,18 @@ using UnityEngine;
 public class MenuApparition : MonoBehaviour
 {
     public GameObject menu;
+    public GameObject logo;
     private void Start()
     {
         menu = GameObject.FindGameObjectWithTag("Menu");
+        logo = GameObject.Find("Logo");
+        logo.SetActive(false);
         menu.SetActive(false);
     }
 
     void Appart()
     {
-        Debug.Log("Marche putain");
+        logo.SetActive(true);
         menu.SetActive(true);
     }
 }

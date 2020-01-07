@@ -44,7 +44,9 @@ public class CameraManager : MonoBehaviour
         Debug.Log("fini");
         yield break;*/
         tpManager.gameObject.tag = ("lock");
+        //Debug.Log("début cool");
         yield return new WaitForSeconds(1f);
+        //Debug.Log("fin cool");
         tpManager.gameObject.tag = ("Untagged");
 
     }

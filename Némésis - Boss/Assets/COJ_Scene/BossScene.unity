@@ -914,7 +914,7 @@ PrefabInstance:
         type: 3}
       propertyPath: defaultWeapon
       value: 
-      objectReference: {fileID: 11400000, guid: 345adcf91aeab9a4886d2424b1ace3de,
+      objectReference: {fileID: 11400000, guid: f22371cba82d5594c81521aeda116755,
         type: 2}
     - target: {fileID: 6015816081722176325, guid: ad024cec512fb6040a5b0834226afa47,
         type: 3}
@@ -1658,17 +1658,17 @@ PrefabInstance:
       propertyPath: enemyBulletSpeed
       value: 200
       objectReference: {fileID: 0}
-    - target: {fileID: 3118177371231984458, guid: c21a8d13f83cddc4b88fdece2ff38176,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3118177369809345462, guid: c21a8d13f83cddc4b88fdece2ff38176,
         type: 3}
       propertyPath: explosionMaker
       value: 
       objectReference: {fileID: 5552126037452730538, guid: 0004d711326f0f84da8c5af76a7e9fe8,
         type: 3}
+    - target: {fileID: 3118177371231984458, guid: c21a8d13f83cddc4b88fdece2ff38176,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c21a8d13f83cddc4b88fdece2ff38176, type: 3}
 --- !u!4 &1401803199 stripped
@@ -2098,7 +2098,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1917843747}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.0000019073486, y: 0.009333134, z: -10}
+  m_LocalPosition: {x: -0.0000038146973, y: 0.009334087, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

@@ -43,9 +43,8 @@ public class PlayerControllerScript : MonoBehaviour
     {
         playerRb = GetComponent<Rigidbody2D>();
         canMove = true;
-        playerTorso = gameObject.transform.GetChild(0).transform.GetChild(1).GetComponent<Animator>();
-        playerArms = gameObject.transform.GetChild(0).transform.GetChild(0).GetComponent<Animator>();
-        playerlegs = gameObject.transform.GetChild(0).transform.GetChild(2).GetComponent<Animator>();
+        playerTorso = gameObject.transform.GetChild(0).transform.GetChild(0).GetComponent<Animator>();
+        playerlegs = gameObject.transform.GetChild(0).transform.GetChild(1).GetComponent<Animator>();
     }
 
 
@@ -64,14 +63,15 @@ public class PlayerControllerScript : MonoBehaviour
         laserPoint.transform.localPosition = laserDirection;
         laserScopeRenderer = laserPoint.GetComponent<LineRenderer>();
         AimAndShoot();
-        playerTorso.SetFloat("deplacementHorizontal", Input.GetAxis("HorizontalSecondJoystick"));
-        playerTorso.SetFloat("deplacementVertical", Input.GetAxis("VerticalSecondJoystick"));
+        playerTorso.SetFloat("HorizontalAim", Input.GetAxis("HorizontalSecondJoystick"));
+        playerTorso.SetFloat("VerticalAim", Input.GetAxis("VerticalSecondJoystick"));
+        playerTorso.SetFloat("Horizontal", Input.GetAxis("Horizontal"));
+        playerTorso.SetFloat("Vertical", Input.GetAxis("Vertical"));
 
-        playerArms.SetFloat("deplacementHorizontal", Input.GetAxis("HorizontalSecondJoystick"));
-        playerArms.SetFloat("deplacementVertical", Input.GetAxis("VerticalSecondJoystick"));
-
-        playerlegs.SetFloat("deplacementHorizontal", Input.GetAxis("Horizontal"));
-        playerlegs.SetFloat("deplacementVertical", Input.GetAxis("Vertical"));
+        playerlegs.SetFloat("Horizontal", Input.GetAxis("Horizontal"));
+        playerlegs.SetFloat("Vertical", Input.GetAxis("Vertical"));
+        playerlegs.SetFloat("HorizontalAim", Input.GetAxis("HorizontalSecondJoystick"));
+        playerlegs.SetFloat("VerticalAim", Input.GetAxis("VerticalSecondJoystick"));
 
 
 
@@ -97,6 +97,17 @@ public class PlayerControllerScript : MonoBehaviour
         {
             playerRb.velocity = moveVelocity;    
         }
+
+        if(moveInputDirection.magnitude > 0.2)
+        {
+            playerTorso.SetBool("isRunning", true);
+            playerlegs.SetBool("isRunning", true);
+        }
+        else
+        {
+            playerTorso.SetBool("isRunning", false);
+            playerlegs.SetBool("isRunning", false);
+        }
     }
 
 
@@ -107,13 +118,16 @@ public class PlayerControllerScript : MonoBehaviour
         bulletDirection.Normalize();
         if (aimInputDirection.magnitude > 0.0f)
         {
-
+            playerTorso.SetBool("isAiming", true);
+            playerlegs.SetBool("isAiming", true);
             aimInputDirection.Normalize();
             aimingPoint.transform.localPosition =  aimInputDirection;
             aimingPoint.SetActive(true);
         }
         else
         {
+            playerTorso.SetBool("isAiming", false);
+            playerlegs.SetBool("isAiming", false);
             aimingPoint.SetActive(false);
         }
         if (Input.GetButton("Fire") && aimInputDirection != Vector3.zero)

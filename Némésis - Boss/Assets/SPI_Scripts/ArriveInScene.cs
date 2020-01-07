@@ -17,7 +17,7 @@ public class ArriveInScene : MonoBehaviour
     {
         player.SetActive(false);
         //loadingScreenAnim.SetActive(true);//Set loading screen active true
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(4.5f);
         player.SetActive(true);
         player.transform.position = gameObject.transform.localPosition;
         loadingScreenAnim.SetActive(false);//Set loading screen active true

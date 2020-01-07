@@ -11,22 +11,17 @@ public class teleport : MonoBehaviour
 
     public GameObject tpCoridor;
 
-    public float distanceV;
-    public float distanceH;
-
     void Start()
     {
-        distanceH = 25f;
-        distanceV = 25f;
         player = GameObject.FindGameObjectWithTag("Player");
     }
 
     void Update()
     {
-
+        
         if (canTp & Input.GetButtonDown("Interact"))
         {
-            //Debug.Log("tp toi !!!!");
+            Debug.Log("tp toi !!!!");
             switch (orientation)
             {
                 case 0: // tp north
@@ -57,7 +52,10 @@ public class teleport : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Player")
+        {
             canTp = true;
+            player = GameObject.FindGameObjectWithTag("Player");
+        }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {

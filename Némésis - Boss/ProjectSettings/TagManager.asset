@@ -54,11 +54,12 @@ TagManager:
   - RootRoom
   - RockSpawnRoom
   - RockSpawnBoss
-  - Key
   - RedScreenEffect
   - loadScreen
   - Menu
   - BossExplosionGen
+  - LeftKey
+  - RightKey
   layers:
   - Default
   - TransparentFX

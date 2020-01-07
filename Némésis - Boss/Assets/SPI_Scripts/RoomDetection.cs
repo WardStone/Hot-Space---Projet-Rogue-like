@@ -26,6 +26,7 @@ public class RoomDetection : MonoBehaviour
             ennemyNumber = GameObject.FindGameObjectsWithTag("Enemy").Length;
             if (ennemyNumber <= 0)
                 tpManager.gameObject.tag = "Untagged";
+            
         }
     }
 

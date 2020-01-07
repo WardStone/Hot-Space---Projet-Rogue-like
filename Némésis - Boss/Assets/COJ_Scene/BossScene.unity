@@ -916,6 +916,29 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 345adcf91aeab9a4886d2424b1ace3de,
         type: 2}
+    - target: {fileID: 6015816081722176325, guid: ad024cec512fb6040a5b0834226afa47,
+        type: 3}
+      propertyPath: dashForce
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 6015816081722176325, guid: ad024cec512fb6040a5b0834226afa47,
+        type: 3}
+      propertyPath: movementSpeed
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6015816081722176325, guid: ad024cec512fb6040a5b0834226afa47,
+        type: 3}
+      propertyPath: dashDuration
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1566532118, guid: ad024cec512fb6040a5b0834226afa47, type: 3}
+      propertyPath: m_MaxValue
+      value: 280
+      objectReference: {fileID: 0}
+    - target: {fileID: 1566532118, guid: ad024cec512fb6040a5b0834226afa47, type: 3}
+      propertyPath: m_Value
+      value: 280
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad024cec512fb6040a5b0834226afa47, type: 3}
 --- !u!1 &693622141
@@ -1005,8 +1028,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 697437674}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.2, y: -3.06, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalPosition: {x: -9.03, y: -0.97, z: 0}
+  m_LocalScale: {x: 0.65, y: 0.65, z: 1}
   m_Children:
   - {fileID: 1545212141}
   - {fileID: 1080494572}
@@ -1625,6 +1648,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3118177369809345462, guid: c21a8d13f83cddc4b88fdece2ff38176,
+        type: 3}
+      propertyPath: bossHealth
+      value: 3000
+      objectReference: {fileID: 0}
+    - target: {fileID: 3118177369809345462, guid: c21a8d13f83cddc4b88fdece2ff38176,
+        type: 3}
+      propertyPath: enemyBulletSpeed
+      value: 200
+      objectReference: {fileID: 0}
     - target: {fileID: 3118177371231984458, guid: c21a8d13f83cddc4b88fdece2ff38176,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -1962,7 +1995,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1764302438}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Arena
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2288,6 +2321,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7289607099640894430, guid: 7aca3073c1b65184285de9aa9296df8c,
+        type: 3}
+      propertyPath: spawnTime
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7289607099640894430, guid: 7aca3073c1b65184285de9aa9296df8c,
+        type: 3}
+      propertyPath: spawnDelay
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 7289607099640894430, guid: 7aca3073c1b65184285de9aa9296df8c,
+        type: 3}
+      propertyPath: brkRockNbrMin
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7289607099640894430, guid: 7aca3073c1b65184285de9aa9296df8c,
+        type: 3}
+      propertyPath: brkRockNbrMax
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7aca3073c1b65184285de9aa9296df8c, type: 3}

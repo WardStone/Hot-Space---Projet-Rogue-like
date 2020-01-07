@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5470264617389218649}
   - component: {fileID: 5470264617389218648}
   - component: {fileID: 5470264617389218651}
+  - component: {fileID: -1267338102972247186}
   m_Layer: 0
   m_Name: Spc
   m_TagString: Enemy
@@ -28,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5470264617389218644}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.63, y: 0.25, z: -1.8970785}
+  m_LocalPosition: {x: -4.63, y: 0.25, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -72,13 +73,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -6321347899779059607, guid: 23901392d891f88438b53042bf3f9e95,
-    type: 3}
+  m_Sprite: {fileID: 21300000, guid: 190a77b24f5e3ed4db39a65c84dc6691, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.125, y: 2.625}
+  m_Size: {x: 3.5625, y: 4}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -135,8 +135,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 30
   speed: 4
-  target:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  dmgBoxSpawnDelay: 0.2
+  spcDmgBox: {fileID: 4814175886417094952, guid: 079a3553234c81448a26373d838c9bb7,
+    type: 3}
+  target1: []
+  target2: []
+--- !u!95 &-1267338102972247186
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5470264617389218644}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a39be998fb4974d4cb22f9e47fd747dd, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

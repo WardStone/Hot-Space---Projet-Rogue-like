@@ -17,32 +17,61 @@ public class SpcBahavior : MonoBehaviour
     private int previousPath;
     private int currentPath = 1;
     private bool canChangePath = true;
+    private bool canMove = true;
 
     protected Rigidbody2D spcRb;
     protected Vector2 dirVector;
+
+    private Animator anim;
 
 
 
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating("SpawnDamageBox", 0, dmgBoxSpawnDelay);
 
+        InvokeRepeating("SpawnDamageBox", 0, dmgBoxSpawnDelay);
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (transform.position != target1[currentWaypoint].position && currentPath == 1)
+
+
+
+        if (transform.position != target1[currentWaypoint].position && currentPath == 1 && canMove == true)
         {
+
             Vector2 pos = Vector2.MoveTowards(transform.position, target1[currentWaypoint].position, speed * Time.deltaTime);
             GetComponent<Rigidbody2D>().MovePosition(pos);
+
+            //Vector2 dir = new Vector2(target1[currentPath].position.x - target1[previousPath].position.x, target1[currentPath].position.y - target1[previousPath].position.y);
+
+            dirVector = (transform.position - target1[currentWaypoint].position).normalized;
+            anim.SetFloat("MoveX", dirVector.x);
+            anim.SetFloat("MoveY", dirVector.y);
+
+            //if (dir.x > 0)
+            //{
+            //    anim.SetBool("isMovingRight", false);
+            //    anim.SetBool("isMovingLeft", true);
+            //}
+            //else
+            //{
+            //    anim.SetBool("isMovingRight", true);
+            //    anim.SetBool("isMovingLeft", false);
+            //}
         }
 
-        else if (transform.position != target2[currentWaypoint].position && currentPath == 2)
+        else if (transform.position != target2[currentWaypoint].position && currentPath == 2 && canMove == true)
         {
             Vector2 pos = Vector2.MoveTowards(transform.position, target2[currentWaypoint].position, speed * Time.deltaTime);
             GetComponent<Rigidbody2D>().MovePosition(pos);
+
+            dirVector = (transform.position - target2[currentWaypoint].position).normalized;
+            anim.SetFloat("MoveX", dirVector.x);
+            anim.SetFloat("MoveY", dirVector.y);
         }
 
 
@@ -95,11 +124,18 @@ public class SpcBahavior : MonoBehaviour
 
             if (health <= 0)
             {
-                Destroy(gameObject);
+                CancelInvoke("SpawnDamageBox");
+                anim.SetBool("isDead", true);
+                canMove = false;
             }
         }
 
     
+    }
+
+    private void Death()
+    {
+        Destroy(gameObject);
     }
 
 }

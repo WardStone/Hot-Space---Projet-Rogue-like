@@ -16,7 +16,8 @@ public class DistBehavior : MonoBehaviour
     public float reloadTime;
     
     private bool canMove = true;
-    private bool canShoot = true; 
+    private bool canShoot = true;
+    bool isRight = true;
 
     [HideInInspector]
     public Transform player;
@@ -26,10 +27,16 @@ public class DistBehavior : MonoBehaviour
     public Color shootColor = Color.red;
     public Color normalColor = Color.white;
 
+    private Animator anim;
+    [SerializeField]
+    Rigidbody2D body;
+
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.Find("Player").transform;
+        anim = GetComponent<Animator>();
+
     }
 
     // Update is called once per frame
@@ -37,27 +44,48 @@ public class DistBehavior : MonoBehaviour
     {
         if (Vector2.Distance(transform.position, player.position) > stoppingDistance && canMove == true)
         {
-            transform.position = Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
+            body.MovePosition(Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime));
+
+            /*if(player.position.x < transform.position.x)
+            {
+                anim.SetBool("isMovingRight", false);
+            }
+            else
+            {
+                anim.SetBool("isMovingRight", true);
+            }*/
         }
 
         else if (Vector2.Distance(transform.position, player.position) < stoppingDistance && canMove == true && canShoot == true)
         {
             canMove = false;
             canShoot = false;
+            body.velocity = Vector2.zero;
             StartCoroutine("Shoot");
         }
 
        else if (Vector2.Distance(transform.position, player.position) < retreatDistance && canMove == true && canShoot == false)
        {
-           transform.position = Vector2.MoveTowards(transform.position, player.position, -speed * Time.deltaTime);
-       }
+            body.MovePosition(Vector2.MoveTowards(transform.position, player.position, -speed * Time.deltaTime));
+
+            /*if (player.position.x < transform.position.x)
+            {
+                anim.SetBool("isMovingRight", true);
+            }
+            else
+            {
+                anim.SetBool("isMovingRight", false);
+            }*/
+        }
+       
     }
 
     IEnumerator Shoot()
     {
-        GetComponent<SpriteRenderer>().material.color = shootColor;
 
         yield return new WaitForSeconds(startShootTime);
+
+        anim.SetBool("isAttacking", true);
 
         for (int i = 0; shotNbr > i; i++)
         {
@@ -65,10 +93,11 @@ public class DistBehavior : MonoBehaviour
             yield return new WaitForSeconds(timeBtwShot);
         }
 
+        anim.SetBool("isAttacking", false);
+
         yield return new WaitForSeconds(recoveryTime);
 
         canMove = true;
-        GetComponent<SpriteRenderer>().material.color = normalColor;
 
         yield return new WaitForSeconds(reloadTime);
 
@@ -85,8 +114,14 @@ public class DistBehavior : MonoBehaviour
 
         if (health <= 0)
         {
-            Destroy(gameObject);
+            canMove = false;
+            anim.SetBool("isDead", true);
         }
+    }
+
+    private void Death()
+    {
+        Destroy(gameObject);
     }
 
 }

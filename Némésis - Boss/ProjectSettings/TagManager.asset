@@ -59,6 +59,7 @@ TagManager:
   - loadScreen
   - Menu
   - BossExplosionGen
+  - DmgBox
   layers:
   - Default
   - TransparentFX

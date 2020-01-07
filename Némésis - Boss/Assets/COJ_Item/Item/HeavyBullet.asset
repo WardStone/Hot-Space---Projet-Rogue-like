@@ -10,22 +10,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ef7f2ed38d3127e45865cfa49648ec4b, type: 3}
-  m_Name: DefaultGun
+  m_Name: HeavyBullet
   m_EditorClassIdentifier: 
-  name: Weapon1
+  name: HeavyBullet
   icon: {fileID: 0}
   isDefaultItem: 0
-  howManybulleShot: 1
-  bulletLifeSpan: 2
+  howManybulleShot: 0
+  bulletLifeSpan: 0
   delayBeforeFirstShot: 0
-  delayBeforeNextShot: 0.45
-  bulletSpeed: 20
+  delayBeforeNextShot: 0
+  bulletSpeed: -0.2
   bulletSize: {fileID: 0}
-  bulletDamage: 10
-  weaponAccuracy: 0.15
-  healthBonus: 200
+  bulletDamage: 0.3
+  weaponAccuracy: 0.2
+  healthBonus: 0
   playerSpeed: 0
-  bulletPrefab: {fileID: 1040633955465522699, guid: 2400e91dceb08d246bd0fb3a75fb2712,
-    type: 3}
-  isWeapon: 1
+  bulletPrefab: {fileID: 0}
+  isWeapon: 0
   weaponRef: 0

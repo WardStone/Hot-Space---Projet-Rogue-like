@@ -81,11 +81,11 @@ public class RootRoom : MonoBehaviour
     {
         generation = true;
 
-        xDimensions = 2*23.565f; //23.565f
-        yDimensions = 2*13.312f;//13.312f
+        xDimensions = 2*23.56f; //23.565f
+        yDimensions = 2*13.1f;//13.312f
 
-        doorX = 23.565f;
-        doorY = 13.312f;
+        doorX = 23.56f;
+        doorY = 13.1f;
 
 
         grid[0, 0, 0] = true;

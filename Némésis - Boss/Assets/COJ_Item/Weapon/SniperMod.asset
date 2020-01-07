@@ -18,7 +18,7 @@ MonoBehaviour:
   howManybulleShot: 1
   bulletLifeSpan: 5
   delayBeforeFirstShot: 0
-  delayBeforeNextShot: 1.5
+  delayBeforeNextShot: 1.2
   bulletSpeed: 45
   bulletSize: {fileID: 0}
   bulletDamage: 60

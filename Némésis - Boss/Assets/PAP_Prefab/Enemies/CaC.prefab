@@ -112,12 +112,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05b6f759b8fe343489340f55e2523358, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 30
-  normalSpeed: 5
-  dashSpeed: 15
-  stoppingDistance: 2.5
-  recoveryTime: 2
-  timeBeforeDash: 1
+  health: 31
+  normalSpeed: 6
+  dashSpeed: 30
+  stoppingDistance: 2.2
+  recoveryTime: 1.7
+  timeBeforeDash: 0.75
   player: {fileID: 0}
   dashColor: {r: 1, g: 0, b: 0, a: 1}
   normalColor: {r: 1, g: 1, b: 1, a: 1}

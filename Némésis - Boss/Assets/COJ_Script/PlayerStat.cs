@@ -89,7 +89,7 @@ public class PlayerStat : MonoBehaviour
         if (other.CompareTag("EnemyBullet") && canTakeDamage == true)
         {
             canTakeDamage = false;
-            damageTaken = 5;
+            damageTaken = 10;
             privateTimer = 0.2f;
             StartCoroutine(takeDamage());
         }

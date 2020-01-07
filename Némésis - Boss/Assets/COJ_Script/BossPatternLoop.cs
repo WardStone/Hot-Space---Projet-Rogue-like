@@ -21,6 +21,8 @@ public class BossPatternLoop : MonoBehaviour
     List<int> patternList = new List<int>();
 
     public bool phase2Started;
+    public bool isDead;
+    public GameObject explosionMaker;
 
     // Les Animators du boss
     public Animator HeadAnimator;
@@ -632,11 +634,19 @@ public class BossPatternLoop : MonoBehaviour
    
     void bossDeath()
     {
-        if (bossHealth <= 0)
+        if (bossHealth <= 0 && isDead == false)
         {
+            isDead = true;
             Debug.Log(" you won !");
+            Instantiate(explosionMaker, gameObject.transform.position, Quaternion.identity);
+            MaskAnimator.SetTrigger("dead");
+            LeftArmAnimator.SetTrigger("dead");
+            RightArmAnimator.SetTrigger("dead");
+            HeadAnimator.SetTrigger("dead");
+            LeftHandAnimator.SetTrigger("dead");
+
             StopAllCoroutines();
-            Destroy(gameObject);
+            StartCoroutine(BossDeathAnimation());
         }
     }
 
@@ -762,6 +772,22 @@ public class BossPatternLoop : MonoBehaviour
 
 
 
+    }
+
+    IEnumerator BossDeathAnimation()
+    {
+        GameObject rockSpawner = GameObject.FindGameObjectWithTag("RockSpawnBoss");
+        Destroy(rockSpawner);
+        HeadAnimator.SetBool("Dead", true);
+        RightArmAnimator.SetBool("Dead", true);
+        LeftArmAnimator.SetBool("Dead", true);
+        LeftHandAnimator.SetBool("Dead",true);
+        MaskAnimator.SetBool("Dead",true);
+        yield return new WaitForSeconds(4f);
+        Destroy(leftArm01);
+        Destroy(rightArm01);
+        Destroy(Head01);
+        Destroy(gameObject);
     }
 
 }

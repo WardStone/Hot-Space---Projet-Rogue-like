@@ -119,7 +119,6 @@ public class PlayerControllerScript : MonoBehaviour
         if (aimInputDirection.magnitude > 0.0f)
         {
             playerTorso.SetBool("isAiming", true);
-            playerlegs.SetBool("isAiming", true);
             aimInputDirection.Normalize();
             aimingPoint.transform.localPosition =  aimInputDirection;
             aimingPoint.SetActive(true);
@@ -127,7 +126,6 @@ public class PlayerControllerScript : MonoBehaviour
         else
         {
             playerTorso.SetBool("isAiming", false);
-            playerlegs.SetBool("isAiming", false);
             aimingPoint.SetActive(false);
         }
         if (Input.GetButton("Fire") && aimInputDirection != Vector3.zero)

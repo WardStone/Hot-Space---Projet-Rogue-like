@@ -34,7 +34,7 @@ public class CameraManager : MonoBehaviour
 
     public IEnumerator CoolDownTp()
     {
-        /*float cooldowntime = 1.5f;
+        float cooldowntime = 1.5f;
         while (cooldowntime > 0)
         {
             tpManager.gameObject.tag = ("lock");
@@ -42,12 +42,11 @@ public class CameraManager : MonoBehaviour
             yield return null;
         }
         Debug.Log("fini");
-        yield break;*/
-        tpManager.gameObject.tag = ("lock");
-        //Debug.Log("début cool");
-        yield return new WaitForSeconds(1f);
-        //Debug.Log("fin cool");
+
         tpManager.gameObject.tag = ("Untagged");
+        yield break;
+        //Debug.Log("début cool");
+        //Debug.Log("fin cool");
 
     }
 }

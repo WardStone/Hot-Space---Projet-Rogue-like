@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class PickableItem : MonoBehaviour
 {
     public PlayerControllerScript playerC;
+    public PlayerStat playerS;
     public GameManagerScript gameManager;
     public Text itemName;
     public Text itemDescription;
@@ -17,6 +18,7 @@ public class PickableItem : MonoBehaviour
     private void Start()
     {
         playerC = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControllerScript>();
+        playerS = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStat>();
         gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManagerScript>();
         itemName = gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.GetComponent<Text>();
         itemDescription = gameObject.transform.GetChild(0).gameObject.transform.GetChild(1).gameObject.GetComponent<Text>();
@@ -49,7 +51,7 @@ public class PickableItem : MonoBehaviour
         {
             itemName.enabled = true;
             itemDescription.enabled = true;
-            if (gameObject.CompareTag("ShopItem") || gameObject.CompareTag("ShopWeapon"))
+            if (gameObject.CompareTag("ShopItem") || gameObject.CompareTag("ShopWeapon") || gameObject.CompareTag("healthPack"))
             {
                 itemPrice.enabled = true;
             }
@@ -93,6 +95,16 @@ public class PickableItem : MonoBehaviour
         {
             Inventory.instance.Add(item);
             Destroy(gameObject);
+        }
+        else if (gameObject.CompareTag("healthPack"))
+        {
+            int healthPackCost = 30;
+            if(gameManager.playerMoney >= healthPackCost)
+            {
+                gameManager.playerMoney -= healthPackCost;
+                playerS.playerHealth += 20;
+                Destroy(gameObject);
+            }
         }
         Debug.Log("item picked up");
     }

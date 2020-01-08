@@ -64,6 +64,8 @@ TagManager:
   - Torso
   - Legs
   - CameraConfiner
+  - healthPack
+  - healthPackSpawner
   layers:
   - Default
   - TransparentFX

@@ -5,6 +5,7 @@ using UnityEngine;
 public class ItemSpawnerBehaviour : MonoBehaviour
 {
     public ItemSpawn spawnItemlist;
+    public GameObject healthPack;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,6 +17,11 @@ public class ItemSpawnerBehaviour : MonoBehaviour
         else if (gameObject.CompareTag("WeaponSpawner") || gameObject.CompareTag("ShopWeaponSpawner"))
         {
             SpawnWeapon();
+        }
+
+        else if (gameObject.CompareTag("healthPackSpawner"))
+        {
+            healthPackSpawn();
         }
     }
 
@@ -46,5 +52,10 @@ public class ItemSpawnerBehaviour : MonoBehaviour
         {
             spawnedWeapon.tag = "Item";
         }
+    }
+
+    void healthPackSpawn()
+    {
+        GameObject healthPackPre = Instantiate(healthPack, gameObject.transform.position, Quaternion.identity);
     }
 }

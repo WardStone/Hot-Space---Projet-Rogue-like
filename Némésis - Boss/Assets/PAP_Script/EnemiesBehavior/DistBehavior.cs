@@ -144,7 +144,7 @@ public class DistBehavior : MonoBehaviour
 
     void GetMoney()
     {
-        int loot = Random.Range(5, 15);
+        int loot = Random.Range(12, 15);
         gameManager.playerMoney += loot;
     }
 

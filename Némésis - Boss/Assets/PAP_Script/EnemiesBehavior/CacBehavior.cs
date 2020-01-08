@@ -97,6 +97,7 @@ public class CacBehavior : MonoBehaviour
             if (health <= 0)
             {
                 anim.SetBool("isDead", true);
+                canMove = false;
             }
         }
 

@@ -10,21 +10,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ef7f2ed38d3127e45865cfa49648ec4b, type: 3}
-  m_Name: SprayAndPray
+  m_Name: WeirdThing1
   m_EditorClassIdentifier: 
-  name: Spray And Pray
-  price: 147
-  description: Firerate++    Range+    BulletSpeed+    Damage+    Accuracy---
+  name: Weird Thing
+  price: 42
+  description: Smells like one pharaon who stayed too long in Egopt
   icon: {fileID: 0}
   isDefaultItem: 0
-  howManybulleShot: 0
-  bulletLifeSpan: 0.1
+  howManybulleShot: 1
+  bulletLifeSpan: 0
   delayBeforeFirstShot: 0
-  delayBeforeNextShot: -0.25
-  bulletSpeed: 0.2
+  delayBeforeNextShot: 0
+  bulletSpeed: 0
   bulletSize: {fileID: 0}
-  bulletDamage: 0.2
-  weaponAccuracy: 0.4
+  bulletDamage: 0
+  weaponAccuracy: 0
   healthBonus: 0
   playerSpeed: 0
   bulletPrefab: {fileID: 0}

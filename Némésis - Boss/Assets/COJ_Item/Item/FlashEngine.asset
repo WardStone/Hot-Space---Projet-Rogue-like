@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef7f2ed38d3127e45865cfa49648ec4b, type: 3}
   m_Name: FlashEngine
   m_EditorClassIdentifier: 
-  name: FlashEngine
-  price: 40
-  description: new description
+  name: Flash Engine
+  price: 130
+  description: Speed++    Damage+   Damage-
   icon: {fileID: 0}
   isDefaultItem: 0
   howManybulleShot: 0

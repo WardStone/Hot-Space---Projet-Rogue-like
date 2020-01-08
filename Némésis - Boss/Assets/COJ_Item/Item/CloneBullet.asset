@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: CloneBullet
   m_EditorClassIdentifier: 
   name: Clone Bullet
-  price: 40
+  price: 155
   description: DoubleShot
   icon: {fileID: 0}
   isDefaultItem: 0

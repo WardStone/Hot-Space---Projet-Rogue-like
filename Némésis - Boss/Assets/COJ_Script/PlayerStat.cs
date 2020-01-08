@@ -12,10 +12,12 @@ public class PlayerStat : MonoBehaviour
     public int listLenght = 0;
 
     public float playerHealth; //
+    public float maxHealth;
     protected int damageTaken;
     protected bool canTakeDamage = true;
     protected float privateTimer;
     public Slider playerBar;
+    public Text playerHealthValue;
 
     public float howManybulleShot; // nb de balle par tir   //
     public float bulletLifeSpan; // portée de la balle //
@@ -67,6 +69,7 @@ public class PlayerStat : MonoBehaviour
         weaponAccuracy = defaultWeapon.weaponAccuracy;
         bulletPrefab = defaultWeapon.bulletPrefab;
         playerHealth= defaultWeapon.healthBonus;
+        maxHealth = defaultWeapon.healthBonus;
         playerSpeed = 5;
         redScreenEffect.enabled = false;
 
@@ -86,6 +89,14 @@ public class PlayerStat : MonoBehaviour
     private void Update()
     {
         GetItem();
+        playerBar.maxValue = maxHealth;
+        playerBar.value = playerHealth;
+        playerHealthValue.text = playerHealth.ToString();
+
+        if (playerHealth > maxHealth)
+        {
+            playerHealth = maxHealth;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -158,7 +169,6 @@ public class PlayerStat : MonoBehaviour
 
         Debug.Log(damageTaken);
         playerHealth -= damageTaken;
-        playerBar.value = playerHealth;
         StartCoroutine(HurtColor());
         if (playerHealth <= 0)
         {
@@ -217,6 +227,7 @@ public class PlayerStat : MonoBehaviour
         Debug.Log("Accuracy is  now" + weaponAccuracy);
         playerHealth += newItem.healthBonus;
         playerHealthSave += newItem.healthBonus;
+        maxHealth += newItem.healthBonus;
         Debug.Log("PlayerHealth is now" + playerHealth);
         playerSpeed += playerSpeed * newItem.playerSpeed;
         playerSpeedSave += playerSpeedSave * newItem.playerSpeed;

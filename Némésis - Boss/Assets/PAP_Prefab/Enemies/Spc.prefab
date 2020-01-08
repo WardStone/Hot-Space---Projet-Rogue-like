@@ -135,7 +135,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerStat: {fileID: 0}
   gameManager: {fileID: 0}
-  health: 31
+  health: 34
   speed: 6
   dmgBoxSpawnDelay: 0.2
   spcDmgBox: {fileID: 4814175886417094952, guid: 079a3553234c81448a26373d838c9bb7,

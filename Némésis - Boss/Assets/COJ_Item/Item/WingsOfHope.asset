@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: WingsOfHope
   m_EditorClassIdentifier: 
   name: Wings Of Hope
-  price: 130
+  price: 125
   description: Speed++    Damage+    Accuracy-                    Wings spread, you
     shall Ascend
   icon: {fileID: 0}

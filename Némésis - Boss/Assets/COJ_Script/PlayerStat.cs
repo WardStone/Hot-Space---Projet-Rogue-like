@@ -51,8 +51,8 @@ public class PlayerStat : MonoBehaviour
     public void Start()
     {
         playerC = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControllerScript>();
-        TorsoRenderer = GameObject.FindGameObjectWithTag("Player").transform.GetChild(0).transform.GetChild(0).gameObject;
-        LegRenderer = GameObject.FindGameObjectWithTag("Player").transform.GetChild(0).transform.GetChild(1).gameObject;
+        TorsoRenderer = GameObject.FindGameObjectWithTag("Torso");
+        LegRenderer = GameObject.FindGameObjectWithTag("Legs");
         redScreenEffect = GameObject.FindGameObjectWithTag("RedScreenEffect").GetComponent<Image>();
 
 

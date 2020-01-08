@@ -61,6 +61,8 @@ TagManager:
   - LeftKey
   - RightKey
   - DmgBox
+  - Torso
+  - Legs
   layers:
   - Default
   - TransparentFX

@@ -21,11 +21,20 @@ public class PlayerStat : MonoBehaviour
     public float delayBeforeFirstShot;// délai avant le premier tir //
     public float delayBeforeNextShot;//délai avant le prochain tir //
     public float bulletSpeed;//vitesse de la balle //
-    public Transform bulletSize;// taille de la balle 
     public float bulletDamage;//dégat de la balle //
     public float weaponAccuracy;//Précision de l'arme //
     public float playerSpeed;//vitesse du joueur //
     public GameObject bulletPrefab;
+
+    public float howManyBulletShotSave;
+    public float bulletLifeSpanSave;
+    public float delayBeforeFirstShotSave;
+    public float delayBeforeNextShotSave;
+    public float bulletSpeedSave;
+    public float bulletDamageSave;
+    public float weaponAccuracySave;
+    public float playerSpeedSave;
+    public float playerHealthSave;
 
     public Color DamagedColor;
     public Color NormalColor;
@@ -52,13 +61,22 @@ public class PlayerStat : MonoBehaviour
         delayBeforeFirstShot = defaultWeapon.delayBeforeFirstShot;
         delayBeforeNextShot = defaultWeapon.delayBeforeNextShot;
         bulletSpeed = defaultWeapon.bulletSpeed;
-        bulletSize = defaultWeapon.bulletSize;
         bulletDamage = defaultWeapon.bulletDamage;
         weaponAccuracy = defaultWeapon.weaponAccuracy;
         bulletPrefab = defaultWeapon.bulletPrefab;
-        playerHealth = defaultWeapon.healthBonus;
+        playerHealth= defaultWeapon.healthBonus;
         playerSpeed = 5;
         redScreenEffect.enabled = false;
+
+        howManyBulletShotSave = 1;
+        bulletLifeSpanSave = 1;
+        delayBeforeFirstShotSave = 0;
+        delayBeforeNextShotSave = 1;
+        bulletSpeedSave = 1;
+        bulletDamageSave = 1;
+        weaponAccuracySave = 1;
+        playerSpeedSave = 1;
+      
         NewPassiveAcquired();
 
     }
@@ -175,23 +193,31 @@ public class PlayerStat : MonoBehaviour
     {
         Debug.Log("You got the item " + newItem.name);
         howManybulleShot += newItem.howManybulleShot;
+        howManyBulletShotSave += newItem.howManybulleShot;
         Debug.Log("howManyBulletShot is now" + howManybulleShot);
         bulletLifeSpan += bulletLifeSpan * newItem.bulletLifeSpan;
+        bulletLifeSpanSave += bulletLifeSpanSave * newItem.bulletLifeSpan;
         Debug.Log("bulletLifeSap is now" + bulletLifeSpan);
         delayBeforeFirstShot += newItem.delayBeforeFirstShot;
+        delayBeforeFirstShotSave += newItem.delayBeforeFirstShot;
         Debug.Log("delayBeforeFirstShot is now" + delayBeforeFirstShot);
         delayBeforeNextShot += delayBeforeNextShot * newItem.delayBeforeNextShot;
+        delayBeforeNextShotSave += delayBeforeNextShotSave * newItem.delayBeforeNextShot;
         Debug.Log("delayBeforeNextShot is now" + delayBeforeNextShot);
         bulletSpeed += bulletSpeed * newItem.bulletSpeed;
+        bulletSpeedSave += bulletSpeedSave * newItem.bulletSpeed;
         Debug.Log("bulletSpeed is now" + bulletSpeed);
-        //bulletSize = defaultWeapon.bulletSize;
         bulletDamage += bulletDamage * newItem.bulletDamage;
+        bulletDamageSave += bulletDamageSave * newItem.bulletDamage;
         Debug.Log("Damage is now" + bulletDamage);
         weaponAccuracy += weaponAccuracy * newItem.weaponAccuracy;
+        weaponAccuracySave += weaponAccuracy * newItem.weaponAccuracy;
         Debug.Log("Accuracy is  now" + weaponAccuracy);
         playerHealth += newItem.healthBonus;
+        playerHealthSave += newItem.healthBonus;
         Debug.Log("PlayerHealth is now" + playerHealth);
         playerSpeed += playerSpeed * newItem.playerSpeed;
+        playerSpeedSave += playerSpeedSave * newItem.playerSpeed;
         Debug.Log("playerSpeed is now" + playerSpeed);
         NewPassiveAcquired();
         yield return null;
@@ -200,17 +226,16 @@ public class PlayerStat : MonoBehaviour
 
     IEnumerator SetStatFromWeapon()
     {
-        howManybulleShot = newItem.howManybulleShot;
-        bulletLifeSpan = newItem.bulletLifeSpan;
-        delayBeforeFirstShot = newItem.delayBeforeFirstShot;
-        delayBeforeNextShot = newItem.delayBeforeNextShot;
-        bulletSpeed = newItem.bulletSpeed;
-        //bulletSize = defaultWeapon.bulletSize;
-        bulletDamage = newItem.bulletDamage;
-        weaponAccuracy = newItem.weaponAccuracy;
+        howManybulleShot = newItem.howManybulleShot + howManyBulletShotSave;
+        bulletLifeSpan = newItem.bulletLifeSpan * bulletLifeSpanSave;
+        delayBeforeFirstShot = newItem.delayBeforeFirstShot + delayBeforeFirstShotSave;
+        delayBeforeNextShot = newItem.delayBeforeNextShot * delayBeforeNextShotSave;
+        bulletSpeed = newItem.bulletSpeed * bulletSpeedSave;
+        bulletDamage = newItem.bulletDamage * bulletDamageSave;
+        weaponAccuracy = newItem.weaponAccuracy * weaponAccuracySave;
         bulletPrefab = newItem.bulletPrefab;
         NewPassiveAcquired();
-        playerHealth = newItem.healthBonus;
+        playerHealth = newItem.healthBonus + playerHealthSave;
         yield return null;
         Debug.Log("You got the weapon " + newItem.name);
     }
@@ -219,8 +244,11 @@ public class PlayerStat : MonoBehaviour
     {
         if (defaultWeapon.weaponRef == 1)
         {
-            Debug.Log("WORK GODAMMIT");
             playerC.laserScope = true;
+        }
+        else
+        {
+            playerC.laserScope = false;
         }
     }
 

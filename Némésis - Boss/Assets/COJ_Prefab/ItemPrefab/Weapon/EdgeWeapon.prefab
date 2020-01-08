@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1132603447157173353}
   m_Layer: 0
   m_Name: EdgeWeapon
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -111,4 +111,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerC: {fileID: 0}
+  gameManager: {fileID: 0}
   item: {fileID: 11400000, guid: a141564a491fa5c4bb21247ffd2078d7, type: 2}

@@ -45,6 +45,7 @@ public class PlayerControllerScript : MonoBehaviour
         canMove = true;
         playerTorso = gameObject.transform.GetChild(0).transform.GetChild(0).GetComponent<Animator>();
         playerlegs = gameObject.transform.GetChild(0).transform.GetChild(1).GetComponent<Animator>();
+        player = gameObject;
     }
 
 
@@ -118,9 +119,10 @@ public class PlayerControllerScript : MonoBehaviour
         bulletDirection.Normalize();
         if (aimInputDirection.magnitude > 0.0f)
         {
+            float posMultiplier = 2.5f;
             playerTorso.SetBool("isAiming", true);
             aimInputDirection.Normalize();
-            aimingPoint.transform.localPosition =  aimInputDirection;
+            aimingPoint.transform.localPosition =  aimInputDirection * posMultiplier;
             aimingPoint.SetActive(true);
         }
         else

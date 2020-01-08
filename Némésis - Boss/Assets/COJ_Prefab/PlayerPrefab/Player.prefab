@@ -465,10 +465,10 @@ RectTransform:
   m_Father: {fileID: 208052726}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.25}
-  m_AnchorMax: {x: 1, y: 0.75}
-  m_AnchoredPosition: {x: -315.73, y: 197.25}
-  m_SizeDelta: {x: -667.73, y: -249.85}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 176.76001, y: -79.98999}
+  m_SizeDelta: {x: 317.24, y: 28.640015}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1140710987
 GameObject:
@@ -613,7 +613,7 @@ LineRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 10
+  m_SortingOrder: 90
   m_Positions:
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 0}
@@ -967,7 +967,7 @@ Transform:
   m_GameObject: {fileID: 6015816080708264859}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 1}
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1}
   m_Children: []
   m_Father: {fileID: 6015816081722176322}
   m_RootOrder: 2
@@ -1009,9 +1009,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: d9b628873db47a4408700e28a2140222, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_SortingOrder: 50
+  m_Sprite: {fileID: 21300000, guid: d7b34802389338542b40ccaa262a6811, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1330,6 +1330,7 @@ GameObject:
   - component: {fileID: 6015816081722176323}
   - component: {fileID: 720278834}
   - component: {fileID: -509412322081777621}
+  - component: {fileID: 488971066859119301}
   m_Layer: 9
   m_Name: Player
   m_TagString: Player
@@ -1430,18 +1431,26 @@ MonoBehaviour:
   delayBeforeFirstShot: 0
   delayBeforeNextShot: 0
   bulletSpeed: 0
-  bulletSize: {fileID: 0}
   bulletDamage: 0
   weaponAccuracy: 0
   playerSpeed: 0
   bulletPrefab: {fileID: 0}
+  howManyBulletShotSave: 0
+  bulletLifeSpanSave: 0
+  delayBeforeFirstShotSave: 0
+  delayBeforeNextShotSave: 0
+  bulletSpeedSave: 0
+  bulletDamageSave: 0
+  weaponAccuracySave: 0
+  playerSpeedSave: 0
+  playerHealthSave: 0
   DamagedColor: {r: 0.9433962, g: 0.3960484, b: 0.3960484, a: 1}
   NormalColor: {r: 1, g: 1, b: 1, a: 1}
   TorsoRenderer: {fileID: 0}
   LegRenderer: {fileID: 0}
   redScreenEffect: {fileID: 0}
   canGetStat: 0
-  defaultWeapon: {fileID: 11400000, guid: f22371cba82d5594c81521aeda116755, type: 2}
+  defaultWeapon: {fileID: 11400000, guid: 345adcf91aeab9a4886d2424b1ace3de, type: 2}
 --- !u!114 &720278834
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1471,6 +1480,18 @@ CapsuleCollider2D:
   m_Offset: {x: -0.097, y: -0.31}
   m_Size: {x: 0.446, y: 1.834}
   m_Direction: 0
+--- !u!114 &488971066859119301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6015816081722176326}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b176f8ddf9bc97a4682f6f369e16cb7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8506628956437485126
 GameObject:
   m_ObjectHideFlags: 0

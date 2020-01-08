@@ -2120,7 +2120,7 @@ PrefabInstance:
     - target: {fileID: 8272889684307673985, guid: bc858cb441992bc49b865e1955c67df9,
         type: 3}
       propertyPath: maxRoom
-      value: 5
+      value: 14
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bc858cb441992bc49b865e1955c67df9, type: 3}

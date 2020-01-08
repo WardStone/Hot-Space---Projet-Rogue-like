@@ -129,11 +129,11 @@ public class RootRoom : MonoBehaviour
                 listeRight[i] = treasorRoom;
                 //Debug.Log("Salle trésor 1 droite remplie en case : " + i);
             }
-            else if (i == TresorTwoR)
+            /*else if (i == TresorTwoR)
             {
                 listeRight[i] = treasorRoom;
                 //Debug.Log("Salle trésor 2 droite remplie en case : " + i);
-            } else
+            }*/ else
             {
                 geter = Random.Range(0, normalRoomListe.Length);
                 listeRight[i] = normalRoomListe[geter];
@@ -165,11 +165,11 @@ public class RootRoom : MonoBehaviour
                 listeLeft[i] = treasorRoom;
                 //Debug.Log("Salle trésor 1 gauche remplie en case : " + i);
             }
-            else if (i == TresorTwoL)
+            /*else if (i == TresorTwoL)
             {
                 listeLeft[i] = treasorRoom;
                 //Debug.Log("Salle trésor 2 gauche remplie en case : " + i);
-            }
+            }*/
             else
             {
                 geter = Random.Range(0, normalRoomListe.Length);

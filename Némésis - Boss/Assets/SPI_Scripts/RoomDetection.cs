@@ -11,6 +11,8 @@ public class RoomDetection : MonoBehaviour
 
     public int ennemyNumber;
     public bool hasBeenActivated;
+    public bool containsEnemy;
+    private IEnumerator test;
 
     void Start()
     {
@@ -23,19 +25,20 @@ public class RoomDetection : MonoBehaviour
     {
         if (hasBeenActivated)
         {
-            ennemyNumber = GameObject.FindGameObjectsWithTag("Enemy").Length;
-            if (ennemyNumber > 0)
-                StartCoroutine(Spawnez());
+                ennemyNumber = GameObject.FindGameObjectsWithTag("Enemy").Length;
+                if (ennemyNumber > 0)
+                    test = Spawnez();
+                    StartCoroutine(test);
 
-            if (ennemyNumber <= 0)
-                tpManager.gameObject.tag = "Untagged";
+                if (ennemyNumber <= 0)
+                    tpManager.gameObject.tag = "Untagged";
             
         }
     }
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player") & hasBeenActivated == false )
+        if (hasBeenActivated == false )
         {
             hasBeenActivated = true;
             tpManager.gameObject.tag = ("lock");
@@ -46,6 +49,8 @@ public class RoomDetection : MonoBehaviour
     IEnumerator Spawnez()
     {
         tpManager.gameObject.tag = ("lock");
+        if (GameObject.FindGameObjectsWithTag("Enemy").Length > 0)
+            containsEnemy = true;
         yield break;
     }
 }

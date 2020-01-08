@@ -114,7 +114,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerStat: {fileID: 0}
   gameManager: {fileID: 0}
-  health: 31
+  health: 34
   normalSpeed: 6
   dashSpeed: 30
   stoppingDistance: 2.2

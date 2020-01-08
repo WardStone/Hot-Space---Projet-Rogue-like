@@ -97,7 +97,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerStat: {fileID: 0}
-  health: 26
+  gameManager: {fileID: 0}
+  health: 29
   speed: 5
   stoppingDistance: 10
   retreatDistance: 5

@@ -765,7 +765,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   generation: 0
-  maxRoom: 6
+  maxRoom: 16
   rightRoomNumber: 0
   leftRoomNumber: 0
   normalRoomMax: 0

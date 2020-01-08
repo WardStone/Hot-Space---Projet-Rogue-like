@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: Cobalt Armor
   m_EditorClassIdentifier: 
   name: Cobalt Armor
+  price: 40
+  description: PV ++     Speed -
   icon: {fileID: 0}
   isDefaultItem: 0
   howManybulleShot: 0

@@ -63,6 +63,7 @@ TagManager:
   - DmgBox
   - Torso
   - Legs
+  - CameraConfiner
   layers:
   - Default
   - TransparentFX

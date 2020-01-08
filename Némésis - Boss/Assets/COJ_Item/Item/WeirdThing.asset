@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: WeirdThing
   m_EditorClassIdentifier: 
   name: WeirdThing
+  price: 40
+  description: new description
   icon: {fileID: 0}
   isDefaultItem: 0
   howManybulleShot: 1

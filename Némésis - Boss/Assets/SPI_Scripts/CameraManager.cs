@@ -18,11 +18,11 @@ public class CameraManager : MonoBehaviour
     }
     public IEnumerator MoveCam(Vector2 positionToGo)
     {
-        float timerMovement = 0.3f;
+        float timerMovement = 0.4f;
 
         while (timerMovement > 0)
         {
-            camConfiner.transform.position = Vector2.MoveTowards(camConfiner.transform.position, positionToGo, 3f);
+            camConfiner.transform.position = Vector2.MoveTowards(camConfiner.transform.position, positionToGo, 2.5f);
 
             timerMovement -= Time.deltaTime;
 
@@ -34,7 +34,7 @@ public class CameraManager : MonoBehaviour
 
     public IEnumerator CoolDownTp()
     {
-        /*float cooldowntime = 1.5f;
+        float cooldowntime = 1.5f;
         while (cooldowntime > 0)
         {
             tpManager.gameObject.tag = ("lock");
@@ -42,12 +42,11 @@ public class CameraManager : MonoBehaviour
             yield return null;
         }
         Debug.Log("fini");
-        yield break;*/
-        tpManager.gameObject.tag = ("lock");
-        //Debug.Log("début cool");
-        yield return new WaitForSeconds(1f);
-        //Debug.Log("fin cool");
+
         tpManager.gameObject.tag = ("Untagged");
+        yield break;
+        //Debug.Log("début cool");
+        //Debug.Log("fin cool");
 
     }
 }

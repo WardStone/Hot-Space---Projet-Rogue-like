@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class BossDoorDétection : MonoBehaviour
 {
-    public bool canOpenBoss;
+    
     public int keyLeft;
     public GameObject theDoor;
     public bool boiInTheRoom;
@@ -13,7 +13,6 @@ public class BossDoorDétection : MonoBehaviour
     void Start()
     {
         theDoor = GameObject.FindGameObjectWithTag("RootRoom").transform.GetChild(1).gameObject;
-        canOpenBoss = false;
         keyLeft = 2;
     }
 
@@ -40,12 +39,8 @@ public class BossDoorDétection : MonoBehaviour
                 theDoor.transform.GetChild(2).gameObject.SetActive(false);
                 theDoor.transform.GetChild(3).gameObject.SetActive(true);
             }
-
-            if (canOpenBoss & Input.GetButtonDown("Interact") & keyLeft == 0)
-            {
-
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-            }
+            if (keyLeft == 0)
+                theDoor.transform.GetChild(4).gameObject.SetActive(true);
         }
     }
 
@@ -53,7 +48,6 @@ public class BossDoorDétection : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            canOpenBoss = true;
             boiInTheRoom = true;
         }
     }
@@ -63,7 +57,6 @@ public class BossDoorDétection : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             boiInTheRoom = true;
-            canOpenBoss = false;
         }
     }
 }

@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: ShotGunMod
   m_EditorClassIdentifier: 
   name: Shotgun
-  price: 100
-  description: new description
+  price: 300
+  description: Still the same after all thoses years
   icon: {fileID: 0}
   isDefaultItem: 0
   howManybulleShot: 6

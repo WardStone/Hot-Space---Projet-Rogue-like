@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Pants
   m_EditorClassIdentifier: 
   name: Pants
-  price: 50
+  price: 125
   description: At least, WE have one.
   icon: {fileID: 0}
   isDefaultItem: 0
@@ -23,7 +23,7 @@ MonoBehaviour:
   delayBeforeNextShot: 0
   bulletSpeed: 0
   bulletSize: {fileID: 0}
-  bulletDamage: 0
+  bulletDamage: 0.1
   weaponAccuracy: 0
   healthBonus: 30
   playerSpeed: 0

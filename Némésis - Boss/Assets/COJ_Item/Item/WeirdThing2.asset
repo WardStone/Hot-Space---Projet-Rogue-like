@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: WeirdThing2
   m_EditorClassIdentifier: 
   name: Weird Thing
-  price: 42
+  price: 125
   description: Smells like one pharaon who stayed too long in Egopt
   icon: {fileID: 0}
   isDefaultItem: 0

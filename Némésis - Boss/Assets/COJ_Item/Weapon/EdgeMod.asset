@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: EdgeMod
   m_EditorClassIdentifier: 
   name: New item
-  price: 100
-  description: new description
+  price: 300
+  description: Every hit with this beautifull weapon free a powerfull wave of wind
+    with low range
   icon: {fileID: 0}
   isDefaultItem: 0
   howManybulleShot: 1

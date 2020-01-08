@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: FlashEngine
   m_EditorClassIdentifier: 
   name: Flash Engine
-  price: 130
+  price: 125
   description: Speed++    Damage+   Damage-
   icon: {fileID: 0}
   isDefaultItem: 0

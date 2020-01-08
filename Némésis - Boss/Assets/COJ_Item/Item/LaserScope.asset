@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: LaserScope
   m_EditorClassIdentifier: 
   name: Laser Scope
-  price: 100
+  price: 125
   description: Accuracy+   Damage+
   icon: {fileID: 0}
   isDefaultItem: 0

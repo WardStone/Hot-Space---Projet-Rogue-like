@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: SprayAndPray
   m_EditorClassIdentifier: 
   name: Spray And Pray
-  price: 147
+  price: 125
   description: Firerate++    Range+    BulletSpeed+    Damage+    Accuracy---
   icon: {fileID: 0}
   isDefaultItem: 0

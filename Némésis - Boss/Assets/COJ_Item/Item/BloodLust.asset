@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: BloodLust
   m_EditorClassIdentifier: 
   name: BloodLust
+  price: 40
+  description: new description
   icon: {fileID: 0}
   isDefaultItem: 0
   howManybulleShot: 0

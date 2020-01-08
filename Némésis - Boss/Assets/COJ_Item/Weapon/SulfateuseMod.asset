@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: SulfateuseMod
   m_EditorClassIdentifier: 
   name: SulfateuseMod
+  price: 100
+  description: new description
   icon: {fileID: 0}
   isDefaultItem: 0
   howManybulleShot: 1

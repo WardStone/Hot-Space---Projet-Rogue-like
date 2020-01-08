@@ -9,7 +9,7 @@ public class GameManagerScript : MonoBehaviour
     public Text moneyText;
     void Start()
     {
-        playerMoney = 100;
+        playerMoney = 1;
     }
 
     private void Update()

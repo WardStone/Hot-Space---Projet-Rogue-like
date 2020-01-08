@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef7f2ed38d3127e45865cfa49648ec4b, type: 3}
   m_Name: EdgeMod
   m_EditorClassIdentifier: 
-  name: New item
-  price: 300
+  name: An Edge
+  price: '    300'
   description: Every hit with this beautifull weapon free a powerfull wave of wind
     with low range
   icon: {fileID: 0}

@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef7f2ed38d3127e45865cfa49648ec4b, type: 3}
   m_Name: SniperMod
   m_EditorClassIdentifier: 
-  name: Sniper
-  price: 300
+  name: Sniper XO-43
+  price: '    300'
   description: You will be able to hit a fly in a bottle with his laser 4.0
   icon: {fileID: 0}
   isDefaultItem: 0

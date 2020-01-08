@@ -133,8 +133,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87c73e6043a872b458e102f25716c082, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 30
-  speed: 4
+  health: 31
+  speed: 6
   dmgBoxSpawnDelay: 0.2
   spcDmgBox: {fileID: 4814175886417094952, guid: 079a3553234c81448a26373d838c9bb7,
     type: 3}

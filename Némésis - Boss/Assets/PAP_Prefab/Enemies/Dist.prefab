@@ -96,8 +96,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f409cb7c98900c4ba25c59faba58ca0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 30
-  speed: 3.5
+  health: 26
+  speed: 5
   stoppingDistance: 10
   retreatDistance: 5
   shotNbr: 3

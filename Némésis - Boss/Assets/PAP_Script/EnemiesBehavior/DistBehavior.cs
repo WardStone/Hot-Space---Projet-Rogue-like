@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class DistBehavior : MonoBehaviour
 {
+    public PlayerStat playerStat;
+    public GameManagerScript gameManager;
+
     public float health;
     public float speed;
     public float stoppingDistance;
@@ -26,6 +29,8 @@ public class DistBehavior : MonoBehaviour
 
     public Color shootColor = Color.red;
     public Color normalColor = Color.white;
+    public Color hurtColor;
+
 
     private Animator anim;
     [SerializeField]
@@ -35,6 +40,8 @@ public class DistBehavior : MonoBehaviour
     void Start()
     {
         player = GameObject.Find("Player").transform;
+        playerStat = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStat>();
+        gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManagerScript>();
         anim = GetComponent<Animator>();
 
     }
@@ -109,19 +116,36 @@ public class DistBehavior : MonoBehaviour
     {
         if (other.CompareTag("Bullet"))
         {
-            health -= 5;
+           StartCoroutine(enemyTakeDamage());
         }
+    }
+
+    IEnumerator enemyTakeDamage()
+    {
+            health -= playerStat.bulletDamage;
+            gameObject.GetComponent<SpriteRenderer>().color = hurtColor;
+
 
         if (health <= 0)
         {
             canMove = false;
             anim.SetBool("isDead", true);
         }
+        yield return new WaitForSeconds(0.1f);
+        gameObject.GetComponent<SpriteRenderer>().color = normalColor;
+
     }
 
     private void Death()
     {
+        GetMoney();
         Destroy(gameObject);
+    }
+
+    void GetMoney()
+    {
+        int loot = Random.Range(5, 15);
+        gameManager.playerMoney += loot;
     }
 
 }

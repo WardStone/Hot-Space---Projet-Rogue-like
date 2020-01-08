@@ -6,15 +6,15 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/COJ_Scene/ItemRoomScene.unity
-    guid: e1d793d8c20321d4ab77ed2f57c40087
-  - enabled: 1
     path: Assets/SPI_Scenes/Main Menu.unity
     guid: 044ef250d501b8b4d94111f709f2bdbf
   - enabled: 1
-    path: Assets/COJ_Scene/BossScene.unity
-    guid: e76930fb9f6c432499c1a80478f70da3
-  - enabled: 1
     path: Assets/SPI_Scenes/GenPro Test.unity
     guid: 941a9db98932de246ba986ae8d4be7da
+  - enabled: 1
+    path: Assets/COJ_Scene/BossScene.unity
+    guid: e76930fb9f6c432499c1a80478f70da3
+  - enabled: 0
+    path: Assets/COJ_Scene/ItemRoomScene.unity
+    guid: e1d793d8c20321d4ab77ed2f57c40087
   m_configObjects: {}

@@ -41,7 +41,6 @@ public class CameraManager : MonoBehaviour
             cooldowntime -= Time.deltaTime;
             yield return null;
         }
-        Debug.Log("fini");
 
         tpManager.gameObject.tag = ("Untagged");
         yield break;

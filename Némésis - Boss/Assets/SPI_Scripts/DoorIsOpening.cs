@@ -15,5 +15,6 @@ public class DoorIsOpening : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         doorIsOpening.SetBool("OpenTheDoor", true);
+        door.transform.GetChild(1).gameObject.transform.GetChild(4).gameObject.SetActive(true);
     }
 }

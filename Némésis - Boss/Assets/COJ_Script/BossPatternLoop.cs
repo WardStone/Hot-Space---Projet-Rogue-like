@@ -108,6 +108,8 @@ public class BossPatternLoop : MonoBehaviour
     public bool phase2IsOn;
 
     // Start is called before the first frame update
+    public GameObject victoryScreen;
+
     void Start()
     {
         cameraShake = GameObject.FindGameObjectWithTag("CameraShakeManager").GetComponent<SimpleCameraShakeInCinemachine>();
@@ -152,9 +154,8 @@ public class BossPatternLoop : MonoBehaviour
         }
         patternSaved = -1;
 
-
-        BossPatternSelection();
         
+        BossPatternSelection();
     }
 
     // Update is called once per frame
@@ -787,6 +788,8 @@ public class BossPatternLoop : MonoBehaviour
         Destroy(leftArm01);
         Destroy(rightArm01);
         Destroy(Head01);
+        yield return new WaitForSeconds(1f);
+        Instantiate(victoryScreen);
         Destroy(gameObject);
     }
 

@@ -424,6 +424,8 @@ MonoBehaviour:
   verticalDamagedGroundSpawn: {fileID: 3118177369689641725}
   rightArmRespawn: 0
   phase2IsOn: 0
+  victoryScreen: {fileID: 5768540900138853469, guid: 9901c5258a24897449e2375a4144ee63,
+    type: 3}
 --- !u!61 &3118177369809345464
 BoxCollider2D:
   m_ObjectHideFlags: 0

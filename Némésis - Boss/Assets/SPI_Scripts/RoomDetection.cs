@@ -25,14 +25,22 @@ public class RoomDetection : MonoBehaviour
     {
         if (hasBeenActivated)
         {
+            if (containsEnemy)
+            {
+
+
                 ennemyNumber = GameObject.FindGameObjectsWithTag("Enemy").Length;
                 if (ennemyNumber > 0)
                     test = Spawnez();
-                    StartCoroutine(test);
+                StartCoroutine(test);
 
                 if (ennemyNumber <= 0)
+                {
+                    containsEnemy = false;
                     tpManager.gameObject.tag = "Untagged";
-            
+                }
+
+            }
         }
     }
 
@@ -43,6 +51,8 @@ public class RoomDetection : MonoBehaviour
             hasBeenActivated = true;
             tpManager.gameObject.tag = ("lock");
             currentRoom.transform.GetChild(1).gameObject.SetActive(true);
+            if (GameObject.FindGameObjectsWithTag("Enemy").Length > 0)
+                containsEnemy = true;
         }
     }
 

@@ -17,7 +17,7 @@ public class EnemyBulletBehaviour : MonoBehaviour
     public void Start()
     {
         boss = GameObject.Find("Boss").GetComponent<BossPatternLoop>();
-        playerPos = GameObject.Find("Player").transform;
+        playerPos = GameObject.FindGameObjectWithTag("Player") .transform;
         headPos = GameObject.Find("HeadShotPoint").transform;
         homingBulletDir = playerPos.position - headPos.position;
         bounceBulletDir = new Vector2(Random.Range(-1f, 1), -1);

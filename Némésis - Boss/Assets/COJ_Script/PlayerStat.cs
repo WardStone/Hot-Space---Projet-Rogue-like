@@ -7,6 +7,7 @@ public class PlayerStat : MonoBehaviour
 {
     public PlayerControllerScript playerC;
     public Inventory playerInventory;
+    public Restart restart;
     public Item newItem;
     public int listLenght = 0;
 
@@ -54,6 +55,7 @@ public class PlayerStat : MonoBehaviour
         TorsoRenderer = GameObject.FindGameObjectWithTag("Torso");
         LegRenderer = GameObject.FindGameObjectWithTag("Legs");
         redScreenEffect = GameObject.FindGameObjectWithTag("RedScreenEffect").GetComponent<Image>();
+        restart = gameObject.GetComponent<Restart>();
 
 
         howManybulleShot = defaultWeapon.howManybulleShot;
@@ -160,7 +162,7 @@ public class PlayerStat : MonoBehaviour
         StartCoroutine(HurtColor());
         if (playerHealth <= 0)
         {
-            Destroy(gameObject);
+            restart.RestartGame();
         }
 
         Debug.Log("Player health equal" + playerHealth);

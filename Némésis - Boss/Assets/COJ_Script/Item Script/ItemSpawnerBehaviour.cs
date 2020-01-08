@@ -30,7 +30,7 @@ public class ItemSpawnerBehaviour : MonoBehaviour
         }
         else
         {
-            spawnedItem.tag = "item";
+            spawnedItem.tag = "Item";
         }
     }
     //Spawn une arme
@@ -44,7 +44,7 @@ public class ItemSpawnerBehaviour : MonoBehaviour
         }
         else
         {
-            spawnedWeapon.tag = "item";
+            spawnedWeapon.tag = "Item";
         }
     }
 }

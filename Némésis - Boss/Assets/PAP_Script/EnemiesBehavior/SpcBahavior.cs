@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class SpcBahavior : MonoBehaviour
 {
+    public PlayerStat playerStat;
+    public GameManagerScript gameManager;
 
-    public int health;
+    public float health;
     public float speed;
     public float dmgBoxSpawnDelay;
     public GameObject spcDmgBox;
@@ -24,12 +26,15 @@ public class SpcBahavior : MonoBehaviour
 
     private Animator anim;
 
+    public Color hurtColor;
+    public Color normalColor = Color.white;
 
 
     // Start is called before the first frame update
     void Start()
     {
-
+        playerStat = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStat>();
+        gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManagerScript>();
         InvokeRepeating("SpawnDamageBox", 0, dmgBoxSpawnDelay);
         anim = GetComponent<Animator>();
     }
@@ -120,22 +125,40 @@ public class SpcBahavior : MonoBehaviour
 
         if (other.CompareTag("Bullet"))
         {
-            health -= 5;
-
-            if (health <= 0)
-            {
-                CancelInvoke("SpawnDamageBox");
-                anim.SetBool("isDead", true);
-                canMove = false;
-            }
+           StartCoroutine(enemyTakeDamage());
         }
 
     
     }
 
+  
+
+    IEnumerator enemyTakeDamage()
+    {
+        health -= playerStat.bulletDamage;
+        gameObject.GetComponent<SpriteRenderer>().color = hurtColor;
+        Debug.Log("enemy has taken " + playerStat.bulletDamage);
+        if (health <= 0)
+        {
+            CancelInvoke("SpawnDamageBox");
+            anim.SetBool("isDead", true);
+            canMove = false;
+        }
+        yield return new WaitForSeconds(0.1f);
+        gameObject.GetComponent<SpriteRenderer>().color = normalColor;
+
+    }
+
     private void Death()
     {
+        GetMoney();
         Destroy(gameObject);
+    }
+
+    void GetMoney()
+    {
+        int loot = Random.Range(5, 15);
+        gameManager.playerMoney += loot;
     }
 
 }

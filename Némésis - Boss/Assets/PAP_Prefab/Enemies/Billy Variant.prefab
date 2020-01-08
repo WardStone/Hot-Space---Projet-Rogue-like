@@ -77,5 +77,45 @@ PrefabInstance:
       propertyPath: dmgBoxSpawnDelay
       value: 0.05
       objectReference: {fileID: 0}
+    - target: {fileID: 5470264617389218651, guid: ff197849ab969b442a93561dc3d4cf84,
+        type: 3}
+      propertyPath: hurtColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5470264617389218651, guid: ff197849ab969b442a93561dc3d4cf84,
+        type: 3}
+      propertyPath: hurtColor.g
+      value: 0.6431373
+      objectReference: {fileID: 0}
+    - target: {fileID: 5470264617389218651, guid: ff197849ab969b442a93561dc3d4cf84,
+        type: 3}
+      propertyPath: hurtColor.b
+      value: 0.07058824
+      objectReference: {fileID: 0}
+    - target: {fileID: 5470264617389218651, guid: ff197849ab969b442a93561dc3d4cf84,
+        type: 3}
+      propertyPath: normalColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5470264617389218651, guid: ff197849ab969b442a93561dc3d4cf84,
+        type: 3}
+      propertyPath: normalColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5470264617389218651, guid: ff197849ab969b442a93561dc3d4cf84,
+        type: 3}
+      propertyPath: normalColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5470264617389218651, guid: ff197849ab969b442a93561dc3d4cf84,
+        type: 3}
+      propertyPath: normalColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5470264617389218651, guid: ff197849ab969b442a93561dc3d4cf84,
+        type: 3}
+      propertyPath: hurtColor.a
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff197849ab969b442a93561dc3d4cf84, type: 3}

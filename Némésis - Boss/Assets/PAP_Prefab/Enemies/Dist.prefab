@@ -96,6 +96,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f409cb7c98900c4ba25c59faba58ca0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerStat: {fileID: 0}
   health: 26
   speed: 5
   stoppingDistance: 10
@@ -110,6 +111,7 @@ MonoBehaviour:
     type: 3}
   shootColor: {r: 1, g: 0, b: 0, a: 1}
   normalColor: {r: 1, g: 1, b: 1, a: 1}
+  hurtColor: {r: 1, g: 0.6431373, b: 0.07058824, a: 1}
   body: {fileID: -8594201177793558860}
 --- !u!58 &78349998
 CircleCollider2D:

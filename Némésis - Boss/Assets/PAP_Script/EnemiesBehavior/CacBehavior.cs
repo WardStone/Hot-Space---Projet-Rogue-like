@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class CacBehavior : MonoBehaviour
 {
+    public PlayerStat playerStat;
+    public GameManagerScript gameManager;
+
     public float health;
     public float normalSpeed;
     public float dashSpeed;
@@ -22,13 +25,20 @@ public class CacBehavior : MonoBehaviour
 
     public Color dashColor = Color.red;
     public Color normalColor = Color.white;
+     public Color hurtColor;
+
 
     private Animator anim;
+
+    
+
 
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.Find("Player").transform;
+        playerStat = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStat>();
+        gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManagerScript>();
         anim = GetComponent<Animator>();
     }
 
@@ -92,13 +102,7 @@ public class CacBehavior : MonoBehaviour
     {
         if (other.CompareTag("Bullet"))
         {
-            health -= 5;
-
-            if (health <= 0)
-            {
-                anim.SetBool("isDead", true);
-                canMove = false;
-            }
+           StartCoroutine(enemyTakeDamage());
         }
 
         if (other.CompareTag("Wall"))
@@ -116,9 +120,30 @@ public class CacBehavior : MonoBehaviour
         }
     }
 
+    IEnumerator enemyTakeDamage()
+    {
+        health -= playerStat.bulletDamage;
+        gameObject.GetComponent<SpriteRenderer>().color = hurtColor;
+
+        if (health <= 0)
+        {
+            anim.SetBool("isDead", true);
+            canMove = false;
+        }
+        yield return new WaitForSeconds(0.1f);
+        gameObject.GetComponent<SpriteRenderer>().color = normalColor;
+    }
+
     private void Death()
     {
+        GetMoney();
         Destroy(gameObject);
+    }
+
+    void GetMoney()
+    {
+        int loot = Random.Range(5, 15);
+        gameManager.playerMoney += loot;
     }
 
 }

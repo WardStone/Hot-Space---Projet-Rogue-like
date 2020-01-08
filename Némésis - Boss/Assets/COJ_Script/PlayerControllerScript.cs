@@ -28,8 +28,8 @@ public class PlayerControllerScript : MonoBehaviour
     public bool isDashing = false;
 
   
-    private bool canMove = true;
-    private bool canDash = true;
+    public bool canMove = true;
+    public bool canDash = true;
     private bool canShoot = true;
     public bool laserScope = true;
 

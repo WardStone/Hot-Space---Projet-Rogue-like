@@ -10,6 +10,8 @@ public class PlayerStat : MonoBehaviour
     public Restart restart;
     public Item newItem;
     public int listLenght = 0;
+    public Animator legAnimator;
+    public Animator torsoAnimator;
 
     public float playerHealth; //
     public float maxHealth;
@@ -55,6 +57,8 @@ public class PlayerStat : MonoBehaviour
     {
         playerC = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControllerScript>();
         TorsoRenderer = GameObject.FindGameObjectWithTag("Torso");
+        LegRenderer = GameObject.FindGameObjectWithTag("Legs");
+        torsoAnimator = GameObject.FindGameObjectWithTag("Torso").GetComponent<Animator>();
         LegRenderer = GameObject.FindGameObjectWithTag("Legs");
         redScreenEffect = GameObject.FindGameObjectWithTag("RedScreenEffect").GetComponent<Image>();
         restart = gameObject.GetComponent<Restart>();
@@ -172,7 +176,7 @@ public class PlayerStat : MonoBehaviour
         StartCoroutine(HurtColor());
         if (playerHealth <= 0)
         {
-            restart.RestartGame();
+            StartCoroutine(DeathAndRestart());
         }
 
         Debug.Log("Player health equal" + playerHealth);
@@ -274,5 +278,15 @@ public class PlayerStat : MonoBehaviour
         LegRenderer.GetComponent<SpriteRenderer>().color = NormalColor;
         TorsoRenderer.GetComponent<SpriteRenderer>().color = NormalColor;
         redScreenEffect.enabled = false;
+    }
+
+    IEnumerator DeathAndRestart()
+    {
+        torsoAnimator.SetBool("Dead", true);
+        legAnimator.SetBool("Dead", true);
+        playerC.canMove = false;
+        playerC.canDash = false;
+        yield return new WaitForSeconds(3f);
+        restart.RestartGame();
     }
 }

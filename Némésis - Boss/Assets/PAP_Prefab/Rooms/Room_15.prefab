@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4134943883137969048}
   m_Layer: 0
-  m_Name: Room_31
+  m_Name: Room_15
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -247,6 +247,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: RockSpawnerRoom
       objectReference: {fileID: 0}
+    - target: {fileID: 3768527051532578660, guid: 3310a2d1a9ac7bb428ee3d1e43a9cb3b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3768527051532578664, guid: 3310a2d1a9ac7bb428ee3d1e43a9cb3b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -265,17 +270,17 @@ PrefabInstance:
     - target: {fileID: 3768527051532578664, guid: 3310a2d1a9ac7bb428ee3d1e43a9cb3b,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3768527051532578664, guid: 3310a2d1a9ac7bb428ee3d1e43a9cb3b,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3768527051532578664, guid: 3310a2d1a9ac7bb428ee3d1e43a9cb3b,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3768527051532578664, guid: 3310a2d1a9ac7bb428ee3d1e43a9cb3b,
         type: 3}
@@ -301,6 +306,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3768527051532578661, guid: 3310a2d1a9ac7bb428ee3d1e43a9cb3b,
+        type: 3}
+      propertyPath: spawnDelay
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3310a2d1a9ac7bb428ee3d1e43a9cb3b, type: 3}
@@ -397,6 +407,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8359378297042745681}
     m_Modifications:
+    - target: {fileID: 376559350167746137, guid: 30b0ae7f9459da14286ff5633c87e53b,
+        type: 3}
+      propertyPath: m_Name
+      value: Empty Room
+      objectReference: {fileID: 0}
     - target: {fileID: 376559350167746119, guid: 30b0ae7f9459da14286ff5633c87e53b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -451,11 +466,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 376559350167746137, guid: 30b0ae7f9459da14286ff5633c87e53b,
-        type: 3}
-      propertyPath: m_Name
-      value: Empty Room
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 30b0ae7f9459da14286ff5633c87e53b, type: 3}

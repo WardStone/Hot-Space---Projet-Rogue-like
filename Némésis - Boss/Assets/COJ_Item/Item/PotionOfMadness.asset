@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Potion of Madness
   price: 125
-  description: Firerate++    Damage+    Health-
+  description: Firerate++    Damage+    Health-                  Fresh fruits from
+    another country
   icon: {fileID: 0}
   isDefaultItem: 0
   howManybulleShot: 0

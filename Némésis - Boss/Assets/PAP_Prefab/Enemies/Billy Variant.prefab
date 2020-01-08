@@ -117,5 +117,11 @@ PrefabInstance:
       propertyPath: hurtColor.a
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5470264617389218645, guid: ff197849ab969b442a93561dc3d4cf84,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 190a77b24f5e3ed4db39a65c84dc6691,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff197849ab969b442a93561dc3d4cf84, type: 3}

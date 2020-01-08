@@ -133,6 +133,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87c73e6043a872b458e102f25716c082, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerStat: {fileID: 0}
+  gameManager: {fileID: 0}
   health: 31
   speed: 6
   dmgBoxSpawnDelay: 0.2
@@ -152,6 +154,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  hurtColor: {r: 1, g: 0.6431373, b: 0.07058824, a: 0}
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!95 &-1267338102972247186
 Animator:
   serializedVersion: 3

@@ -113,6 +113,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerStat: {fileID: 0}
+  gameManager: {fileID: 0}
   health: 31
   normalSpeed: 6
   dashSpeed: 30
@@ -120,9 +121,9 @@ MonoBehaviour:
   recoveryTime: 1.7
   timeBeforeDash: 0.75
   player: {fileID: 0}
-  dashColor: {r: 1, g: 0.6445884, b: 0.07075471, a: 1}
+  dashColor: {r: 1, g: 0.079595506, b: 0.07058823, a: 1}
   normalColor: {r: 1, g: 1, b: 1, a: 1}
-  hurtColor: {r: 0, g: 0, b: 0, a: 0}
+  hurtColor: {r: 1, g: 0.6431373, b: 0.07058824, a: 1}
 --- !u!50 &364940555329059153
 Rigidbody2D:
   serializedVersion: 4

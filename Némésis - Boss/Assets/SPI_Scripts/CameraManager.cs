@@ -18,11 +18,11 @@ public class CameraManager : MonoBehaviour
     }
     public IEnumerator MoveCam(Vector2 positionToGo)
     {
-        float timerMovement = 0.3f;
+        float timerMovement = 0.4f;
 
         while (timerMovement > 0)
         {
-            camConfiner.transform.position = Vector2.MoveTowards(camConfiner.transform.position, positionToGo, 3f);
+            camConfiner.transform.position = Vector2.MoveTowards(camConfiner.transform.position, positionToGo, 2.5f);
 
             timerMovement -= Time.deltaTime;
 

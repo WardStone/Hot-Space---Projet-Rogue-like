@@ -13,6 +13,7 @@ public class Restart : MonoBehaviour
     }
     public void RestartGame()
     {
+        
         Destroy(player);
         Time.timeScale = 1f;
         SceneManager.LoadScene(1);

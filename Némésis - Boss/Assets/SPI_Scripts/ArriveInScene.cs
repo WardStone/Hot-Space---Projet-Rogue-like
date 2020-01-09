@@ -6,6 +6,7 @@ public class ArriveInScene : MonoBehaviour
 {
     public GameObject player;
     public GameObject loadingScreenAnim;
+    public GameObject keyUi;
 
     private void Start()
     {
@@ -15,10 +16,14 @@ public class ArriveInScene : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player");
         loadingScreenAnim = GameObject.FindGameObjectWithTag("loadScreen");
+        keyUi = GameObject.FindGameObjectWithTag("KeyUi");
         player.transform.position = gameObject.transform.localPosition;
         loadingScreenAnim.SetActive(false);
-        if (SceneManager.GetActiveScene().buildIndex != 2) 
+        keyUi.SetActive(false);
+        if (SceneManager.GetActiveScene().buildIndex != 2)
+        {
             StartCoroutine(loadingScreen());
+        }
     }
 
     IEnumerator loadingScreen()
@@ -29,5 +34,6 @@ public class ArriveInScene : MonoBehaviour
         yield return new WaitForSeconds(4.5f);
         player.SetActive(true);
         loadingScreenAnim.SetActive(false);//Set loading screen active true
+        keyUi.SetActive(true);
     }
 }

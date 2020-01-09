@@ -211,7 +211,7 @@ public class PlayerStat : MonoBehaviour
     IEnumerator GetStatFromItem()
     {
         Debug.Log("You got the item " + newItem.name);
-        howManybulleShot += newItem.howManybulleShot;
+        howManybulleShot = howManybulleShot * newItem.howManybulleShot;
         howManyBulletShotSave += newItem.howManybulleShot;
         Debug.Log("howManyBulletShot is now" + howManybulleShot);
         bulletLifeSpan += bulletLifeSpan * newItem.bulletLifeSpan;

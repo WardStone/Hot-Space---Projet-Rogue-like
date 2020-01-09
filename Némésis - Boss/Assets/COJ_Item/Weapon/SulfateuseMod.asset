@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef7f2ed38d3127e45865cfa49648ec4b, type: 3}
   m_Name: SulfateuseMod
   m_EditorClassIdentifier: 
-  name: The Sulfator
+  name: MOD Sulfator
   price: '    300'
   description: Burn them all (and press longer)
   icon: {fileID: 0}

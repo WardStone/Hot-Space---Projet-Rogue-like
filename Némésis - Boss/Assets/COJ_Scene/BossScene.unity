@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -869,7 +869,7 @@ Transform:
   - {fileID: 430767241}
   - {fileID: 1669624178}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &743867460
 GameObject:
@@ -1932,7 +1932,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1917843747}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.01, y: -6.16, z: -10}
+  m_LocalPosition: {x: 1.4752717, y: -3.9200206, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2017,7 +2017,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2016670837
 PrefabInstance:
@@ -2234,6 +2234,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: MusicSource Boss
       objectReference: {fileID: 0}
+    - target: {fileID: 7165587569115545344, guid: 86237d0af22128a4181c11d13d558ec7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7165587569115545346, guid: 86237d0af22128a4181c11d13d558ec7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2272,7 +2277,7 @@ PrefabInstance:
     - target: {fileID: 7165587569115545346, guid: 86237d0af22128a4181c11d13d558ec7,
         type: 3}
       propertyPath: m_RootOrder
-      value: 12
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7165587569115545346, guid: 86237d0af22128a4181c11d13d558ec7,
         type: 3}

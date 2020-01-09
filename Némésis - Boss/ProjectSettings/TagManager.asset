@@ -66,6 +66,7 @@ TagManager:
   - CameraConfiner
   - healthPack
   - healthPackSpawner
+  - KeyUi
   layers:
   - Default
   - TransparentFX

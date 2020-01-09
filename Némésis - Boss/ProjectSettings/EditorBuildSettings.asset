@@ -14,7 +14,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/COJ_Scene/BossScene.unity
     guid: e76930fb9f6c432499c1a80478f70da3
-  - enabled: 0
-    path: Assets/COJ_Scene/ItemRoomScene.unity
-    guid: e1d793d8c20321d4ab77ed2f57c40087
   m_configObjects: {}

@@ -15,7 +15,7 @@ MonoBehaviour:
   name: Cobalt Armor
   price: 125
   description: '   Health+++    Speed -                                     You''ll
-    be stronger than a GOLEM.'
+    be stronger than a GOLEM'
   icon: {fileID: 0}
   isDefaultItem: 0
   howManybulleShot: 0

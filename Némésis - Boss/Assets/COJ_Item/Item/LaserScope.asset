@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef7f2ed38d3127e45865cfa49648ec4b, type: 3}
   m_Name: LaserScope
   m_EditorClassIdentifier: 
-  name: Laser Scope
+  name: Scope
   price: 125
-  description: Accuracy+   Damage+
+  description: Accuracy+   Damage+                                      It belonged
+    to a fox with a hook
   icon: {fileID: 0}
   isDefaultItem: 0
   howManybulleShot: 0

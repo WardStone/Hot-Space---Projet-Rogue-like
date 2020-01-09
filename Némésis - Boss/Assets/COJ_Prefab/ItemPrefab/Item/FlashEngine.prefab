@@ -112,6 +112,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerC: {fileID: 0}
+  playerS: {fileID: 0}
   gameManager: {fileID: 0}
   itemName: {fileID: 0}
   itemDescription: {fileID: 0}
@@ -410,7 +411,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -2, y: 89.99998}
+  m_AnchoredPosition: {x: 64, y: 89.99998}
   m_SizeDelta: {x: 580.6, y: 71.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &958457852761264523

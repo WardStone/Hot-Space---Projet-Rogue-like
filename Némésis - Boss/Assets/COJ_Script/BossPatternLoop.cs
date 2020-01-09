@@ -266,7 +266,7 @@ public class BossPatternLoop : MonoBehaviour
         if (leftArm01Stat.partHealth <= 0)
         {
             yield return new WaitForSeconds(1.5f);
-            leftArm01Stat.partHealth = 200;
+            leftArm01Stat.partHealth = 450;
             leftArm01Stat.hasRespawned = true;
             leftArmRespawn = Random.Range(0, 3);
             if (leftArmRespawn == 0)
@@ -293,7 +293,7 @@ public class BossPatternLoop : MonoBehaviour
         if (rightArm01Stat.partHealth <= 0)
         {
             yield return new WaitForSeconds(1.5f);
-            rightArm01Stat.partHealth = 200;
+            rightArm01Stat.partHealth = 450;
             rightArm01Stat.hasRespawned = true;
             rightArmRespawn = Random.Range(0, 3);
             if(rightArmRespawn == 0)
@@ -320,7 +320,7 @@ public class BossPatternLoop : MonoBehaviour
         if (head01Stat.partHealth <= 0)
         {
             yield return new WaitForSeconds(1.5f);
-            head01Stat.partHealth = 200;
+            head01Stat.partHealth = 350;
             head01Stat.hasRespawned = true;
             headRespawn = Random.Range(0, 3);
             if (headRespawn == 0)

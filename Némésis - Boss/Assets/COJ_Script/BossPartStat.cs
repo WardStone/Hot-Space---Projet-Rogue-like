@@ -20,15 +20,15 @@ public class BossPartStat : MonoBehaviour
         boss = GameObject.FindGameObjectWithTag("Boss").GetComponent<BossPatternLoop>();
         if (gameObject.CompareTag("bossLeftArm01") || gameObject.CompareTag("bossLeftArm02") || gameObject.CompareTag("bossLeftArm03"))
         {
-            partHealth = 600;
+            partHealth = 450;
         }
         if (gameObject.CompareTag("bossRightArm01") || gameObject.CompareTag("bossRightArm02") || gameObject.CompareTag("bossRightArm03"))
         {
-            partHealth = 600;
+            partHealth = 450;
         }
         if (gameObject.CompareTag("bossHead01") || gameObject.CompareTag("bossHead02") || gameObject.CompareTag("bossHead03"))
         {
-            partHealth = 500;
+            partHealth = 350;
         }
     }
 

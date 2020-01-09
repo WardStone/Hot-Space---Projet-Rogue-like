@@ -102,7 +102,7 @@ public class PickableItem : MonoBehaviour
             if(gameManager.playerMoney >= healthPackCost)
             {
                 gameManager.playerMoney -= healthPackCost;
-                playerS.playerHealth += 20;
+                playerS.playerHealth += 30;
                 Destroy(gameObject);
             }
         }

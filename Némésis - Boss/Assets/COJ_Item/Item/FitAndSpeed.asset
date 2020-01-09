@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Potion of Speed
   price: 125
-  description: Speed++ Accuracy+ Range-
+  description: 'Speed++ Accuracy+ Range-                           Perfectly fresh
+    with a taste of vanilla '
   icon: {fileID: 0}
   isDefaultItem: 0
   howManybulleShot: 0

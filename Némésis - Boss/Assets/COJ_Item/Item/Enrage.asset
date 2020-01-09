@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Enrage
   price: 125
-  description: Damage+    Speed+
+  description: Damage+    Speed+                                    Unleash the beast,
+    kill the penguins
   icon: {fileID: 0}
   isDefaultItem: 0
   howManybulleShot: 0

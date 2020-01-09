@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Clone Bullet
   price: 125
-  description: DoubleShot
+  description: 'DoubleShot, HELL YES   '
   icon: {fileID: 0}
   isDefaultItem: 0
   howManybulleShot: 1

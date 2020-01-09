@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class StyRockBehavior : MonoBehaviour
 {
-    public int health;
-    private int maxHealth;
+    public PlayerStat playerStat;
+    public float health;
+    private float maxHealth;
     private Animator anim;
 
 
@@ -17,6 +18,7 @@ public class StyRockBehavior : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        playerStat = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStat>();
         StartCoroutine(DmgOnFall());
         anim = GetComponent<Animator>();
     }
@@ -32,7 +34,7 @@ public class StyRockBehavior : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Bullet"))
         {
-            health -= 34;
+            health -= playerStat.bulletDamage;
         }
 
         /* 

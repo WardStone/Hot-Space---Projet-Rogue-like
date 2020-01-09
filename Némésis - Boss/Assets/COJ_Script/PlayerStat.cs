@@ -48,6 +48,7 @@ public class PlayerStat : MonoBehaviour
     public Image redScreenEffect;
 
     public bool canGetStat;
+    public bool isDead = false;
 
     public Item defaultWeapon;
 
@@ -59,7 +60,7 @@ public class PlayerStat : MonoBehaviour
         TorsoRenderer = GameObject.FindGameObjectWithTag("Torso");
         LegRenderer = GameObject.FindGameObjectWithTag("Legs");
         torsoAnimator = GameObject.FindGameObjectWithTag("Torso").GetComponent<Animator>();
-        LegRenderer = GameObject.FindGameObjectWithTag("Legs");
+        legAnimator = GameObject.FindGameObjectWithTag("Legs").GetComponent<Animator>();
         redScreenEffect = GameObject.FindGameObjectWithTag("RedScreenEffect").GetComponent<Image>();
         restart = gameObject.GetComponent<Restart>();
 
@@ -174,9 +175,11 @@ public class PlayerStat : MonoBehaviour
         Debug.Log(damageTaken);
         playerHealth -= damageTaken;
         StartCoroutine(HurtColor());
-        if (playerHealth <= 0)
+        if (playerHealth <= 0 && isDead == false)
         {
+            isDead = true;
             StartCoroutine(DeathAndRestart());
+            Debug.Log("wtf");
         }
 
         Debug.Log("Player health equal" + playerHealth);
@@ -252,7 +255,6 @@ public class PlayerStat : MonoBehaviour
         weaponAccuracy = newItem.weaponAccuracy * weaponAccuracySave;
         bulletPrefab = newItem.bulletPrefab;
         NewPassiveAcquired();
-        playerHealth = newItem.healthBonus + playerHealthSave;
         yield return null;
         Debug.Log("You got the weapon " + newItem.name);
     }
@@ -282,8 +284,11 @@ public class PlayerStat : MonoBehaviour
 
     IEnumerator DeathAndRestart()
     {
-        torsoAnimator.SetBool("Dead", true);
-        legAnimator.SetBool("Dead", true);
+        torsoAnimator.SetTrigger("dead");
+        legAnimator.SetTrigger("dead");
+        torsoAnimator.SetBool("isDead", true);
+        legAnimator.SetBool("isDead", true);
+        playerSpeed = 0;
         playerC.canMove = false;
         playerC.canDash = false;
         yield return new WaitForSeconds(3f);

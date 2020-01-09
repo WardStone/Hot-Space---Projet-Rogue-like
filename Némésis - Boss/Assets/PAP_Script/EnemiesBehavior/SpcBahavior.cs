@@ -157,7 +157,7 @@ public class SpcBahavior : MonoBehaviour
 
     void GetMoney()
     {
-        int loot = Random.Range(9, 13);
+        int loot = Random.Range(5, 7);
         gameManager.playerMoney += loot;
     }
 

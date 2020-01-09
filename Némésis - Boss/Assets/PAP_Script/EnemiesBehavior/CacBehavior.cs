@@ -142,7 +142,7 @@ public class CacBehavior : MonoBehaviour
 
     void GetMoney()
     {
-        int loot = Random.Range(9, 13);
+        int loot = Random.Range(10, 15);
         gameManager.playerMoney += loot;
     }
 

@@ -24,7 +24,7 @@ public class BossHeartScript : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (boss.bossHealth <= 750)
+        if (boss.bossHealth <= 1000)
         {
 
             bossCoreRb.velocity = bossCoreDirection * coreSpeed * Time.deltaTime;
@@ -33,8 +33,7 @@ public class BossHeartScript : MonoBehaviour
             
 
         }
-        if(boss.bossHealth <=
-            0)
+        if(boss.bossHealth <=   0)
         {
             Destroy(gameObject);
         }

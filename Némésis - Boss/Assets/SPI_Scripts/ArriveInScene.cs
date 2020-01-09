@@ -16,6 +16,7 @@ public class ArriveInScene : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         loadingScreenAnim = GameObject.FindGameObjectWithTag("loadScreen");
         player.transform.position = gameObject.transform.localPosition;
+        loadingScreenAnim.SetActive(false);
         if (SceneManager.GetActiveScene().buildIndex != 2) 
             StartCoroutine(loadingScreen());
     }
@@ -24,7 +25,7 @@ public class ArriveInScene : MonoBehaviour
     {
         player.SetActive(false);
         Debug.Log("loadscreen");
-        //loadingScreenAnim.SetActive(true);//Set loading screen active true
+        loadingScreenAnim.SetActive(true);//Set loading screen active true
         yield return new WaitForSeconds(4.5f);
         player.SetActive(true);
         loadingScreenAnim.SetActive(false);//Set loading screen active true

@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerControllerScript : MonoBehaviour
 {
     public PlayerStat stats;
+    public SimpleCameraShakeInCinemachine shakeCam;
 
     public float movementSpeed;
     private Rigidbody2D playerRb;
@@ -22,6 +23,7 @@ public class PlayerControllerScript : MonoBehaviour
     public GameObject firePoint;
     public GameObject laserPoint;
     public GameObject player;
+    public GameObject gunFlash;
 
     private Animator playerlegs, playerTorso, playerArms;
 
@@ -42,6 +44,7 @@ public class PlayerControllerScript : MonoBehaviour
     void Start()
     {
         playerRb = GetComponent<Rigidbody2D>();
+        shakeCam = GameObject.FindGameObjectWithTag("CameraShakeManager").GetComponent<SimpleCameraShakeInCinemachine>();
         canMove = true;
         playerTorso = gameObject.transform.GetChild(0).transform.GetChild(0).GetComponent<Animator>();
         playerlegs = gameObject.transform.GetChild(0).transform.GetChild(1).GetComponent<Animator>();
@@ -173,8 +176,12 @@ public class PlayerControllerScript : MonoBehaviour
 
     IEnumerator ShootBullet()
     {
+
         for (int i = 0; i < stats.howManybulleShot; i++)
         {
+            Instantiate(gunFlash, firePoint.transform.position, Quaternion.identity);
+            StartCoroutine(shakeCam.bulletShake());
+
             Debug.Log("Cool it shoot");
             if (aimingPoint.transform.position.x >= 0.5f || aimingPoint.transform.position.x <= -0.5f)
             {

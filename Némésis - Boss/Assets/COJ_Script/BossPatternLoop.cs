@@ -397,7 +397,7 @@ public class BossPatternLoop : MonoBehaviour
             //PatternPart3
             pattern01FirstDir = new Vector3(0, 0, 0);
             leftArm01Rb.velocity = pattern01FirstDir * 1;
-            cameraShake.Shake();
+            StartCoroutine(cameraShake.Shake());
             Instantiate(fistImpactFX, leftArm01.transform.position - new Vector3(4.5f, 0), Quaternion.identity);
             if (leftArm01.CompareTag("bossLeftArm02"))
             {
@@ -464,7 +464,7 @@ public class BossPatternLoop : MonoBehaviour
                     yield return new WaitForSeconds(0.1f);
                     pattern01FirstDir = new Vector3(0, 0, 0);
                     leftArm01Rb.velocity = pattern01FirstDir * 1;
-                    cameraShake.Shake();
+                    StartCoroutine(cameraShake.Shake());
                     Instantiate(fistImpactFX, leftArm01.transform.position - new Vector3(4.5f, 0), Quaternion.identity);
                 }
 
@@ -610,6 +610,7 @@ public class BossPatternLoop : MonoBehaviour
         AnimatorRef = 2;
         SetAllAnimatorRef();
         yield return new WaitForSeconds(1.5f);
+        StartCoroutine(cameraShake.Shake());
 
         if (rightArm01.CompareTag("bossRightArm01"))
         {

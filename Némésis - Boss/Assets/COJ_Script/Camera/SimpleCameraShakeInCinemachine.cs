@@ -6,9 +6,11 @@ using UnityEngine.Events;
 
 public class SimpleCameraShakeInCinemachine : MonoBehaviour {
 
-    public float ShakeDuration = 0.3f;          // Time the Camera Shake effect will last
-    public float ShakeAmplitude = 1.2f;         // Cinemachine Noise Profile Parameter
-    public float ShakeFrequency = 2.0f;         // Cinemachine Noise Profile Parameter
+    public float ShakeDuration;          // Time the Camera Shake effect will last
+    public float ShakeAmplitude;         // Cinemachine Noise Profile Parameter
+    public float ShakeFrequency;         // Cinemachine Noise Profile Parameter
+    public bool envrionmentShake = false;
+    public bool canShake = true;
 
     private float ShakeElapsedTime = 0f;
 
@@ -52,8 +54,26 @@ public class SimpleCameraShakeInCinemachine : MonoBehaviour {
         }
     }
 
-    public void Shake()
+    public IEnumerator Shake()
     {
+        envrionmentShake = true;
+        ShakeDuration = 0.5f;
+        ShakeAmplitude = 10f;
         ShakeElapsedTime = ShakeDuration;
+        yield return new WaitForSeconds(0.5f);
+        envrionmentShake = false;      
+    }
+
+    public IEnumerator bulletShake()
+    {
+        ShakeDuration = 0.1f;
+        ShakeAmplitude = 1f;
+        if(envrionmentShake == false && canShake == true)
+        {
+            canShake = false;
+            ShakeElapsedTime = ShakeDuration;
+        }
+        yield return new WaitForSeconds(0.1f);
+        canShake = true;
     }
 }

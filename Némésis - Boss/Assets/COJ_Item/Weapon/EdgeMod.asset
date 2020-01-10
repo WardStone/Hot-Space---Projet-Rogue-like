@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: EdgeMod
   m_EditorClassIdentifier: 
   name: MOD Edge
-  price: '    300'
+  price: 200
   description: Shoot slash of air
   icon: {fileID: 0}
   isDefaultItem: 0
@@ -23,7 +23,7 @@ MonoBehaviour:
   delayBeforeNextShot: 0.5
   bulletSpeed: 20
   bulletSize: {fileID: 0}
-  bulletDamage: 25
+  bulletDamage: 20
   weaponAccuracy: 0.08
   healthBonus: 200
   playerSpeed: 0

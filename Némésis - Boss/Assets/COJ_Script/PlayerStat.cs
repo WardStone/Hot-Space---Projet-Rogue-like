@@ -75,10 +75,10 @@ public class PlayerStat : MonoBehaviour
         bulletPrefab = defaultWeapon.bulletPrefab;
         playerHealth= defaultWeapon.healthBonus;
         maxHealth = defaultWeapon.healthBonus;
-        playerSpeed = 5;
+        playerSpeed = 7;
         redScreenEffect.enabled = false;
 
-        howManyBulletShotSave = 1;
+        howManyBulletShotSave = 0;
         bulletLifeSpanSave = 1;
         delayBeforeFirstShotSave = 0;
         delayBeforeNextShotSave = 1;
@@ -211,7 +211,7 @@ public class PlayerStat : MonoBehaviour
     IEnumerator GetStatFromItem()
     {
         Debug.Log("You got the item " + newItem.name);
-        howManybulleShot = howManybulleShot * newItem.howManybulleShot;
+        howManybulleShot = howManybulleShot + newItem.howManybulleShot;
         howManyBulletShotSave += newItem.howManybulleShot;
         Debug.Log("howManyBulletShot is now" + howManybulleShot);
         bulletLifeSpan += bulletLifeSpan * newItem.bulletLifeSpan;

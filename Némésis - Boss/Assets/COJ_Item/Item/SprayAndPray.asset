@@ -17,7 +17,7 @@ MonoBehaviour:
   description: Firerate++    Range+    BulletSpeed+    Damage+    Accuracy---
   icon: {fileID: 0}
   isDefaultItem: 0
-  howManybulleShot: 1
+  howManybulleShot: 0
   bulletLifeSpan: 0.1
   delayBeforeFirstShot: 0
   delayBeforeNextShot: -0.25

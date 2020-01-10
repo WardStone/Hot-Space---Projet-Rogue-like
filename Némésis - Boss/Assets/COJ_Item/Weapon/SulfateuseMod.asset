@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: SulfateuseMod
   m_EditorClassIdentifier: 
   name: MOD Sulfator
-  price: '    300'
+  price: 200
   description: Burn them all (and press longer)
   icon: {fileID: 0}
   isDefaultItem: 0
@@ -23,7 +23,7 @@ MonoBehaviour:
   delayBeforeNextShot: 0.05
   bulletSpeed: 20
   bulletSize: {fileID: 0}
-  bulletDamage: 3
+  bulletDamage: 2
   weaponAccuracy: 0.35
   healthBonus: 200
   playerSpeed: 0

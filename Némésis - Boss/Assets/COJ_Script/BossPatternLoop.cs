@@ -82,7 +82,7 @@ public class BossPatternLoop : MonoBehaviour
     public GameObject enemyBulletPrefab;
     public GameObject enemyBouncyBulletPrefab;
     protected Vector2 head01BulletDir;
-    public float enemyBulletSpeed = 100f;
+    public float enemyBulletSpeed = 300f;
     public Rigidbody2D enemyBulletRb;
     protected GameObject enemyBullet;
     public Transform shotSpawnPoint;

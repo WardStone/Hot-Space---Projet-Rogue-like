@@ -12,7 +12,7 @@ public class BossDoorDétection : MonoBehaviour
 
     void Start()
     {
-        theDoor = GameObject.FindGameObjectWithTag("RootRoom").transform.GetChild(1).gameObject;
+        theDoor = GameObject.FindGameObjectWithTag("RootRoom").transform.GetChild(2).gameObject;
         keyLeft = 2;
     }
 

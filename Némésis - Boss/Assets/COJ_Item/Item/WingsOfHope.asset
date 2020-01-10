@@ -18,7 +18,7 @@ MonoBehaviour:
     shall Ascend
   icon: {fileID: 0}
   isDefaultItem: 0
-  howManybulleShot: 1
+  howManybulleShot: 0
   bulletLifeSpan: 0
   delayBeforeFirstShot: 0
   delayBeforeNextShot: 0

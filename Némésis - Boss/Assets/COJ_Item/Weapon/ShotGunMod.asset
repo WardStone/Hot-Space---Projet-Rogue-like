@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: ShotGunMod
   m_EditorClassIdentifier: 
   name: MOD Shotgun
-  price: '   300  '
+  price: 200
   description: Still the same after all thoses years
   icon: {fileID: 0}
   isDefaultItem: 0
@@ -23,7 +23,7 @@ MonoBehaviour:
   delayBeforeNextShot: 1.1
   bulletSpeed: 15
   bulletSize: {fileID: 0}
-  bulletDamage: 7
+  bulletDamage: 6
   weaponAccuracy: 0.25
   healthBonus: 200
   playerSpeed: 0

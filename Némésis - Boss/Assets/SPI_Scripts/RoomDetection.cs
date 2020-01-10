@@ -49,10 +49,9 @@ public class RoomDetection : MonoBehaviour
         if (hasBeenActivated == false )
         {
             hasBeenActivated = true;
-            tpManager.gameObject.tag = ("lock");
-            currentRoom.transform.GetChild(1).gameObject.SetActive(true);
-            if (GameObject.FindGameObjectsWithTag("Enemy").Length > 0)
-                containsEnemy = true;
+            
+            StartCoroutine(timeSpawner());
+            
         }
     }
 
@@ -60,7 +59,18 @@ public class RoomDetection : MonoBehaviour
     {
         tpManager.gameObject.tag = ("lock");
         if (GameObject.FindGameObjectsWithTag("Enemy").Length > 0)
+        {
             containsEnemy = true;
+        }
         yield break;
     }
+    IEnumerator timeSpawner()
+    {
+        tpManager.gameObject.tag = ("lock");
+        yield return new WaitForSeconds(0.6f);
+        currentRoom.transform.GetChild(1).gameObject.SetActive(true);
+        if (GameObject.FindGameObjectsWithTag("Enemy").Length > 0)
+            containsEnemy = true;
+    }
+
 }

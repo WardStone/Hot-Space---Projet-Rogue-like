@@ -43,7 +43,9 @@ public class PauseMenu : MonoBehaviour
 
     public void LoadingMenu ()
     {
+        GameObject thePlayer = GameObject.FindGameObjectWithTag("Player");
         Time.timeScale = 1f;
+        Destroy(thePlayer);
         SceneManager.LoadScene(0);
     }
     public void QuitGame()

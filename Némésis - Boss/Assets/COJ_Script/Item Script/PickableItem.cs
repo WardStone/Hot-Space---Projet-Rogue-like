@@ -82,7 +82,7 @@ public class PickableItem : MonoBehaviour
         }
         else if (gameObject.CompareTag("ShopWeapon"))
         {
-            int cost = 300;
+            int cost = 200;
             if(gameManager.playerMoney >= cost)
             {
                 gameManager.playerMoney -= cost;

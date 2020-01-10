@@ -17,7 +17,7 @@ MonoBehaviour:
   description: Smells like one pharaon who stayed too long in Egopt
   icon: {fileID: 0}
   isDefaultItem: 0
-  howManybulleShot: 2
+  howManybulleShot: 1
   bulletLifeSpan: 0
   delayBeforeFirstShot: 0
   delayBeforeNextShot: 0

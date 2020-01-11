@@ -122,6 +122,10 @@ MonoBehaviour:
   recoveryTime: 1.7
   timeBeforeDash: 0.75
   player: {fileID: 0}
+  deadBody: {fileID: 4345480586243504270, guid: c41fb1812fcb9b44d9233875d24360ae,
+    type: 3}
+  dropLoot: {fileID: 8681428853780567395, guid: a20f63120c19ca84a8e5bb96b368a15a,
+    type: 3}
   dashColor: {r: 1, g: 0.079595506, b: 0.07058823, a: 1}
   normalColor: {r: 1, g: 1, b: 1, a: 1}
   hurtColor: {r: 1, g: 0.6431373, b: 0.07058824, a: 1}

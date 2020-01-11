@@ -67,6 +67,8 @@ TagManager:
   - healthPack
   - healthPackSpawner
   - KeyUi
+  - GunFlash
+  - BossPartExplosion
   layers:
   - Default
   - TransparentFX

@@ -114,6 +114,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boss: {fileID: 0}
+  explosionGen: {fileID: 3994322604524090185, guid: 23593fb4aa98fe3498447bd50f6dfe88,
+    type: 3}
   stat: {fileID: 0}
   partHealth: 300
   hasRespawned: 0

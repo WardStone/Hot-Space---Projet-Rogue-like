@@ -6,6 +6,8 @@ public class BossPartStat : MonoBehaviour
 {
     public BossPatternLoop boss;
 
+    public GameObject explosionGen;
+    public bool canExplose = true;
     public PlayerStat stat;
     public float partHealth;
     public bool hasRespawned = false;
@@ -39,6 +41,7 @@ public class BossPartStat : MonoBehaviour
         {
             gameObject.GetComponent<BoxCollider2D>().enabled = false;
             gameObject.GetComponent<SpriteRenderer>().enabled = false;
+            InstantiateExplosion();
             Debug.Log("Dead");
             
         }
@@ -46,6 +49,7 @@ public class BossPartStat : MonoBehaviour
         {
             gameObject.GetComponent<BoxCollider2D>().enabled = true;
             gameObject.GetComponent<SpriteRenderer>().enabled = true;
+            canExplose = true;
             Debug.Log("Respawned");
         }
     }
@@ -68,5 +72,14 @@ public class BossPartStat : MonoBehaviour
             gameObject.GetComponent<SpriteRenderer>().material.color = hurtColor;
             yield return new WaitForSeconds(0.05f);
             gameObject.GetComponent<SpriteRenderer>().material.color = okColor;
+    }
+
+    void InstantiateExplosion()
+    {
+        if(canExplose == true)
+        {
+            canExplose = false;
+            Instantiate(explosionGen, gameObject.transform.position, Quaternion.identity);
+        }
     }
 }

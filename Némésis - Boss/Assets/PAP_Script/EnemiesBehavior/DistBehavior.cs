@@ -26,6 +26,8 @@ public class DistBehavior : MonoBehaviour
     public Transform player;
 
     public GameObject enemyBullet;
+    public GameObject deadhBody;
+    public GameObject dropLoot;
 
     public Color shootColor = Color.red;
     public Color normalColor = Color.white;
@@ -139,13 +141,17 @@ public class DistBehavior : MonoBehaviour
     private void Death()
     {
         GetMoney();
+        Instantiate(deadhBody, gameObject.transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
 
     void GetMoney()
     {
         int loot = Random.Range(10, 15);
-        gameManager.playerMoney += loot;
+        for(int i = 0; i < loot; i++)
+        {
+            Instantiate(dropLoot,gameObject.transform.position + new Vector3(Random.Range(-1f,2f), Random.Range(-1f, 2f)),Quaternion.identity);
+        }
     }
 
 }

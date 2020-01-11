@@ -141,6 +141,10 @@ MonoBehaviour:
   dmgBoxSpawnDelay: 0.2
   spcDmgBox: {fileID: 4814175886417094952, guid: 079a3553234c81448a26373d838c9bb7,
     type: 3}
+  deadBody: {fileID: 7076264321794815318, guid: b0fcc20de70beb44b930fd2b64995209,
+    type: 3}
+  dropLoot: {fileID: 8681428853780567395, guid: a20f63120c19ca84a8e5bb96b368a15a,
+    type: 3}
   target1:
   - {fileID: 0}
   - {fileID: 0}

@@ -11,6 +11,8 @@ public class SpcBahavior : MonoBehaviour
     public float speed;
     public float dmgBoxSpawnDelay;
     public GameObject spcDmgBox;
+    public GameObject deadBody;
+    public GameObject dropLoot;
 
     public Transform[] target1;
     public Transform[] target2;
@@ -152,13 +154,17 @@ public class SpcBahavior : MonoBehaviour
     private void Death()
     {
         GetMoney();
+        Instantiate(deadBody, gameObject.transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
 
     void GetMoney()
     {
         int loot = Random.Range(5, 7);
-        gameManager.playerMoney += loot;
+        for (int i = 0; i < loot; i++)
+        {
+            Instantiate(dropLoot, gameObject.transform.position + new Vector3(Random.Range(-1f, 2f), Random.Range(-1f, 2f)), Quaternion.identity);
+        }
     }
 
 }

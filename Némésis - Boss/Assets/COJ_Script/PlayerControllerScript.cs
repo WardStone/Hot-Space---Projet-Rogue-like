@@ -96,7 +96,7 @@ public class PlayerControllerScript : MonoBehaviour
 
     private void FixedUpdate()
     {
-
+        Debug.Log("Axis equal" +Input.GetAxis("Fire"));
         if (canMove == true)
         {
             playerRb.velocity = moveVelocity;    
@@ -133,7 +133,7 @@ public class PlayerControllerScript : MonoBehaviour
             playerTorso.SetBool("isAiming", false);
             aimingPoint.SetActive(false);
         }
-        if (Input.GetButton("Fire") && aimInputDirection != Vector3.zero)
+        if (Input.GetAxis("Fire") == 1 && aimInputDirection != Vector3.zero)
         {
             firstShotDelay += Time.deltaTime;
             

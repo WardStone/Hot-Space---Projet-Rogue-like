@@ -26,7 +26,7 @@ public class DistBehavior : MonoBehaviour
     public Transform player;
 
     public GameObject enemyBullet;
-    public GameObject deadhBody;
+    public GameObject deadBody;
     public GameObject dropLoot;
 
     public Color shootColor = Color.red;
@@ -130,7 +130,9 @@ public class DistBehavior : MonoBehaviour
 
         if (health <= 0)
         {
+            gameObject.GetComponent<CircleCollider2D>().enabled = false;
             canMove = false;
+            StopAllCoroutines();
             anim.SetBool("isDead", true);
         }
         yield return new WaitForSeconds(0.1f);
@@ -141,7 +143,7 @@ public class DistBehavior : MonoBehaviour
     private void Death()
     {
         GetMoney();
-        Instantiate(deadhBody, gameObject.transform.position, Quaternion.identity);
+        Instantiate(deadBody, gameObject.transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
 

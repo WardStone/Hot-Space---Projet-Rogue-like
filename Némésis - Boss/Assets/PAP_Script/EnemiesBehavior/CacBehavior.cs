@@ -70,6 +70,8 @@ public class CacBehavior : MonoBehaviour
         
         yield return new WaitForSeconds(timeBeforeDash);
 
+        GetComponent<SpriteRenderer>().material.color = normalColor;
+
         target = new Vector2(player.position.x, player.position.y);
 
         anim.SetBool("isJumping", true);
@@ -77,8 +79,6 @@ public class CacBehavior : MonoBehaviour
         while (transform.position != target && stopDash == false)
         {
             
-
-            GetComponent<CircleCollider2D>().isTrigger = true;
             transform.position = Vector2.MoveTowards(transform.position, target, dashSpeed * Time.deltaTime);
 
             yield return new WaitForSeconds(0.005f);
@@ -87,11 +87,8 @@ public class CacBehavior : MonoBehaviour
 
         anim.SetBool("isJumping", false);
 
-        GetComponent<CircleCollider2D>().isTrigger = false;
-
         stopDash = false;
 
-        GetComponent<SpriteRenderer>().material.color = normalColor;
 
         yield return new WaitForSeconds(recoveryTime);
 
@@ -129,7 +126,9 @@ public class CacBehavior : MonoBehaviour
 
         if (health <= 0)
         {
+            GetComponent<CircleCollider2D>().enabled = false;
             anim.SetBool("isDead", true);
+            StopAllCoroutines();
             canMove = false;
         }
         yield return new WaitForSeconds(0.1f);

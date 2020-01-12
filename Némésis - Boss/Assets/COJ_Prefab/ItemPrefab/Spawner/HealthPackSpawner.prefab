@@ -54,6 +54,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 9005606681114410877}
     m_Modifications:
+    - target: {fileID: 5955408968848976002, guid: 8af48e2068f09e348be97f94b0b7abe4,
+        type: 3}
+      propertyPath: m_Name
+      value: Piedestal
+      objectReference: {fileID: 0}
     - target: {fileID: 4504192632922358367, guid: 8af48e2068f09e348be97f94b0b7abe4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -62,7 +67,7 @@ PrefabInstance:
     - target: {fileID: 4504192632922358367, guid: 8af48e2068f09e348be97f94b0b7abe4,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.49
       objectReference: {fileID: 0}
     - target: {fileID: 4504192632922358367, guid: 8af48e2068f09e348be97f94b0b7abe4,
         type: 3}
@@ -108,11 +113,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5955408968848976002, guid: 8af48e2068f09e348be97f94b0b7abe4,
-        type: 3}
-      propertyPath: m_Name
-      value: Piedestal
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8af48e2068f09e348be97f94b0b7abe4, type: 3}

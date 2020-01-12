@@ -66,8 +66,8 @@ public class SimpleCameraShakeInCinemachine : MonoBehaviour {
 
     public IEnumerator bulletShake()
     {
-        ShakeDuration = 0.1f;
-        ShakeAmplitude = 1f;
+        ShakeDuration = 0.2f;
+        ShakeAmplitude = 1.5f;
         if(envrionmentShake == false && canShake == true)
         {
             canShake = false;

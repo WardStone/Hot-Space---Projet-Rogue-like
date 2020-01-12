@@ -142,6 +142,7 @@ public class SpcBahavior : MonoBehaviour
         Debug.Log("enemy has taken " + playerStat.bulletDamage);
         if (health <= 0)
         {
+            GetComponent<CircleCollider2D>().enabled = false;
             CancelInvoke("SpawnDamageBox");
             anim.SetBool("isDead", true);
             canMove = false;

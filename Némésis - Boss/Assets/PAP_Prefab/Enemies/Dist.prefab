@@ -111,7 +111,7 @@ MonoBehaviour:
   player: {fileID: 0}
   enemyBullet: {fileID: 2176418971063826607, guid: 33677433e7b83ae41adabdac4781faa6,
     type: 3}
-  deadhBody: {fileID: 7329798516054999873, guid: 01c291e093ba89f49a6bd120c0c05ff0,
+  deadBody: {fileID: 7329798516054999873, guid: 01c291e093ba89f49a6bd120c0c05ff0,
     type: 3}
   dropLoot: {fileID: 8681428853780567395, guid: a20f63120c19ca84a8e5bb96b368a15a,
     type: 3}

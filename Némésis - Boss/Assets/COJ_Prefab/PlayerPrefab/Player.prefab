@@ -1949,7 +1949,7 @@ MonoBehaviour:
   redScreenEffect: {fileID: 0}
   canGetStat: 0
   isDead: 0
-  defaultWeapon: {fileID: 11400000, guid: 705c6796eff09644d8f63474e6c6be9b, type: 2}
+  defaultWeapon: {fileID: 11400000, guid: 345adcf91aeab9a4886d2424b1ace3de, type: 2}
 --- !u!114 &720278834
 MonoBehaviour:
   m_ObjectHideFlags: 0

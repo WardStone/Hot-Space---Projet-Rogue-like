@@ -49,6 +49,7 @@ public class PlayerStat : MonoBehaviour
 
     public bool canGetStat;
     public bool isDead = false;
+    public int weaponR;
 
     public Item defaultWeapon;
 
@@ -75,6 +76,7 @@ public class PlayerStat : MonoBehaviour
         bulletPrefab = defaultWeapon.bulletPrefab;
         playerHealth= defaultWeapon.healthBonus;
         maxHealth = defaultWeapon.healthBonus;
+        weaponR = defaultWeapon.weaponRef;
         playerSpeed = 7;
         redScreenEffect.enabled = false;
 
@@ -254,6 +256,7 @@ public class PlayerStat : MonoBehaviour
         bulletDamage = newItem.bulletDamage * bulletDamageSave;
         weaponAccuracy = newItem.weaponAccuracy * weaponAccuracySave;
         bulletPrefab = newItem.bulletPrefab;
+        weaponR = newItem.weaponRef;
         NewPassiveAcquired();
         yield return null;
         Debug.Log("You got the weapon " + newItem.name);

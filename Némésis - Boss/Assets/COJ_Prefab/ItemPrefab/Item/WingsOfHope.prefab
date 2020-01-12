@@ -256,7 +256,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0.0329507, y: 0}
   serializedVersion: 2
-  m_Radius: 1.629937
+  m_Radius: 2.2
 --- !u!114 &5993057521592386459
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -270,6 +270,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerC: {fileID: 0}
+  playerS: {fileID: 0}
   gameManager: {fileID: 0}
   itemName: {fileID: 0}
   itemDescription: {fileID: 0}

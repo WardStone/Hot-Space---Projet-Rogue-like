@@ -84,7 +84,7 @@ public class PlayerControllerScript : MonoBehaviour
             StartCoroutine(Dash());
         }
 
-        if (laserScope == true)
+        if (stats.weaponR == 1)
         {
             LaserScoping();
         }

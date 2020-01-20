@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ef7f2ed38d3127e45865cfa49648ec4b, type: 3}
-  m_Name: ReadyAimFire
+  m_Name: ChickenNuggets
   m_EditorClassIdentifier: 
-  name: Old Corpse
+  name: Chicken nuggets
   price: 125
   description: Damage++    Health+    Firerate-        Used to be a weapon back in
     the day

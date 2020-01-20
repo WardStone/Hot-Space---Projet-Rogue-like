@@ -30,4 +30,4 @@ MonoBehaviour:
   bulletPrefab: {fileID: 1798982906214986569, guid: c3385333ed3fa54459797089cd2bf4e2,
     type: 3}
   isWeapon: 1
-  weaponRef: 0
+  weaponRef: 4

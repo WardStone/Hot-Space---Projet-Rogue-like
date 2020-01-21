@@ -38,6 +38,7 @@ public class PlayerControllerScript : MonoBehaviour
     public float dashForce;
     public float dashDuration;
     public float firstShotDelay;
+    public int soundIndex;
 
     public LineRenderer laserScopeRenderer;
 
@@ -176,6 +177,12 @@ public class PlayerControllerScript : MonoBehaviour
 
     IEnumerator ShootBullet()
     {
+        /*if (soundIndex > stats.bulletSoundHolder.transform.childCount -1)
+        {
+            soundIndex = 0;
+        }*/
+        Instantiate(stats.bulletSoundHolder.transform.GetChild(soundIndex), gameObject.transform.position, Quaternion.identity);
+        soundIndex = Random.Range(0, stats.bulletSoundHolder.transform.childCount);
 
         for (int i = 0; i < stats.howManybulleShot; i++)
         {

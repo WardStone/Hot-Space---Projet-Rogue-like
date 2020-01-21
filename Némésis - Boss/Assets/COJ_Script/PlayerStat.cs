@@ -30,6 +30,7 @@ public class PlayerStat : MonoBehaviour
     public float weaponAccuracy;//Précision de l'arme //
     public float playerSpeed;//vitesse du joueur //
     public GameObject bulletPrefab;
+    public GameObject bulletSoundHolder;
 
     public float howManyBulletShotSave;
     public float bulletLifeSpanSave;
@@ -77,6 +78,8 @@ public class PlayerStat : MonoBehaviour
         playerHealth= defaultWeapon.healthBonus;
         maxHealth = defaultWeapon.healthBonus;
         weaponR = defaultWeapon.weaponRef;
+        bulletSoundHolder = defaultWeapon.bulletSound;
+        playerC.soundIndex = 0;
         playerSpeed = 7;
         redScreenEffect.enabled = false;
 
@@ -257,6 +260,8 @@ public class PlayerStat : MonoBehaviour
         weaponAccuracy = newItem.weaponAccuracy * weaponAccuracySave;
         bulletPrefab = newItem.bulletPrefab;
         weaponR = newItem.weaponRef;
+        bulletSoundHolder = newItem.bulletSound;
+        playerC.soundIndex = 0;
         NewPassiveAcquired();
         yield return null;
         Debug.Log("You got the weapon " + newItem.name);

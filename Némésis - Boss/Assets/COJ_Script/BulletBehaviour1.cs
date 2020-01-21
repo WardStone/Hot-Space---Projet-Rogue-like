@@ -5,12 +5,6 @@ using UnityEngine;
 public class BulletBehaviour1 : MonoBehaviour
 {
     public GameObject impact;
-    public GameObject bulletSound;
-
-    private void Start()
-    {
-        Instantiate(bulletSound, gameObject.transform.position, Quaternion.identity);
-    }
 
     private void OnTriggerEnter2D(Collider2D other)
     {

@@ -21,6 +21,7 @@ public class Item : ScriptableObject
     public float weaponAccuracy;//Précision de l'arme
     public float healthBonus;//Bonus de Point de vie
     public float playerSpeed;//Bonus de vitesse du joueur
+    public GameObject bulletSound;//Bruit des balles
     public GameObject bulletPrefab;// Forme de la balle (dépend du type d'arme)
 
     public bool isWeapon;// Si l'objet est une arme

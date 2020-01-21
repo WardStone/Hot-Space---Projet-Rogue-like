@@ -27,6 +27,8 @@ MonoBehaviour:
   weaponAccuracy: 0.15
   healthBonus: 200
   playerSpeed: 0
+  bulletSound: {fileID: 5269653000654434192, guid: c7ec3c2d5cad6e94ebced587ddc86eaf,
+    type: 3}
   bulletPrefab: {fileID: 1040633955465522699, guid: 2400e91dceb08d246bd0fb3a75fb2712,
     type: 3}
   isWeapon: 1

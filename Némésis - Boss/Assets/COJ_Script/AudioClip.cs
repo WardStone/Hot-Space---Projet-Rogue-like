@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class AudioClip : MonoBehaviour
 {
+    public float timer;
     // Start is called before the first frame update
     void Start()
     {
@@ -12,7 +13,7 @@ public class AudioClip : MonoBehaviour
     
     IEnumerator destroySound()
     {
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(timer);
         Destroy(gameObject);
     }
 }

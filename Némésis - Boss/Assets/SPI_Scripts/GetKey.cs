@@ -1,10 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GetKey : MonoBehaviour
 {
     public bool canPick=false;
+    public Text description;
    
     void Update()
     {
@@ -14,12 +16,20 @@ public class GetKey : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        canPick = true;
+        if (other.CompareTag("Player"))
+        {
+            description.enabled = true;
+            canPick = true;
+        }
     }
-    private void OnTriggerExit2D(Collider2D collision)
+    private void OnTriggerExit2D(Collider2D other)
     {
-        canPick = false;
+        if (other.CompareTag("Player"))
+        {
+            description.enabled = false;
+            canPick = false;
+        }
     }
 }

@@ -19,6 +19,39 @@ AudioMixerGroupController:
   m_Mute: 0
   m_Solo: 0
   m_BypassEffects: 0
+--- !u!244 &-7749374544892810756
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: e94b7f8e4ce6b1448a72cb00534f1c6d
+  m_EffectName: Attenuation
+  m_MixLevel: dc51bbb6dbb0e384484fc34dbb06b113
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
+--- !u!243 &-6070598025243756173
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Bullet
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: 92f9c4acecdedae4a99e47a5b0024842
+  m_Children: []
+  m_Volume: 65d4bcb192dbe6640930e6b470fef819
+  m_Pitch: 5fc3214c5ffe3c247b9c0f1a79eb6a32
+  m_Send: 00000000000000000000000000000000
+  m_Effects:
+  - {fileID: -7749374544892810756}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
 --- !u!241 &24100000
 AudioMixerController:
   m_ObjectHideFlags: 0
@@ -41,6 +74,7 @@ AudioMixerController:
     - abb9da41f15c92f49b7f8a94c6ed435d
     - 79aa735743a3a6c4d9e8a92dc321522a
     - a32720486402d5649b2981a9e6e3b39d
+    - 92f9c4acecdedae4a99e47a5b0024842
     name: View
   m_CurrentViewIndex: 0
   m_TargetSnapshot: {fileID: 24500006}
@@ -57,6 +91,7 @@ AudioMixerGroupController:
   - {fileID: -9033985764565514712}
   - {fileID: 3290386100027073642}
   - {fileID: 7915595479045366943}
+  - {fileID: -6070598025243756173}
   m_Volume: 3c21955cfd8599242bf37db6e7c2fc1f
   m_Pitch: 046facd0f04405d498cc027dd6b99a1e
   m_Send: 00000000000000000000000000000000
@@ -90,6 +125,7 @@ AudioMixerSnapshotController:
   m_AudioMixer: {fileID: 24100000}
   m_SnapshotID: 46ddd41e08e71d1489a7567b06f4851d
   m_FloatValues:
+    65d4bcb192dbe6640930e6b470fef819: -22
     3c21955cfd8599242bf37db6e7c2fc1f: -0.002441872
     25c2cd7c57f543e4ca8d5708a6600a49: -4.9356413
     df10848c934b64e4ebdccf0b8d503e32: -10.345207

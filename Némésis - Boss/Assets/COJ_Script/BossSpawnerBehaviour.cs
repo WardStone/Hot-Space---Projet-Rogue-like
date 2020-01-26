@@ -19,9 +19,9 @@ public class BossSpawnerBehaviour : MonoBehaviour
         camShake.Shake();
         yield return new WaitForSeconds(3.5f);
         camShake.Shake();
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(1.5f);
         camShake.Shake();
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(2f);
         camShake.Shake();
         Instantiate(boss, gameObject.transform.position, Quaternion.identity);
     }

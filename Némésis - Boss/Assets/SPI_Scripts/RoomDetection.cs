@@ -67,7 +67,8 @@ public class RoomDetection : MonoBehaviour
     IEnumerator timeSpawner()
     {
         tpManager.gameObject.tag = ("lock");
-        yield return new WaitForSeconds(0.6f);
+        currentRoom.transform.GetChild(3).gameObject.SetActive(true);
+        yield return new WaitForSeconds(1.5f);
         currentRoom.transform.GetChild(1).gameObject.SetActive(true);
         if (GameObject.FindGameObjectsWithTag("Enemy").Length > 0)
             containsEnemy = true;

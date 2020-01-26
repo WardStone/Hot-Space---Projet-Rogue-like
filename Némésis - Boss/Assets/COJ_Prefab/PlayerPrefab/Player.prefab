@@ -238,7 +238,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.2784314}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.2784314}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -2408,6 +2408,7 @@ MonoBehaviour:
   dashForce: 20
   dashDuration: 0.3
   firstShotDelay: 0
+  soundIndex: 0
   laserScopeRenderer: {fileID: 0}
 --- !u!50 &6015816081722176324
 Rigidbody2D:
@@ -2462,6 +2463,7 @@ MonoBehaviour:
   weaponAccuracy: 0
   playerSpeed: 0
   bulletPrefab: {fileID: 0}
+  bulletSoundHolder: {fileID: 0}
   howManyBulletShotSave: 0
   bulletLifeSpanSave: 0
   delayBeforeFirstShotSave: 0
@@ -2944,6 +2946,11 @@ PrefabInstance:
 
 
 '
+      objectReference: {fileID: 0}
+    - target: {fileID: 1920461299287164651, guid: 543b4edf1d3b06740aafee94823e6273,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 543b4edf1d3b06740aafee94823e6273, type: 3}

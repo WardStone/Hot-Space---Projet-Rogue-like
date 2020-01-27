@@ -18,12 +18,12 @@ MonoBehaviour:
   icon: {fileID: 0}
   isDefaultItem: 0
   howManybulleShot: 1
-  bulletLifeSpan: 1.5
+  bulletLifeSpan: 1
   delayBeforeFirstShot: 1.5
   delayBeforeNextShot: 0.05
   bulletSpeed: 20
   bulletSize: {fileID: 0}
-  bulletDamage: 2
+  bulletDamage: 2.5
   weaponAccuracy: 0.35
   healthBonus: 200
   playerSpeed: 0

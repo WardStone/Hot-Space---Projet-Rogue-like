@@ -30,6 +30,7 @@ public class BossHeartScript : MonoBehaviour
             bossCoreRb.velocity = bossCoreDirection * coreSpeed * Time.deltaTime;
             gameObject.GetComponent<BoxCollider2D>().enabled = true;
             gameObject.GetComponent<SpriteRenderer>().enabled = true;
+            gameObject.GetComponent<AudioSource>().enabled = true;
             
 
         }

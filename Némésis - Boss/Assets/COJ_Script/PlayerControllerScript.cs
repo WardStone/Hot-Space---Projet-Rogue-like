@@ -165,12 +165,12 @@ public class PlayerControllerScript : MonoBehaviour
         player.GetComponent<CapsuleCollider2D>().enabled = false;
         canMove = false;
         canDash = false;
-        gameObject.GetComponentInChildren<AudioSource>().enabled = true;
+        gameObject.transform.GetChild(14).GetComponent<AudioSource>().enabled = true;
         yield return new WaitForSeconds(dashDuration);
         
         canMove = true;
         player.GetComponent<CapsuleCollider2D>().enabled = true;
-        gameObject.GetComponentInChildren<AudioSource>().enabled = false;
+        gameObject.transform.GetChild(14).GetComponent<AudioSource>().enabled = false ;
         yield return new WaitForSeconds(0.5f);
         canDash = true;
 

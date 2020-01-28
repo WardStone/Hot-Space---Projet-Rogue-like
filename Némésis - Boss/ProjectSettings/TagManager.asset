@@ -109,3 +109,6 @@ TagManager:
   - name: LaserScope
     uniqueID: 1949513029
     locked: 0
+  - name: "SuperCrat\xE8re"
+    uniqueID: 1939904317
+    locked: 0

@@ -284,7 +284,9 @@ public class PlayerStat : MonoBehaviour
         LegRenderer.GetComponent<SpriteRenderer>().color = DamagedColor;
         TorsoRenderer.GetComponent<SpriteRenderer>().color = DamagedColor;
         redScreenEffect.enabled = true;
+        gameObject.transform.GetChild(15).GetComponent<AudioSource>().enabled = true;
         yield return new WaitForSeconds(0.2f);
+        gameObject.transform.GetChild(15).GetComponent<AudioSource>().enabled = false;
         LegRenderer.GetComponent<SpriteRenderer>().color = NormalColor;
         TorsoRenderer.GetComponent<SpriteRenderer>().color = NormalColor;
         redScreenEffect.enabled = false;

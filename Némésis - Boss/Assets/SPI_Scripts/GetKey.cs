@@ -5,9 +5,10 @@ using UnityEngine.UI;
 
 public class GetKey : MonoBehaviour
 {
+    public switchButton Abutton;
     public bool canPick=false;
     public Text description;
-   
+
     void Update()
     {
         if (canPick && Input.GetButtonDown("Interact"))
@@ -20,6 +21,8 @@ public class GetKey : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            Abutton = GameObject.Find("Abutton").GetComponent<switchButton>();
+            Abutton.canInteract = true;
             description.enabled = true;
             canPick = true;
         }
@@ -28,6 +31,7 @@ public class GetKey : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            Abutton.canInteract = false;
             description.enabled = false;
             canPick = false;
         }

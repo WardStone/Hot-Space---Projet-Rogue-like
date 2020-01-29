@@ -38,7 +38,14 @@ public class DropFollowPlayer : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             gameManagerOBJ.playerMoney += 1;
-            Destroy(gameObject);
+            gameObject.GetComponent<AudioSource>().enabled = true;
+            StartCoroutine(DestroyObject());
         }
+    }
+
+    IEnumerator DestroyObject()
+    {
+        yield return new WaitForSeconds(0.2f);
+        Destroy(gameObject);
     }
 }

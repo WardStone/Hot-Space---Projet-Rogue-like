@@ -30,14 +30,33 @@ public class BossHeartScript : MonoBehaviour
             bossCoreRb.velocity = bossCoreDirection * coreSpeed * Time.deltaTime;
             gameObject.GetComponent<BoxCollider2D>().enabled = true;
             gameObject.GetComponent<SpriteRenderer>().enabled = true;
-            gameObject.GetComponent<AudioSource>().enabled = true;
-            
+
+            if (boss.bossHealth <= 1000 && boss.bossHealth >= 500)
+            {
+                gameObject.transform.GetChild(0).GetComponent<AudioSource>().enabled = true;
+            }
+
+            else if (boss.bossHealth <= 500 && boss.bossHealth >= 250)
+            {
+                gameObject.transform.GetChild(0).GetComponent<AudioSource>().enabled = false;
+
+                gameObject.transform.GetChild(1).GetComponent<AudioSource>().enabled = true;
+            }
+
+            else if (boss.bossHealth <= 250 && boss.bossHealth >= 0)
+            {
+                gameObject.transform.GetChild(1).GetComponent<AudioSource>().enabled = false;
+
+                gameObject.transform.GetChild(2).GetComponent<AudioSource>().enabled = true;
+            }
 
         }
+        
         if(boss.bossHealth <=   0)
         {
             Destroy(gameObject);
         }
+
     }
 
     void OnTriggerEnter2D(Collider2D collision)

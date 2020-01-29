@@ -140,7 +140,7 @@ public class SpcBahavior : MonoBehaviour
         health -= playerStat.bulletDamage;
         gameObject.GetComponent<SpriteRenderer>().color = hurtColor;
         Debug.Log("enemy has taken " + playerStat.bulletDamage);
-        gameObject.GetComponent<AudioSource>().enabled = true;
+        gameObject.transform.GetChild(1).GetComponent<AudioSource>().enabled = true;
 
         if (health <= 0)
         {
@@ -148,12 +148,13 @@ public class SpcBahavior : MonoBehaviour
             CancelInvoke("SpawnDamageBox");
             anim.SetBool("isDead", true);
             canMove = false;
+            gameObject.transform.GetChild(2).GetComponent<AudioSource>().enabled = true;
         }
         yield return new WaitForSeconds(0.1f);
         gameObject.GetComponent<SpriteRenderer>().color = normalColor;
 
         yield return new WaitForSeconds(0.1f);
-        gameObject.GetComponent<AudioSource>().enabled = false;
+        gameObject.transform.GetChild(1).GetComponent<AudioSource>().enabled = false;
 
     }
 

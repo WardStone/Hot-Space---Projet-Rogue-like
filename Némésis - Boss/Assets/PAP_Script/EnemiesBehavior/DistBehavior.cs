@@ -126,21 +126,24 @@ public class DistBehavior : MonoBehaviour
     {
             health -= playerStat.bulletDamage;
             gameObject.GetComponent<SpriteRenderer>().color = hurtColor;
-            gameObject.GetComponent<AudioSource>().enabled = true;
+            gameObject.transform.GetChild(1).GetComponent<AudioSource>().enabled = true;
 
 
         if (health <= 0)
         {
             gameObject.GetComponent<CircleCollider2D>().enabled = false;
             canMove = false;
-            StopAllCoroutines();
             anim.SetBool("isDead", true);
+            gameObject.transform.GetChild(2).GetComponent<AudioSource>().enabled = true;
+
+            StopAllCoroutines();
+            
         }
         yield return new WaitForSeconds(0.1f);
         gameObject.GetComponent<SpriteRenderer>().color = normalColor;
 
         yield return new WaitForSeconds(0.1f);
-        gameObject.GetComponent<AudioSource>().enabled = false;
+        gameObject.transform.GetChild(1).GetComponent<AudioSource>().enabled = false;
 
 
     }

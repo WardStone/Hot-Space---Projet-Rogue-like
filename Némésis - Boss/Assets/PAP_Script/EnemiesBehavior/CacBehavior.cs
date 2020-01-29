@@ -123,6 +123,7 @@ public class CacBehavior : MonoBehaviour
     {
         health -= playerStat.bulletDamage;
         gameObject.GetComponent<SpriteRenderer>().color = hurtColor;
+        gameObject.GetComponent<AudioSource>().enabled = true;
 
         if (health <= 0)
         {
@@ -131,8 +132,11 @@ public class CacBehavior : MonoBehaviour
             StopAllCoroutines();
             canMove = false;
         }
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.1f); 
         gameObject.GetComponent<SpriteRenderer>().color = normalColor;
+
+        yield return new WaitForSeconds(0.1f);
+        gameObject.GetComponent<AudioSource>().enabled = false;
     }
 
     private void Death()

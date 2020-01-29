@@ -126,6 +126,7 @@ public class DistBehavior : MonoBehaviour
     {
             health -= playerStat.bulletDamage;
             gameObject.GetComponent<SpriteRenderer>().color = hurtColor;
+            gameObject.GetComponent<AudioSource>().enabled = true;
 
 
         if (health <= 0)
@@ -137,6 +138,10 @@ public class DistBehavior : MonoBehaviour
         }
         yield return new WaitForSeconds(0.1f);
         gameObject.GetComponent<SpriteRenderer>().color = normalColor;
+
+        yield return new WaitForSeconds(0.1f);
+        gameObject.GetComponent<AudioSource>().enabled = false;
+
 
     }
 

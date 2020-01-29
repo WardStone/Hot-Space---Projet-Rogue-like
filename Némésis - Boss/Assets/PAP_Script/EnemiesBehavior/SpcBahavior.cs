@@ -140,6 +140,8 @@ public class SpcBahavior : MonoBehaviour
         health -= playerStat.bulletDamage;
         gameObject.GetComponent<SpriteRenderer>().color = hurtColor;
         Debug.Log("enemy has taken " + playerStat.bulletDamage);
+        gameObject.GetComponent<AudioSource>().enabled = true;
+
         if (health <= 0)
         {
             GetComponent<CircleCollider2D>().enabled = false;
@@ -149,6 +151,9 @@ public class SpcBahavior : MonoBehaviour
         }
         yield return new WaitForSeconds(0.1f);
         gameObject.GetComponent<SpriteRenderer>().color = normalColor;
+
+        yield return new WaitForSeconds(0.1f);
+        gameObject.GetComponent<AudioSource>().enabled = false;
 
     }
 

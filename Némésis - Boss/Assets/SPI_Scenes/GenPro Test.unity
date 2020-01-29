@@ -4257,7 +4257,7 @@ PrefabInstance:
         type: 3}
       propertyPath: shopRoom
       value: 
-      objectReference: {fileID: 1245256118031429207, guid: 32b0557b56a0a5842b65d1558ecbd30c,
+      objectReference: {fileID: 3171358445186139166, guid: 75859a533a89aea47849b6e3c97aadb4,
         type: 3}
     - target: {fileID: 8272889684307673985, guid: bc858cb441992bc49b865e1955c67df9,
         type: 3}

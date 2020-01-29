@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class PickableItem : MonoBehaviour
 {
+    public switchButton Abutton;
     public PlayerControllerScript playerC;
     public PlayerStat playerS;
     public GameManagerScript gameManager;
@@ -49,6 +50,8 @@ public class PickableItem : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            Abutton = GameObject.Find("Abutton").GetComponent<switchButton>();
+            Abutton.canInteract = true;
             itemName.enabled = true;
             itemDescription.enabled = true;
             if (gameObject.CompareTag("ShopItem") || gameObject.CompareTag("ShopWeapon") || gameObject.CompareTag("healthPack"))
@@ -65,6 +68,7 @@ public class PickableItem : MonoBehaviour
             itemName.enabled = false;
             itemDescription.enabled = false;
             itemPrice.enabled = false;
+            Abutton.canInteract = false;
         }
     }
     void PickUp()

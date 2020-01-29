@@ -1,18 +1,22 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class switchButton : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public bool canInteract = false;
 
     // Update is called once per frame
     void Update()
     {
-        
+        if(canInteract == true)
+        {
+            gameObject.GetComponent<Image>().enabled = true;
+        }
+        else
+        {
+            gameObject.GetComponent<Image>().enabled = false;
+        }
     }
 }

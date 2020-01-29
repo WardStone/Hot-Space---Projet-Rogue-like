@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class BossDoorDétection : MonoBehaviour
 {
-    public switchButton Abutton;
     public int keyLeft;
     public GameObject theDoor;
     public bool boiInTheRoom;
@@ -48,8 +47,6 @@ public class BossDoorDétection : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            Abutton = GameObject.Find("Abutton").GetComponent<switchButton>();
-            Abutton.canInteract = true;
             boiInTheRoom = true;
         }
     }
@@ -59,7 +56,6 @@ public class BossDoorDétection : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             boiInTheRoom = true;
-            Abutton.canInteract = false;
         }
     }
 }

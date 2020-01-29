@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 public class GoToBoss : MonoBehaviour
 {
     public bool canOpenBoss;
+    public switchButton Abutton;
     void Start()
     {
 
@@ -24,6 +25,8 @@ public class GoToBoss : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
+            Abutton = GameObject.Find("Abutton").GetComponent<switchButton>();
+            Abutton.canInteract = true;
             canOpenBoss = true;
         }
     }
@@ -32,6 +35,8 @@ public class GoToBoss : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
+            Abutton = GameObject.Find("Abutton").GetComponent<switchButton>();
+            Abutton.canInteract = false;
             canOpenBoss = false;
         }
     }

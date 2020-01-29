@@ -130,7 +130,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4620773}
   - component: {fileID: 4620775}
-  - component: {fileID: 4620774}
   m_Layer: 0
   m_Name: MapLeftMB
   m_TagString: Untagged
@@ -152,14 +151,6 @@ Transform:
   m_Father: {fileID: 2035993564}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!81 &4620774
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4620772}
-  m_Enabled: 1
 --- !u!20 &4620775
 Camera:
   m_ObjectHideFlags: 0
@@ -213,7 +204,6 @@ GameObject:
   m_Component:
   - component: {fileID: 28378888}
   - component: {fileID: 28378890}
-  - component: {fileID: 28378889}
   m_Layer: 0
   m_Name: MapRightLT
   m_TagString: Untagged
@@ -235,14 +225,6 @@ Transform:
   m_Father: {fileID: 2035993564}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!81 &28378889
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 28378887}
-  m_Enabled: 1
 --- !u!20 &28378890
 Camera:
   m_ObjectHideFlags: 0
@@ -371,7 +353,6 @@ GameObject:
   m_Component:
   - component: {fileID: 87270000}
   - component: {fileID: 87270002}
-  - component: {fileID: 87270001}
   m_Layer: 0
   m_Name: MapRightMB
   m_TagString: Untagged
@@ -393,14 +374,6 @@ Transform:
   m_Father: {fileID: 2035993564}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!81 &87270001
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 87269999}
-  m_Enabled: 1
 --- !u!20 &87270002
 Camera:
   m_ObjectHideFlags: 0
@@ -671,7 +644,6 @@ GameObject:
   m_Component:
   - component: {fileID: 241867441}
   - component: {fileID: 241867443}
-  - component: {fileID: 241867442}
   m_Layer: 0
   m_Name: MapLeftLB
   m_TagString: Untagged
@@ -693,14 +665,6 @@ Transform:
   m_Father: {fileID: 2035993564}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!81 &241867442
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 241867440}
-  m_Enabled: 1
 --- !u!20 &241867443
 Camera:
   m_ObjectHideFlags: 0
@@ -1107,7 +1071,6 @@ GameObject:
   m_Component:
   - component: {fileID: 445900711}
   - component: {fileID: 445900713}
-  - component: {fileID: 445900712}
   m_Layer: 0
   m_Name: MapLeftRB
   m_TagString: Untagged
@@ -1129,14 +1092,6 @@ Transform:
   m_Father: {fileID: 2035993564}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!81 &445900712
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 445900710}
-  m_Enabled: 1
 --- !u!20 &445900713
 Camera:
   m_ObjectHideFlags: 0
@@ -1265,7 +1220,6 @@ GameObject:
   m_Component:
   - component: {fileID: 469250240}
   - component: {fileID: 469250242}
-  - component: {fileID: 469250241}
   m_Layer: 0
   m_Name: MapRightRB
   m_TagString: Untagged
@@ -1287,14 +1241,6 @@ Transform:
   m_Father: {fileID: 2035993564}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!81 &469250241
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 469250239}
-  m_Enabled: 1
 --- !u!20 &469250242
 Camera:
   m_ObjectHideFlags: 0
@@ -1787,7 +1733,6 @@ GameObject:
   m_Component:
   - component: {fileID: 754907246}
   - component: {fileID: 754907245}
-  - component: {fileID: 754907244}
   m_Layer: 0
   m_Name: MapRightLB
   m_TagString: Untagged
@@ -1795,14 +1740,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &754907244
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 754907243}
-  m_Enabled: 1
 --- !u!20 &754907245
 Camera:
   m_ObjectHideFlags: 0
@@ -2020,7 +1957,6 @@ GameObject:
   m_Component:
   - component: {fileID: 817990162}
   - component: {fileID: 817990164}
-  - component: {fileID: 817990163}
   m_Layer: 0
   m_Name: MapLeftRT
   m_TagString: Untagged
@@ -2042,14 +1978,6 @@ Transform:
   m_Father: {fileID: 2035993564}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!81 &817990163
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 817990161}
-  m_Enabled: 1
 --- !u!20 &817990164
 Camera:
   m_ObjectHideFlags: 0
@@ -2438,7 +2366,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1084650073}
   - component: {fileID: 1084650075}
-  - component: {fileID: 1084650074}
   m_Layer: 0
   m_Name: MapRightRT
   m_TagString: Untagged
@@ -2460,14 +2387,6 @@ Transform:
   m_Father: {fileID: 2035993564}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!81 &1084650074
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1084650072}
-  m_Enabled: 1
 --- !u!20 &1084650075
 Camera:
   m_ObjectHideFlags: 0
@@ -2810,7 +2729,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1317268028}
   - component: {fileID: 1317268030}
-  - component: {fileID: 1317268029}
   m_Layer: 0
   m_Name: MapLeftMT
   m_TagString: Untagged
@@ -2832,14 +2750,6 @@ Transform:
   m_Father: {fileID: 2035993564}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!81 &1317268029
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1317268027}
-  m_Enabled: 1
 --- !u!20 &1317268030
 Camera:
   m_ObjectHideFlags: 0
@@ -2893,7 +2803,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1347545902}
   - component: {fileID: 1347545904}
-  - component: {fileID: 1347545903}
   m_Layer: 0
   m_Name: MapLeftLT
   m_TagString: Untagged
@@ -2915,14 +2824,6 @@ Transform:
   m_Father: {fileID: 2035993564}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!81 &1347545903
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1347545901}
-  m_Enabled: 1
 --- !u!20 &1347545904
 Camera:
   m_ObjectHideFlags: 0
@@ -3562,7 +3463,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2014199794}
   - component: {fileID: 2014199796}
-  - component: {fileID: 2014199795}
   m_Layer: 0
   m_Name: MapRightMT
   m_TagString: Untagged
@@ -3584,14 +3484,6 @@ Transform:
   m_Father: {fileID: 2035993564}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!81 &2014199795
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2014199793}
-  m_Enabled: 1
 --- !u!20 &2014199796
 Camera:
   m_ObjectHideFlags: 0

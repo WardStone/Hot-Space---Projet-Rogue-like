@@ -5,6 +5,7 @@ using UnityEngine;
 public class teleport : MonoBehaviour
 {
     public CameraManager camManager;
+    public switchButton Abutton;
 
     public GameObject tp;
     public GameObject player;
@@ -75,6 +76,11 @@ public class teleport : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
+            if(tpManager.CompareTag("lock") == false)
+            {
+                Abutton = GameObject.Find("Abutton").GetComponent<switchButton>();
+                Abutton.canInteract = true;
+            }
             canTp = true;
             player = GameObject.FindGameObjectWithTag("Player");
         }
@@ -82,6 +88,10 @@ public class teleport : MonoBehaviour
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Player")
+        {
+            Abutton = GameObject.Find("Abutton").GetComponent<switchButton>();
+            Abutton.canInteract = false;
             canTp = false;
+        }
     }
 }

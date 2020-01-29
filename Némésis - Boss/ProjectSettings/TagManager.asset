@@ -69,6 +69,8 @@ TagManager:
   - KeyUi
   - GunFlash
   - BossPartExplosion
+  - EnemyRoom
+  - Map
   layers:
   - Default
   - TransparentFX
@@ -85,7 +87,7 @@ TagManager:
   - Wall
   - heartLayer
   - bouncyLayer
-  - 
+  - MiniMap
   - 
   - 
   - 

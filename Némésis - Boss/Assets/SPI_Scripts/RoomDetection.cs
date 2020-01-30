@@ -8,6 +8,7 @@ public class RoomDetection : MonoBehaviour
     public GameObject rootRoom;
     public GameObject tpManager;
     public GameObject currentRoom;
+    public GameObject tpActiveSound;
 
     public int ennemyNumber;
     public bool hasBeenActivated;
@@ -38,6 +39,7 @@ public class RoomDetection : MonoBehaviour
                 {
                     containsEnemy = false;
                     tpManager.gameObject.tag = "Untagged";
+                    Instantiate(tpActiveSound);
                 }
 
             }

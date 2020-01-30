@@ -3,7 +3,12 @@ guid: ce2ab966f6499924f9c12315e958a394
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - rootRoom: {instanceID: 0}
+  - tpManager: {instanceID: 0}
+  - currentRoom: {instanceID: 0}
+  - tpActiveSound: {fileID: 2756785157823845416, guid: 997701dff0f811d40967c5bb6aebfacc,
+      type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

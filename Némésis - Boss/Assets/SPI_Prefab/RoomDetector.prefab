@@ -47,8 +47,11 @@ MonoBehaviour:
   rootRoom: {fileID: 0}
   tpManager: {fileID: 0}
   currentRoom: {fileID: 0}
+  tpActiveSound: {fileID: 2756785157823845416, guid: 997701dff0f811d40967c5bb6aebfacc,
+    type: 3}
   ennemyNumber: 0
   hasBeenActivated: 0
+  containsEnemy: 0
 --- !u!61 &8888333695456498729
 BoxCollider2D:
   m_ObjectHideFlags: 0

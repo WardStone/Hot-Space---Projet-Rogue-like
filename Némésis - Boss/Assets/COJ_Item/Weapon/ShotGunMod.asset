@@ -17,13 +17,13 @@ MonoBehaviour:
   description: Still the same after all thoses years
   icon: {fileID: 0}
   isDefaultItem: 0
-  howManybulleShot: 6
+  howManybulleShot: 8
   bulletLifeSpan: 0.8
   delayBeforeFirstShot: 0
   delayBeforeNextShot: 1.1
-  bulletSpeed: 15
+  bulletSpeed: 13
   bulletSize: {fileID: 0}
-  bulletDamage: 6
+  bulletDamage: 9
   weaponAccuracy: 0.25
   healthBonus: 200
   playerSpeed: 0

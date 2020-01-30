@@ -582,7 +582,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b9d5dbb6a982ce409a91d4ecf904c97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bossHealth: 3500
+  bossHealth: 4000
   canTakeDamage: 1
   healthBar: {fileID: 3118177370040885236}
   phase2Started: 0
@@ -834,9 +834,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 0}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 3500
+  m_MaxValue: 4000
   m_WholeNumbers: 1
-  m_Value: 3500
+  m_Value: 4000
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []

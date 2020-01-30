@@ -164,6 +164,8 @@ MonoBehaviour:
   - {fileID: 0}
   hurtColor: {r: 1, g: 0.6431373, b: 0.07058824, a: 1}
   normalColor: {r: 1, g: 1, b: 1, a: 1}
+  moneyMinRange: 5
+  moneyMaxRange: 8
 --- !u!95 &-1267338102972247186
 Animator:
   serializedVersion: 3

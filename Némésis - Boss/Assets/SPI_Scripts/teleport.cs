@@ -19,6 +19,8 @@ public class teleport : MonoBehaviour
 
     public GameObject camConfiner;
 
+    public GameObject tpSoundGameobject;
+
     void Start()
     {
         rootRoom = GameObject.FindGameObjectWithTag("RootRoom");
@@ -30,7 +32,7 @@ public class teleport : MonoBehaviour
 
     void Update()
     {
-        
+
         if (tpManager.CompareTag("lock") == false & canTp & Input.GetButtonDown("Interact"))
         {
             //Debug.Log("tp toi !!!!");
@@ -41,6 +43,7 @@ public class teleport : MonoBehaviour
                     player.transform.localPosition = tpCoridor.transform.GetChild(1).gameObject.transform.GetChild(2).gameObject.transform.position;
                     StartCoroutine(camManager.MoveCam(new Vector2(camConfiner.transform.position.x, camConfiner.transform.position.y - 2 * 13.1f)));
                     StartCoroutine(camManager.CoolDownTp());
+                    StartCoroutine(TpSound());
                     break;
 
                 case 1: //tp east
@@ -48,6 +51,7 @@ public class teleport : MonoBehaviour
                     player.transform.localPosition = tpCoridor.transform.GetChild(0).gameObject.transform.GetChild(2).gameObject.transform.position;
                     StartCoroutine(camManager.MoveCam(new Vector2(camConfiner.transform.position.x - 2 * 23.56f, camConfiner.transform.position.y)));
                     StartCoroutine(camManager.CoolDownTp());
+                    StartCoroutine(TpSound());
                     break;
 
                 case 2: //tp south
@@ -55,6 +59,7 @@ public class teleport : MonoBehaviour
                     player.transform.localPosition = tpCoridor.transform.GetChild(0).gameObject.transform.GetChild(2).gameObject.transform.position;
                     StartCoroutine(camManager.MoveCam(new Vector2(camConfiner.transform.position.x, camConfiner.transform.position.y + 2 * 13.1f)));
                     StartCoroutine(camManager.CoolDownTp());
+                    StartCoroutine(TpSound());
                     break;
 
                 case 3:// tp west
@@ -63,6 +68,7 @@ public class teleport : MonoBehaviour
                     //camConfiner.transform.position = new Vector2(camConfiner.transform.position.x + 2 * 23.56f, camConfiner.transform.position.y);
                     StartCoroutine(camManager.MoveCam(new Vector2(camConfiner.transform.position.x + 2 * 23.56f, camConfiner.transform.position.y)));
                     StartCoroutine(camManager.CoolDownTp());
+                    StartCoroutine(TpSound());
 
                     break;
 
@@ -83,5 +89,13 @@ public class teleport : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
             canTp = false;
+    }
+
+    IEnumerator TpSound()
+    {
+        tpSoundGameobject = GameObject.Find("TpSound");
+        tpSoundGameobject.GetComponent<AudioSource>().enabled = true;
+        yield return new WaitForSeconds(1.5f);
+        tpSoundGameobject.GetComponent<AudioSource>().enabled = false;
     }
 }

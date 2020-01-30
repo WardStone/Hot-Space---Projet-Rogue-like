@@ -28,15 +28,19 @@ public class DistBehavior : MonoBehaviour
     public GameObject enemyBullet;
     public GameObject deadBody;
     public GameObject dropLoot;
+    public GameObject shootSoundPrefab;
 
     public Color shootColor = Color.red;
     public Color normalColor = Color.white;
     public Color hurtColor;
 
+    
 
     private Animator anim;
     [SerializeField]
     Rigidbody2D body;
+
+    
 
     // Start is called before the first frame update
     void Start()
@@ -99,6 +103,7 @@ public class DistBehavior : MonoBehaviour
         for (int i = 0; shotNbr > i; i++)
         {
             Instantiate(enemyBullet, transform.position, Quaternion.identity);
+            Instantiate(shootSoundPrefab, transform.position, Quaternion.identity);
             yield return new WaitForSeconds(timeBtwShot);
         }
 

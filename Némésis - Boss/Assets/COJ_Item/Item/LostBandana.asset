@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: 'Lost Bandana    '
   price: 125
-  description: Firerate++    Damage+   Health-                        You will have
-    the strenght of Rambot
+  description: Range++    Damage+   Health-                        You will have the
+    strenght of Rambot
   icon: {fileID: 0}
   isDefaultItem: 0
   howManybulleShot: 0
@@ -28,6 +28,7 @@ MonoBehaviour:
   weaponAccuracy: 0
   healthBonus: 0
   playerSpeed: -0.2
+  bulletSound: {fileID: 0}
   bulletPrefab: {fileID: 0}
   isWeapon: 0
   weaponRef: 0

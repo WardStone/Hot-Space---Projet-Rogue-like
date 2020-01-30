@@ -20,10 +20,10 @@ MonoBehaviour:
   howManybulleShot: 1
   bulletLifeSpan: 5
   delayBeforeFirstShot: 0
-  delayBeforeNextShot: 1.2
+  delayBeforeNextShot: 0.9
   bulletSpeed: 45
   bulletSize: {fileID: 0}
-  bulletDamage: 50
+  bulletDamage: 40
   weaponAccuracy: 0.08
   healthBonus: 200
   playerSpeed: 0

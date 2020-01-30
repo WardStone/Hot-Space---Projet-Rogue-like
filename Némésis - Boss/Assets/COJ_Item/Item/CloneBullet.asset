@@ -23,10 +23,11 @@ MonoBehaviour:
   delayBeforeNextShot: 0
   bulletSpeed: 0
   bulletSize: {fileID: 0}
-  bulletDamage: 0
+  bulletDamage: -0.2
   weaponAccuracy: 0
   healthBonus: 0
   playerSpeed: 0
+  bulletSound: {fileID: 0}
   bulletPrefab: {fileID: 0}
   isWeapon: 0
   weaponRef: 0

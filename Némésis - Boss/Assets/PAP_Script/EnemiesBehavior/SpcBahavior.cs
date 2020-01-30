@@ -30,6 +30,10 @@ public class SpcBahavior : MonoBehaviour
 
     public Color hurtColor;
     public Color normalColor = Color.white;
+    [Range(1,100)]
+    public int moneyMinRange;
+    [Range(1,100)]
+    public int moneyMaxRange;
 
 
     // Start is called before the first frame update
@@ -166,11 +170,14 @@ public class SpcBahavior : MonoBehaviour
 
     void GetMoney()
     {
-        int loot = Random.Range(5, 7);
+
+        int loot = Random.Range(moneyMinRange, moneyMaxRange);
         for (int i = 0; i < loot; i++)
         {
             Instantiate(dropLoot, gameObject.transform.position + new Vector3(Random.Range(-1f, 2f), Random.Range(-1f, 2f)), Quaternion.identity);
         }
+
+
     }
 
 }

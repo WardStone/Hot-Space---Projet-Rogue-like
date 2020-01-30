@@ -8,6 +8,7 @@ public class teleportManager : MonoBehaviour
     public GameObject rootRoom;
     public GameObject tpManager;
 
+
     void Start()
     {
         rootRoom = GameObject.FindGameObjectWithTag("RootRoom");
@@ -30,4 +31,5 @@ public class teleportManager : MonoBehaviour
             tp.transform.GetChild(1).gameObject.transform.GetChild(1).gameObject.SetActive(false);
         }
     }
+
 }

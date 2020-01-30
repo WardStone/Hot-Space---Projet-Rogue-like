@@ -48,6 +48,8 @@ MonoBehaviour:
   tp: {fileID: 5078009329368592145}
   rootRoom: {fileID: 0}
   tpManager: {fileID: 0}
+  activeTpSound: {fileID: 2756785157823845416, guid: 997701dff0f811d40967c5bb6aebfacc,
+    type: 3}
 --- !u!1 &5649203326653834422
 GameObject:
   m_ObjectHideFlags: 0
@@ -96,6 +98,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camManager: {fileID: 0}
+  Abutton: {fileID: 0}
   tp: {fileID: 0}
   player: {fileID: 0}
   canTp: 0
@@ -238,6 +241,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camManager: {fileID: 0}
+  Abutton: {fileID: 0}
   tp: {fileID: 0}
   player: {fileID: 0}
   canTp: 0

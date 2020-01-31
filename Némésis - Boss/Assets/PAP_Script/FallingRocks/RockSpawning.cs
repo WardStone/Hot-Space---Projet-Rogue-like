@@ -8,6 +8,7 @@ public class RockSpawning : MonoBehaviour
 
     public GameObject styShadowPreviz;
     public GameObject brkShadowPreviz;
+    public GameObject previewSound;
 
     public bool stopSpawning = false;
     public float spawnTime;
@@ -30,6 +31,7 @@ public class RockSpawning : MonoBehaviour
 
 
         brkRockNbr = Random.Range(brkRockNbrMin, brkRockNbrMax);
+        Instantiate(previewSound, transform.position, Quaternion.identity);
         cameraShake.Shake();
 
         if (gameObject.CompareTag("RockSpawnBoss"))

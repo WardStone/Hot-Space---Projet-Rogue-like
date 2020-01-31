@@ -9,7 +9,7 @@ public class DoorIsOpening : MonoBehaviour
     void Start()
     {
 
-        door = GameObject.FindGameObjectWithTag("RootRoom").transform.GetChild(1).gameObject.transform.GetChild(3).gameObject;
+        door = GameObject.FindGameObjectWithTag("RootRoom").transform.GetChild(2).gameObject.transform.GetChild(3).gameObject;
         doorIsOpening = door.GetComponent<Animator>();
     }
     private void OnTriggerEnter2D(Collider2D collision)

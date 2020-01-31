@@ -48,6 +48,8 @@ MonoBehaviour:
     type: 3}
   brkShadowPreviz: {fileID: 4416108185306851784, guid: 8c6d721deaf5abf47a9ed2bbcec8326f,
     type: 3}
+  previewSound: {fileID: 6500954283127838255, guid: b996fb0bbe8a63947ad529397664f149,
+    type: 3}
   stopSpawning: 0
   spawnTime: 2
   spawnDelay: 8

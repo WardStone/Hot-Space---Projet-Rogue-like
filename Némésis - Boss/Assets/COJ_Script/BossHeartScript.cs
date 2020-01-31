@@ -31,12 +31,12 @@ public class BossHeartScript : MonoBehaviour
             gameObject.GetComponent<BoxCollider2D>().enabled = true;
             gameObject.GetComponent<SpriteRenderer>().enabled = true;
 
-            if (boss.bossHealth <= 1000 && boss.bossHealth >= 500)
+            if (boss.bossHealth <= 1250 && boss.bossHealth >= 750)
             {
                 gameObject.transform.GetChild(0).GetComponent<AudioSource>().enabled = true;
             }
 
-            else if (boss.bossHealth <= 500 && boss.bossHealth >= 250)
+            else if (boss.bossHealth <= 750 && boss.bossHealth >= 250)
             {
                 gameObject.transform.GetChild(0).GetComponent<AudioSource>().enabled = false;
 

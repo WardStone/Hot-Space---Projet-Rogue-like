@@ -68,6 +68,9 @@ public class BossPatternLoop : MonoBehaviour
 
     public GameObject burnZone;
 
+    public GameObject patternIndicatorSound;
+    public GameObject patternImpactSound;
+
     //HeadPattern condition and object
     protected GameObject Head01;
     public GameObject Head01Prefab;
@@ -88,6 +91,9 @@ public class BossPatternLoop : MonoBehaviour
     public Transform shotSpawnPoint;
 
     public float headRespawn;
+
+    public GameObject smallShot;
+    public GameObject bigShot;
 
     //RightArmPattern Condition and object
 
@@ -359,6 +365,7 @@ public class BossPatternLoop : MonoBehaviour
         
         
         leftArm01.GetComponent<BoxCollider2D>().enabled = false;
+        bool spawnSound = true;
         while (pattern1Timer > 0 && leftArm01)
             {
 
@@ -368,10 +375,17 @@ public class BossPatternLoop : MonoBehaviour
                 if (pattern1Timer <= 0.3f && pattern1Timer > 0.1f)
                 {
                     leftArm01.GetComponent<SpriteRenderer>().material.color = dashNowColor;
+                if(spawnSound == true)
+                {
+                    Instantiate(patternIndicatorSound);
+                    spawnSound = false;
+                }
+                    
                 }
                 else
                 {
                     leftArm01.GetComponent<SpriteRenderer>().material.color = leftArmColor;
+                    spawnSound = true;
                 }
 
 
@@ -397,6 +411,7 @@ public class BossPatternLoop : MonoBehaviour
             //PatternPart3
             pattern01FirstDir = new Vector3(0, 0, 0);
             leftArm01Rb.velocity = pattern01FirstDir * 1;
+            Instantiate(patternImpactSound);
             StartCoroutine(cameraShake.Shake());
             Instantiate(fistImpactFX, leftArm01.transform.position - new Vector3(4.5f, 0), Quaternion.identity);
             if (leftArm01.CompareTag("bossLeftArm02"))
@@ -443,10 +458,16 @@ public class BossPatternLoop : MonoBehaviour
                     if (patternPart2Timer <= 0.3f && patternPart2Timer > 0.1f)
                     {
                         leftArm01.GetComponent<SpriteRenderer>().material.color = dashNowColor;
+                        if (spawnSound == true)
+                        {
+                            Instantiate(patternIndicatorSound);
+                            spawnSound = false;
+                        }
                     }
                     else
                     {
                         leftArm01.GetComponent<SpriteRenderer>().material.color = leftArmColor;
+                        spawnSound = true;
                     }
 
 
@@ -462,6 +483,7 @@ public class BossPatternLoop : MonoBehaviour
                     pattern01FirstDir = impactPointSpawn.transform.position - leftArmPoint.position;
                     leftArm01Rb.velocity = pattern01FirstDir * impactSpeed;
                     yield return new WaitForSeconds(0.1f);
+                    Instantiate(patternImpactSound);
                     pattern01FirstDir = new Vector3(0, 0, 0);
                     leftArm01Rb.velocity = pattern01FirstDir * 1;
                     StartCoroutine(cameraShake.Shake());
@@ -531,6 +553,7 @@ public class BossPatternLoop : MonoBehaviour
                     canSpawn = false;
                     yield return new WaitForSeconds(0.45f);
 
+                    Instantiate(smallShot);
                     enemyBullet = enemyHomingBulletPrefab;
                     Instantiate(enemyBullet, shotSpawnPoint.transform.position, Quaternion.identity);
                     beamPatternTimer -= 0.25f;
@@ -556,6 +579,7 @@ public class BossPatternLoop : MonoBehaviour
                     canSpawn = false;
                     yield return new WaitForSeconds(0.15f);
 
+                    Instantiate(smallShot);
                     enemyBullet = enemyRandomBulletPrefab;
                     Instantiate(enemyBullet, shotSpawnPoint.transform.position, Quaternion.identity);
                     beamPatternTimer -= 0.10f;
@@ -577,6 +601,7 @@ public class BossPatternLoop : MonoBehaviour
 
                 enemyBullet = enemyBouncyBulletPrefab;
                 Instantiate(enemyBullet, shotSpawnPoint.transform.position, Quaternion.identity);
+                Instantiate(bigShot);
                 yield return new WaitForSeconds(0.5f);
             }
         }

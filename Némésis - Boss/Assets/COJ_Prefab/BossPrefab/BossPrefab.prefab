@@ -623,6 +623,10 @@ MonoBehaviour:
   patternPart2Timer: 0
   burnZone: {fileID: 6684535543246607528, guid: 46426f56204a11447bd72ba460f57f07,
     type: 3}
+  patternIndicatorSound: {fileID: 4545367363390861293, guid: 54792a0194941c04aaea762d4905859a,
+    type: 3}
+  patternImpactSound: {fileID: 6985406578765409133, guid: 40b7e7f2a66cd3d4191256f2aa574b45,
+    type: 3}
   Head01Prefab: {fileID: 3426822258088181811, guid: a4a2b0fd9cd1cd947ac7b0215b501c43,
     type: 3}
   HeadPoint: {fileID: 0}
@@ -641,6 +645,9 @@ MonoBehaviour:
     type: 3}
   shotSpawnPoint: {fileID: 3118177370175495388}
   headRespawn: 0
+  smallShot: {fileID: 2568828214764104606, guid: 72b3db7a131dadc419f1ffd38c023741,
+    type: 3}
+  bigShot: {fileID: 6418214055728751188, guid: ecc422d2fb13cee4789b5c4c88f111ec, type: 3}
   rightArm01: {fileID: 0}
   rightArm01Prefab: {fileID: 4962646218542758053, guid: 21c8945472abbda4a9d5ec3bb2e81ec3,
     type: 3}

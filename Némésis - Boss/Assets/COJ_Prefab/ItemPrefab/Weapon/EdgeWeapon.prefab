@@ -370,12 +370,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: baf313139277e2649a9683684d5fbb08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Abutton: {fileID: 0}
   playerC: {fileID: 0}
   playerS: {fileID: 0}
   gameManager: {fileID: 0}
   itemName: {fileID: 0}
   itemDescription: {fileID: 0}
   itemPrice: {fileID: 0}
+  ShopDenialSoundPrefab: {fileID: 2520440576993423605, guid: ccd3dbafccf21fd43ac920787c3f65e0,
+    type: 3}
+  PickHealthPackSoundPrefab: {fileID: 2963500261292185708, guid: b97921966d43f5d43b7e68d49c004afd,
+    type: 3}
+  PickWeaponSoundPrefab: {fileID: 8169153080962000666, guid: 6f2212eeae01c384dbaaee5176263ebe,
+    type: 3}
+  PickItemSoundPrefab: {fileID: 2650047544073542993, guid: 05e0808c7e82a3b4ea800677f9017928,
+    type: 3}
   item: {fileID: 11400000, guid: a141564a491fa5c4bb21247ffd2078d7, type: 2}
 --- !u!1 &5037878744525432212
 GameObject:

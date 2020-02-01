@@ -9,10 +9,14 @@ public class PauseMenu : MonoBehaviour
     public GameObject pauseMenuUI;
     public PlayerStat playerStat;
     public bool godMode;
+    private float lifeBeforeGodMod;
+    private float maxLifebeforeGodMod;
+    public GameObject MenuConfirmeSoundPrefab;
+    private GameObject player;
 
     private void Start()
     {
-        
+       player = GameObject.Find("Player");
     }
     void Update()
     {
@@ -26,19 +30,24 @@ public class PauseMenu : MonoBehaviour
                 Pause();
             }
         }
+
     }
     public void Resume ()
     {
+        Instantiate(MenuConfirmeSoundPrefab);
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         GameIsPaused = false;
+        
     }
 
     void Pause ()
     {
+        Instantiate(MenuConfirmeSoundPrefab);
         pauseMenuUI.SetActive(true);
-        Time.timeScale = 0f;
+        Time.timeScale = 0f; 
         GameIsPaused = true;
+        
     }
 
     public void LoadingMenu ()
@@ -55,9 +64,13 @@ public class PauseMenu : MonoBehaviour
 
     public void God()
     {
+        playerStat = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStat>();
+        
+
         if (godMode == false)
         {
-            playerStat = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStat>();
+            lifeBeforeGodMod = playerStat.playerHealth;
+            maxLifebeforeGodMod = playerStat.maxHealth;
             playerStat.maxHealth = 99999;
             playerStat.playerHealth = 99999;
             gameObject.transform.GetChild(1).gameObject.transform.GetChild(4).gameObject.transform.GetChild(1).gameObject.SetActive(true);
@@ -65,9 +78,8 @@ public class PauseMenu : MonoBehaviour
         }
         else
         {
-            playerStat = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStat>();
-            playerStat.maxHealth = 200;
-            playerStat.playerHealth = 200;
+            playerStat.maxHealth = maxLifebeforeGodMod;
+            playerStat.playerHealth = lifeBeforeGodMod;
             gameObject.transform.GetChild(1).gameObject.transform.GetChild(4).gameObject.transform.GetChild(1).gameObject.SetActive(false);
             godMode = false;
         }

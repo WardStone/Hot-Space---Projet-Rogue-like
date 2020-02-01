@@ -8,11 +8,13 @@ public class GetKey : MonoBehaviour
     public switchButton Abutton;
     public bool canPick=false;
     public Text description;
+    public GameObject pickKeySoundPrefab;
 
     void Update()
     {
         if (canPick && Input.GetButtonDown("Interact"))
         {
+            Instantiate(pickKeySoundPrefab);
             Destroy(gameObject);
         }
     }

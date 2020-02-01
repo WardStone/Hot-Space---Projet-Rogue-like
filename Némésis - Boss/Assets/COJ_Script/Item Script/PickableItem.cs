@@ -13,6 +13,11 @@ public class PickableItem : MonoBehaviour
     public Text itemDescription;
     public Text itemPrice;
 
+    public GameObject ShopDenialSoundPrefab;
+    public GameObject PickHealthPackSoundPrefab;
+    public GameObject PickWeaponSoundPrefab;
+    public GameObject PickItemSoundPrefab;
+
 
     public Item item;
     protected bool canPick = true;
@@ -36,11 +41,10 @@ public class PickableItem : MonoBehaviour
     {
             if (other.CompareTag("Player") && Input.GetButtonDown("Interact"))
             {
-
                 if (canPick == true)
                 {
-                    PickUp();
-                    canPick = false;
+                    canPick = false;    
+                    PickUp();    
                 }
 
             }
@@ -81,6 +85,12 @@ public class PickableItem : MonoBehaviour
                 gameManager.playerMoney -= cost;
                 Inventory.instance.Add(item);
                 Destroy(gameObject);
+                Instantiate(PickItemSoundPrefab);
+            }
+            else
+            {
+                Instantiate(ShopDenialSoundPrefab);
+                canPick = true;
             }
             Debug.Log("item bought");
         }
@@ -92,6 +102,12 @@ public class PickableItem : MonoBehaviour
                 gameManager.playerMoney -= cost;
                 Inventory.instance.Add(item);
                 Destroy(gameObject);
+                Instantiate(PickWeaponSoundPrefab);
+            }
+            else
+            {
+                Instantiate(ShopDenialSoundPrefab);
+                canPick = true;
             }
             Debug.Log("weapon bought");
         }  
@@ -99,6 +115,7 @@ public class PickableItem : MonoBehaviour
         {
             Inventory.instance.Add(item);
             Destroy(gameObject);
+            Instantiate(PickItemSoundPrefab);
         }
         else if (gameObject.CompareTag("healthPack"))
         {
@@ -108,6 +125,12 @@ public class PickableItem : MonoBehaviour
                 gameManager.playerMoney -= healthPackCost;
                 playerS.playerHealth += 30;
                 Destroy(gameObject);
+                Instantiate(PickHealthPackSoundPrefab);
+            }
+            else
+            {
+                Instantiate(ShopDenialSoundPrefab);
+                canPick = true;
             }
         }
         Debug.Log("item picked up");

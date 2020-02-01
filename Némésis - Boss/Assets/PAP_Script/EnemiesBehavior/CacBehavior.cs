@@ -14,6 +14,7 @@ public class CacBehavior : MonoBehaviour
 
     public float recoveryTime;
     public float timeBeforeDash;
+    public float timeBeforeSoundDash;
 
     private bool canMove = true;
     private bool stopDash = false;
@@ -27,7 +28,7 @@ public class CacBehavior : MonoBehaviour
 
     public Color dashColor = Color.red;
     public Color normalColor = Color.white;
-     public Color hurtColor;
+    public Color hurtColor;
 
 
     private Animator anim;
@@ -67,8 +68,13 @@ public class CacBehavior : MonoBehaviour
     {
 
         GetComponent<SpriteRenderer>().material.color = dashColor;
+
         
         yield return new WaitForSeconds(timeBeforeDash);
+        gameObject.transform.GetChild(3).GetComponent<AudioSource>().enabled = true;
+        yield return new WaitForSeconds(timeBeforeSoundDash);
+        
+
 
         GetComponent<SpriteRenderer>().material.color = normalColor;
 
@@ -91,6 +97,7 @@ public class CacBehavior : MonoBehaviour
 
 
         yield return new WaitForSeconds(recoveryTime);
+        gameObject.transform.GetChild(3).GetComponent<AudioSource>().enabled = false;
 
         canMove = true;
         anim.SetBool("isMoving", true);

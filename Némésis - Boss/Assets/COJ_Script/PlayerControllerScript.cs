@@ -32,7 +32,7 @@ public class PlayerControllerScript : MonoBehaviour
   
     public bool canMove = true;
     public bool canDash = true;
-    private bool canShoot = true;
+    public bool canShoot = true;
     public bool laserScope = true;
 
     public float dashForce;
@@ -97,7 +97,6 @@ public class PlayerControllerScript : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Debug.Log("Axis equal" +Input.GetAxis("Fire"));
         if (canMove == true)
         {
             playerRb.velocity = moveVelocity;    

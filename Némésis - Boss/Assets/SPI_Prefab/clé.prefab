@@ -273,8 +273,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a52289d55aca3ce4891307d8ebdbce43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Abutton: {fileID: 0}
   canPick: 0
   description: {fileID: 2126916215}
+  pickKeySoundPrefab: {fileID: 1517852096735023618, guid: adff197e8fbe70f47af0bbf5a99e8d63,
+    type: 3}
 --- !u!61 &3063704461193488115
 BoxCollider2D:
   m_ObjectHideFlags: 0

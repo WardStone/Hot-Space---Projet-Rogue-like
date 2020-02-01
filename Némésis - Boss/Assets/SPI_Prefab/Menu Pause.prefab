@@ -610,6 +610,8 @@ MonoBehaviour:
   pauseMenuUI: {fileID: 6071517257423924824}
   playerStat: {fileID: 0}
   godMode: 0
+  MenuConfirmeSoundPrefab: {fileID: 2790681307036780415, guid: 1abad979996e0294fadb666a92e038c4,
+    type: 3}
 --- !u!1 &6071517257971053877
 GameObject:
   m_ObjectHideFlags: 0

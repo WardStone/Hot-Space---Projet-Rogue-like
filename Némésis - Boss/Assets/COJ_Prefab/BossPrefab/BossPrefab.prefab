@@ -668,6 +668,10 @@ MonoBehaviour:
     type: 3}
   bossRespBodySoundPrefab: {fileID: 3378942821113258649, guid: f5d8e87dce8cd5741b946eed6d69b710,
     type: 3}
+  bossClawAttackSoundPrefab: {fileID: 5458828332097478170, guid: 7628edf3b8496f1408e99d930ec3b2a7,
+    type: 3}
+  bossPrepClawSoundPrefab: {fileID: 8725567192709638050, guid: 8051fedb6cb542b45bc76ae0464888f3,
+    type: 3}
 --- !u!61 &3118177369809345464
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -119,6 +119,8 @@ public class BossPatternLoop : MonoBehaviour
     public GameObject bossTakeDmgSoundPrefab;
     public GameObject bossDeathSoundPrefab;
     public GameObject bossRespBodySoundPrefab;
+    public GameObject bossClawAttackSoundPrefab;
+    public GameObject bossPrepClawSoundPrefab;
 
     void Start()
     {
@@ -643,8 +645,10 @@ public class BossPatternLoop : MonoBehaviour
         Debug.Log("Pattern 2 has begun");
         AnimatorRef = 2;
         SetAllAnimatorRef();
+        Instantiate(bossPrepClawSoundPrefab);
         yield return new WaitForSeconds(1.5f);
         StartCoroutine(cameraShake.Shake());
+        Instantiate(bossClawAttackSoundPrefab);
 
         if (rightArm01.CompareTag("bossRightArm01"))
         {
@@ -657,6 +661,7 @@ public class BossPatternLoop : MonoBehaviour
         else if (rightArm01.CompareTag("bossRightArm03"))
         {
             rockSpawn.brkRockNbr = 20;
+            rockSpawn.styRockNbr = 0;
             rockSpawn.BossSpawnObject();
         }
         yield return new WaitForSeconds(0.5f);

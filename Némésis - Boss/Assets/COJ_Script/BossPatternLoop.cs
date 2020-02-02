@@ -116,6 +116,10 @@ public class BossPatternLoop : MonoBehaviour
     // Start is called before the first frame update
     public GameObject victoryScreen;
 
+    public GameObject bossTakeDmgSoundPrefab;
+    public GameObject bossDeathSoundPrefab;
+    public GameObject bossRespBodySoundPrefab;
+
     void Start()
     {
         cameraShake = GameObject.FindGameObjectWithTag("CameraShakeManager").GetComponent<SimpleCameraShakeInCinemachine>();
@@ -259,6 +263,8 @@ public class BossPatternLoop : MonoBehaviour
     public IEnumerator takeDamage()
     {
         bossHealth -= playerStat.bulletDamage;
+        Instantiate(bossTakeDmgSoundPrefab);
+        Debug.Log("alo les photos ?");
         healthBar.value = bossHealth;
         canTakeDamage = false;
         Debug.Log("bosshealth =" + bossHealth);
@@ -271,6 +277,7 @@ public class BossPatternLoop : MonoBehaviour
     {
         if (leftArm01Stat.partHealth <= 0)
         {
+            Instantiate(bossRespBodySoundPrefab);
             yield return new WaitForSeconds(1.5f);
             leftArm01Stat.partHealth = 700;
             leftArm01Stat.hasRespawned = true;
@@ -281,7 +288,7 @@ public class BossPatternLoop : MonoBehaviour
             }
             if (leftArmRespawn == 1)
             {
-                leftArm01.tag = "bossLeftArm01";
+                leftArm01.tag = "bossLeftArm02";
             }
             if (leftArmRespawn == 2)
             {
@@ -298,6 +305,7 @@ public class BossPatternLoop : MonoBehaviour
     {
         if (rightArm01Stat.partHealth <= 0)
         {
+            Instantiate(bossRespBodySoundPrefab);
             yield return new WaitForSeconds(1.5f);
             rightArm01Stat.partHealth = 700;
             rightArm01Stat.hasRespawned = true;
@@ -325,6 +333,7 @@ public class BossPatternLoop : MonoBehaviour
     {
         if (head01Stat.partHealth <= 0)
         {
+            Instantiate(bossRespBodySoundPrefab);
             yield return new WaitForSeconds(1.5f);
             head01Stat.partHealth = 600;
             head01Stat.hasRespawned = true;
@@ -671,6 +680,7 @@ public class BossPatternLoop : MonoBehaviour
             RightArmAnimator.SetTrigger("dead");
             HeadAnimator.SetTrigger("dead");
             LeftHandAnimator.SetTrigger("dead");
+            Instantiate(bossDeathSoundPrefab);
 
             StopAllCoroutines();
             StartCoroutine(BossDeathAnimation());

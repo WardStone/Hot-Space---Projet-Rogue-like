@@ -89,6 +89,7 @@ public class RockSpawning : MonoBehaviour
     }
     public void BossSpawnObject()
     {
+        Instantiate(previewSound, transform.position, Quaternion.identity);
         cameraShake.Shake();
         for (int i = 0; i < styRockNbr; i++)
         {

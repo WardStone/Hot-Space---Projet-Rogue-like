@@ -15,6 +15,8 @@ public class BossPartStat : MonoBehaviour
     public Color hurtColor = Color.yellow;
     public Color okColor = Color.white;
 
+    public GameObject bossTakeDmgSoundPrefab;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -68,6 +70,7 @@ public class BossPartStat : MonoBehaviour
     {
             partHealth -= stat.bulletDamage;
             boss.bossHealth -= stat.bulletDamage;
+        Instantiate(bossTakeDmgSoundPrefab);
             boss.healthBar.value = boss.bossHealth;
             gameObject.GetComponent<SpriteRenderer>().material.color = hurtColor;
             yield return new WaitForSeconds(0.05f);

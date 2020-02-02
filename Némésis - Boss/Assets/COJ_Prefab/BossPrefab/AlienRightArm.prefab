@@ -116,11 +116,14 @@ MonoBehaviour:
   boss: {fileID: 0}
   explosionGen: {fileID: 3994322604524090185, guid: 23593fb4aa98fe3498447bd50f6dfe88,
     type: 3}
+  canExplose: 1
   stat: {fileID: 0}
   partHealth: 300
   hasRespawned: 0
   hurtColor: {r: 1, g: 0.101960786, b: 0.015686275, a: 1}
   okColor: {r: 1, g: 1, b: 1, a: 1}
+  bossTakeDmgSoundPrefab: {fileID: 7228418367157069633, guid: a7ec3f665d54d9e44ad17a9797c5c479,
+    type: 3}
 --- !u!212 &1307887884
 SpriteRenderer:
   m_ObjectHideFlags: 0

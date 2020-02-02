@@ -662,6 +662,12 @@ MonoBehaviour:
   phase2IsOn: 0
   victoryScreen: {fileID: 5768540900138853469, guid: 9901c5258a24897449e2375a4144ee63,
     type: 3}
+  bossTakeDmgSoundPrefab: {fileID: 2848272029448303274, guid: 9b9a61321310f9144ba5843daacf4994,
+    type: 3}
+  bossDeathSoundPrefab: {fileID: 7661872707189626931, guid: 598efc83231ff704ca4fb284d149011f,
+    type: 3}
+  bossRespBodySoundPrefab: {fileID: 3378942821113258649, guid: f5d8e87dce8cd5741b946eed6d69b710,
+    type: 3}
 --- !u!61 &3118177369809345464
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1432,7 +1438,7 @@ AudioSource:
   m_GameObject: {fileID: 3118177370671824307}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 6397859119120120333, guid: ad189a31b70bca14c9235d826a41a121,
+  OutputAudioMixerGroup: {fileID: 7915595479045366943, guid: c2abad8c22b36bd4e8b74d00ad0cdeb1,
     type: 2}
   m_audioClip: {fileID: 8300000, guid: 98adc903d49bacf4698f44b9d4e7bd92, type: 3}
   m_PlayOnAwake: 1
@@ -1442,7 +1448,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 120
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500

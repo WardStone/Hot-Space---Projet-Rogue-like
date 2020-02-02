@@ -105,6 +105,8 @@ MonoBehaviour:
   hasRespawned: 0
   hurtColor: {r: 1, g: 0.08366534, b: 0, a: 1}
   okColor: {r: 1, g: 1, b: 1, a: 1}
+  bossTakeDmgSoundPrefab: {fileID: 7228418367157069633, guid: a7ec3f665d54d9e44ad17a9797c5c479,
+    type: 3}
 --- !u!61 &-7711634833896501092
 BoxCollider2D:
   m_ObjectHideFlags: 0

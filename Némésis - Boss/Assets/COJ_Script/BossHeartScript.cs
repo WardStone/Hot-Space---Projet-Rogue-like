@@ -12,6 +12,8 @@ public class BossHeartScript : MonoBehaviour
 
     public Color damagedColor;
     public Color normalColor;
+
+    public GameObject heartTakeDmgSound;
     // Start is called before the first frame update
     void Start()
     {
@@ -67,6 +69,7 @@ public class BossHeartScript : MonoBehaviour
             if (boss.canTakeDamage == true)
             {
                 StartCoroutine(HurtColor());
+                Instantiate(heartTakeDmgSound);
                 StartCoroutine(boss.takeDamage());
             }
         }

@@ -339,6 +339,8 @@ MonoBehaviour:
   coreSpeed: 300
   damagedColor: {r: 1, g: 0, b: 0, a: 1}
   normalColor: {r: 1, g: 1, b: 1, a: 1}
+  heartTakeDmgSound: {fileID: 7228418367157069633, guid: a7ec3f665d54d9e44ad17a9797c5c479,
+    type: 3}
 --- !u!50 &3118177369647767362
 Rigidbody2D:
   serializedVersion: 4
